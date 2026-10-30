@@ -146,6 +146,21 @@ def pick(title: str, salt: str, choices: list, count: int = 1) -> list:
     return result
 
 
+def with_ai_images(titles: list[dict]) -> list[dict]:
+    """Puts the generated images that sources.toml has pinned in place of a title's photos."""
+    pinned = load("sources.toml")["image"]
+    by_title = {t["title"]: t for t in titles}
+    for key, entry in load("prompts.toml")["image"].items():
+        if key in pinned and entry["title"] in by_title:
+            item = by_title[entry["title"]]
+            if entry["shape"] == "poster":
+                # Generated at 2:3 with the subject at the top and room for the title below.
+                item.update(poster=key, focus=0.5, plain_poster=False, layout=item.get("layout") or "bottom")
+            else:
+                item["backdrop"] = key
+    return titles
+
+
 def movies(catalog: dict) -> list[dict]:
     """The films of the catalog: the [[movie]] tables, then the one-line films."""
     result = list(catalog.get("movie", []))
@@ -165,7 +180,7 @@ def movies(catalog: dict) -> list[dict]:
             "files": [{"video": "720p" if n % SD_EVERY == SD_EVERY - 1 else "1080p", "tracks": "light"}],
             "filler": True,
         })
-    return result
+    return with_ai_images(result)
 
 
 def shows(catalog: dict) -> list[dict]:
@@ -200,7 +215,7 @@ def shows(catalog: dict) -> list[dict]:
             "season": season_list,
             "filler": True,
         })
-    return result
+    return with_ai_images(result)
 
 
 # ---------------------------------------------------------------- images

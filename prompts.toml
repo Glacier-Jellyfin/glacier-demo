@@ -1,0 +1,128 @@
+# Images generated with FLUX.1-schnell (Apache 2.0), for posters that need a
+# person, a couple or a superhero: free photos of real people come without
+# their consent to advertising, and nobody here exists.
+#
+# ai.py makes four candidates per entry; the chosen one gets "seed", and
+# "ai.py pin" adds it to sources.toml. Without "prompt", the prompt is made
+# from the title's plot and genres in catalog.toml. The text on the posters is
+# set by demo.py, never by the model.
+#
+# shape: poster (2:3) or backdrop (16:9).
+
+[style]
+photo = "cinematic film still, photorealistic, 35mm film, natural skin texture, soft dramatic lighting, shallow depth of field, rich colour grading, no text, no letters, no logo, no watermark"
+poster = "vertical movie poster artwork, subject in the upper two thirds, calm empty space at the bottom"
+
+# ---- Vanguard, the superhero series
+
+[image.ai-vanguard-poster]
+title = "Vanguard"
+shape = "poster"
+seed = 2
+prompt = "a woman in her thirties in a dark grey armoured superhero suit of original design with a small plain steel-blue triangle on the chest, no cape, standing on the girders of an unfinished suspension bridge at dusk, bent steel beams floating around her, city skyline behind"
+
+[image.ai-vanguard-backdrop]
+title = "Vanguard"
+shape = "backdrop"
+seed = 2
+prompt = "wide shot of a superhero in a dark grey armoured suit hovering above a half-built suspension bridge over a river at dusk, steel beams bending in the air, city lights in the distance"
+
+[image.ai-vanguard-fallout-poster]
+title = "Vanguard: Fallout"
+shape = "poster"
+seed = 4
+prompt = "a woman superhero in a scratched dark grey armoured suit facing a masked villain in a long black coat on a rain-soaked rooftop at night, neon city below, sparks in the rain"
+
+[image.ai-vanguard-last-stand-poster]
+title = "Vanguard: Last Stand"
+shape = "poster"
+seed = 3
+prompt = "four superheroes in battle-worn suits standing side by side in a ruined factory hall, a giant dormant machine glowing red behind them, dust in shafts of light"
+
+[image.ai-vanguard-legacy-poster]
+title = "Vanguard: Legacy"
+shape = "poster"
+seed = 2
+prompt = "three teenagers in hoodies discovering an abandoned superhero headquarters, old armoured suits in glass cases, flashlight beams, dust, a faded plain steel-blue triangle painted on the wall"
+
+[image.ai-vanguard-legacy-backdrop]
+title = "Vanguard: Legacy"
+shape = "backdrop"
+seed = 2
+prompt = "wide shot of an abandoned superhero headquarters hidden under a city, rows of empty armoured suits in glass cases, three teenagers with flashlights in the doorway"
+
+# ---- People: portraits and couples
+
+[image.ai-letters-poster]
+title = "Letters to Ingrid"
+shape = "poster"
+seed = 3
+prompt = "an elderly woman with silver hair sitting by a window in an old wooden house, holding a bundle of yellowed letters tied with string, warm afternoon light, thoughtful expression"
+
+[image.ai-letters-backdrop]
+title = "Letters to Ingrid"
+shape = "backdrop"
+seed = 3
+prompt = "a young woman in a knitted cardigan kneeling in a dusty attic, opening an old wooden box full of letters, warm light through a small round window"
+
+[image.ai-evening-train-poster]
+title = "Evening Train"
+shape = "poster"
+seed = 2
+prompt = "a man and a woman in their thirties in winter coats standing a little apart on a train platform at dusk, both glancing at each other, a commuter train arriving with warm lit windows"
+
+[image.ai-just-one-song-poster]
+title = "Just One Song"
+shape = "poster"
+seed = 3
+prompt = "a woman pianist in a dark green dress playing a grand piano in an empty hotel bar at night, warm lamp light, a single glass on the piano, reflections in the window"
+
+[image.ai-concerto-poster]
+title = "Concerto for a Stranger"
+shape = "poster"
+seed = 3
+prompt = "a young woman playing the violin at an open window of an old apartment at night, eyes closed, city courtyard below with a single lit window opposite"
+
+[image.ai-second-act-poster]
+title = "Second Act"
+shape = "poster"
+seed = 3
+prompt = "a grey-haired man in his seventies in a velvet jacket standing on a small amateur theatre stage, spotlight on him, red curtain, a few amateur actors watching from the wings, warm and funny mood"
+
+[image.ai-hearts-shore-poster]
+title = "Hearts on the Shore"
+shape = "poster"
+seed = 4
+prompt = "an elderly couple holding hands walking barefoot along the edge of the sea at sunset, seen from the side, wind in their hair, long shadows on the wet sand"
+
+# ---- Series
+
+[image.ai-night-shift-poster]
+title = "Night Shift"
+shape = "poster"
+seed = 3
+prompt = "a nurse in navy blue scrubs standing in a long hospital corridor at night, tired but determined, an ambulance's blue light reflecting through the glass doors behind her"
+
+[image.ai-coldwater-poster]
+title = "Coldwater"
+shape = "poster"
+seed = 3
+prompt = "a woman detective in a dark wool coat standing on a forest road in thick fog, a mountain town's lights faint behind her, a missing person poster on a tree"
+
+[image.ai-kingsbridge-poster]
+title = "Kingsbridge"
+shape = "poster"
+seed = 4
+prompt = "a woman detective inspector in a long camel coat and her younger male sergeant standing on an old stone bridge over a misty river in an English market town, early morning"
+
+[image.ai-hinterland-poster]
+title = "Hinterland"
+shape = "poster"
+seed = 3
+prompt = "a police chief in her forties in a dark green police jacket standing in a Black Forest village square at dusk, half-timbered houses, villagers watching from windows"
+
+[image.ai-bakery-poster]
+title = "The Bakery on Elm Street"
+shape = "poster"
+seed = 3
+prompt = "a cheerful family of three generations behind the counter of a small corner bakery, grandmother, father and teenage daughter in aprons, shelves of bread, morning light, comedy mood"

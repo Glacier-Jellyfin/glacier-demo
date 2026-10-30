@@ -58,6 +58,66 @@ them off the website.
 | `pc-market` | [2022-02-21_The-market_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2022-02-21_The-market_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
 | `pc-rain` | [2022-12-06_Rain-City_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2022-12-06_Rain-City_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
 | `pc-cozy` | [2023-11-22_Cozy_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2023-11-22_Cozy_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
+| `city-night` | [Park City night sky (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Park_City_night_sky_(Unsplash).jpg) | Jeff Golenski jeffgolenski | CC0 |
+| `neon-street` | [Neon streets (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Neon_streets_(Unsplash).jpg) | JINDONG H jindong | CC0 |
+| `desert-dunes` | [Desert Dunes (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Desert_Dunes_(Unsplash).jpg) | Joe Mania joemania | CC0 |
+| `mountain-lake` | [Mountain lake (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountain_lake_(Unsplash).jpg) | Aleksandra Boguslawska aleksandraboguslawska | CC0 |
+| `forest-road` | [Wet forest road (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Wet_forest_road_(Unsplash).jpg) | Nathan Anderson nathananderson | CC0 |
+| `foggy-forest` | [Foggy green forest (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Foggy_green_forest_(Unsplash).jpg) | Gaetano Cessati gaetanocessati | CC0 |
+| `snowy-forest` | [Snowy forest in Austria (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Snowy_forest_in_Austria_(Unsplash).jpg) | Emily Morter emilymorter | CC0 |
+| `rain-window` | [Rain on window (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Rain_on_window_(Unsplash).jpg) | Francesco Gallarotti gallarotti | CC0 |
+| `highway-night` | [Highway intersection at night-time (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Highway_intersection_at_night-time_(Unsplash).jpg) | Israel Sundseth kappuru | CC0 |
+| `vintage-typewriter` | [Vintage black typewriter (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Vintage_black_typewriter_(Unsplash).jpg) | Daniel McCullough d_mccullough | CC0 |
+| `library-books` | [Library Books Bookshelves (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Library_Books_Bookshelves_(Unsplash).jpg) | Davide Cantelli cant89 | CC0 |
+| `piano` | [Piano reflection (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Piano_reflection_(Unsplash).jpg) | Isaac Ibbott wanderingimagery | CC0 |
+| `violin` | [Dusty violin (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Dusty_violin_(Unsplash).jpg) | Dan Gold danielcgold | CC0 |
+| `bicycle-street` | [Secured bicycle (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Secured_bicycle_(Unsplash).jpg) | James Pond shotbyjames | CC0 |
+| `surfer` | [Trickster surfer (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Trickster_surfer_(Unsplash).jpg) | Marcus Dall Col marcusdallcol | CC0 |
+| `couple-beach-silhouette` | [Couple sitting watching sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Couple_sitting_watching_sunset_(Unsplash).jpg) | Gerrit Vermeulen gerritvermeulen | CC0 |
+| `owl` | [Orange eyed owl (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Orange_eyed_owl_(Unsplash).jpg) | Harm Weustink dutchdude85 | CC0 |
+| `horse-field` | [Horse in a snowy field in close-up (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Horse_in_a_snowy_field_in_close-up_(Unsplash).jpg) | Benny Jackson themightymerlin | CC0 |
+| `elephant` | [Elephant Rock, Currumbin, Australia (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Elephant_Rock,_Currumbin,_Australia_(Unsplash).jpg) | Jordan Donaldson - @jordi.d jordan | CC0 |
+| `lion` | [Sleepy Lion (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Sleepy_Lion_(Unsplash).jpg) | Markus Knöll fontsaenger | CC0 |
+| `whale` | [While whale watching (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:While_whale_watching_(Unsplash).jpg) | Ferdinand Stöhr fellowferdi | CC0 |
+| `jellyfish` | [A little-big Jellyfish (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:A_little-big_Jellyfish_(Unsplash).jpg) | Federico Benedetti vidrikphotography | CC0 |
+| `starry-sky` | [Purple starry sky (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Purple_starry_sky_(Unsplash).jpg) | Dawid Zawiła davealmine | CC0 |
+| `aurora` | [Lofoten, Norway (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Lofoten,_Norway_(Unsplash).jpg) | Johannes Groll followhansi | CC0 |
+| `volcano` | [Volcano (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Volcano_(Unsplash).jpg) | Diego PH jdiegoph | CC0 |
+| `canyon` | [Canyon (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Canyon_(Unsplash).jpg) | Joe Gardner josephgardnerphotography | CC0 |
+| `waterfall` | [Peaceful waterfall (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Peaceful_waterfall_(Unsplash).jpg) | Jeffrey Workman jeffreyp | CC0 |
+| `skyscraper` | [City skyscraper architecture (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:City_skyscraper_architecture_(Unsplash).jpg) | PICSELI picseli | CC0 |
+| `carnival-ferris-wheel` | [Ferris wheel at Tibidabo summer (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Ferris_wheel_at_Tibidabo_summer_(Unsplash).jpg) | Héctor Martínez oria_hector | CC0 |
+| `lanterns` | [Line of lanterns (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Line_of_lanterns_(Unsplash).jpg) | kazuend kazuend | CC0 |
+| `abandoned-building` | [Abandoned Libušín building (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Abandoned_Libu%C5%A1%C3%ADn_building_(Unsplash).jpg) | Hieu Vu Minh spoony | CC0 |
+| `castle` | [Mountains by Neuschwanstein Castle (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountains_by_Neuschwanstein_Castle_(Unsplash).jpg) | Joshua Stannard jbstannard | CC0 |
+| `bridge-fog` | [Brooklyn Bridge Sunrise Fog (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_Sunrise_Fog_(Unsplash).jpg) | Emanuel Hahn hahnbo | CC0 |
+| `concert-crowd` | [Concert crowd (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Concert_crowd_(Unsplash).jpg) | Hannah Rodrigo hannahrodrigo | CC0 |
+| `festival-crowd` | [Looking into festival crowd (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Looking_into_festival_crowd_(Unsplash).jpg) | Marvin Meyer marvelous | CC0 |
+| `crowd-street` | [Crowd holding umbrellas (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Crowd_holding_umbrellas_(Unsplash).jpg) | Alex Knight agkdesign | CC0 |
+| `marathon-runners` | [Brussels marathon runners (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Brussels_marathon_runners_(Unsplash).jpg) | Martins Zemlickis mzemlickis | CC0 |
+| `people-walking-city` | [Walking Toward Nice (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Walking_Toward_Nice_(Unsplash).jpg) | Jonas Weckschmied jweckschmied | CC0 |
+| `crowded-market` | [Glowing bazaar at night (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Glowing_bazaar_at_night_(Unsplash).jpg) | Juan ignacio Tapia juanitapia | CC0 |
+| `people-beach` | [People enjoying Newport Beach (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:People_enjoying_Newport_Beach_(Unsplash).jpg) | Herson Rodriguez hero | CC0 |
+| `audience` | [Front row audience (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Front_row_audience_(Unsplash).jpg) | Melanie van Leeuwen strompictures | CC0 |
+| `train-station-people` | [People waiting for the train (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:People_waiting_for_the_train_(Unsplash).jpg) | Redd Angelo reddangelo16 | CC0 |
+| `ai-vanguard-poster` | [ai-vanguard-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-vanguard-backdrop` | [ai-vanguard-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-backdrop.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-vanguard-fallout-poster` | [ai-vanguard-fallout-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-fallout-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
+| `ai-vanguard-last-stand-poster` | [ai-vanguard-last-stand-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-last-stand-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-vanguard-legacy-poster` | [ai-vanguard-legacy-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-vanguard-legacy-backdrop` | [ai-vanguard-legacy-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-backdrop.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-letters-poster` | [ai-letters-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-letters-backdrop` | [ai-letters-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-backdrop.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-evening-train-poster` | [ai-evening-train-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-evening-train-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-just-one-song-poster` | [ai-just-one-song-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-just-one-song-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-concerto-poster` | [ai-concerto-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-concerto-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-second-act-poster` | [ai-second-act-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-second-act-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-hearts-shore-poster` | [ai-hearts-shore-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hearts-shore-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
+| `ai-night-shift-poster` | [ai-night-shift-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-shift-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-coldwater-poster` | [ai-coldwater-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-coldwater-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-kingsbridge-poster` | [ai-kingsbridge-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-kingsbridge-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
+| `ai-hinterland-poster` | [ai-hinterland-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hinterland-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-bakery-poster` | [ai-bakery-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-bakery-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 
 ## Fonts
 

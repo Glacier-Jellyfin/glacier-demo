@@ -79,3 +79,15 @@ stream copy in under a second.
   sources that may be used in advertising (CC0, public domain, CC-BY)
 
 After adding a source, run `python demo.py credits` to update CREDITS.md.
+
+## Generated images
+
+Posters that need a person, a couple or a superhero come from FLUX.1-schnell
+(Apache 2.0), because free photos of real people come without their consent
+to advertising. `prompts.toml` holds one entry per image; `ai.py` (setup in
+its docstring, it needs PyTorch with CUDA) makes four candidates each, the
+chosen seed goes back into prompts.toml, and `ai.py pin` adds the image to
+sources.toml. The images are attached to the `ai-v1` release. demo.py puts
+them in place of the title's photos and sets the title text itself; the
+model is never asked for lettering, and candidates with made-up text or
+logos that resemble real brands are left out.
