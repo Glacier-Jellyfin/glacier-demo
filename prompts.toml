@@ -198,3 +198,36 @@ title = "Ramen Nights"
 shape = "backdrop"
 seed = 3
 prompt = "a narrow street of small food stalls under railway arches at night, red paper lanterns, steam, a lit commuter train crossing the bridge above, light rain"
+
+# ---- Collections ("collection" instead of "title"; the genres are the first member's)
+
+[image.ai-collection-vanguard-poster]
+collection = "Vanguard Collection"
+shape = "poster"
+seed = 1
+prompt = "four superheroes in dark grey armoured suits of original design standing together on a rooftop at night, a woman in the middle, each with a small plain steel-blue triangle on the chest, no capes, a huge glowing steel-blue triangle projected into storm clouds above the city"
+
+[image.ai-collection-vanguard-backdrop]
+collection = "Vanguard Collection"
+shape = "backdrop"
+seed = 1
+prompt = "wide panorama of a night city skyline under storm clouds, a huge glowing steel-blue triangle projected into the clouds, four tiny superhero silhouettes standing on the edge of a rooftop"
+
+[image.ai-collection-paper-moons-poster]
+collection = "Paper Moons Collection"
+shape = "poster"
+seed = 3
+prompt = "a girl in a yellow raincoat sitting on a crescent moon made of folded paper, a black-and-white cat beside her, a big friendly full moon behind them, paper stars on strings, a fjord with a striped lighthouse far below"
+
+[image.ai-collection-northern-light-poster]
+collection = "Northern Light Trilogy"
+shape = "poster"
+seed = 3
+prompt = "a lone lighthouse on a rocky island in a glacier fjord at dusk, its beam reaching across the water, green northern lights over snowy mountains, a small figure in a coat on the shore"
+
+[image.ai-collection-animal-tales-poster]
+collection = "Animal Tales"
+shape = "poster"
+seed = 3
+prompt = "a young red fox sitting in a golden meadow at sunrise, butterflies and a dragonfly in the air around it, an owl on a branch above, dew on the grass, forest edge in soft mist"
+medium = "photo"

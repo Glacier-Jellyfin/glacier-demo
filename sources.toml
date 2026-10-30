@@ -958,3 +958,38 @@ sha256 = "22804f4d52c653abc3740ebafad2c9fc9a4755736568a20335a473caede781bb"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
+
+[image.ai-collection-vanguard-poster]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-poster.jpg"
+sha256 = "9a958e849bab3248843e3683f4155c770d70e81ebd9fbd268af3629d7b0d8f88"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 1"
+license = "CC0"
+
+[image.ai-collection-vanguard-backdrop]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-backdrop.jpg"
+sha256 = "0471ed2c4c0bbbebba720e5542cbc3797cd6ca6bde74e3e195fe45f3794faad8"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 1"
+license = "CC0"
+
+[image.ai-collection-paper-moons-poster]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-paper-moons-poster.jpg"
+sha256 = "002835c935371d603ec9ab161088de0be4e188fe37170610271ed0dbef6ad2f7"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-collection-northern-light-poster]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-northern-light-poster.jpg"
+sha256 = "a73bb132946955c980e2f39bcffedcb2a7044242633c9306c4fcbe21989bdbb0"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-collection-animal-tales-poster]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-animal-tales-poster.jpg"
+sha256 = "10857add08891ddcbe3aa71bd5924e4c795940fe2390848d580f216a78c2d97e"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"

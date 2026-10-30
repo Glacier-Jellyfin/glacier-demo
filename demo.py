@@ -5,6 +5,7 @@
   demo.py credits                rewrite CREDITS.md from sources.toml
   demo.py server setup [--reset] set up a fresh server on the built library
   demo.py server start|stop|status
+  demo.py server collections     redraw the collections' pictures on a running server
 
 The library comes from catalog.toml, tracks.toml and sources.toml. Videos are
 one still frame per chapter and the audio is silence, so a two-hour film takes
@@ -152,7 +153,7 @@ def with_ai_images(titles: list[dict]) -> list[dict]:
     pinned = load("sources.toml")["image"]
     by_title = {t["title"]: t for t in titles}
     for key, entry in load("prompts.toml")["image"].items():
-        if key in pinned and entry["title"] in by_title:
+        if key in pinned and entry.get("title") in by_title:
             item = by_title[entry["title"]]
             if entry["shape"] == "poster":
                 # Generated at 2:3 with the subject at the top and room for the title below.
@@ -162,6 +163,23 @@ def with_ai_images(titles: list[dict]) -> list[dict]:
             else:
                 item["backdrop"] = key
     return titles
+
+
+def collections_of(catalog: dict) -> dict[str, list[dict]]:
+    """Each collection with its films and series, oldest first: from "collection" on a
+    title and from [[collection]] lists."""
+    titles = movies(catalog) + shows(catalog)
+    groups: dict[str, list[dict]] = {}
+    for item in titles:
+        names = item.get("collection", [])
+        for name in [names] if isinstance(names, str) else names:
+            groups.setdefault(name, []).append(item)
+    by_title = {item["title"]: item for item in titles}
+    for listed in catalog.get("collection", []):
+        groups.setdefault(listed["name"], []).extend(by_title[t] for t in listed["titles"])
+    for members in groups.values():
+        members.sort(key=lambda m: m["year"])
+    return groups
 
 
 def movies(catalog: dict) -> list[dict]:
@@ -503,12 +521,39 @@ class Art:
             "scale": pick(title, "scale", [1.0, 0.92, 0.84, 0.76])[0],
         }
 
-    def poster(self, item: dict, key: str, focus: float, subtitle: str | None = None) -> Image.Image:
-        """A poster: the image, then title, tagline and (if wanted) credits set like a film's one-sheet."""
+    def collection(self, name: str, members: list[dict]) -> tuple[Image.Image, Image.Image]:
+        """Poster and backdrop of a collection: generated ones from prompts.toml, else a
+        collage of its members, lettered in the style of its first member."""
+        pinned = self.sources["image"]
+        generated = {e["shape"]: key for key, e in load("prompts.toml")["image"].items()
+                     if e.get("collection") == name and key in pinned}
+        item = dict(members[0], title=name, layout="bottom", align="center", tagline=None)
+        if "poster" in generated:
+            poster = self.poster(item, generated["poster"], 0.5)
+        else:
+            # A busy collage needs quiet lettering, whatever its members are.
+            poster = self.poster(dict(item, treatment="documentary"), None, 0.5, base=self.collage(members))
+        backdrop = self.cover(generated.get("backdrop") or members[0]["backdrop"], 1920, 1080)
+        return poster, backdrop
+
+    def collage(self, members: list[dict]) -> Image.Image:
+        """The members' backdrops side by side in tall strips, for a collection without its own picture."""
+        width, height = 1000, 1500
+        image = Image.new("RGB", (width, height))
+        columns = min(3, len(members))
+        rows = (len(members) + columns - 1) // columns
+        for n, member in enumerate(members):
+            w, h = width // columns, height // rows
+            image.paste(self.cover(member["backdrop"], w - 4, h - 4, 0.5), ((n % columns) * w + 2, (n // columns) * h + 2))
+        return self.shade(image, 0.0, 0.0, 0.3)
+
+    def poster(self, item: dict, key: str | None, focus: float, subtitle: str | None = None,
+               base: Image.Image | None = None) -> Image.Image:
+        """A poster: the image (or base), then title, tagline and (if wanted) credits set like a film's one-sheet."""
         width, height, margin = 1000, 1500, 80
         layout = self.layout(item)
         place, tagline, align = layout["place"], layout["tagline"], layout["align"]
-        image = self.cover(key, width, height, focus)
+        image = base if base is not None else self.cover(key, width, height, focus)
         # Dark behind the title, and a lighter shade along the top for a tagline.
         if place == "bottom":
             image = self.shade(image, 0.45, 0.92, 0.05)
@@ -1242,27 +1287,19 @@ class Server:
         self.request("POST", path, raw=base64.b64encode(buffer.getvalue()), content_type="image/jpeg")
 
     def collections(self) -> None:
+        """Creates the collections that do not exist yet and gives all of them their pictures."""
         catalog = load("catalog.toml")
         items = self.items(self.user_id, "Movie,Series")
-        groups: dict[str, list[dict]] = {}
-        titles = movies(catalog) + shows(catalog)
-        for item in titles:
-            names = item.get("collection", [])
-            for name in [names] if isinstance(names, str) else names:
-                groups.setdefault(name, []).append(item)
-        by_title = {item["title"]: item for item in titles}
-        for listed in catalog.get("collection", []):
-            groups.setdefault(listed["name"], []).extend(by_title[t] for t in listed["titles"])
-        for name, members in groups.items():
-            members.sort(key=lambda m: m["year"])
-            ids = ",".join(items[m["title"]]["Id"] for m in members)
-            query = urllib.parse.urlencode({"name": name, "ids": ids})
-            created = self.request("POST", f"/Collections?{query}")
-            # A poster that already carries its own lettering would get a second title.
-            source = next((m for m in reversed(members) if not m.get("plain_poster")), members[0])
-            poster = self.art().poster(dict(source, title=name), source["poster"], source.get("focus", 0.5))
-            self.upload(f"/Items/{created['Id']}/Images/Primary", poster)
-            self.upload(f"/Items/{created['Id']}/Images/Backdrop", self.art().cover(members[0]["backdrop"], 1920, 1080))
+        existing = {i["Name"]: i["Id"] for i in self.request(
+            "GET", f"/Items?userId={self.user_id}&Recursive=true&IncludeItemTypes=BoxSet")["Items"]}
+        for name, members in collections_of(catalog).items():
+            if name not in existing:
+                ids = ",".join(items[m["title"]]["Id"] for m in members)
+                existing[name] = self.request("POST", f"/Collections?{urllib.parse.urlencode({'name': name, 'ids': ids})}")["Id"]
+            poster, backdrop = self.art().collection(name, members)
+            self.upload(f"/Items/{existing[name]}/Images/Primary", poster)
+            self.upload(f"/Items/{existing[name]}/Images/Backdrop", backdrop)
+            print(f"  collection {name}")
 
     def watch_state(self, user: str) -> None:
         items = self.items(user, "Movie,Series,Episode")
@@ -1287,7 +1324,7 @@ def main() -> None:
     build.add_argument("--only", help="build only titles containing this text")
     commands.add_parser("credits")
     server = commands.add_parser("server")
-    server.add_argument("action", choices=["setup", "start", "stop", "status"])
+    server.add_argument("action", choices=["setup", "start", "stop", "status", "collections"])
     server.add_argument("--reset", action="store_true", help="setup: delete the server's data first")
     args = parser.parse_args()
     if args.command == "build":
@@ -1298,6 +1335,10 @@ def main() -> None:
         Server().setup(args.reset)
     elif args.action == "start":
         Server().start()
+    elif args.action == "collections":
+        s = Server()
+        s.login(ADMIN)
+        s.collections()
     elif args.action == "stop":
         Server().stop()
     else:

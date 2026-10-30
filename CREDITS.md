@@ -125,6 +125,11 @@ them off the website.
 | `ai-owl-woods-poster` | [ai-owl-woods-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-owl-woods-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
 | `ai-ramen-nights-poster` | [ai-ramen-nights-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 | `ai-ramen-nights-backdrop` | [ai-ramen-nights-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-backdrop.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-collection-vanguard-poster` | [ai-collection-vanguard-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-poster.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
+| `ai-collection-vanguard-backdrop` | [ai-collection-vanguard-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-backdrop.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
+| `ai-collection-paper-moons-poster` | [ai-collection-paper-moons-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-paper-moons-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-collection-northern-light-poster` | [ai-collection-northern-light-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-northern-light-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-collection-animal-tales-poster` | [ai-collection-animal-tales-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-animal-tales-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 
 ## Fonts
 

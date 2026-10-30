@@ -47,8 +47,10 @@ def entries() -> dict[str, dict]:
     titles = {t["title"]: t for t in demo.movies(catalog) + shows}
     result = {}
     style, art = prompts["style"], prompts["art"]
+    groups = demo.collections_of(catalog)
     for key, entry in prompts["image"].items():
-        title = titles[entry["title"]]
+        # A collection takes its genres (and so its art direction) from its first member.
+        title = titles[entry["title"]] if "title" in entry else dict(groups[entry["collection"]][0], title=entry["collection"])
         genres = [g.lower() for g in title["genres"]]
         # Without a prompt of its own, the plot describes the picture.
         scene = entry.get("prompt") or f"a scene from a {', '.join(genres)} story: {' '.join(title['plot'].split())}"
