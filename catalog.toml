@@ -12,6 +12,11 @@
 # their own lettering. Titles without "rating" are unrated.
 # "collection" puts a film or series into one collection, or several as a list.
 
+# The credits block at the foot of the posters (studio, cast, crew); off for
+# clean posters in the style of ThePosterDB.
+[posters]
+billing = false
+
 [[movie]]
 title = "The Last Lighthouse"
 year = 2023

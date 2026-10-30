@@ -26,6 +26,7 @@ import base64
 import hashlib
 import json
 import os
+import random
 import shutil
 import subprocess
 import sys
@@ -40,7 +41,7 @@ import zipfile
 from fractions import Fraction
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+from PIL import Image, ImageChops, ImageColor, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parent
 PORT = 8098
@@ -155,7 +156,9 @@ def with_ai_images(titles: list[dict]) -> list[dict]:
             item = by_title[entry["title"]]
             if entry["shape"] == "poster":
                 # Generated at 2:3 with the subject at the top and room for the title below.
-                item.update(poster=key, focus=0.5, plain_poster=False, layout=item.get("layout") or "bottom")
+                bottom = {"top-tagline-below": "bottom-tagline-below", "bottom-tagline-below": "bottom-tagline-below",
+                          "bottom-tagline-top": "bottom-tagline-top"}.get(item.get("layout"), "bottom")
+                item.update(poster=key, focus=0.5, plain_poster=False, layout=bottom)
             else:
                 item["backdrop"] = key
     return titles
@@ -223,19 +226,21 @@ def shows(catalog: dict) -> list[dict]:
 class Art:
     """Posters, logos and frames drawn from the source photos."""
 
-    def __init__(self, sources: dict):
+    def __init__(self, sources: dict, billing: bool = False):
         self.sources = sources
+        # The credits block at the foot of the posters; catalog.toml [posters] billing.
+        self.billing_block = billing
         self.fonts: dict[str, Path] = {}
         self.photos: dict[str, Image.Image] = {}
 
-    def font(self, style: str, size: int) -> ImageFont.FreeTypeFont:
+    def font(self, style: str, size: int, weight: str | None = None) -> ImageFont.FreeTypeFont:
         if style not in self.fonts:
             self.fonts[style] = fetch(self.sources["font"][style])
-        font = ImageFont.truetype(str(self.fonts[style]), size)
-        # Variable fonts open at their lightest weight.
-        for weight in (b"Bold", b"SemiBold"):
+        font = ImageFont.truetype(str(self.fonts[style]), max(8, round(size)))
+        # Variable fonts open at their lightest weight; static ones ignore this.
+        for name in ([weight] if weight else []) + ["Bold", "SemiBold"]:
             try:
-                font.set_variation_by_name(weight)
+                font.set_variation_by_name(name)
                 break
             except (OSError, ValueError):
                 continue
@@ -286,9 +291,188 @@ class Art:
             size -= 4
         return self.font(style, size), [text]
 
+    # ---- poster typography
+
+    # How a kind of film sets its title: font and weight, letter spacing as a
+    # share of the size, the largest size, the finish of the letters, and
+    # thin rules above and below.
+    TREATMENTS = {
+        "blockbuster": {"font": "impact", "tracking": 0.03, "size": 230, "finish": "metal"},
+        "prestige": {"font": "garamond", "weight": "Medium", "tracking": 0.16, "size": 130, "finish": "plain"},
+        "thriller": {"font": "condensed", "weight": "Light", "tracking": 0.32, "size": 140, "finish": "plain",
+                     "rules": True},
+        "horror": {"font": "skinny", "tracking": 0.12, "size": 320, "finish": "plain"},
+        "scifi": {"font": "shoulders", "weight": "Light", "tracking": 0.42, "size": 140, "finish": "glow"},
+        "western": {"font": "roman", "weight": "Bold", "tracking": 0.10, "size": 150, "finish": "gold"},
+        "documentary": {"font": "wide", "weight": "Light", "tracking": 0.40, "size": 90, "finish": "plain", "rules": True},
+        "indie": {"font": "gothic", "tracking": 0.05, "size": 230, "finish": "plain"},
+        "family": {"font": "soft", "weight": "Black", "tracking": 0.0, "size": 200, "finish": "cartoon", "case": "title"},
+    }
+    # The first genre here that a title has picks its treatment; dramas and the rest are prestige.
+    GENRE_TREATMENTS = [("Superhero", "blockbuster"), ("Horror", "horror"), ("Science Fiction", "scifi"),
+                        ("Animation", "family"), ("Anime", "family"), ("Kids", "family"), ("Family", "family"),
+                        ("Action", "blockbuster"), ("Western", "western"), ("Thriller", "thriller"),
+                        ("Crime", "thriller"), ("Mystery", "thriller"), ("Medical", "thriller"), ("Documentary", "documentary"),
+                        ("Comedy", "indie"), ("Music", "indie"), ("Sport", "indie")]
+
+    def treatment(self, item: dict) -> dict:
+        genres = item.get("genres", [])
+        name = item.get("treatment") or next((t for g, t in self.GENRE_TREATMENTS if g in genres), "prestige")
+        return self.TREATMENTS[name]
+
     @staticmethod
-    def spaced(text: str) -> str:
-        return " ".join(text.upper())
+    def tiers(title: str) -> list[tuple[str, str]]:
+        """The title in levels: a sequel's subtitle below, a leading "The" small above."""
+        if ":" in title:
+            main, sub = title.split(":", 1)
+            return [("main", main.strip()), ("sub", sub.strip())]
+        words = title.split()
+        if len(words) > 1 and words[0].lower() == "the":
+            return [("small", words[0]), ("main", " ".join(words[1:]))]
+        return [("main", title)]
+
+    def letters(self, text: str, font: ImageFont.FreeTypeFont, tracking: float) -> Image.Image:
+        """One line of text as a mask, with tracking added between the letters."""
+        gap = tracking * font.size
+        width = sum(font.getlength(c) for c in text) + gap * max(0, len(text) - 1)
+        ascent, descent = font.getmetrics()
+        mask = Image.new("L", (max(1, round(width) + 8), ascent + descent + 8))
+        draw, x = ImageDraw.Draw(mask), 4.0
+        for c in text:
+            draw.text((x, 4), c, font=font, fill=255)
+            x += font.getlength(c) + gap
+        box = mask.getbbox()
+        return mask.crop(box) if box else mask
+
+    def wrapped(self, text: str, style: dict, size: float, max_width: int, max_lines: int) -> list[Image.Image] | None:
+        """text in lines no wider than max_width at this size, or None if it needs more lines."""
+        font = self.font(style["font"], size, style.get("weight"))
+        lines, line = [], ""
+        for word in text.split():
+            candidate = f"{line} {word}".strip()
+            if not line or self.letters(candidate, font, style["tracking"]).width <= max_width:
+                line = candidate
+            else:
+                lines.append(line)
+                line = word
+        lines.append(line)
+        masks = [self.letters(l, font, style["tracking"]) for l in lines]
+        if len(masks) > max_lines or any(m.width > max_width for m in masks):
+            return None
+        return masks
+
+    def title_block(self, item: dict, max_width: int, scale: float, align: str, extra: list[str]) -> Image.Image:
+        """The title with its finish, and lines below it (season, tagline), as one RGBA image."""
+        style = self.treatment(item)
+        upper = style.get("case") != "title"
+        rows = []  # (mask, gap above)
+        for level, text in self.tiers(item["title"]):
+            text = text.upper() if upper else text
+            if level == "main":
+                size = style["size"] * scale
+                while (masks := self.wrapped(text, style, size, max_width, 2)) is None and size > 30:
+                    size *= 0.93
+                font = self.font(style["font"], size, style.get("weight"))
+                masks = masks or [self.letters(text, font, style["tracking"])]
+                rows += [(m, round(size * 0.14)) for m in masks]
+            else:
+                # A sub-title or a small "The" in the same font, smaller and spaced wider.
+                small = dict(style, tracking=style["tracking"] + 0.25)
+                masks = self.wrapped(text.upper(), small, style["size"] * scale * 0.32, max_width, 1)
+                rows += [(m, round(style["size"] * scale * 0.12)) for m in masks or []]
+        line_font = self.font("condensed", 34, "Regular")
+        for text in extra:
+            rows.append((self.letters(text.upper(), line_font, 0.3), 30))
+        width = max(m.width for m, _ in rows)
+        height = sum(m.height + gap for m, gap in rows) - rows[0][1]
+        pad = 40
+        mask = Image.new("L", (width + 2 * pad, height + 2 * pad))
+        extra_mask = Image.new("L", mask.size)
+        y, title_rows = pad, len(rows) - len(extra)
+        for n, (m, gap) in enumerate(rows):
+            y += gap if n else 0
+            x = {"left": pad, "right": pad + width - m.width}.get(align, pad + (width - m.width) // 2)
+            (mask if n < title_rows else extra_mask).paste(m, (x, y), m)
+            y += m.height
+        return self.finish_letters(mask, extra_mask, style["finish"], item.get("accent", "#ffffff"))
+
+    @staticmethod
+    def gradient(size: tuple[int, int], stops: list[str]) -> Image.Image:
+        column = Image.new("RGB", (1, len(stops)))
+        for n, colour in enumerate(stops):
+            column.putpixel((0, n), ImageColor.getrgb(colour))
+        return column.resize(size, Image.BICUBIC)
+
+    def finish_letters(self, mask: Image.Image, extra: Image.Image, finish: str, accent: str) -> Image.Image:
+        """Colours the letters (metal, gold, glow, cartoon or plain white) over a soft shadow."""
+        size = mask.size
+        shadow = Image.new("RGBA", size, (0, 0, 0, 255))
+        shadow.putalpha(mask.filter(ImageFilter.GaussianBlur(14)).point(lambda a: a * 0.7))
+        layer = Image.alpha_composite(Image.new("RGBA", size, (0, 0, 0, 0)), shadow)
+        if finish == "glow":
+            glow = Image.new("RGBA", size, ImageColor.getrgb(accent) + (255,))
+            glow.putalpha(mask.filter(ImageFilter.GaussianBlur(18)))
+            layer = Image.alpha_composite(layer, glow)
+        if finish == "cartoon":
+            thick = mask.filter(ImageFilter.MaxFilter(11))
+            drop = Image.new("RGBA", size, (0, 0, 0, 0))
+            drop.paste(Image.new("RGBA", size, (20, 20, 40, 220)), (6, 9), thick)
+            outline = Image.new("RGBA", size, (255, 255, 255, 255))
+            outline.putalpha(thick)
+            layer = Image.alpha_composite(Image.alpha_composite(layer, drop), outline)
+        fills = {"metal": ["#ffffff", "#dfe5ea", "#9aa4ae", "#eef2f5"], "gold": ["#fff1c9", "#e7c27a", "#b9853c"],
+                 "cartoon": [accent, accent]}
+        fill = self.gradient(size, fills.get(finish, ["#ffffff", "#ffffff"])).convert("RGBA")
+        fill.putalpha(mask)
+        layer = Image.alpha_composite(layer, fill)
+        lines = Image.new("RGBA", size, ImageColor.getrgb(accent) + (255,))
+        lines.putalpha(extra)
+        return Image.alpha_composite(layer, lines)
+
+    def billing(self, item: dict, width: int) -> Image.Image:
+        """The block of credits at the foot of a poster: small words, bigger names."""
+        title = item["title"]
+        crew = pick(title, "crew", DIRECTORS + ACTORS, 5)
+        director = (item.get("directors") or crew[:1])[0]
+        tokens = [(item["studios"][0], True), ("presents", False), ("a", False), (director, True), ("film", False)]
+        tokens += [(name, True) for name, _ in item.get("cast", [])]
+        for role, name in zip(["music by", "edited by", "director of photography", "produced by"], crew[1:]):
+            tokens += [(role, False), (name, True)]
+        tokens += [("written by", False), ((item.get("writers") or [director])[0], True),
+                   ("directed by", False), (director, True)]
+        big, small = self.font("billing", 30), self.font("billing", 18)
+        rows, row, row_width = [], [], 0.0
+        for text, name in tokens:
+            font = big if name else small
+            w = font.getlength(text.upper()) + 14
+            if row and row_width + w > width:
+                rows.append(row)
+                row, row_width = [], 0.0
+            row.append((text.upper(), font))
+            row_width += w
+        rows.append(row)
+        image = Image.new("L", (width, 40 * len(rows)))
+        draw = ImageDraw.Draw(image)
+        for n, row in enumerate(rows):
+            total = sum(f.getlength(t) + 14 for t, f in row) - 14
+            x = (width - total) / 2
+            for text, font in row:
+                draw.text((x, 32 + n * 40), text, font=font, fill=190, anchor="ls")
+                x += font.getlength(text) + 14
+        return image
+
+    @staticmethod
+    def film_look(image: Image.Image, seed: str) -> Image.Image:
+        """A vignette and fine grain, so a photo reads as a printed poster."""
+        width, height = image.size
+        vignette = ImageOps.invert(Image.radial_gradient("L")).resize((width, height))
+        vignette = vignette.point(lambda v: 255 - round((255 - v) * 0.55))
+        image = Image.composite(image, Image.new("RGB", image.size, "black"), vignette)
+        random.seed(seed)
+        noise = Image.frombytes("L", (width // 2, height // 2),
+                                bytes(random.randint(108, 148) for _ in range((width // 2) * (height // 2))))
+        noise = noise.resize(image.size, Image.BILINEAR).convert("RGB")
+        return Image.blend(image, ImageChops.soft_light(image, noise), 0.6)
 
     # Fixed layouts for "layout" in the catalog: where the title sits and the tagline.
     LAYOUTS = {
@@ -316,61 +500,57 @@ class Art:
             "tagline": tagline if item.get("tagline") else None,
             # Mostly centred; now and then flush left or right.
             "align": item.get("align") or pick(title, "align", ["center"] * 6 + ["left", "right"])[0],
-            "size": pick(title, "size", [170, 150, 130, 110, 90])[0],
+            "scale": pick(title, "scale", [1.0, 0.92, 0.84, 0.76])[0],
         }
 
     def poster(self, item: dict, key: str, focus: float, subtitle: str | None = None) -> Image.Image:
-        """A poster with the title set over the image; subtitle names a season."""
+        """A poster: the image, then title, tagline and (if wanted) credits set like a film's one-sheet."""
         width, height, margin = 1000, 1500, 80
         layout = self.layout(item)
         place, tagline, align = layout["place"], layout["tagline"], layout["align"]
         image = self.cover(key, width, height, focus)
-        # Dark behind the title, and a lighter shade on the edge where a tagline goes.
+        # Dark behind the title, and a lighter shade along the top for a tagline.
         if place == "bottom":
-            image = self.shade(image, 0.42, 0.9, 0.1)
+            image = self.shade(image, 0.45, 0.92, 0.05)
         elif place == "top":
-            image = ImageOps.flip(self.shade(ImageOps.flip(image), 0.5, 0.9, 0.1))
+            image = ImageOps.flip(self.shade(ImageOps.flip(image), 0.5, 0.92, 0.05))
         else:
-            image = self.shade(image, 0.0, 0.0, 0.38)
-        if tagline == "edge":
-            image = ImageOps.flip(self.shade(ImageOps.flip(image), 0.82, 0.55))
-        draw = ImageDraw.Draw(image)
-        accent = item.get("accent", "white")
-        x, anchor = {"center": (width / 2, "ma"), "left": (margin, "la"), "right": (width - margin, "ra")}[align]
-        max_width = width - 2 * margin - (0 if align == "center" else 60)
-        font, lines = self.fit(item["title"], item.get("style", "serif"), max_width, layout["size"])
-        line_height = round(font.size * 1.08)
-        below = []
-        if subtitle:
-            below.append((self.spaced(subtitle), self.font("sans", 34)))
-        elif tagline == "below":
-            below.append((item["tagline"].upper(), self.font("sans", 28)))
-        block = line_height * len(lines) + sum(26 + f.size for _, f in below)
+            image = self.shade(image, 0.0, 0.0, 0.32)
+        image = ImageOps.flip(self.shade(ImageOps.flip(image), 0.85, 0.5))
+        image = self.film_look(image, item["title"])
+        accent = item.get("accent", "#ffffff")
+        canvas = image.convert("RGBA")
+
+        if tagline == "edge" and not subtitle:
+            line = self.letters(item["tagline"].upper(), self.font("condensed", 26, "Regular"), 0.25)
+            colour = Image.new("RGBA", line.size, ImageColor.getrgb(accent) + (255,))
+            canvas.paste(colour, ((width - line.width) // 2, 56), line)
+
+        foot = 0
+        if self.billing_block and not subtitle:
+            block = self.billing(item, width - 2 * margin)
+            foot = block.height + 40
+            canvas.paste(Image.new("RGBA", block.size, (210, 210, 210, 255)), (margin, height - foot), block)
+
+        extra = [subtitle] if subtitle else ([item["tagline"]] if tagline == "below" else [])
+        title = self.title_block(item, width - 2 * margin, layout["scale"], align, extra)
         # A centred title sits a little above or below the middle, never quite on it twice.
         shift = pick(item["title"], "shift", [-0.12, -0.07, -0.03, 0.03, 0.07, 0.12])[0] * height
-        y = {"top": 120, "center": (height - block) / 2 + shift, "bottom": height - 120 - block}[place]
-        for line in lines:
-            draw.text((x, y), line, font=font, fill="white", anchor=anchor)
-            y += line_height
-        for text, small in below:
-            draw.text((x, y + 26), text, font=small, fill=accent, anchor=anchor)
-            y += 26 + small.size
-        if tagline == "edge" and not subtitle:
-            draw.text((x, 70), item["tagline"].upper(), font=self.font("sans", 26), fill=accent, anchor=anchor)
-        return image
+        y = {"top": 90,
+             "center": (height - title.height) / 2 + shift,
+             "bottom": height - 80 - foot - title.height}[place]
+        x = {"left": margin - 40, "right": width - margin + 40 - title.width}.get(align, (width - title.width) // 2)
+        canvas.alpha_composite(title, (round(x), round(y)))
+        if self.treatment(item).get("rules"):
+            draw = ImageDraw.Draw(canvas)
+            box = title.getbbox()
+            for ry in (y + box[1] - 22, y + box[3] + 22):
+                draw.line([(x + box[0], ry), (x + box[2], ry)], fill=accent, width=2)
+        return canvas.convert("RGB")
 
     def logo(self, item: dict) -> Image.Image:
-        style = item.get("style", "serif")
-        font, lines = self.fit(item["title"], style, 1100, 220, max_lines=2)
-        line_height = round(font.size * 1.05)
-        image = Image.new("RGBA", (1200, line_height * len(lines) + 120), (0, 0, 0, 0))
-        draw = ImageDraw.Draw(image)
-        for n, line in enumerate(lines):
-            draw.text((600, 60 + n * line_height), line, font=font, fill="white", anchor="ma")
-        shadow = Image.new("RGBA", image.size, (0, 0, 0, 0))
-        shadow.putalpha(image.getchannel("A").filter(ImageFilter.GaussianBlur(10)).point(lambda a: a * 0.6))
-        result = Image.alpha_composite(shadow, image)
-        return result.crop(result.getbbox())
+        block = self.title_block(item, 1100, 1.0, "center", [])
+        return block.crop(block.getbbox())
 
     def landscape(self, item: dict) -> Image.Image:
         image = self.shade(self.cover(item["backdrop"], 1280, 720), 0.35, 0.8)
@@ -493,7 +673,7 @@ class Builder:
     def __init__(self):
         self.sources = load("sources.toml")
         self.tracks = load("tracks.toml")
-        self.art = Art(self.sources)
+        self.art = Art(self.sources, billing=load("catalog.toml").get("posters", {}).get("billing", False))
         self.media = work() / "media"
         self.temp = work() / "build"
 
@@ -1001,7 +1181,7 @@ class Server:
 
     def art(self) -> Art:
         if not hasattr(self, "_art"):
-            self._art = Art(load("sources.toml"))
+            self._art = Art(load("sources.toml"), billing=load("catalog.toml").get("posters", {}).get("billing", False))
         return self._art
 
     def login(self, user: dict) -> None:

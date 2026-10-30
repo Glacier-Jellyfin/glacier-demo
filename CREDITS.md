@@ -100,24 +100,31 @@ them off the website.
 | `people-beach` | [People enjoying Newport Beach (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:People_enjoying_Newport_Beach_(Unsplash).jpg) | Herson Rodriguez hero | CC0 |
 | `audience` | [Front row audience (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Front_row_audience_(Unsplash).jpg) | Melanie van Leeuwen strompictures | CC0 |
 | `train-station-people` | [People waiting for the train (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:People_waiting_for_the_train_(Unsplash).jpg) | Redd Angelo reddangelo16 | CC0 |
-| `ai-vanguard-poster` | [ai-vanguard-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-vanguard-poster` | [ai-vanguard-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-poster.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
 | `ai-vanguard-backdrop` | [ai-vanguard-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-backdrop.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-vanguard-fallout-poster` | [ai-vanguard-fallout-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-fallout-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
+| `ai-vanguard-fallout-poster` | [ai-vanguard-fallout-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-fallout-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 | `ai-vanguard-last-stand-poster` | [ai-vanguard-last-stand-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-last-stand-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-vanguard-legacy-poster` | [ai-vanguard-legacy-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-vanguard-legacy-backdrop` | [ai-vanguard-legacy-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-backdrop.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-letters-poster` | [ai-letters-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-letters-backdrop` | [ai-letters-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-backdrop.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-evening-train-poster` | [ai-evening-train-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-evening-train-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-vanguard-legacy-poster` | [ai-vanguard-legacy-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
+| `ai-vanguard-legacy-backdrop` | [ai-vanguard-legacy-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-backdrop.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
+| `ai-letters-poster` | [ai-letters-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-letters-backdrop` | [ai-letters-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-backdrop.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-evening-train-poster` | [ai-evening-train-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-evening-train-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 | `ai-just-one-song-poster` | [ai-just-one-song-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-just-one-song-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 | `ai-concerto-poster` | [ai-concerto-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-concerto-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 | `ai-second-act-poster` | [ai-second-act-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-second-act-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-hearts-shore-poster` | [ai-hearts-shore-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hearts-shore-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
-| `ai-night-shift-poster` | [ai-night-shift-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-shift-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-hearts-shore-poster` | [ai-hearts-shore-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hearts-shore-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-night-shift-poster` | [ai-night-shift-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-shift-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
 | `ai-coldwater-poster` | [ai-coldwater-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-coldwater-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-kingsbridge-poster` | [ai-kingsbridge-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-kingsbridge-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
-| `ai-hinterland-poster` | [ai-hinterland-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hinterland-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-bakery-poster` | [ai-bakery-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-bakery-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-kingsbridge-poster` | [ai-kingsbridge-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-kingsbridge-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-hinterland-poster` | [ai-hinterland-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hinterland-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-bakery-poster` | [ai-bakery-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-bakery-poster.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
+| `ai-paper-moons-poster` | [ai-paper-moons-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-paper-moons-2-poster` | [ai-paper-moons-2-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-2-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-winter-fox-poster` | [ai-winter-fox-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-winter-fox-poster.jpg) | generated with FLUX.1-schnell, seed 7 | CC0 |
+| `ai-little-explorers-poster` | [ai-little-explorers-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-little-explorers-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-owl-woods-poster` | [ai-owl-woods-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-owl-woods-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
+| `ai-ramen-nights-poster` | [ai-ramen-nights-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+| `ai-ramen-nights-backdrop` | [ai-ramen-nights-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-backdrop.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
 
 ## Fonts
 
@@ -127,6 +134,17 @@ All under the SIL Open Font License 1.1, from [google/fonts](https://github.com/
 - Bebas Neue
 - Inter
 - Fraunces
+- Oswald
+- Anton
+- League Gothic
+- Cinzel
+- Cormorant Garamond
+- Montserrat
+- Barlow Condensed Light
+- Barlow Condensed SemiBold
+- Six Caps
+- Playfair Display Italic
+- Big Shoulders Display
 
 ## Server
 

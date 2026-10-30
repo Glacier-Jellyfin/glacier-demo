@@ -32,7 +32,8 @@ import demo
 MODEL = "black-forest-labs/FLUX.1-schnell"
 REVISION = "741f7c3ce8b383c54771c7003378a50191e9efe9"
 RELEASE = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1"
-SIZES = {"poster": (896, 1344), "backdrop": (1792, 1008)}
+# About 1.5 megapixels: more detail in faces and hands than 1 MP, still fast.
+SIZES = {"poster": (1024, 1536), "backdrop": (1824, 1024)}
 
 
 def folder() -> Path:
@@ -45,22 +46,27 @@ def entries() -> dict[str, dict]:
     shows = demo.shows(catalog)
     titles = {t["title"]: t for t in demo.movies(catalog) + shows}
     result = {}
+    style, art = prompts["style"], prompts["art"]
     for key, entry in prompts["image"].items():
         title = titles[entry["title"]]
+        genres = [g.lower() for g in title["genres"]]
         # Without a prompt of its own, the plot describes the picture.
-        genres = ", ".join(title["genres"]).lower()
-        scene = entry.get("prompt") or f"a scene from a {genres} story: {' '.join(title['plot'].split())}"
-        if entry["shape"] == "poster":
-            # First, so CLIP (77 tokens) reads it too.
-            kind = "series" if title in shows else "film"
-            scene = f"movie poster for a {genres} {kind}: {scene}"
-        parts = [scene, prompts["style"]["poster"]] if entry["shape"] == "poster" else [scene]
-        result[key] = dict(entry, scene=scene, full_prompt=", ".join(parts + [prompts["style"]["photo"]]))
+        scene = entry.get("prompt") or f"a scene from a {', '.join(genres)} story: {' '.join(title['plot'].split())}"
+        direction = next((text for genre, text in art.items() if genre in genres), "")
+        shape = style[entry["shape"]]
+        medium = entry.get("medium") or ("anime" if "anime" in genres else "cartoon" if {"animation", "kids"} <= set(genres)
+                                         else "animation" if "animation" in genres else "photo")
+        parts = [shape, direction, scene] + ([style["composition"]] if entry["shape"] == "poster" else []) + [prompts["medium"][medium]]
+        full = ", ".join(p for p in parts if p)
+        # The candidates belong to this exact prompt and size; a new prompt starts afresh.
+        version = hashlib.sha1(f"{full}|{SIZES[entry['shape']]}".encode()).hexdigest()[:8]
+        # CLIP reads 77 tokens: the shape and the scene; T5 reads all of it.
+        result[key] = dict(entry, clip_prompt=f"{shape}, {scene}", full_prompt=full, version=version)
     return result
 
 
-def candidate(key: str, seed: int) -> Path:
-    return folder() / "candidates" / f"{key}-{seed}.png"
+def candidate(key: str, entry: dict, seed: int) -> Path:
+    return folder() / "candidates" / f"{key}-{entry['version']}-{seed}.png"
 
 
 def candidates(only: str | None, count: int) -> None:
@@ -68,7 +74,7 @@ def candidates(only: str | None, count: int) -> None:
     from diffusers import FluxPipeline
 
     todo = [(k, e, s) for k, e in entries().items() if not only or only in k
-            for s in range(1, count + 1) if not candidate(k, s).exists()]
+            for s in range(1, count + 1) if not candidate(k, e, s).exists()]
     if not todo:
         print("nothing to do")
         return
@@ -85,11 +91,10 @@ def candidates(only: str | None, count: int) -> None:
     pipe.to("cuda")
     for key, entry, seed in todo:
         width, height = SIZES[entry["shape"]]
-        # CLIP reads 77 tokens: it gets the scene, T5 the whole prompt.
-        image = pipe(prompt=entry["scene"], prompt_2=entry["full_prompt"], width=width, height=height,
+        image = pipe(prompt=entry["clip_prompt"], prompt_2=entry["full_prompt"], width=width, height=height,
                      guidance_scale=0.0, num_inference_steps=4, max_sequence_length=256,
                      generator=torch.Generator("cpu").manual_seed(seed)).images[0]
-        path = candidate(key, seed)
+        path = candidate(key, entry, seed)
         path.parent.mkdir(parents=True, exist_ok=True)
         image.save(path)
         print(f"  {path.name}")
@@ -99,7 +104,7 @@ def sheet() -> None:
     out = folder() / "sheets"
     out.mkdir(parents=True, exist_ok=True)
     for key, entry in entries().items():
-        files = sorted(folder().glob(f"candidates/{key}-*.png"), key=lambda p: int(p.stem.rsplit("-", 1)[1]))
+        files = sorted(folder().glob(f"candidates/{key}-{entry['version']}-*.png"), key=lambda p: int(p.stem.rsplit("-", 1)[1]))
         if not files:
             continue
         thumbs = []
@@ -126,7 +131,14 @@ def pin() -> None:
     for key, entry in entries().items():
         if "seed" not in entry:
             continue
-        image = Image.open(candidate(key, entry["seed"])).convert("RGB")
+        chosen = candidate(key, entry, entry["seed"])
+        if not chosen.exists():
+            print(f"  {key}: the prompt changed since seed {entry['seed']} was chosen; choose again")
+            continue
+        image = Image.open(chosen).convert("RGB")
+        if entry.get("crop"):
+            # Cuts off made-up lettering along the bottom; demo.py crops to the poster shape anyway.
+            image = image.crop((0, 0, image.width, round(image.height * (1 - entry["crop"]))))
         path = final / f"{key}.jpg"
         image.save(path, quality=92)
         data = path.read_bytes()

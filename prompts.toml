@@ -7,30 +7,56 @@
 # from the title's plot and genres in catalog.toml. The text on the posters is
 # set by demo.py, never by the model.
 #
-# shape: poster (2:3) or backdrop (16:9).
+# shape: poster (2:3) or backdrop (16:9). crop cuts that share off the bottom
+# of the chosen image, for a candidate that is good apart from lettering there.
 
+# The prompt is: shape, art direction, scene, composition (posters), medium.
+# The shape comes first so that CLIP, which reads only 77 tokens, sees it:
+# "textless key art" is what poster artwork without lettering is called.
 [style]
-photo = "cinematic film still, photorealistic, 35mm film, natural skin texture, soft dramatic lighting, shallow depth of field, rich colour grading, no text, no letters, no logo, no watermark"
-poster = "vertical movie poster artwork, subject in the upper two thirds, calm empty space at the bottom"
+poster = "textless theatrical one-sheet movie poster key art"
+backdrop = "textless widescreen movie key art, horizontal banner"
+composition = "bold central composition, the subject in the upper two thirds, the lower third plain dark empty ground fading to black"
+
+# Art direction by genre: the first entry here that the title has wins.
+[art]
+superhero = "epic low-angle hero shot, volumetric light, sparks and debris in the air, dramatic sky, teal and orange grade"
+medical = "cold fluorescent and blue emergency light, deep corridor perspective, tense and tired"
+crime = "noir mood, wet surfaces, sodium street light, cold blue and amber"
+thriller = "high contrast chiaroscuro, a single hard light source, deep shadows, cold desaturated palette"
+mystery = "fog, muted greens and greys, eerie stillness"
+romance = "golden hour backlight, warm glow, gentle lens flare, soft focus background"
+music = "moody stage light, haze, a warm spotlight cutting through darkness"
+comedy = "bright cheerful light, warm saturated colours, playful expressions"
+family = "warm storybook light, rich colours, wonder"
+drama = "intimate portrait, soft window light, muted natural palette, quiet emotion"
+
+# How the picture is made. An entry's "medium" wins; otherwise Anime, then
+# Animation with Kids (cartoon), then Animation, then photo.
+[medium]
+photo = "professional cinema poster photography, photorealistic, detailed faces and natural hands, subtle film grain, cinematic colour grade, no text, no watermark"
+animation = "stylised 3D animated feature film still, soft global illumination, expressive characters with big eyes, rich textures, warm cinematic lighting, no text, no watermark"
+anime = "Japanese anime key visual, cel shading, clean confident line art, vibrant hand-painted background, dramatic sky, no text, no watermark"
+cartoon = "2D cartoon for children's television, bold clean outlines, flat bright colours, simple shapes, friendly characters, no text, no watermark"
 
 # ---- Vanguard, the superhero series
 
 [image.ai-vanguard-poster]
 title = "Vanguard"
 shape = "poster"
-seed = 2
+seed = 1
 prompt = "a woman in her thirties in a dark grey armoured superhero suit of original design with a small plain steel-blue triangle on the chest, no cape, standing on the girders of an unfinished suspension bridge at dusk, bent steel beams floating around her, city skyline behind"
 
 [image.ai-vanguard-backdrop]
 title = "Vanguard"
 shape = "backdrop"
 seed = 2
-prompt = "wide shot of a superhero in a dark grey armoured suit hovering above a half-built suspension bridge over a river at dusk, steel beams bending in the air, city lights in the distance"
+prompt = "wide shot of a woman superhero in a dark grey armoured suit with a small plain steel-blue triangle on the chest, hovering above a half-built suspension bridge over a river at dusk, steel beams bending in the air, city lights in the distance"
 
 [image.ai-vanguard-fallout-poster]
 title = "Vanguard: Fallout"
 shape = "poster"
-seed = 4
+seed = 3
 prompt = "a woman superhero in a scratched dark grey armoured suit facing a masked villain in a long black coat on a rain-soaked rooftop at night, neon city below, sparks in the rain"
 
 [image.ai-vanguard-last-stand-poster]
@@ -42,13 +68,13 @@ prompt = "four superheroes in battle-worn suits standing side by side in a ruine
 [image.ai-vanguard-legacy-poster]
 title = "Vanguard: Legacy"
 shape = "poster"
-seed = 2
+seed = 4
 prompt = "three teenagers in hoodies discovering an abandoned superhero headquarters, old armoured suits in glass cases, flashlight beams, dust, a faded plain steel-blue triangle painted on the wall"
 
 [image.ai-vanguard-legacy-backdrop]
 title = "Vanguard: Legacy"
 shape = "backdrop"
-seed = 2
+seed = 4
 prompt = "wide shot of an abandoned superhero headquarters hidden under a city, rows of empty armoured suits in glass cases, three teenagers with flashlights in the doorway"
 
 # ---- People: portraits and couples
@@ -56,19 +82,19 @@ prompt = "wide shot of an abandoned superhero headquarters hidden under a city, 
 [image.ai-letters-poster]
 title = "Letters to Ingrid"
 shape = "poster"
-seed = 3
+seed = 2
 prompt = "an elderly woman with silver hair sitting by a window in an old wooden house, holding a bundle of yellowed letters tied with string, warm afternoon light, thoughtful expression"
 
 [image.ai-letters-backdrop]
 title = "Letters to Ingrid"
 shape = "backdrop"
-seed = 3
+seed = 2
 prompt = "a young woman in a knitted cardigan kneeling in a dusty attic, opening an old wooden box full of letters, warm light through a small round window"
 
 [image.ai-evening-train-poster]
 title = "Evening Train"
 shape = "poster"
-seed = 2
+seed = 3
 prompt = "a man and a woman in their thirties in winter coats standing a little apart on a train platform at dusk, both glancing at each other, a commuter train arriving with warm lit windows"
 
 [image.ai-just-one-song-poster]
@@ -92,7 +118,7 @@ prompt = "a grey-haired man in his seventies in a velvet jacket standing on a sm
 [image.ai-hearts-shore-poster]
 title = "Hearts on the Shore"
 shape = "poster"
-seed = 4
+seed = 3
 prompt = "an elderly couple holding hands walking barefoot along the edge of the sea at sunset, seen from the side, wind in their hair, long shadows on the wet sand"
 
 # ---- Series
@@ -100,7 +126,7 @@ prompt = "an elderly couple holding hands walking barefoot along the edge of the
 [image.ai-night-shift-poster]
 title = "Night Shift"
 shape = "poster"
-seed = 3
+seed = 2
 prompt = "a nurse in navy blue scrubs standing in a long hospital corridor at night, tired but determined, an ambulance's blue light reflecting through the glass doors behind her"
 
 [image.ai-coldwater-poster]
@@ -112,17 +138,63 @@ prompt = "a woman detective in a dark wool coat standing on a forest road in thi
 [image.ai-kingsbridge-poster]
 title = "Kingsbridge"
 shape = "poster"
-seed = 4
+seed = 2
 prompt = "a woman detective inspector in a long camel coat and her younger male sergeant standing on an old stone bridge over a misty river in an English market town, early morning"
 
 [image.ai-hinterland-poster]
 title = "Hinterland"
 shape = "poster"
-seed = 3
+seed = 2
 prompt = "a police chief in her forties in a dark green police jacket standing in a Black Forest village square at dusk, half-timbered houses, villagers watching from windows"
 
 [image.ai-bakery-poster]
 title = "The Bakery on Elm Street"
 shape = "poster"
-seed = 3
+seed = 1
 prompt = "a cheerful family of three generations behind the counter of a small corner bakery, grandmother, father and teenage daughter in aprons, shelves of bread, morning light, comedy mood"
+
+# ---- Animation, anime and cartoon
+
+[image.ai-paper-moons-poster]
+title = "Paper Moons"
+shape = "poster"
+seed = 3
+prompt = "an eight-year-old girl in a yellow raincoat and her grumpy black-and-white cat in a small rowing boat on a moonlit fjord, the girl reaching up for a folded paper moon drifting away in the night sky, little paper stars on strings"
+
+[image.ai-paper-moons-2-poster]
+title = "Paper Moons 2"
+shape = "poster"
+seed = 3
+prompt = "a girl in a yellow raincoat and a black-and-white cat climbing the outside spiral staircase of a tall striped lighthouse at night, the girl holding up a crescent moon folded from newspaper, a sleepy real moon with closed eyes in the sky"
+
+[image.ai-winter-fox-poster]
+title = "Winter Fox"
+shape = "poster"
+seed = 7
+crop = 0.16
+medium = "animation"
+prompt = "a young red fox and a scruffy black-and-white sheepdog walking side by side across a frozen lake, pink and blue winter sky, snowflakes, a farm with lit windows far behind"
+
+[image.ai-little-explorers-poster]
+title = "Little Explorers"
+shape = "poster"
+seed = 3
+prompt = "three children aged seven with a cheerful talking backpack that has big eyes, exploring a sunny river with stepping stones behind their school, a small waterfall, dragonflies"
+
+[image.ai-owl-woods-poster]
+title = "Owl Woods"
+shape = "poster"
+seed = 2
+prompt = "a sleepy owl teacher with small round glasses yawning in front of a tree-house school in the forest, little rabbits, hedgehogs and squirrels as pupils with satchels, bright daytime"
+
+[image.ai-ramen-nights-poster]
+title = "Ramen Nights"
+shape = "poster"
+seed = 3
+prompt = "a tiny ramen shop under railway arches at night, the young chef with a towel on his head behind the counter, three regulars on stools, steam rising, red paper lanterns, a lit commuter train passing on the bridge above"
+
+[image.ai-ramen-nights-backdrop]
+title = "Ramen Nights"
+shape = "backdrop"
+seed = 3
+prompt = "a narrow street of small food stalls under railway arches at night, red paper lanterns, steam, a lit commuter train crossing the bridge above, light rain"
