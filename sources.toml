@@ -1,0 +1,727 @@
+# Everything the demo library is built from. demo.py downloads each file once
+# into the work directory's cache and refuses it when the sha256 differs.
+#
+# Only sources whose licence allows advertising go here (CC0, public domain,
+# CC-BY with credit in CREDITS.md): the website shows this library.
+# Images come from Wikimedia Commons; "page" is where the licence is stated.
+
+[jellyfin]
+version = "12.2"
+url = "https://repo.jellyfin.org/files/server/windows/stable/v12.2/amd64/jellyfin_12.2-amd64.zip"
+sha256 = "ab247745b54cea9af2460c3d62622f5f30a323b02b92d11cea501b67b9a8d83f"
+
+# Fonts from github.com/google/fonts at a fixed commit, all SIL Open Font License.
+[font.serif]
+url = "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf"
+sha256 = "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6"
+name = "Playfair Display"
+
+[font.display]
+url = "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/bebasneue/BebasNeue-Regular.ttf"
+sha256 = "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
+name = "Bebas Neue"
+
+[font.sans]
+url = "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/inter/Inter%5Bopsz,wght%5D.ttf"
+sha256 = "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+name = "Inter"
+
+[font.soft]
+url = "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/fraunces/Fraunces%5BSOFT,WONK,opsz,wght%5D.ttf"
+sha256 = "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb"
+name = "Fraunces"
+
+[image.glacier-alaska]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/9f/Alaskan_Glacier_2026.jpg"
+sha256 = "275d0896a357522eab03fa214f2af8b875a21aa7330401e1c42a979739c91379"
+page = "https://commons.wikimedia.org/wiki/File:Alaskan_Glacier_2026.jpg"
+author = "Bherzhaft"
+license = "CC0"
+
+[image.lighthouse-chania]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/d9/Lighthouse_Chania_evening_sun.jpg"
+sha256 = "d98788856bbbfab3d998fad23398371adb2413c780ec524592e4f6d80445771b"
+page = "https://commons.wikimedia.org/wiki/File:Lighthouse_Chania_evening_sun.jpg"
+author = "Jebulon"
+license = "CC0"
+
+[image.lighthouse-belletout]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f7/Belle_Tout_Lighthouse%2C_June_2020_01.jpg"
+sha256 = "f67f7de6f636c77ef2328ddc6b9d5e4129982e7e60742f157c68c3614667692b"
+page = "https://commons.wikimedia.org/wiki/File:Belle_Tout_Lighthouse,_June_2020_01.jpg"
+author = "Poliphilo"
+license = "CC0"
+
+[image.moon-fjord]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/d9/Waxing_half_moon_over_Brofjorden_1.jpg"
+sha256 = "5f68fb7d4ddb54f27fd71f70277e322856a11b7eb7aa03137eb3ca777ae0f03d"
+page = "https://commons.wikimedia.org/wiki/File:Waxing_half_moon_over_Brofjorden_1.jpg"
+author = "W.carter"
+license = "CC0"
+
+[image.moon-crescent]
+url = "https://upload.wikimedia.org/wikipedia/commons/3/38/Crescent_Moon_in_the_Night_Sky.jpg"
+sha256 = "1ae34039be8bfd2ce2a61b5e111749cd9d31815e23edf1b6cebafa14d42fd172"
+page = "https://commons.wikimedia.org/wiki/File:Crescent_Moon_in_the_Night_Sky.jpg"
+author = "Shivanianbukumar"
+license = "CC0"
+
+[image.lisbon-rain]
+url = "https://upload.wikimedia.org/wikipedia/commons/2/2b/LISBON_IN_THE_NIGHT_RAIN_%2810604014063%29.jpg"
+sha256 = "5fc789509c015a210d96de9ed9dac2d52131c550298f47b1967bacfd08ee2e2b"
+page = "https://commons.wikimedia.org/wiki/File:LISBON_IN_THE_NIGHT_RAIN_(10604014063).jpg"
+author = "Terry Kearney from liverpool, merseyside"
+license = "CC0"
+
+[image.harbor-night]
+url = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Norra_Grundsund_harbor_at_night.jpg"
+sha256 = "fbe5af98afd843f25869f56a42e577a8f05a69f4ffdf7fa402d73b07e7edfcfa"
+page = "https://commons.wikimedia.org/wiki/File:Norra_Grundsund_harbor_at_night.jpg"
+author = "W.carter"
+license = "CC0"
+
+[image.pier-sunset]
+url = "https://upload.wikimedia.org/wikipedia/commons/5/5d/12_palanga_Sunset_over_the_Pier_%2828733557366%29.jpg"
+sha256 = "35d1dc42d5ae4d693319dae773f863329d582f4be724571f9b2e9f245fd7d162"
+page = "https://commons.wikimedia.org/wiki/File:12_palanga_Sunset_over_the_Pier_(28733557366).jpg"
+author = "Brian Toward from London, United Kingdom"
+license = "CC0"
+
+[image.trawlers]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/81/Fishing_Trawlers_moored_in_Brixham_Harbour.jpg"
+sha256 = "4fe17f3a1a5fe914af7d76c1bfdac13bffdf42223eb83f8ecb433fe808d15f43"
+page = "https://commons.wikimedia.org/wiki/File:Fishing_Trawlers_moored_in_Brixham_Harbour.jpg"
+author = "JLParton"
+license = "CC0"
+
+[image.old-train]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/08/Old_Train_%28Unsplash%29.jpg"
+sha256 = "590a4e7dc754f9f665dafe7ffc4525667d9630ef607bda78384558f9e7aa6cec"
+page = "https://commons.wikimedia.org/wiki/File:Old_Train_(Unsplash).jpg"
+author = "David Hellmann davidhellmann"
+license = "CC0"
+
+[image.red-boat]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f9/Red_boat_Eretria_Greece.jpg"
+sha256 = "2470a7912273b785fbd360968399ab802fd0b4b1f67bc3ae2c8e945fe05043ac"
+page = "https://commons.wikimedia.org/wiki/File:Red_boat_Eretria_Greece.jpg"
+author = "Jebulon"
+license = "CC0"
+
+[image.beach-boat]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/4f/Sopot_fishing_boats_2.jpg"
+sha256 = "80f4bd808bf9f6c583f10a6fee1eaa2521aae26fededd2640ebf137010dda0d7"
+page = "https://commons.wikimedia.org/wiki/File:Sopot_fishing_boats_2.jpg"
+author = "\u0410\u0438\u043c\u0430\u0438\u043d\u0430 \u0445\u0438\u043a\u0430\u0440\u0438"
+license = "CC0"
+
+[image.stormy-sea]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Stormy_Baltic_sea_on_Bornholm.jpg"
+sha256 = "80e9f48c7949ca853dc6c7f4b07081b64db6d091eaac46544fd253d8aaaef76d"
+page = "https://commons.wikimedia.org/wiki/File:Stormy_Baltic_sea_on_Bornholm.jpg"
+author = "Socket0"
+license = "CC0"
+
+[image.sea-fog]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/4f/Swans_in_the_fog%2C_Bornholm.jpg"
+sha256 = "23cafc1b422a195278609ca6d6cd7ff889b38a27e80a87e599d16f24c206e8f9"
+page = "https://commons.wikimedia.org/wiki/File:Swans_in_the_fog,_Bornholm.jpg"
+author = "Socket0"
+license = "CC0"
+
+# People, animals and insects. identifiable = true marks a recognisable face:
+# the photo is CC0, but the person never agreed to advertise anything, so
+# keep those off the website.
+
+[image.silhouette-woman]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Silhouette_woman_standing_sunset_%28Unsplash%29.jpg"
+sha256 = "78329d4c165537ffcf8b7fe51d2d6106877f9efab47d7a3b89fb29a195ed17a3"
+page = "https://commons.wikimedia.org/wiki/File:Silhouette_woman_standing_sunset_(Unsplash).jpg"
+author = "freestocks.org freestocks"
+license = "CC0"
+
+[image.sunset-watcher]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/6c/Person_watching_the_sunset_%28Unsplash%29.jpg"
+sha256 = "d5ee6353bd3e10239d217577100f4c6216b5254aa160dd30f7d1b5db72b87b5b"
+page = "https://commons.wikimedia.org/wiki/File:Person_watching_the_sunset_(Unsplash).jpg"
+author = "Jon Asato jon_asato"
+license = "CC0"
+
+[image.crowd]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/64/Leiria_sunset_crowd_silhouette_%28Unsplash%29.jpg"
+sha256 = "daec098a42905795475165cfd38a5d2a727fc548d61d0f179718786135a9f5a0"
+page = "https://commons.wikimedia.org/wiki/File:Leiria_sunset_crowd_silhouette_(Unsplash).jpg"
+author = "Marcos Paix\u00e3o marcosjtpx"
+license = "CC0"
+
+[image.elderly-woman]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/70/Portrait_of_elderly_woman_%28Unsplash%29.jpg"
+sha256 = "84cb2c2dad01d18faf1b535e7514cc9b4446a54e151544c47aec1b3aa32ec020"
+page = "https://commons.wikimedia.org/wiki/File:Portrait_of_elderly_woman_(Unsplash).jpg"
+author = "Christian Gertenbach kc_gertenbach"
+license = "CC0"
+identifiable = true
+
+[image.woman-field]
+url = "https://upload.wikimedia.org/wikipedia/commons/a/a1/Laughing_woman_in_jean_jacket_%28Unsplash%29.jpg"
+sha256 = "0324216bb5a78d9233e72a69cebc6f3eaac4249b79f3d3c5754ae3a64dda7133"
+page = "https://commons.wikimedia.org/wiki/File:Laughing_woman_in_jean_jacket_(Unsplash).jpg"
+author = "Brooke Cagle brookecagle"
+license = "CC0"
+identifiable = true
+
+[image.horse-rider]
+url = "https://upload.wikimedia.org/wikipedia/commons/b/bf/Horse_rider_silhouette_at_sunset_%28Unsplash%29.jpg"
+sha256 = "ae39608895a7b288dba1c7036c358ef1f65c9a40d8dec4fae9ab29ec7a5ecff4"
+page = "https://commons.wikimedia.org/wiki/File:Horse_rider_silhouette_at_sunset_(Unsplash).jpg"
+author = "Alex Wigan alwig64"
+license = "CC0"
+
+[image.fox]
+url = "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rotfuchs_%28Mai_2025%29_1.jpg"
+sha256 = "b56017e20b78fc9c72d32050c70805f1985d45169e61f98ede506c5c7b12d57c"
+page = "https://commons.wikimedia.org/wiki/File:Rotfuchs_(Mai_2025)_1.jpg"
+author = "Romzig"
+license = "CC0"
+
+[image.fox-meadow]
+url = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Vulpes_vulpes7.jpg"
+sha256 = "5fa2c467c97e9126557d56c02e9676e4a8f77fb8ef1ea275eb9c6097842092bf"
+page = "https://commons.wikimedia.org/wiki/File:Vulpes_vulpes7.jpg"
+author = "MilanIlic553"
+license = "CC0"
+
+[image.roe-deer]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/85/Roe_deer_in_Brastad_2.jpg"
+sha256 = "3051d52452166ba171dd3a4f3638854d4a38004c1489574f5d0543268d37c9a7"
+page = "https://commons.wikimedia.org/wiki/File:Roe_deer_in_Brastad_2.jpg"
+author = "W.carter"
+license = "CC0"
+
+[image.dog-snow]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/76/Dog_on_a_snowy_plain_%28Unsplash%29.jpg"
+sha256 = "72699ce274e21963207646832af6b4074fe4d782e2d77f25098d0a8421b2e9ea"
+page = "https://commons.wikimedia.org/wiki/File:Dog_on_a_snowy_plain_(Unsplash).jpg"
+author = "Patrick Tomasso impatrickt"
+license = "CC0"
+
+[image.cat]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/95/Young_tabby_cat_keeping_watch.jpg"
+sha256 = "39512ca0b6dc81ed04a7900f8ea1bf3ce40004f276b75df301fb89ea60b240c6"
+page = "https://commons.wikimedia.org/wiki/File:Young_tabby_cat_keeping_watch.jpg"
+author = "W.carter"
+license = "CC0"
+
+[image.butterfly]
+url = "https://upload.wikimedia.org/wikipedia/commons/5/55/Butterfly_on_a_yellow_flower_in_macro_%28Unsplash%29.jpg"
+sha256 = "abebedb76f53521dbcf71957ae6077d88732d79feb399837adf2fd8985ffc054"
+page = "https://commons.wikimedia.org/wiki/File:Butterfly_on_a_yellow_flower_in_macro_(Unsplash).jpg"
+author = "Boris Smokrovic borisworkshop"
+license = "CC0"
+
+[image.butterfly-dark]
+url = "https://upload.wikimedia.org/wikipedia/commons/a/a9/Admiral-plant-macro_%28Unsplash%29.jpg"
+sha256 = "fb678aeb23d1f317c24b661f1ec46733032f1aa436827a6283f09c4621940141"
+page = "https://commons.wikimedia.org/wiki/File:Admiral-plant-macro_(Unsplash).jpg"
+author = "Boris Smokrovic borisworkshop"
+license = "CC0"
+
+[image.dragonfly]
+url = "https://upload.wikimedia.org/wikipedia/commons/1/1f/Dragonfly_landing_%28Unsplash%29.jpg"
+sha256 = "10cef3df05e8142b580f952ef267a62ef5c9b6a30a9e0072b8a3207bb203e2ad"
+page = "https://commons.wikimedia.org/wiki/File:Dragonfly_landing_(Unsplash).jpg"
+author = "Boris Smokrovic borisworkshop"
+license = "CC0"
+
+[image.bee]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/78/Honey_bee_flying.JPG"
+sha256 = "b99a5d543a098c0c1db54160ce54a70b79bdfe8b89ac28aed6feeb070e3982bc"
+page = "https://commons.wikimedia.org/wiki/File:Honey_bee_flying.JPG"
+author = "Devcore"
+license = "CC0"
+
+# Blender Studio's open films, used under their own titles.
+
+[image.bbb-poster]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/4a/Peach_Bunny_Poster.jpg"
+sha256 = "93bc2fac2f033f6507219ff5ca0c8d82fda564e8d570e69a2104f716dbc3b73a"
+page = "https://commons.wikimedia.org/wiki/File:Peach_Bunny_Poster.jpg"
+author = "Blender Foundation"
+license = "CC BY 3.0"
+
+[image.bbb-meadow]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/e6/Big.Buck.Bunny.-.Landscape.png"
+sha256 = "b2c4065bd7d79cbb5e0337dc91aa81e1722dadf53926a12f9d755a4c5e72ea93"
+page = "https://commons.wikimedia.org/wiki/File:Big.Buck.Bunny.-.Landscape.png"
+author = "Blender Foundation (screenshot: Church of emacs)"
+license = "CC BY 3.0"
+
+[image.sintel-dragon]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/6d/Durian_-_Sintel-wallpaper-dragon.jpg"
+sha256 = "e2266814d231ed777bab473e9c9c8adbb95434f935888a5e745d61eb8442eb61"
+page = "https://commons.wikimedia.org/wiki/File:Durian_-_Sintel-wallpaper-dragon.jpg"
+author = "David REVOY"
+license = "CC BY 3.0"
+
+[image.spring-house]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Spring-concept_art-house.jpg"
+sha256 = "cfaf06a617beda4aba2bf6badcdd6a8d8218dff4d8f3d447fdaf30ad0987cf32"
+page = "https://commons.wikimedia.org/wiki/File:Spring-concept_art-house.jpg"
+author = "David Revoy / Blender Foundation"
+license = "CC BY 4.0"
+
+[image.sprite-fright-poster]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/e5/Sprite_Fright-movie_poster.jpg"
+sha256 = "1bdbcc0813a3b75178188dc0f42ce5fc45f0a68aec75718dd670261bcf9a878f"
+page = "https://commons.wikimedia.org/wiki/File:Sprite_Fright-movie_poster.jpg"
+author = "Blender Studio"
+license = "CC BY 4.0"
+
+[image.sprite-fright-forest]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/42/Sprite_Fright-concept_art-nature_01.png"
+sha256 = "a14235baa63caf5d1c91ca7f1f3d2f36e72c32fcd6f077c5d892df32c00f6192"
+page = "https://commons.wikimedia.org/wiki/File:Sprite_Fright-concept_art-nature_01.png"
+author = "Andy Goralczyk / Blender Foundation"
+license = "CC BY 4.0"
+
+[image.tears-of-steel]
+url = "https://upload.wikimedia.org/wikipedia/commons/c/cb/Tears_of_Steel_frame_03_1a.jpg"
+sha256 = "5f22d1519f685a444a27e5b3531e34b9033464857cf97fe2cc2e397860426a97"
+page = "https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_03_1a.jpg"
+author = "Blender Foundation"
+license = "CC BY 3.0"
+
+[image.cosmos-laundromat]
+url = "https://upload.wikimedia.org/wikipedia/commons/5/5a/Tornado_deevad_01.jpg"
+sha256 = "ff1bb9c74d7f2b7c43e5b92d64e78ec715568118da9a222fb177e508afacd00d"
+page = "https://commons.wikimedia.org/wiki/File:Tornado_deevad_01.jpg"
+author = "Blender Foundation"
+license = "CC BY 3.0"
+
+# Pepper&Carrot by David Revoy (www.peppercarrot.com), the art of the anime series.
+
+[image.pc-cover]
+url = "https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2016-02-24_vertical-cover_remake_by-David-Revoy.jpg"
+sha256 = "671dc6e7595144e1b4e23902df0bef332da2b8533d9dc4a53a419c4dd484a5bb"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-rendezvous]
+url = "https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2018-03-30_The-rendezvous_by-David-Revoy.jpg"
+sha256 = "95d0490636afcfa41c155b69e27b7525d07ea8c1cbbed9044d6f7839195c3cc9"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-snow]
+url = "https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2016-12-04_Running-on-Snow_by-David-Revoy.jpg"
+sha256 = "6c5940f0176ac8d4773e45bd993fe9427b43c49c85fdb9d337864466ae2b0b0a"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-shichimi]
+url = "https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2016-12-04_Shichimi-and-Yuzu_by-David-Revoy.jpg"
+sha256 = "04fe645cb51bc1d3468fbbda1a68f8629c2caee4a1c55aad02597d36ed332308"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-flight]
+url = "https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2019-02-27_Flight-of-Spring_extended-version_by-David-Revoy.jpg"
+sha256 = "30884d284e203cc00963f83ccf0bb4e0bed806574fa4eb80dd2f2d35eced3146"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-autumn]
+url = "https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2020-09-06_Autumn-Run_by-David-Revoy.jpg"
+sha256 = "388a3264a1f721f843a6fdb8957daf2d3ab2e7f086505f8829ceb0e529c6e1d8"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-market]
+url = "https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2022-02-21_The-market_by-David-Revoy.jpg"
+sha256 = "b3d5612395144a69318b441a8b640f3a295a150aaee8e060a1c3f7fc5631f1f6"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-rain]
+url = "https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2022-12-06_Rain-City_by-David-Revoy.jpg"
+sha256 = "0067099d1121e269b3a6f9dab0b803a90b28fd3bb0fbb30a1ccb060ff67ef1d3"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+[image.pc-cozy]
+url = "https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2023-11-22_Cozy_by-David-Revoy.jpg"
+sha256 = "160f5104eb8473afce81c597403132883eb40410b1fe7b7affc8b29170846ae7"
+page = "https://www.peppercarrot.com/en/licence/index.html"
+author = "David Revoy"
+license = "CC BY 4.0"
+
+# Places, things and animals for the bulk of the film library.
+
+[image.city-night]
+url = "https://upload.wikimedia.org/wikipedia/commons/3/36/Park_City_night_sky_%28Unsplash%29.jpg"
+sha256 = "7ec976ed2a7f78ca82747434b97ca32c7cf257c2322c8190f1096910d446f10a"
+page = "https://commons.wikimedia.org/wiki/File:Park_City_night_sky_(Unsplash).jpg"
+author = "Jeff Golenski jeffgolenski"
+license = "CC0"
+
+
+
+[image.neon-street]
+url = "https://upload.wikimedia.org/wikipedia/commons/3/32/Neon_streets_%28Unsplash%29.jpg"
+sha256 = "401ba941fd51c203b79f734d76c2279ffde61d8c2f644a53bf3130370cab22d7"
+page = "https://commons.wikimedia.org/wiki/File:Neon_streets_(Unsplash).jpg"
+author = "JINDONG H jindong"
+license = "CC0"
+
+
+
+[image.desert-dunes]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/49/Desert_Dunes_%28Unsplash%29.jpg"
+sha256 = "9ef504cc6cfe0a3f134a433e220a3a3a91a5c12b028a9dd09d24c8bf8e01e17d"
+page = "https://commons.wikimedia.org/wiki/File:Desert_Dunes_(Unsplash).jpg"
+author = "Joe Mania joemania"
+license = "CC0"
+
+
+
+[image.mountain-lake]
+url = "https://upload.wikimedia.org/wikipedia/commons/5/5b/Mountain_lake_%28Unsplash%29.jpg"
+sha256 = "57ff73a39622a7e34027a7c7c6b99a35510e5a24ce246c4a679d4c55d85cc910"
+page = "https://commons.wikimedia.org/wiki/File:Mountain_lake_(Unsplash).jpg"
+author = "Aleksandra Boguslawska aleksandraboguslawska"
+license = "CC0"
+
+
+
+[image.forest-road]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/d6/Wet_forest_road_%28Unsplash%29.jpg"
+sha256 = "f19ef2dff0bd2fc279d1a047caade08e2e587e20304d997ce91cfce1d89ecaa9"
+page = "https://commons.wikimedia.org/wiki/File:Wet_forest_road_(Unsplash).jpg"
+author = "Nathan Anderson nathananderson"
+license = "CC0"
+
+
+
+[image.foggy-forest]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/d2/Foggy_green_forest_%28Unsplash%29.jpg"
+sha256 = "3a875e19822fe726cc792072d4af007d3fafff8a771b9342fa7ae3f4b0634da1"
+page = "https://commons.wikimedia.org/wiki/File:Foggy_green_forest_(Unsplash).jpg"
+author = "Gaetano Cessati gaetanocessati"
+license = "CC0"
+
+
+
+[image.snowy-forest]
+url = "https://upload.wikimedia.org/wikipedia/commons/c/c0/Snowy_forest_in_Austria_%28Unsplash%29.jpg"
+sha256 = "dac9c9069f7b293025e0b6c53726128a7eeeec14880bff65f1ca3184fc8bf585"
+page = "https://commons.wikimedia.org/wiki/File:Snowy_forest_in_Austria_(Unsplash).jpg"
+author = "Emily Morter emilymorter"
+license = "CC0"
+
+
+
+[image.rain-window]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/9c/Rain_on_window_%28Unsplash%29.jpg"
+sha256 = "079e822f5d5f437d229910ca4ac07353efaa531026c6cf54fb84a7ccd9a1f80c"
+page = "https://commons.wikimedia.org/wiki/File:Rain_on_window_(Unsplash).jpg"
+author = "Francesco Gallarotti gallarotti"
+license = "CC0"
+
+
+
+[image.highway-night]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/9c/Highway_intersection_at_night-time_%28Unsplash%29.jpg"
+sha256 = "04b41d12cd6da3b4ddd267dc13ed533efafb29ff5860bbb1ab539b171dae04d5"
+page = "https://commons.wikimedia.org/wiki/File:Highway_intersection_at_night-time_(Unsplash).jpg"
+author = "Israel Sundseth kappuru"
+license = "CC0"
+
+
+
+[image.vintage-typewriter]
+url = "https://upload.wikimedia.org/wikipedia/commons/3/3a/Vintage_black_typewriter_%28Unsplash%29.jpg"
+sha256 = "45d2587e4a683653d5f772d39272e01b7e44780c39eb108dbece51ff964f539b"
+page = "https://commons.wikimedia.org/wiki/File:Vintage_black_typewriter_(Unsplash).jpg"
+author = "Daniel McCullough d_mccullough"
+license = "CC0"
+
+
+
+[image.library-books]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f0/Library_Books_Bookshelves_%28Unsplash%29.jpg"
+sha256 = "b5a167b69b7828e55fe9c63963f3b37777fba4abd944c1b5c7053094190746aa"
+page = "https://commons.wikimedia.org/wiki/File:Library_Books_Bookshelves_(Unsplash).jpg"
+author = "Davide Cantelli cant89"
+license = "CC0"
+
+
+
+[image.piano]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/e3/Piano_reflection_%28Unsplash%29.jpg"
+sha256 = "3b4c004ceb6199c7c782ba96727eafe3ccf6fce0d5134946db8fc67eeb3cd677"
+page = "https://commons.wikimedia.org/wiki/File:Piano_reflection_(Unsplash).jpg"
+author = "Isaac Ibbott wanderingimagery"
+license = "CC0"
+
+
+
+[image.violin]
+url = "https://upload.wikimedia.org/wikipedia/commons/2/25/Dusty_violin_%28Unsplash%29.jpg"
+sha256 = "0079e2c63965cd3e29e340a177d555d08ea8f358d66f4f3192212550a0c24b5f"
+page = "https://commons.wikimedia.org/wiki/File:Dusty_violin_(Unsplash).jpg"
+author = "Dan Gold danielcgold"
+license = "CC0"
+
+
+
+[image.bicycle-street]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/8d/Secured_bicycle_%28Unsplash%29.jpg"
+sha256 = "9f2a97f44e10be719cbeadb0b791c42276eab08308c24b734fbc343448437a91"
+page = "https://commons.wikimedia.org/wiki/File:Secured_bicycle_(Unsplash).jpg"
+author = "James Pond shotbyjames"
+license = "CC0"
+
+
+
+[image.surfer]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/09/Trickster_surfer_%28Unsplash%29.jpg"
+sha256 = "dc7e7651bf80ca1a70ecca4e3217d022af190ac96eae2d5f3ed7129df82956e6"
+page = "https://commons.wikimedia.org/wiki/File:Trickster_surfer_(Unsplash).jpg"
+author = "Marcus Dall Col marcusdallcol"
+license = "CC0"
+
+
+
+[image.couple-beach-silhouette]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/4a/Couple_sitting_watching_sunset_%28Unsplash%29.jpg"
+sha256 = "c1937867efb96dad85d503ec2e86c4dd8be51bd00b14c9fe5b0c03f9b31ec0d4"
+page = "https://commons.wikimedia.org/wiki/File:Couple_sitting_watching_sunset_(Unsplash).jpg"
+author = "Gerrit Vermeulen gerritvermeulen"
+license = "CC0"
+
+
+
+[image.owl]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/04/Orange_eyed_owl_%28Unsplash%29.jpg"
+sha256 = "874f15b172da6392613be7159ed97ee07572e138e4c5ba20713b3ebc70a7d2ad"
+page = "https://commons.wikimedia.org/wiki/File:Orange_eyed_owl_(Unsplash).jpg"
+author = "Harm Weustink dutchdude85"
+license = "CC0"
+
+
+
+[image.horse-field]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/75/Horse_in_a_snowy_field_in_close-up_%28Unsplash%29.jpg"
+sha256 = "40fbb7308f36860069a77e657c9290a41b8cdd9967e75ba54f92c2573fb39b7e"
+page = "https://commons.wikimedia.org/wiki/File:Horse_in_a_snowy_field_in_close-up_(Unsplash).jpg"
+author = "Benny Jackson themightymerlin"
+license = "CC0"
+
+
+
+[image.elephant]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f9/Elephant_Rock%2C_Currumbin%2C_Australia_%28Unsplash%29.jpg"
+sha256 = "8399aa63463a9598ee84e19af79fd91e8d1ff9e855ea2f59c6a3504791ba7772"
+page = "https://commons.wikimedia.org/wiki/File:Elephant_Rock,_Currumbin,_Australia_(Unsplash).jpg"
+author = "Jordan Donaldson - @jordi.d jordan"
+license = "CC0"
+
+
+
+[image.lion]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/fe/Sleepy_Lion_%28Unsplash%29.jpg"
+sha256 = "7eb42dd3a8844d65354231395cd6b0f1e76705b78078fd7d33c44ec9abbd9531"
+page = "https://commons.wikimedia.org/wiki/File:Sleepy_Lion_(Unsplash).jpg"
+author = "Markus Kn\u00f6ll fontsaenger"
+license = "CC0"
+
+
+
+[image.whale]
+url = "https://upload.wikimedia.org/wikipedia/commons/3/3b/While_whale_watching_%28Unsplash%29.jpg"
+sha256 = "a08dcc241e1747479b20676b65823d894b0d131c84751f9603b40bad0c03543e"
+page = "https://commons.wikimedia.org/wiki/File:While_whale_watching_(Unsplash).jpg"
+author = "Ferdinand St\u00f6hr fellowferdi"
+license = "CC0"
+
+
+
+[image.jellyfish]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/00/A_little-big_Jellyfish_%28Unsplash%29.jpg"
+sha256 = "91a45823b16c5b481b306b5de26fa08a9b832fb4cbcbc493e6244f89a6406eea"
+page = "https://commons.wikimedia.org/wiki/File:A_little-big_Jellyfish_(Unsplash).jpg"
+author = "Federico Benedetti vidrikphotography"
+license = "CC0"
+
+
+
+[image.starry-sky]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/06/Purple_starry_sky_%28Unsplash%29.jpg"
+sha256 = "a283d7b175ac927109b798a8bacc1d9e04b10def767feee39dd78e1176630878"
+page = "https://commons.wikimedia.org/wiki/File:Purple_starry_sky_(Unsplash).jpg"
+author = "Dawid Zawi\u0142a davealmine"
+license = "CC0"
+
+
+
+[image.aurora]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/86/Lofoten%2C_Norway_%28Unsplash%29.jpg"
+sha256 = "3bccf7c95c7e453f448da8f2d660737adc01eaad8a5f115767321537143136a5"
+page = "https://commons.wikimedia.org/wiki/File:Lofoten,_Norway_(Unsplash).jpg"
+author = "Johannes Groll followhansi"
+license = "CC0"
+
+
+
+[image.volcano]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Volcano_%28Unsplash%29.jpg"
+sha256 = "27c8b5937457770923246e4ac1f5c375cf2a148440f55ae7faf46daf2d5a1f67"
+page = "https://commons.wikimedia.org/wiki/File:Volcano_(Unsplash).jpg"
+author = "Diego PH jdiegoph"
+license = "CC0"
+
+
+
+[image.canyon]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/42/Canyon_%28Unsplash%29.jpg"
+sha256 = "addaf8e9aff8383edb4af3130e85ba7971aaf8a3493e68f20a9b67ec45284d08"
+page = "https://commons.wikimedia.org/wiki/File:Canyon_(Unsplash).jpg"
+author = "Joe Gardner josephgardnerphotography"
+license = "CC0"
+
+
+
+[image.waterfall]
+url = "https://upload.wikimedia.org/wikipedia/commons/b/b1/Peaceful_waterfall_%28Unsplash%29.jpg"
+sha256 = "a0c70bc28e6cb0c54a282f6b9003a85f91b5088ebce6992f4d8758e42e7e7119"
+page = "https://commons.wikimedia.org/wiki/File:Peaceful_waterfall_(Unsplash).jpg"
+author = "Jeffrey Workman jeffreyp"
+license = "CC0"
+
+
+
+[image.skyscraper]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/48/City_skyscraper_architecture_%28Unsplash%29.jpg"
+sha256 = "d2ae9258938739bcb5a089a2e2d09bfcc2f62fd4d07318beb2a1636c89588808"
+page = "https://commons.wikimedia.org/wiki/File:City_skyscraper_architecture_(Unsplash).jpg"
+author = "PICSELI picseli"
+license = "CC0"
+
+
+
+[image.carnival-ferris-wheel]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/df/Ferris_wheel_at_Tibidabo_summer_%28Unsplash%29.jpg"
+sha256 = "b441ccea34aa1fb0366f600d4903bdbaa96dc4b25e3bc19c3ceb05024d28efbb"
+page = "https://commons.wikimedia.org/wiki/File:Ferris_wheel_at_Tibidabo_summer_(Unsplash).jpg"
+author = "H\u00e9ctor Mart\u00ednez oria_hector"
+license = "CC0"
+
+
+
+[image.lanterns]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/da/Line_of_lanterns_%28Unsplash%29.jpg"
+sha256 = "46c69d9dced60b17f77490b0bdcffa539f82d85c5c159f54fea8a1f8603a22be"
+page = "https://commons.wikimedia.org/wiki/File:Line_of_lanterns_(Unsplash).jpg"
+author = "kazuend kazuend"
+license = "CC0"
+
+
+
+[image.abandoned-building]
+url = "https://upload.wikimedia.org/wikipedia/commons/3/38/Abandoned_Libu%C5%A1%C3%ADn_building_%28Unsplash%29.jpg"
+sha256 = "35ceead316395bf840967e731cdaeade94668028f9275ad69d332521b5f1bae7"
+page = "https://commons.wikimedia.org/wiki/File:Abandoned_Libu%C5%A1%C3%ADn_building_(Unsplash).jpg"
+author = "Hieu Vu Minh spoony"
+license = "CC0"
+
+
+
+[image.castle]
+url = "https://upload.wikimedia.org/wikipedia/commons/b/b6/Mountains_by_Neuschwanstein_Castle_%28Unsplash%29.jpg"
+sha256 = "807d4b001a6f9a81942f8b708d00f28fa1977974eb82cde382fd2b2879c984c9"
+page = "https://commons.wikimedia.org/wiki/File:Mountains_by_Neuschwanstein_Castle_(Unsplash).jpg"
+author = "Joshua Stannard jbstannard"
+license = "CC0"
+
+
+
+[image.bridge-fog]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Brooklyn_Bridge_Sunrise_Fog_%28Unsplash%29.jpg"
+sha256 = "ea77ec0c17e9f2656e68d87901e335fadeb03a17e5e56b749187da403b2c8616"
+page = "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_Sunrise_Fog_(Unsplash).jpg"
+author = "Emanuel Hahn hahnbo"
+license = "CC0"
+
+# Crowds and people seen from behind: nobody stands out, so these may go on the website.
+
+[image.concert-crowd]
+url = "https://upload.wikimedia.org/wikipedia/commons/b/bb/Concert_crowd_%28Unsplash%29.jpg"
+sha256 = "508db6ceb6a4f9e0817aade167076c5c44375b0591fb04ed6c7bcdf17ca8c5b6"
+page = "https://commons.wikimedia.org/wiki/File:Concert_crowd_(Unsplash).jpg"
+author = "Hannah Rodrigo hannahrodrigo"
+license = "CC0"
+
+[image.festival-crowd]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/62/Looking_into_festival_crowd_%28Unsplash%29.jpg"
+sha256 = "0d285f4cd46c016f545e1deb8478d5f3a6db2c04e2307d8c19c88d759a4ec72e"
+page = "https://commons.wikimedia.org/wiki/File:Looking_into_festival_crowd_(Unsplash).jpg"
+author = "Marvin Meyer marvelous"
+license = "CC0"
+
+[image.crowd-street]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/8f/Crowd_holding_umbrellas_%28Unsplash%29.jpg"
+sha256 = "856ce74b454ce0df2abda7971294070a9549799a43278bde473ae0b0bb1cd84c"
+page = "https://commons.wikimedia.org/wiki/File:Crowd_holding_umbrellas_(Unsplash).jpg"
+author = "Alex Knight agkdesign"
+license = "CC0"
+
+[image.marathon-runners]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Brussels_marathon_runners_%28Unsplash%29.jpg"
+sha256 = "cd5ed791b8bab5034f2f21d07584a3a0e7b389834cc275f54fa0e72110637704"
+page = "https://commons.wikimedia.org/wiki/File:Brussels_marathon_runners_(Unsplash).jpg"
+author = "Martins Zemlickis mzemlickis"
+license = "CC0"
+
+[image.people-walking-city]
+url = "https://upload.wikimedia.org/wikipedia/commons/1/14/Walking_Toward_Nice_%28Unsplash%29.jpg"
+sha256 = "a1b3192270cca169a6c400744ee26dd50d1f9e99e7e1dc08a50a9f4421053918"
+page = "https://commons.wikimedia.org/wiki/File:Walking_Toward_Nice_(Unsplash).jpg"
+author = "Jonas Weckschmied jweckschmied"
+license = "CC0"
+
+[image.crowded-market]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/9f/Glowing_bazaar_at_night_%28Unsplash%29.jpg"
+sha256 = "6c95d8fbe797830ba1aa03f25621b83de3dd3bcb58e7cd23880ed1317d532aae"
+page = "https://commons.wikimedia.org/wiki/File:Glowing_bazaar_at_night_(Unsplash).jpg"
+author = "Juan ignacio Tapia juanitapia"
+license = "CC0"
+
+[image.people-beach]
+url = "https://upload.wikimedia.org/wikipedia/commons/1/12/People_enjoying_Newport_Beach_%28Unsplash%29.jpg"
+sha256 = "689e29f75462e248b0d99a6f0cb43e0ec23f092c49a292364dc80dccccf11e75"
+page = "https://commons.wikimedia.org/wiki/File:People_enjoying_Newport_Beach_(Unsplash).jpg"
+author = "Herson Rodriguez hero"
+license = "CC0"
+
+[image.audience]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/01/Front_row_audience_%28Unsplash%29.jpg"
+sha256 = "7585fefb4bcb4b14af078fb1d4eb71663f3ef740ebf060f09ff3c5d2fce0c392"
+page = "https://commons.wikimedia.org/wiki/File:Front_row_audience_(Unsplash).jpg"
+author = "Melanie van Leeuwen strompictures"
+license = "CC0"
+
+[image.train-station-people]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/43/People_waiting_for_the_train_%28Unsplash%29.jpg"
+sha256 = "435470cdc4b54474e063cc5bff05e775cc6ae3693de12df899b5b06188c2c353"
+page = "https://commons.wikimedia.org/wiki/File:People_waiting_for_the_train_(Unsplash).jpg"
+author = "Redd Angelo reddangelo16"
+license = "CC0"
+

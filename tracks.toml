@@ -1,0 +1,215 @@
+# Stream layouts for the generated files. catalog.toml names a video preset
+# and a track template for every file.
+#
+# The video is a still frame per chapter and the audio is silence, so even a
+# two-hour film stays small. Sizes for two hours of 5.1 silence: FLAC 2.5 MB,
+# AAC 8 MB, Opus 12 MB, E-AC-3 30 MB, AC-3 86 MB, TrueHD 200 MB, DTS 1.2 GB.
+# DTS and TrueHD therefore only go into short titles.
+
+[video.1080p]
+codec = "h264"
+width = 1920
+height = 1080
+fps = "24000/1001"
+
+[video.1080p25]
+codec = "h264"
+width = 1920
+height = 1080
+fps = "25"
+
+[video.720p]
+codec = "h264"
+width = 1280
+height = 720
+fps = "25"
+
+[video.2160p-hdr]
+codec = "hevc"
+width = 3840
+height = 2160
+fps = "24000/1001"
+hdr = true
+
+[video.1080p-av1]
+codec = "av1"
+width = 1920
+height = 1080
+fps = "24"
+
+# The usual anime release: 10-bit HEVC.
+[video.1080p-hevc10]
+codec = "hevc"
+width = 1920
+height = 1080
+fps = "24000/1001"
+bits = 10
+
+[video.2160p50-hdr]
+codec = "hevc"
+width = 3840
+height = 2160
+fps = "50"
+hdr = true
+
+# Audio: lang (ISO 639-2), codec (aac, ac3, eac3, flac, opus, truehd, dts),
+# channels, title, and the flags default, original, commentary and
+# visual_impaired (audio description).
+#
+# Subtitles: lang, title, format (srt or ass), text (dialogue, signs or
+# lyrics), and the flags default, forced and hearing_impaired.
+# Some tracks carry a mark only in their name ("English SDH" without the
+# flag, "Sing-Along", "CC"): the app reads both, so both occur.
+#
+# External subtitles are written next to the video as
+# <file>.<lang>[.forced|.sdh].srt.
+
+# An English-language film in a German release.
+[template.film-de]
+audio = [
+  { lang = "ger", codec = "eac3", channels = 6, title = "Deutsch", default = true },
+  { lang = "eng", codec = "eac3", channels = 6, title = "English", original = true },
+  { lang = "eng", codec = "aac", channels = 2, title = "Commentary with the director", commentary = true },
+  { lang = "ger", codec = "aac", channels = 2, title = "Deutsch Audiodeskription", visual_impaired = true },
+]
+subtitles = [
+  { lang = "ger", title = "Deutsch (erzwungen)", text = "signs", forced = true },
+  { lang = "ger", title = "Deutsch" },
+  { lang = "ger", title = "Deutsch SDH", hearing_impaired = true },
+  { lang = "eng", title = "English" },
+  { lang = "eng", title = "English SDH" },
+  { lang = "fre", title = "Français" },
+  { lang = "spa", title = "Español (Latinoamérica)" },
+  { lang = "por", title = "Português (Brasil)" },
+  { lang = "chi", title = "Chinese (Traditional)" },
+]
+external = [
+  { lang = "eng", forced = true, text = "signs" },
+  { lang = "dut" },
+]
+
+# A German film: German original, English dub.
+[template.film-original-de]
+audio = [
+  { lang = "ger", codec = "flac", channels = 2, title = "Deutsch", default = true, original = true },
+  { lang = "eng", codec = "eac3", channels = 6, title = "English (Dub)" },
+]
+subtitles = [
+  { lang = "eng", title = "English", format = "ass" },
+  { lang = "eng", title = "English CC" },
+  { lang = "ger", title = "Deutsch für Hörgeschädigte", hearing_impaired = true },
+  { lang = "tur", title = "Türkçe" },
+  { lang = "pol", title = "Polski" },
+]
+
+# A family film with sing-along lyrics.
+[template.kids]
+audio = [
+  { lang = "ger", codec = "aac", channels = 2, title = "Deutsch", default = true },
+  { lang = "eng", codec = "aac", channels = 6, title = "English", original = true },
+]
+subtitles = [
+  { lang = "ger", title = "Deutsch" },
+  { lang = "ger", title = "Sing-Along", text = "lyrics" },
+  { lang = "eng", title = "English" },
+  { lang = "eng", title = "Karaoke", text = "lyrics" },
+  { lang = "eng", title = "English CC", hearing_impaired = true },
+]
+
+# A TV series: German and English with a forced track for the signs.
+[template.series]
+audio = [
+  { lang = "ger", codec = "eac3", channels = 6, title = "Deutsch", default = true },
+  { lang = "eng", codec = "eac3", channels = 6, title = "English", original = true },
+]
+subtitles = [
+  { lang = "ger", title = "Signs & Songs", text = "signs" },
+  { lang = "ger", title = "Deutsch" },
+  { lang = "eng", title = "English" },
+  { lang = "eng", title = "English", hearing_impaired = true },
+]
+
+# A short film carrying the expensive codecs.
+[template.codecs]
+audio = [
+  { lang = "eng", codec = "truehd", channels = 6, title = "Dolby TrueHD 5.1", default = true, original = true },
+  { lang = "eng", codec = "dts", channels = 6, title = "DTS 5.1" },
+  { lang = "ger", codec = "ac3", channels = 6, title = "Deutsch AC-3 5.1" },
+  { lang = "ger", codec = "opus", channels = 2, title = "Deutsch Opus" },
+  { lang = "yue", codec = "aac", channels = 2, title = "Cantonese" },
+]
+subtitles = [
+  { lang = "eng", title = "English", default = true },
+  { lang = "jpn", title = "日本語", format = "ass" },
+]
+
+# An anime release: Japanese original, dubs, and ASS subtitles with a forced
+# signs track and karaoke for opening and ending.
+[template.anime]
+audio = [
+  { lang = "jpn", codec = "flac", channels = 2, title = "Japanese", default = true, original = true },
+  { lang = "ger", codec = "aac", channels = 2, title = "Deutsch" },
+  { lang = "eng", codec = "aac", channels = 2, title = "English" },
+]
+subtitles = [
+  { lang = "ger", title = "Deutsch", format = "ass", default = true },
+  { lang = "ger", title = "Deutsch Signs & Songs", format = "ass", text = "signs", forced = true },
+  { lang = "eng", title = "English [Full]", format = "ass" },
+  { lang = "eng", title = "English Signs/Songs", format = "ass", text = "signs" },
+  { lang = "eng", title = "OP/ED Karaoke", format = "ass", text = "lyrics" },
+  { lang = "por", title = "Português (Brasil)", format = "ass" },
+  { lang = "spa", title = "Español (España)", format = "ass" },
+]
+
+# A nature documentary: narration, audio description, no forced track.
+[template.documentary]
+audio = [
+  { lang = "ger", codec = "eac3", channels = 6, title = "Deutsch", default = true },
+  { lang = "eng", codec = "eac3", channels = 6, title = "English", original = true },
+  { lang = "ger", codec = "aac", channels = 2, title = "Deutsch (Audiodeskription)", visual_impaired = true },
+]
+subtitles = [
+  { lang = "ger", title = "Deutsch" },
+  { lang = "ger", title = "Deutsch SDH", hearing_impaired = true },
+  { lang = "eng", title = "English SDH", hearing_impaired = true },
+]
+
+# A concert film: one language, two mixes, the lyrics as subtitles.
+[template.concert]
+audio = [
+  { lang = "eng", codec = "flac", channels = 6, title = "5.1 Surround Mix", default = true, original = true },
+  { lang = "eng", codec = "aac", channels = 2, title = "Stereo" },
+]
+subtitles = [
+  { lang = "eng", title = "Lyrics", text = "lyrics" },
+  { lang = "ger", title = "Liedtexte (Deutsch)", text = "lyrics" },
+]
+
+# Blender Studio's films: English, subtitles in many languages.
+[template.open-movie]
+audio = [
+  { lang = "eng", codec = "aac", channels = 6, title = "English 5.1", default = true, original = true },
+  { lang = "eng", codec = "aac", channels = 2, title = "English Stereo" },
+]
+subtitles = [
+  { lang = "eng", title = "English" },
+  { lang = "ger", title = "Deutsch" },
+  { lang = "fre", title = "Français" },
+  { lang = "ita", title = "Italiano" },
+  { lang = "dut", title = "Nederlands" },
+  { lang = "rus", title = "Русский" },
+  { lang = "ara", title = "العربية" },
+  { lang = "heb", title = "עברית" },
+  { lang = "kor", title = "한국어" },
+]
+
+# The bulk of the film library: German and English, two subtitles.
+[template.light]
+audio = [
+  { lang = "ger", codec = "aac", channels = 2, title = "Deutsch", default = true },
+  { lang = "eng", codec = "aac", channels = 2, title = "English", original = true },
+]
+subtitles = [
+  { lang = "ger", title = "Deutsch" },
+  { lang = "eng", title = "English" },
+]
