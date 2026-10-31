@@ -1529,9 +1529,9 @@ def credits() -> None:
 # off the login screen and the profiles below are the ones to use.
 ADMIN = {"name": "Admin", "password": "glacier-demo"}
 USERS = [
-    {"name": "Nora", "password": "", "color": "#3d7bd9"},
-    {"name": "Alex", "password": "demo", "color": "#c2410c"},
-    {"name": "Kids", "password": "", "color": "#15803d", "max_rating": "FSK-6"},
+    {"name": "Nora", "password": "", "color": "#3d7bd9", "languages": ("eng", "eng")},
+    {"name": "Alex", "password": "demo", "color": "#c2410c", "languages": ("deu", "deu")},
+    {"name": "Kids", "password": "", "color": "#15803d", "max_rating": "FSK-6", "languages": ("deu", "deu")},
 ]
 # Watch state of user Nora: share watched for resume points, then played and favourites.
 RESUME = {"The Last Lighthouse": 0.35, "Glass Mountain": 0.7, "Belle Tout": 0.6}
@@ -1710,6 +1710,7 @@ class Server:
             self.request("POST", f"/Users/{created['Id']}/Policy", dict(policy, IsHidden=False))
             if user.get("max_rating"):
                 self.limit(created["Id"], user["max_rating"])
+            self.languages(created["Id"], *user["languages"])
         self.avatars()
         self.people()
         self.collections()
@@ -1794,6 +1795,13 @@ class Server:
             if not busy:
                 return
             time.sleep(5)
+
+    def languages(self, user: str, audio: str, subtitles: str) -> None:
+        """Preferred audio and subtitle language; "Smart" shows subtitles only for foreign audio.
+        Without it Jellyfin picks the first external subtitle file as the default."""
+        config = self.request("GET", f"/Users/{user}")["Configuration"]
+        config.update(AudioLanguagePreference=audio, SubtitleLanguagePreference=subtitles, SubtitleMode="Smart")
+        self.request("POST", f"/Users/{user}/Configuration", config)
 
     def limit(self, user: str, rating: str) -> None:
         ratings = self.request("GET", "/Localization/ParentalRatings")
