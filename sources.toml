@@ -186,6 +186,257 @@ page = "https://commons.wikimedia.org/wiki/File:Swans_in_the_fog,_Bornholm.jpg"
 author = "Socket0"
 license = "CC0"
 
+# Real footage for the showcase titles: CC0 or public domain clips, cut into
+# a reel per title (catalog.toml "footage").
+
+[video.lighthouse-lens]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cape_Blanco_Lighthouse_Video_B_Roll_%2810846006126%29.webm"
+sha256 = "76f4490b62220771cc44d26435d1c4df7dfda18d03997f623c8702f605a9090c"
+page = "https://commons.wikimedia.org/wiki/File:Cape_Blanco_Lighthouse_Video_B_Roll_(10846006126).webm"
+author = "BLM Oregon & Washington"
+license = "Public domain"
+
+[video.lighthouse-orbit]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/65/Orbit_around_Fremantle_South_Mole_Lighthouse_at_sunset.webm"
+sha256 = "6a245417eb6bb7077f77178ae8697ba1ae6a8f82bdc19136e526ac40130e812d"
+page = "https://commons.wikimedia.org/wiki/File:Orbit_around_Fremantle_South_Mole_Lighthouse_at_sunset.webm"
+author = "JamesBromberger"
+license = "CC0"
+
+[video.surf-rocks]
+url = "https://upload.wikimedia.org/wikipedia/commons/b/b3/Crashing_waves_in_the_San_Juan_Islands_%2840007700135%29.webm"
+sha256 = "ace334ed730874d066787cc987c5e7e42b75a4452ec659c9ada6c2a203e5c186"
+page = "https://commons.wikimedia.org/wiki/File:Crashing_waves_in_the_San_Juan_Islands_(40007700135).webm"
+author = "BLM Oregon & Washington"
+license = "Public domain"
+
+[video.surf-coast]
+url = "https://upload.wikimedia.org/wikipedia/commons/1/19/Santa_Rosa_Island_Waves.webm"
+sha256 = "206cdb0c0786abb7e5fcf54bee9aeec42cbc9bea73a2899a8f703e36b0c23546"
+page = "https://commons.wikimedia.org/wiki/File:Santa_Rosa_Island_Waves.webm"
+author = "Blervis"
+license = "CC0"
+
+[video.sea-waves]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f0/Ocean_surface_waves_03.ogv"
+sha256 = "13ed4e339cfedc36931bdbee9cb37622a77059d1e8b35ad980fd2dc759b6922d"
+page = "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_03.ogv"
+author = "Mostafameraji"
+license = "CC0"
+
+[video.bay-dusk]
+url = "https://upload.wikimedia.org/wikipedia/commons/5/5d/Ocean_in_Sommaroy.webm"
+sha256 = "76ce45cfcb54b120f41b7d0c16ff5dde770af34dc2aa40bc961ea4ee5b4847f5"
+page = "https://commons.wikimedia.org/wiki/File:Ocean_in_Sommaroy.webm"
+author = "User: Netha Hussain"
+license = "CC0"
+
+[video.boat-fog]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/e0/Forward_View_of_CCGS_McIntyre_Bay.webm"
+sha256 = "258e28a4cd80cc63039a14efa853daf31fdbfc1d4ed7eabb3bd7d7ca84004b2d"
+page = "https://commons.wikimedia.org/wiki/File:Forward_View_of_CCGS_McIntyre_Bay.webm"
+author = "Extemporalist"
+license = "CC0"
+
+[video.harbour-aerial]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/d2/Aerial_view_of_sea_and_boats.webm"
+sha256 = "094f1ac9750a1ecd6cdd5a78f3a78d57ce596e6aa0098925db9d999d3cf1b2d2"
+page = "https://commons.wikimedia.org/wiki/File:Aerial_view_of_sea_and_boats.webm"
+author = "Wayne McKelvie"
+license = "CC0"
+
+[video.icebergs]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/98/GreenlandReel_Icebergs_2160APR.webm"
+sha256 = "0d94721cd71f360f7e5d102ca83bac13339fffc48ecd15b20a80d7235049a0d1"
+page = "https://commons.wikimedia.org/wiki/File:GreenlandReel_Icebergs_2160APR.webm"
+author = "NASA"
+license = "Public domain"
+
+[video.pack-ice]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/88/Flight_Over_a_Rectangular_Iceberg_in_the_Antarctic.webm"
+sha256 = "16ee5b269b6220f6414c4e6f34c6b9daf560c2824ed224e8ffc098ed342e0b89"
+page = "https://commons.wikimedia.org/wiki/File:Flight_Over_a_Rectangular_Iceberg_in_the_Antarctic.webm"
+author = "NASA"
+license = "Public domain"
+
+[video.ice-climb]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Drone_Footage_of_People_Climbing_Ice_Formation.webm"
+sha256 = "b6a351ca5de489b8841d06834ffbdff95930a8da5904a86584d523033f0ab784"
+page = "https://commons.wikimedia.org/wiki/File:Drone_Footage_of_People_Climbing_Ice_Formation.webm"
+author = "Thomas Tapp"
+license = "CC0"
+
+[video.snowfall]
+url = "https://upload.wikimedia.org/wikipedia/commons/5/56/Snow_falling_in_Charlton_MA_2025-12-14.webm"
+sha256 = "9d93e80271d382dc80611d1d26057b5916f64ac41033e1936dd8fa74f2772bbc"
+page = "https://commons.wikimedia.org/wiki/File:Snow_falling_in_Charlton_MA_2025-12-14.webm"
+author = "Peter Cooper Jr."
+license = "CC0"
+
+[video.snow-forest]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/fa/Snow_crystals_scintillate_over_Bear_Creek.webm"
+sha256 = "052e0f71deceff6ddffc2e3040afd06ff039cdffde1afaf3388e01c054911c79"
+page = "https://commons.wikimedia.org/wiki/File:Snow_crystals_scintillate_over_Bear_Creek.webm"
+author = "Extemporalist"
+license = "CC0"
+
+[video.aurora]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/ef/Glacier_Bay_Entrance_Night_Sky_with_Aurora_and_Moon.webm"
+sha256 = "2fba9299f6f74234dfec2b03f0f49d3a5bca279f145e21dba01a50762ebaf987"
+page = "https://commons.wikimedia.org/wiki/File:Glacier_Bay_Entrance_Night_Sky_with_Aurora_and_Moon.webm"
+author = "National Park Service"
+license = "Public domain"
+
+[video.bees]
+url = "https://upload.wikimedia.org/wikipedia/commons/2/26/Bees_on_flowers.webm"
+sha256 = "ad1ed9c39e8d82ad25f03739281f6c68ea5cfa789dcf42080161a08aa3815077"
+page = "https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm"
+author = "J. M. Pearson"
+license = "CC0"
+
+[video.bee-hibiscus]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bees_on_Hibiscus_syriacus.webm"
+sha256 = "b2f5ec1b0b3fc8c4aad33e167a8896c26c96bf8fc16dc215b5edb091a1152eed"
+page = "https://commons.wikimedia.org/wiki/File:Bees_on_Hibiscus_syriacus.webm"
+author = "Cbaile19"
+license = "CC0"
+
+[video.bears]
+url = "https://upload.wikimedia.org/wikipedia/commons/e/ea/Kodiak_bear_family.webm"
+sha256 = "ac9120d1e9c18cfdb34a68d0928e4a7b2341282495157fcb9dc320694a3e970e"
+page = "https://commons.wikimedia.org/wiki/File:Kodiak_bear_family.webm"
+author = "Alaska Region U.S. Fish & Wildlife Service"
+license = "Public domain"
+
+[video.elk]
+url = "https://upload.wikimedia.org/wikipedia/commons/c/cd/Elk_%28Cervus_canadensis%29.webm"
+sha256 = "f1952e6c649fb7ea02f027eac49211d3be7cb7f848e640cbe84b23031fad0308"
+page = "https://commons.wikimedia.org/wiki/File:Elk_(Cervus_canadensis).webm"
+author = "U.S. Fish and Wildlife Service, National Conservation Training Center (USFWS/NCTC)"
+license = "Public domain"
+
+[video.fox-snow]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/9a/Red_fox_playing_with_prey_in_yard%2C_Charlton_MA_2025-12-26.webm"
+sha256 = "0b5c5ab2e2c481e2fce33ff752c3ed24b03dc10e9a407dd68f3c5874ae0ccf30"
+page = "https://commons.wikimedia.org/wiki/File:Red_fox_playing_with_prey_in_yard,_Charlton_MA_2025-12-26.webm"
+author = "Peter Cooper Jr."
+license = "CC0"
+
+[video.moose-fog]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f8/Moose_at_Seedskadee_National_Wildlife_Refuge_%2844827612214%29.webm"
+sha256 = "1f9e44624773d36a475765d7a4c1c30b3d7c2785474fa18353aa5f1bb5ebc378"
+page = "https://commons.wikimedia.org/wiki/File:Moose_at_Seedskadee_National_Wildlife_Refuge_(44827612214).webm"
+author = "USFWS Mountain Prairie"
+license = "Public domain"
+
+# Recordings for the music library: public domain works in CC0 or public
+# domain performances.
+
+[audio.eroica-1]
+url = "https://upload.wikimedia.org/wikipedia/commons/d/da/Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-01-AllegroConBrio.ogg"
+sha256 = "664311641ad14af20ca9c1b155c6b2ba2e16fa7a22dc501225aa7791cabe8a69"
+page = "https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-01-AllegroConBrio.ogg"
+author = "Musopen Symphony"
+license = "CC0"
+
+
+[audio.eroica-2]
+url = "https://upload.wikimedia.org/wikipedia/commons/1/14/Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-02-MarciaFunebreAdagioAssai.ogg"
+sha256 = "1f43a3e5ca73bbacb89ca91a1f5bf73f7b9d2f269e680fc367d962cdea10e676"
+page = "https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-02-MarciaFunebreAdagioAssai.ogg"
+author = "Musopen Symphony"
+license = "CC0"
+
+
+[audio.eroica-3]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/07/Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-03-ScherzoAllegroVivace.ogg"
+sha256 = "fea0ee07e8f3c939d5de51e567ad1e97c2fb63b597084bc0c549b38e8242dd13"
+page = "https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-03-ScherzoAllegroVivace.ogg"
+author = "Musopen Symphony"
+license = "CC0"
+
+
+[audio.eroica-4]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-04-FinaleAllegroMolto.ogg"
+sha256 = "0789d98b08adadcc39db2310bd5350adbe76b85f2435b2999ffd834094f168c7"
+page = "https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-04-FinaleAllegroMolto.ogg"
+author = "Musopen Symphony"
+license = "CC0"
+
+
+[audio.scherzo-1]
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Chopin_Scherzo_no._1_in_B_minor%2C_Op._20%2C_Alice_Gi-Young_Hwang.ogg"
+sha256 = "d88714d80dfa4d570f4dfd9a6a03ab8700504c6dd7b145060dce96dcc6029715"
+page = "https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._1_in_B_minor,_Op._20,_Alice_Gi-Young_Hwang.ogg"
+author = "Alice Gi-Young Hwang"
+license = "CC0"
+
+
+[audio.scherzo-2]
+url = "https://upload.wikimedia.org/wikipedia/commons/4/45/Chopin_Scherzo_no._2_in_B_flat_minor%2C_Op._31%2C_Alice_Gi-Young_Hwang.ogg"
+sha256 = "8a04ed1414565e1528035e0c4f5a61a807e95206fb732fb4f04eb6acd3bf3b30"
+page = "https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._2_in_B_flat_minor,_Op._31,_Alice_Gi-Young_Hwang.ogg"
+author = "Alice Gi-Young Hwang"
+license = "CC0"
+
+
+[audio.scherzo-3]
+url = "https://upload.wikimedia.org/wikipedia/commons/9/91/Chopin_Scherzo_no._3_in_C_sharp_minor%2C_Op._39%2C_Alice_Gi-Young_Hwang.ogg"
+sha256 = "25d88ae448a6744ea501af741e6658983f3da4fbbe94bc7284a55299cbf5887b"
+page = "https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._3_in_C_sharp_minor,_Op._39,_Alice_Gi-Young_Hwang.ogg"
+author = "Alice Gi-Young Hwang"
+license = "CC0"
+
+
+[audio.scherzo-4]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/80/Chopin_Scherzo_no._4_in_E_major%2C_Op._54%2C_Alice_Gi-Young_Hwang.ogg"
+sha256 = "51b25ccfd8d9014ed8204a6a7a4969b9882f633ad6094a0841269fb6337bb0a0"
+page = "https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._4_in_E_major,_Op._54,_Alice_Gi-Young_Hwang.ogg"
+author = "Alice Gi-Young Hwang"
+license = "CC0"
+
+
+[audio.pathetique-1]
+url = "https://upload.wikimedia.org/wikipedia/commons/2/26/Beethoven%2C_Sonata_No._8_in_C_Minor_Pathetique%2C_Op._13_-_I._Grave_-_Allegro_di_molto_e_con_brio.ogg"
+sha256 = "43039492c574d60a23405ede80714aa026be0242014453821d2ebfaf45924ee2"
+page = "https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_I._Grave_-_Allegro_di_molto_e_con_brio.ogg"
+author = "unknown performer, via Wikimedia Commons"
+license = "CC0"
+
+
+[audio.pathetique-2]
+url = "https://upload.wikimedia.org/wikipedia/commons/6/63/Beethoven%2C_Sonata_No._8_in_C_Minor_Pathetique%2C_Op._13_-_II._Adagio_cantabile.ogg"
+sha256 = "96868eb250651f50522de6277528625172c8af78e238ff3b59dfc31004eb466a"
+page = "https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg"
+author = "unknown performer, via Wikimedia Commons"
+license = "CC0"
+
+
+[audio.pathetique-3]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/87/Beethoven%2C_Sonata_No._8_in_C_Minor_Pathetique%2C_Op._13_-_III._Rondo_-_Allegro.ogg"
+sha256 = "d14a3f33a6e46961eb2035dbef5fff010e88eaa5ae21fc488ed340b69bf4ad7c"
+page = "https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_III._Rondo_-_Allegro.ogg"
+author = "unknown performer, via Wikimedia Commons"
+license = "CC0"
+
+# Composers, from public domain portraits.
+
+[image.beethoven-portrait]
+url = "https://upload.wikimedia.org/wikipedia/commons/a/a9/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis_%28cropped%29.jpg"
+sha256 = "459ec2958a56e108faf93fa2bb66dc049d2524cc54af15b578701ba2425e7fa4"
+page = "https://commons.wikimedia.org/wiki/File:Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis_(cropped).jpg"
+author = "Joseph Karl Stieler"
+license = "Public domain"
+
+
+[image.chopin-portrait]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/05/Frederic_Chopin_photo_full.jpeg"
+sha256 = "365d0681d54a00603add98c32dc0053951b4c9863a14eb56f4032ff7f747e8ec"
+page = "https://commons.wikimedia.org/wiki/File:Frederic_Chopin_photo_full.jpeg"
+author = "Louis-Auguste Bisson"
+license = "Public domain"
+
+
 # People, animals and insects. identifiable = true marks a recognisable face:
 # the photo is CC0, but the person never agreed to advertise anything, so
 # keep those off the website.
@@ -993,3 +1244,209 @@ sha256 = "10857add08891ddcbe3aa71bd5924e4c795940fe2390848d580f216a78c2d97e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
+
+[image.ai-cover-neon-harbour-night-ferry]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-neon-harbour-night-ferry.jpg"
+sha256 = "895182d9777696def2cc8d8f91bd225dda5932fd31d9635a749ee848ab78a57e"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-cover-neon-harbour-afterglow]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-neon-harbour-afterglow.jpg"
+sha256 = "375758e8661965280b88e698553a6f5970bb6fa1cd5b0e44abc857522b6c4d5c"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-cover-the-paper-cranes-fold-fly]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-the-paper-cranes-fold-fly.jpg"
+sha256 = "77389e31d112cf4aff5557b8ec401418ac7a954520a1f8e3145ad35ce80888ed"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 2"
+license = "CC0"
+
+[image.ai-cover-the-paper-cranes-postcards-from-the-north]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-the-paper-cranes-postcards-from-the-north.jpg"
+sha256 = "5995e46cfea1dc2d22ce674dc18ebfcf90429cf4e27edf372093f8b6cb5a5319"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-cover-margit-holm-winter-songs]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-margit-holm-winter-songs.jpg"
+sha256 = "55358e9d3bb53f52eb58d31842976d5d74f3bb66b5dea618a5d8b0f100819b3d"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 1"
+license = "CC0"
+
+[image.ai-cover-various-artists-glacier-lounge-vol-1]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-various-artists-glacier-lounge-vol-1.jpg"
+sha256 = "b165d7b2188389c97276eadf8f1676500d985f8efed266b245adc1a5fb5250d0"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 2"
+license = "CC0"
+
+[image.ai-cover-ludwig-van-beethoven-symphony-no-3-eroica]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-ludwig-van-beethoven-symphony-no-3-eroica.jpg"
+sha256 = "d5c65423d1538bc47dd80357d383c9e7126c504e64ed1aca0413ea8d7e411f1b"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 2"
+license = "CC0"
+
+[image.ai-cover-ludwig-van-beethoven-piano-sonata-no-8-pathetique]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-ludwig-van-beethoven-piano-sonata-no-8-pathetique.jpg"
+sha256 = "8716c6bb4e2d00297a2c84d603eb8a7ef57779138334058d585118b609649036"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-cover-frederic-chopin-the-four-scherzos]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-frederic-chopin-the-four-scherzos.jpg"
+sha256 = "2a13c38aa1e633c7c64ac2461c41707e91355a0db47555fc44b90638815e846d"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 4"
+license = "CC0"
+
+[image.ai-artist-neon-harbour]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-artist-neon-harbour.jpg"
+sha256 = "7c6882870c38d39078af025e712ea57c02f30ca6b519cb48b4ded8e4d085115a"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-artist-the-paper-cranes]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-artist-the-paper-cranes.jpg"
+sha256 = "013870304fec22fdbb5c0af1c55dc66650a7cefcd3123e1417f1d9ecb5c0c2b4"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 1"
+license = "CC0"
+
+[image.ai-artist-margit-holm]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-artist-margit-holm.jpg"
+sha256 = "88b7c595e5efe4c40a3d4f22afac8b9d2884b968ee63041b0e40edc816b17d3e"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 1"
+license = "CC0"
+
+[image.ai-avatar-nora]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-avatar-demo.jpg"
+sha256 = "b617ae5df1763d511ae268c9bd02361f8b9e310a6193514a0ff175cfe1078e69"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-avatar-alex]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-avatar-alex.jpg"
+sha256 = "db9601e0a696b3d6c3ab6cf88fec1c213ab42282bf311a757c2e0ec360453318"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 3"
+license = "CC0"
+
+[image.ai-avatar-kids]
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-avatar-kids.jpg"
+sha256 = "b3f55cb120adb15d5f3201dc46a03b064ad81588657e04fb1654b98a6a8c2ec6"
+page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
+author = "generated with FLUX.1-schnell, seed 1"
+license = "CC0"
+
+# ---- Blender open movies, remuxed as they are (demo.py film). "member" is
+# the file inside a zip archive.
+
+[film.bbb]
+url = "https://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_h264.mov.zip"
+sha256 = "402d6625f614631627d518b931865c9c4aefbbf3b75ed0494672e77ff510666d"
+member = "big_buck_bunny_1080p_h264.mov"
+author = "Big Buck Bunny, (c) 2008 Blender Foundation, www.bigbuckbunny.org"
+license = "CC BY 3.0"
+
+[film.sintel]
+url = "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv"
+sha256 = "97f1dbc66231df42ad49bd8c29aa174b8f48933058e47e7157d4ba63d93a8efa"
+author = "Sintel, (c) 2010 Blender Foundation, www.sintel.org"
+license = "CC BY 3.0"
+
+[film.sintel-sub-ko]
+url = "https://download.blender.org/durian/subs/sintel_ko.srt"
+sha256 = "241f05979875655eaadf7ed98f5ae98cbb712845d33c80bc2fc540b349a61391"
+author = "Sintel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.sintel-sub-he]
+url = "https://download.blender.org/durian/subs/sintel_he.srt"
+sha256 = "d0c6818ceb2ef5935199d5ac29cb2f29fb390ea707c81445276d1543735a0d5b"
+author = "Sintel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos]
+url = "https://download.blender.org/demo/movies/ToS/tears_of_steel_1080p.mov.zip"
+sha256 = "d87a41de040d3814dbde143e9ab85ef122caf22265f660b0bebf476cd8b357a5"
+member = "tears_of_steel_1080p.mov"
+author = "Tears of Steel, (CC) Blender Foundation, mango.blender.org"
+license = "CC BY 3.0"
+
+[film.tos-surround]
+url = "https://download.blender.org/demo/movies/ToS/Surround-TOS_DVDSURROUND-Dolby%205.1.ac3"
+sha256 = "ba3977adf9861ae4c2ef7b97126f22c3b4e16d3a9bd350b3b742d3709ae13951"
+author = "Tears of Steel, (CC) Blender Foundation, mango.blender.org"
+license = "CC BY 3.0"
+
+[film.tos-sub-en]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-en.srt"
+sha256 = "ce9578f6fe098a5821045a38884b229160f9e7ba27890448a92f5be330c6e6fe"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-de]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-de.srt"
+sha256 = "666685daa9064a5a59144e47bddd2d570bbdda199df6e4e39f3273e479ab1f4b"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-fr-orig]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-fr-orig.srt"
+sha256 = "94cc887d34c83ee909dfe141edaccc2afc1ae8c23c7929b60e2f73905968c708"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-es]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-es.srt"
+sha256 = "b1936989cf42eda28988ec9120a80b7303562ea6429e49441160ba688da39a5c"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-it]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-it.srt"
+sha256 = "6b8f6023b88b16acadea52d1664aa92ef132d7481e3e1957f1f334260477c870"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-nl]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-nl.srt"
+sha256 = "1146fe8a924306d680d9b7c82cf652e56e9f1ed28c81142fa477daee04b45b58"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-ru]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-ru.srt"
+sha256 = "3fcb17b4671bcc6f3b92c823eeeab134234e739cd8878ed5a4c1ab56b320829c"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-jp]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-JP.srt"
+sha256 = "dae49f0d9231c93a3ca02f02ab08023a4e5379aa8dfa9e22f78bc40d8754ad74"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-he]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-HE.srt"
+sha256 = "b868e12e032ff5bc379995cad5839c9aa4650bac74ffb1d90504680b54e1ad27"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"
+
+[film.tos-sub-pt-br]
+url = "https://download.blender.org/demo/movies/ToS/subtitles/TOS-PT-BR.srt"
+sha256 = "4d1edfdb5c370297701efb29e8296137ba766a8f61af3625bc09fca188a1fdad"
+author = "Tears of Steel subtitles, Blender Foundation"
+license = "CC BY 3.0"

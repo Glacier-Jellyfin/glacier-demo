@@ -7,7 +7,7 @@
 # from the title's plot and genres in catalog.toml. The text on the posters is
 # set by demo.py, never by the model.
 #
-# shape: poster (2:3) or backdrop (16:9). crop cuts that share off the bottom
+# shape: poster (2:3), backdrop (16:9) or avatar (square, with "user" instead of "title"). crop cuts that share off the bottom
 # of the chosen image, for a candidate that is good apart from lettering there.
 
 # The prompt is: shape, art direction, scene, composition (posters), medium.
@@ -16,6 +16,13 @@
 [style]
 poster = "textless theatrical one-sheet movie poster key art"
 backdrop = "textless widescreen movie key art, horizontal banner"
+still = "textless film still from a television series, natural candid moment, widescreen frame"
+# Drawn series: "still" and "series" make the model draw subtitles into cartoons.
+drawing = "a single widescreen background painting with characters, concept art for an animated feature"
+avatar = "textless profile picture, head and shoulders, centred, plain soft colour background"
+cover = "textless square album cover artwork, bold graphic composition, high-end record sleeve design"
+artist = "textless band press photo, editorial music photography, square frame"
+headshot = "close-up actor headshot photograph, face and shoulders only, the frame ends at the collarbones, arms down at the sides, calm natural expression, neutral grey studio backdrop, soft key light"
 composition = "bold central composition, the subject in the upper two thirds, the lower third plain dark empty ground fading to black"
 
 # Art direction by genre: the first entry here that the title has wins.
@@ -37,6 +44,7 @@ drama = "intimate portrait, soft window light, muted natural palette, quiet emot
 photo = "professional cinema poster photography, photorealistic, detailed faces and natural hands, subtle film grain, cinematic colour grade, no text, no watermark"
 animation = "stylised 3D animated feature film still, soft global illumination, expressive characters with big eyes, rich textures, warm cinematic lighting, no text, no watermark"
 anime = "Japanese anime key visual, cel shading, clean confident line art, vibrant hand-painted background, dramatic sky, no text, no watermark"
+illustration = "flat vintage travel poster illustration, screen print texture, limited colour palette, no text, no watermark"
 cartoon = "2D cartoon for children's television, bold clean outlines, flat bright colours, simple shapes, friendly characters, no text, no watermark"
 
 # ---- Vanguard, the superhero series
@@ -231,3 +239,174 @@ shape = "poster"
 seed = 3
 prompt = "a young red fox sitting in a golden meadow at sunrise, butterflies and a dragonfly in the air around it, an owl on a branch above, dew on the grass, forest edge in soft mist"
 medium = "photo"
+
+# ---- Music: album covers ("album" with its "artist") and artist pictures ("artist")
+
+[image.ai-cover-neon-harbour-night-ferry]
+artist = "Neon Harbour"
+album = "Night Ferry"
+shape = "cover"
+seed = 3
+crop = 0.25
+prompt = "a lone ferry crossing a dark harbour at night, neon pink and cyan reflections on the water, a glowing retro grid horizon, 1980s synthwave aesthetic"
+
+[image.ai-cover-neon-harbour-afterglow]
+artist = "Neon Harbour"
+album = "Afterglow"
+shape = "cover"
+seed = 3
+prompt = "a magenta and orange sunset over a city skyline seen through a rain-streaked car windshield at dusk, retro 1980s glow"
+
+[image.ai-cover-the-paper-cranes-fold-fly]
+artist = "The Paper Cranes"
+album = "Fold & Fly"
+shape = "cover"
+seed = 2
+medium = "illustration"
+prompt = "colourful origami paper cranes flying over a small Norwegian town of wooden houses by a fjord, bright pastel sky, playful"
+
+[image.ai-cover-the-paper-cranes-postcards-from-the-north]
+artist = "The Paper Cranes"
+album = "Postcards from the North"
+shape = "cover"
+seed = 3
+medium = "illustration"
+prompt = "a vintage postcard view of a fjord under the midnight sun, a red wooden cabin and a small boat, soft pastel colours"
+
+[image.ai-cover-margit-holm-winter-songs]
+artist = "Margit Holm"
+album = "Winter Songs"
+shape = "cover"
+seed = 1
+prompt = "a single candle in a frosted cottage window at night, snow falling outside, warm golden light, quiet and intimate"
+
+[image.ai-cover-various-artists-glacier-lounge-vol-1]
+artist = "Various Artists"
+album = "Glacier Lounge, Vol. 1"
+shape = "cover"
+seed = 2
+prompt = "an empty modern lounge chair facing a huge window onto a glacier at blue hour, minimal, calm, soft reflections"
+
+[image.ai-cover-ludwig-van-beethoven-symphony-no-3-eroica]
+artist = "Ludwig van Beethoven"
+album = "Symphony No. 3 \"Eroica\""
+shape = "cover"
+seed = 2
+prompt = "a grand nineteenth century concert hall with a full orchestra on stage in dramatic golden light, seen from the balcony"
+
+[image.ai-cover-ludwig-van-beethoven-piano-sonata-no-8-pathetique]
+artist = "Ludwig van Beethoven"
+album = "Piano Sonata No. 8 \"Pathetique\""
+shape = "cover"
+seed = 3
+prompt = "a single black grand piano in a dark empty room, lit by moonlight through a tall window, dramatic and melancholic"
+
+[image.ai-cover-frederic-chopin-the-four-scherzos]
+artist = "Frederic Chopin"
+album = "The Four Scherzos"
+shape = "cover"
+seed = 4
+prompt = "an old Parisian salon with a piano by candlelight, rain running down the window, deep red and gold tones"
+
+[image.ai-artist-neon-harbour]
+artist = "Neon Harbour"
+shape = "artist"
+seed = 3
+prompt = "a synthwave duo, a woman in her thirties with short platinum hair and a man with a dark beard in a leather jacket, standing in front of vintage synthesizers in pink and blue neon light"
+
+[image.ai-artist-the-paper-cranes]
+artist = "The Paper Cranes"
+shape = "artist"
+seed = 1
+prompt = "four young indie musicians, two women and two men in casual clothes, sitting on a wooden pier by a fjord on a sunny day, laughing"
+
+[image.ai-artist-margit-holm]
+artist = "Margit Holm"
+shape = "artist"
+seed = 1
+prompt = "a folk singer in her forties with long auburn hair and a knitted sweater, holding an acoustic guitar by a window at the coast, soft daylight"
+
+# ---- Profile pictures of the demo users
+
+[image.ai-avatar-nora]
+user = "Nora"
+shape = "avatar"
+seed = 3
+prompt = "a friendly woman in her thirties with short dark hair and a warm smile, soft studio light, calm blue background"
+
+[image.ai-avatar-alex]
+user = "Alex"
+shape = "avatar"
+seed = 3
+prompt = "a relaxed man in his late twenties with curly brown hair and round glasses, easy smile, soft studio light, warm orange background"
+
+[image.ai-avatar-kids]
+user = "Kids"
+shape = "avatar"
+seed = 1
+medium = "cartoon"
+prompt = "a cute cartoon fox cub with big eyes waving a paw, cheerful, bright green background"
+
+# ---- Headshots of the made-up cast and crew (ai.py batch people)
+# Real people, like the directors of the Blender films, are left out on purpose.
+
+[people.describe]
+"Ada Kowalska" = "a Polish woman in her thirties with brown hair in a loose bun and a calm look"
+"Ahmet Yilmaz" = "a Turkish German man in his forties with short black hair and stubble"
+"Amara Nwosu" = "a Nigerian British woman in her forties with short natural hair, a film director"
+"Aoi Takeda" = "a Japanese woman in her twenties with a dark bob haircut and a bright smile"
+"Ben Albrecht" = "a German man in his fifties with a grey beard and rectangular glasses, a screenwriter"
+"Clara Weiss" = "an Austrian woman in her forties with shoulder-length light brown hair"
+"Daniel Okafor" = "a Black British man in his thirties with a short beard and a warm smile"
+"Eleni Doukas" = "a Greek woman in her fifties with dark curly hair streaked with grey, a film director"
+"Elin Strand" = "a Swedish woman in her thirties with long straight blond hair and grey eyes"
+"Felix Brandauer" = "an Austrian man in his sixties with white hair combed back, a film director"
+"Freya Holm" = "a Danish woman around twenty with long red hair and freckles"
+"Haru Ishida" = "a Japanese man in his twenties with tousled black hair"
+"Ines Carvalho" = "a Portuguese woman in her forties with dark hair in a low ponytail, a film director"
+"Ingrid Vale" = "a Norwegian woman in her sixties with short silver hair and kind eyes"
+"Jakob Lund" = "a Danish man in his forties with a full brown beard"
+"Johanna Keller" = "a German woman in her thirties with short dark hair and a serious look"
+"Jonas Ek" = "a Swedish man in his thirties with round glasses and a cardigan, a screenwriter"
+"Kenji Ota" = "a Japanese man in his fifties with greying hair and a gentle smile"
+"Kira Holtz" = "a German woman in her forties with red framed glasses, a film director"
+"Leah Moreno" = "a Spanish American woman in her twenties with long dark wavy hair"
+"Leo Marangos" = "a Greek young man around eighteen with curly black hair, wearing a dark crew-neck t-shirt"
+"Lukas Reinholt" = "a German man in his forties with dark hair and a black turtleneck, a film director"
+"Malte Fischer" = "a German man in his thirties with a ginger beard"
+"Mara Lindqvist" = "a Swedish woman in her fifties with short grey hair, a film director"
+"Marco Bellini" = "an Italian man in his fifties with salt-and-pepper hair"
+"Margaret Hale" = "a British woman in her seventies with white hair and a kind face"
+"Mei Arai" = "a Japanese woman in her thirties with long straight black hair"
+"Mila Sorensen" = "a Danish woman in her twenties with light brown hair and freckles"
+"Miriam Sandberg" = "a Swedish woman in her forties with blond hair in a braid, a screenwriter"
+"Nadia Kerr" = "a Scottish woman in her forties with dark hair and a determined look"
+"Nikos Arvanitis" = "a Greek man in his seventies with a white moustache and a weathered face"
+"Oskar Brandt" = "a German man in his sixties, bald, with round glasses"
+"Paul Ferreira" = "a Portuguese Canadian man in his fifties with a short grey beard, a film director"
+"Priya Raman" = "an Indian British woman in her thirties with long black hair"
+"Rafael Ortega" = "a Mexican man in his forties with a thick moustache"
+"Ren Mori" = "a Japanese man in his forties with short hair and a calm face"
+"Ruth Calloway" = "an American woman in her sixties with short white hair, a screenwriter"
+"Samuel Achterberg" = "a Dutch man in his forties with blond stubble and blue eyes"
+"Sanna Moe" = "a Norwegian woman in her twenties with dark blond hair"
+"Sofie Brandt" = "a German woman in her thirties with a short pixie cut, a screenwriter"
+"Sora Fujii" = "a Japanese man in his thirties with a neat side parting"
+"Teodor Varga" = "a Hungarian man in his fifties with a dark beard, a film director"
+"Tomas Berge" = "a Norwegian man in his fifties with a weathered face and grey stubble"
+"Yara Haddad" = "a Lebanese woman in her twenties with long dark hair"
+"Yuki Sato" = "a Japanese woman in her twenties with a high ponytail"
+"Zoe Lambert" = "a French woman in her twenties with short blond hair"
+
+[people.seeds]
+# key = seed, for a headshot that came out wrong with seed 1
+ai-person-leo-marangos = 2
+
+# ---- Episode stills of the one-line series (ai.py episodes)
+
+[episodes.seeds]
+# key = seed, for a still that came out wrong with its own seed
+ai-ep-wild-coast-s01e01 = 101
+ai-ep-wild-coast-s01e05 = 102
+ai-ep-deep-blue-s01e02 = 103
+ai-ep-little-explorers-s01e01 = 104

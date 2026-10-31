@@ -1,8 +1,8 @@
 # Credits
 
 The demo library is built from these works. The titles, plots, people and
-studios in catalog.toml are made up, except for Blender Studio's films and
-Pepper&Carrot, which appear under their own names.
+studios in catalog.toml are made up, except for Blender Studio's films,
+Pepper&Carrot and the two composers, which appear under their own names.
 
 All images were changed: cropped, scaled, dimmed and lettered for posters,
 logos and video frames. Images marked * show a recognisable person; keep
@@ -10,7 +10,7 @@ them off the website.
 
 ## Images
 
-| Used as | Image | Author | Licence |
+| Used as | Work | Author | Licence |
 |---|---|---|---|
 | `glacier-alaska` | [Alaskan Glacier 2026.jpg](https://commons.wikimedia.org/wiki/File:Alaskan_Glacier_2026.jpg) | Bherzhaft | CC0 |
 | `lighthouse-chania` | [Lighthouse Chania evening sun.jpg](https://commons.wikimedia.org/wiki/File:Lighthouse_Chania_evening_sun.jpg) | Jebulon | CC0 |
@@ -26,6 +26,8 @@ them off the website.
 | `beach-boat` | [Sopot fishing boats 2.jpg](https://commons.wikimedia.org/wiki/File:Sopot_fishing_boats_2.jpg) | Аимаина хикари | CC0 |
 | `stormy-sea` | [Stormy Baltic sea on Bornholm.jpg](https://commons.wikimedia.org/wiki/File:Stormy_Baltic_sea_on_Bornholm.jpg) | Socket0 | CC0 |
 | `sea-fog` | [Swans in the fog, Bornholm.jpg](https://commons.wikimedia.org/wiki/File:Swans_in_the_fog,_Bornholm.jpg) | Socket0 | CC0 |
+| `beethoven-portrait` | [Joseph Karl Stieler's Beethoven mit dem Manuskript der Missa solemnis (cropped).jpg](https://commons.wikimedia.org/wiki/File:Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis_(cropped).jpg) | Joseph Karl Stieler | Public domain |
+| `chopin-portrait` | [Frederic Chopin photo full.jpeg](https://commons.wikimedia.org/wiki/File:Frederic_Chopin_photo_full.jpeg) | Louis-Auguste Bisson | Public domain |
 | `silhouette-woman` | [Silhouette woman standing sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Silhouette_woman_standing_sunset_(Unsplash).jpg) | freestocks.org freestocks | CC0 |
 | `sunset-watcher` | [Person watching the sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Person_watching_the_sunset_(Unsplash).jpg) | Jon Asato jon_asato | CC0 |
 | `crowd` | [Leiria sunset crowd silhouette (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Leiria_sunset_crowd_silhouette_(Unsplash).jpg) | Marcos Paixão marcosjtpx | CC0 |
@@ -49,15 +51,15 @@ them off the website.
 | `sprite-fright-forest` | [Sprite Fright-concept art-nature 01.png](https://commons.wikimedia.org/wiki/File:Sprite_Fright-concept_art-nature_01.png) | Andy Goralczyk / Blender Foundation | CC BY 4.0 |
 | `tears-of-steel` | [Tears of Steel frame 03 1a.jpg](https://commons.wikimedia.org/wiki/File:Tears_of_Steel_frame_03_1a.jpg) | Blender Foundation | CC BY 3.0 |
 | `cosmos-laundromat` | [Tornado deevad 01.jpg](https://commons.wikimedia.org/wiki/File:Tornado_deevad_01.jpg) | Blender Foundation | CC BY 3.0 |
-| `pc-cover` | [2016-02-24_vertical-cover_remake_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2016-02-24_vertical-cover_remake_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-rendezvous` | [2018-03-30_The-rendezvous_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2018-03-30_The-rendezvous_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-snow` | [2016-12-04_Running-on-Snow_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2016-12-04_Running-on-Snow_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-shichimi` | [2016-12-04_Shichimi-and-Yuzu_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2016-12-04_Shichimi-and-Yuzu_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-flight` | [2019-02-27_Flight-of-Spring_extended-version_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2019-02-27_Flight-of-Spring_extended-version_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-autumn` | [2020-09-06_Autumn-Run_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2020-09-06_Autumn-Run_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-market` | [2022-02-21_The-market_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2022-02-21_The-market_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-rain` | [2022-12-06_Rain-City_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2022-12-06_Rain-City_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
-| `pc-cozy` | [2023-11-22_Cozy_by-David-Revoy.jpg](https://www.peppercarrot.com/0_sources/0ther/artworks/hi-res/2023-11-22_Cozy_by-David-Revoy.jpg) | David Revoy | CC BY 4.0 |
+| `pc-cover` | [2016-02-24 vertical-cover remake by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-rendezvous` | [2018-03-30 The-rendezvous by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-snow` | [2016-12-04 Running-on-Snow by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-shichimi` | [2016-12-04 Shichimi-and-Yuzu by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-flight` | [2019-02-27 Flight-of-Spring extended-version by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-autumn` | [2020-09-06 Autumn-Run by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-market` | [2022-02-21 The-market by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-rain` | [2022-12-06 Rain-City by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
+| `pc-cozy` | [2023-11-22 Cozy by-David-Revoy.jpg](https://www.peppercarrot.com/en/licence/index.html) | David Revoy | CC BY 4.0 |
 | `city-night` | [Park City night sky (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Park_City_night_sky_(Unsplash).jpg) | Jeff Golenski jeffgolenski | CC0 |
 | `neon-street` | [Neon streets (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Neon_streets_(Unsplash).jpg) | JINDONG H jindong | CC0 |
 | `desert-dunes` | [Desert Dunes (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Desert_Dunes_(Unsplash).jpg) | Joe Mania joemania | CC0 |
@@ -100,36 +102,80 @@ them off the website.
 | `people-beach` | [People enjoying Newport Beach (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:People_enjoying_Newport_Beach_(Unsplash).jpg) | Herson Rodriguez hero | CC0 |
 | `audience` | [Front row audience (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Front_row_audience_(Unsplash).jpg) | Melanie van Leeuwen strompictures | CC0 |
 | `train-station-people` | [People waiting for the train (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:People_waiting_for_the_train_(Unsplash).jpg) | Redd Angelo reddangelo16 | CC0 |
-| `ai-vanguard-poster` | [ai-vanguard-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-poster.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
-| `ai-vanguard-backdrop` | [ai-vanguard-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-backdrop.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-vanguard-fallout-poster` | [ai-vanguard-fallout-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-fallout-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-vanguard-last-stand-poster` | [ai-vanguard-last-stand-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-last-stand-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-vanguard-legacy-poster` | [ai-vanguard-legacy-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-poster.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
-| `ai-vanguard-legacy-backdrop` | [ai-vanguard-legacy-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-backdrop.jpg) | generated with FLUX.1-schnell, seed 4 | CC0 |
-| `ai-letters-poster` | [ai-letters-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-letters-backdrop` | [ai-letters-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-backdrop.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-evening-train-poster` | [ai-evening-train-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-evening-train-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-just-one-song-poster` | [ai-just-one-song-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-just-one-song-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-concerto-poster` | [ai-concerto-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-concerto-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-second-act-poster` | [ai-second-act-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-second-act-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-hearts-shore-poster` | [ai-hearts-shore-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hearts-shore-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-night-shift-poster` | [ai-night-shift-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-shift-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-coldwater-poster` | [ai-coldwater-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-coldwater-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-kingsbridge-poster` | [ai-kingsbridge-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-kingsbridge-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-hinterland-poster` | [ai-hinterland-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hinterland-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-bakery-poster` | [ai-bakery-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-bakery-poster.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
-| `ai-paper-moons-poster` | [ai-paper-moons-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-paper-moons-2-poster` | [ai-paper-moons-2-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-2-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-winter-fox-poster` | [ai-winter-fox-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-winter-fox-poster.jpg) | generated with FLUX.1-schnell, seed 7 | CC0 |
-| `ai-little-explorers-poster` | [ai-little-explorers-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-little-explorers-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-owl-woods-poster` | [ai-owl-woods-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-owl-woods-poster.jpg) | generated with FLUX.1-schnell, seed 2 | CC0 |
-| `ai-ramen-nights-poster` | [ai-ramen-nights-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-ramen-nights-backdrop` | [ai-ramen-nights-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-backdrop.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-collection-vanguard-poster` | [ai-collection-vanguard-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-poster.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
-| `ai-collection-vanguard-backdrop` | [ai-collection-vanguard-backdrop.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-backdrop.jpg) | generated with FLUX.1-schnell, seed 1 | CC0 |
-| `ai-collection-paper-moons-poster` | [ai-collection-paper-moons-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-paper-moons-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-collection-northern-light-poster` | [ai-collection-northern-light-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-northern-light-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
-| `ai-collection-animal-tales-poster` | [ai-collection-animal-tales-poster.jpg](https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-animal-tales-poster.jpg) | generated with FLUX.1-schnell, seed 3 | CC0 |
+
+## Films
+
+Blender Studio's open movies and their subtitles, remuxed unchanged.
+
+| Used as | Work | Author | Licence |
+|---|---|---|---|
+| `bbb` | [big buck bunny 1080p h264.mov.zip](https://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_h264.mov.zip) | Big Buck Bunny, (c) 2008 Blender Foundation, www.bigbuckbunny.org | CC BY 3.0 |
+| `sintel` | [Sintel.2010.1080p.mkv](https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv) | Sintel, (c) 2010 Blender Foundation, www.sintel.org | CC BY 3.0 |
+| `sintel-sub-ko` | [sintel ko.srt](https://download.blender.org/durian/subs/sintel_ko.srt) | Sintel subtitles, Blender Foundation | CC BY 3.0 |
+| `sintel-sub-he` | [sintel he.srt](https://download.blender.org/durian/subs/sintel_he.srt) | Sintel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos` | [tears of steel 1080p.mov.zip](https://download.blender.org/demo/movies/ToS/tears_of_steel_1080p.mov.zip) | Tears of Steel, (CC) Blender Foundation, mango.blender.org | CC BY 3.0 |
+| `tos-surround` | [Surround-TOS DVDSURROUND-Dolby 5.1.ac3](https://download.blender.org/demo/movies/ToS/Surround-TOS_DVDSURROUND-Dolby%205.1.ac3) | Tears of Steel, (CC) Blender Foundation, mango.blender.org | CC BY 3.0 |
+| `tos-sub-en` | [TOS-en.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-en.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-de` | [TOS-de.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-de.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-fr-orig` | [TOS-fr-orig.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-fr-orig.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-es` | [TOS-es.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-es.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-it` | [TOS-it.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-it.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-nl` | [TOS-nl.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-nl.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-ru` | [TOS-ru.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-ru.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-jp` | [TOS-JP.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-JP.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-he` | [TOS-HE.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-HE.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+| `tos-sub-pt-br` | [TOS-PT-BR.srt](https://download.blender.org/demo/movies/ToS/subtitles/TOS-PT-BR.srt) | Tears of Steel subtitles, Blender Foundation | CC BY 3.0 |
+
+## Video
+
+Footage for the showcase titles, music videos, home videos and Live TV.
+
+| Used as | Work | Author | Licence |
+|---|---|---|---|
+| `lighthouse-lens` | [Cape Blanco Lighthouse Video B Roll (10846006126).webm](https://commons.wikimedia.org/wiki/File:Cape_Blanco_Lighthouse_Video_B_Roll_(10846006126).webm) | BLM Oregon & Washington | Public domain |
+| `lighthouse-orbit` | [Orbit around Fremantle South Mole Lighthouse at sunset.webm](https://commons.wikimedia.org/wiki/File:Orbit_around_Fremantle_South_Mole_Lighthouse_at_sunset.webm) | JamesBromberger | CC0 |
+| `surf-rocks` | [Crashing waves in the San Juan Islands (40007700135).webm](https://commons.wikimedia.org/wiki/File:Crashing_waves_in_the_San_Juan_Islands_(40007700135).webm) | BLM Oregon & Washington | Public domain |
+| `surf-coast` | [Santa Rosa Island Waves.webm](https://commons.wikimedia.org/wiki/File:Santa_Rosa_Island_Waves.webm) | Blervis | CC0 |
+| `sea-waves` | [Ocean surface waves 03.ogv](https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_03.ogv) | Mostafameraji | CC0 |
+| `bay-dusk` | [Ocean in Sommaroy.webm](https://commons.wikimedia.org/wiki/File:Ocean_in_Sommaroy.webm) | User: Netha Hussain | CC0 |
+| `boat-fog` | [Forward View of CCGS McIntyre Bay.webm](https://commons.wikimedia.org/wiki/File:Forward_View_of_CCGS_McIntyre_Bay.webm) | Extemporalist | CC0 |
+| `harbour-aerial` | [Aerial view of sea and boats.webm](https://commons.wikimedia.org/wiki/File:Aerial_view_of_sea_and_boats.webm) | Wayne McKelvie | CC0 |
+| `icebergs` | [GreenlandReel Icebergs 2160APR.webm](https://commons.wikimedia.org/wiki/File:GreenlandReel_Icebergs_2160APR.webm) | NASA | Public domain |
+| `pack-ice` | [Flight Over a Rectangular Iceberg in the Antarctic.webm](https://commons.wikimedia.org/wiki/File:Flight_Over_a_Rectangular_Iceberg_in_the_Antarctic.webm) | NASA | Public domain |
+| `ice-climb` | [Drone Footage of People Climbing Ice Formation.webm](https://commons.wikimedia.org/wiki/File:Drone_Footage_of_People_Climbing_Ice_Formation.webm) | Thomas Tapp | CC0 |
+| `snowfall` | [Snow falling in Charlton MA 2025-12-14.webm](https://commons.wikimedia.org/wiki/File:Snow_falling_in_Charlton_MA_2025-12-14.webm) | Peter Cooper Jr. | CC0 |
+| `snow-forest` | [Snow crystals scintillate over Bear Creek.webm](https://commons.wikimedia.org/wiki/File:Snow_crystals_scintillate_over_Bear_Creek.webm) | Extemporalist | CC0 |
+| `aurora` | [Glacier Bay Entrance Night Sky with Aurora and Moon.webm](https://commons.wikimedia.org/wiki/File:Glacier_Bay_Entrance_Night_Sky_with_Aurora_and_Moon.webm) | National Park Service | Public domain |
+| `bees` | [Bees on flowers.webm](https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm) | J. M. Pearson | CC0 |
+| `bee-hibiscus` | [Bees on Hibiscus syriacus.webm](https://commons.wikimedia.org/wiki/File:Bees_on_Hibiscus_syriacus.webm) | Cbaile19 | CC0 |
+| `bears` | [Kodiak bear family.webm](https://commons.wikimedia.org/wiki/File:Kodiak_bear_family.webm) | Alaska Region U.S. Fish & Wildlife Service | Public domain |
+| `elk` | [Elk (Cervus canadensis).webm](https://commons.wikimedia.org/wiki/File:Elk_(Cervus_canadensis).webm) | U.S. Fish and Wildlife Service, National Conservation Training Center (USFWS/NCTC) | Public domain |
+| `fox-snow` | [Red fox playing with prey in yard, Charlton MA 2025-12-26.webm](https://commons.wikimedia.org/wiki/File:Red_fox_playing_with_prey_in_yard,_Charlton_MA_2025-12-26.webm) | Peter Cooper Jr. | CC0 |
+| `moose-fog` | [Moose at Seedskadee National Wildlife Refuge (44827612214).webm](https://commons.wikimedia.org/wiki/File:Moose_at_Seedskadee_National_Wildlife_Refuge_(44827612214).webm) | USFWS Mountain Prairie | Public domain |
+
+## Audio
+
+| Used as | Work | Author | Licence |
+|---|---|---|---|
+| `eroica-1` | [Beethoven SymphonyNo.3Eroica LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-01-AllegroConBrio.ogg](https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-01-AllegroConBrio.ogg) | Musopen Symphony | CC0 |
+| `eroica-2` | [Beethoven SymphonyNo.3Eroica LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-02-MarciaFunebreAdagioAssai.ogg](https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-02-MarciaFunebreAdagioAssai.ogg) | Musopen Symphony | CC0 |
+| `eroica-3` | [Beethoven SymphonyNo.3Eroica LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-03-ScherzoAllegroVivace.ogg](https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-03-ScherzoAllegroVivace.ogg) | Musopen Symphony | CC0 |
+| `eroica-4` | [Beethoven SymphonyNo.3Eroica LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-04-FinaleAllegroMolto.ogg](https://commons.wikimedia.org/wiki/File:Beethoven_SymphonyNo.3Eroica_LudwigVanBeethoven-SymphonyNo.3InEFlatMajorEroicaOp.55-04-FinaleAllegroMolto.ogg) | Musopen Symphony | CC0 |
+| `scherzo-1` | [Chopin Scherzo no. 1 in B minor, Op. 20, Alice Gi-Young Hwang.ogg](https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._1_in_B_minor,_Op._20,_Alice_Gi-Young_Hwang.ogg) | Alice Gi-Young Hwang | CC0 |
+| `scherzo-2` | [Chopin Scherzo no. 2 in B flat minor, Op. 31, Alice Gi-Young Hwang.ogg](https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._2_in_B_flat_minor,_Op._31,_Alice_Gi-Young_Hwang.ogg) | Alice Gi-Young Hwang | CC0 |
+| `scherzo-3` | [Chopin Scherzo no. 3 in C sharp minor, Op. 39, Alice Gi-Young Hwang.ogg](https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._3_in_C_sharp_minor,_Op._39,_Alice_Gi-Young_Hwang.ogg) | Alice Gi-Young Hwang | CC0 |
+| `scherzo-4` | [Chopin Scherzo no. 4 in E major, Op. 54, Alice Gi-Young Hwang.ogg](https://commons.wikimedia.org/wiki/File:Chopin_Scherzo_no._4_in_E_major,_Op._54,_Alice_Gi-Young_Hwang.ogg) | Alice Gi-Young Hwang | CC0 |
+| `pathetique-1` | [Beethoven, Sonata No. 8 in C Minor Pathetique, Op. 13 - I. Grave - Allegro di molto e con brio.ogg](https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_I._Grave_-_Allegro_di_molto_e_con_brio.ogg) | unknown performer, via Wikimedia Commons | CC0 |
+| `pathetique-2` | [Beethoven, Sonata No. 8 in C Minor Pathetique, Op. 13 - II. Adagio cantabile.ogg](https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg) | unknown performer, via Wikimedia Commons | CC0 |
+| `pathetique-3` | [Beethoven, Sonata No. 8 in C Minor Pathetique, Op. 13 - III. Rondo - Allegro.ogg](https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_III._Rondo_-_Allegro.ogg) | unknown performer, via Wikimedia Commons | CC0 |
+
+## Generated images
+
+45 posters, backdrops, covers, artist pictures and avatars, 200 episode
+stills and 46 headshots of made-up people were generated with
+[FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) (Apache 2.0)
+from the prompts in prompts.toml. They show no real person and are released
+under CC0, like the rest of this repository's own content.
 
 ## Fonts
 

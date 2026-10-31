@@ -13,10 +13,15 @@ catalog, the stream layouts and the list of sources with their checksums.
 
 ## What it covers
 
-115 films, 3 series with 20 episodes and 5 collections. Seventeen films are
-worked out in detail; the other 98 are one line each in catalog.toml, so the
-library scrolls and the A-Z rail has letters with ten titles, letters with
-one and a letter with none.
+115 films, 18 series with 269 episodes and 5 collections with descriptions.
+Seventeen films are worked out in detail; the other 98 are one line each in
+catalog.toml, so the library scrolls and the A-Z rail has letters with ten
+titles, letters with one and a letter with none.
+
+Beside films and series there are a music library (five artists and a
+compilation, 64 tracks in FLAC, AAC, MP3, Ogg Vorbis and Opus, some with
+synced lyrics), four music videos, a photo library with five folders of
+photos and home videos, and Live TV with eight channels and a guide.
 
 - films with German and English audio, commentary and audio description
 - subtitles that are forced, SDH (by flag and only by name), closed
@@ -32,7 +37,11 @@ one and a letter with none.
   posters in different styles; people, animals, insects, landscapes
 - series with seasons and a special, two collections, unrated titles,
   chapters, trickplay, resume points, watched episodes and favourites
-- three profiles: Demo (administrator), Alex (password `demo`) and Kids
+- Big Buck Bunny, Sintel and Tears of Steel as the real films, with
+  their surround audio, the community subtitles and named chapters
+- showcase titles with real footage, intros, recaps and credits as media
+  segments, so skip buttons appear
+- three profiles as a family: Nora (administrator), Alex (password `demo`) and Kids
   (up to FSK 6)
 
 ## Use
@@ -49,7 +58,7 @@ python demo.py server stop
 ```
 
 The server answers on <http://localhost:8098>, from the Android emulator on
-<http://10.0.2.2:8098>. Sign in as **Demo** without a password.
+<http://10.0.2.2:8098>. Sign in as **Nora** without a password.
 
 Downloads, the generated media and the server's data live in the work
 directory, `%LOCALAPPDATA%\glacier-demo` unless `GLACIER_DEMO_DIR` says
@@ -57,6 +66,9 @@ otherwise. `server setup --reset` throws away the server's data and starts
 over; `build` only regenerates what changed.
 
 ## How the files stay small
+
+This applies to the made-up titles; the Blender films and the showcases
+carry real footage.
 
 Each chapter is a single still frame encoded as one 64-second GOP and
 repeated with stream copy; audio is silence. A two-hour film comes to a few
@@ -91,3 +103,16 @@ sources.toml. The images are attached to the `ai-v1` release. demo.py puts
 them in place of the title's photos and sets the title text itself; the
 model is never asked for lettering, and candidates with made-up text or
 logos that resemble real brands are left out.
+
+Profile pictures, album covers and artist pictures come the same way.
+`ai.py batch episodes` makes one still per episode of the one-line series
+and `ai.py batch people` one headshot per made-up cast member; a picture
+that came out wrong gets another seed under `[episodes.seeds]` or
+`[people.seeds]`, and `batch ... pin` writes episodes.toml and people.toml.
+Real people, like the directors of the Blender films, get no picture.
+
+## Live TV
+
+`server setup` adds an M3U tuner and an XMLTV guide that `demo.py livetv`
+serves on port 8200; the server starts it. Radio Glacier shows up as a TV
+channel, because Jellyfin's M3U tuner never marks a channel as radio.

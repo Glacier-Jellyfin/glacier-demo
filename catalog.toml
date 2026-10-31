@@ -11,6 +11,10 @@
 # "plain_poster" uses the poster image as it is, for real posters that have
 # their own lettering. Titles without "rating" are unrated.
 # "collection" puts a film or series into one collection, or several as a list.
+# "footage" makes the video from real clips (sources.toml [video]) instead of
+# stills: a reel of the clips, from start for length seconds, repeated over
+# the runtime, with an intro, credits and, for series, recap and preview.
+# crop_bottom cuts that share off the clip, for a burnt-in timestamp.
 
 # The credits block at the foot of the posters (studio, cast, crew); off for
 # clean posters in the style of ThePosterDB.
@@ -34,6 +38,7 @@ When the keeper of a remote lighthouse disappears in a winter storm, his
 estranged daughter Ada returns to the island to sell it. But the lamp keeps
 turning every night, and the logbook keeps filling with entries in her
 father's hand.
+The island has twelve residents, and each of them seems to know more than they say.
 """
 directors = ["Mara Lindqvist"]
 writers = ["Mara Lindqvist", "Jonas Ek"]
@@ -43,6 +48,9 @@ cast = [
   ["Sanna Moe", "Liv Aune"],
   ["Daniel Okafor", "Harbor Master"],
   ["Ingrid Vale", "Ferry Captain"],
+  ["Jakob Lund", "Lighthouse Inspector"],
+  ["Freya Holm", "Young Ada"],
+  ["Malte Fischer", "Ferry Mechanic"],
 ]
 poster = "lighthouse-chania"
 focus = 0.5
@@ -50,6 +58,14 @@ backdrop = "lighthouse-belletout"
 style = "serif"
 accent = "#f2c879"
 files = [{ video = "1080p", tracks = "film-de" }]
+footage = [
+  { clip = "lighthouse-lens", start = 0, length = 15 },
+  { clip = "lighthouse-orbit", start = 0, length = 60 },
+  { clip = "surf-rocks", start = 0, length = 60 },
+  { clip = "surf-coast", start = 60, length = 90 },
+  { clip = "sea-waves", start = 0, length = 21 },
+  { clip = "bay-dusk", start = 0, length = 15 },
+]
 
 [[movie]]
 title = "Glass Mountain"
@@ -67,6 +83,7 @@ plot = """
 Three climate researchers are cut off on a retreating glacier as a storm
 closes the only pass. With the radio gone and the ice breaking up beneath
 their camp, they have to decide whose data is worth carrying down.
+Their only chance is an old supply route that nobody has used in thirty years.
 """
 directors = ["Paul Ferreira"]
 writers = ["Ruth Calloway"]
@@ -75,6 +92,9 @@ cast = [
   ["Samuel Achterberg", "Mikkel Dahl"],
   ["Leah Moreno", "June Park"],
   ["Tomas Berge", "Pilot"],
+  ["Priya Raman", "Base Commander"],
+  ["Kenji Ota", "Radio Operator"],
+  ["Zoe Lambert", "Hanna's Sister"],
 ]
 poster = "glacier-alaska"
 focus = 0.5
@@ -84,6 +104,14 @@ accent = "#9fd3ff"
 files = [
   { label = "2160p", video = "2160p-hdr", tracks = "film-de" },
   { label = "1080p", video = "1080p", tracks = "film-de" },
+]
+footage = [
+  { clip = "icebergs", start = 0, length = 180 },
+  { clip = "pack-ice", start = 0, length = 80, crop_bottom = 0.08 },
+  { clip = "ice-climb", start = 0, length = 110 },
+  { clip = "snowfall", start = 0, length = 15 },
+  { clip = "snow-forest", start = 0, length = 20 },
+  { clip = "aurora", start = 0, length = 46 },
 ]
 
 [[movie]]
@@ -103,6 +131,7 @@ Every night, eight-year-old Juno folds a paper moon and hangs it in her
 window. When one of them drifts out over the fjord and does not come back,
 she sets off with her grumpy neighbour's cat to bring it home before the
 real moon notices.
+On the way they meet a lighthouse keeper, a flock of paper cranes and a moon that is very lonely.
 """
 directors = ["Kira Holtz"]
 writers = ["Kira Holtz", "Ben Albrecht"]
@@ -110,6 +139,9 @@ cast = [
   ["Mila Sorensen", "Juno (voice)"],
   ["Oskar Brandt", "Mister Pepper (voice)"],
   ["Ingrid Vale", "The Moon (voice)"],
+  ["Clara Weiss", "Juno's Mother (voice)"],
+  ["Rafael Ortega", "The Lighthouse Keeper (voice)"],
+  ["Yara Haddad", "Paper Crane (voice)"],
 ]
 poster = "moon-fjord"
 focus = 0.68
@@ -135,6 +167,7 @@ plot = """
 The real moon has fallen asleep, and the tides have stopped. Juno and Mister
 Pepper climb the tallest lighthouse on the coast to wake it, with a crescent
 made of newspaper and a song nobody remembers the end of.
+Their friends from the fjord come too, and nobody is quite sure who is leading whom.
 """
 directors = ["Kira Holtz"]
 writers = ["Ben Albrecht"]
@@ -143,6 +176,8 @@ cast = [
   ["Oskar Brandt", "Mister Pepper (voice)"],
   ["Ingrid Vale", "The Moon (voice)"],
   ["Daniel Okafor", "Lighthouse Keeper (voice)"],
+  ["Clara Weiss", "Juno's Mother (voice)"],
+  ["Yara Haddad", "Paper Crane (voice)"],
 ]
 poster = "moon-crescent"
 focus = 0.52
@@ -168,6 +203,7 @@ A night conductor on the last sleeper train from Berlin to Lisbon finds a
 passenger who is not on any list. By the time they cross into Spain, two
 more people have vanished from their compartments, and the train will not
 stop.
+Vera has twelve hours, one locked compartment and a passenger list that keeps changing.
 """
 directors = ["Lukas Reinholt"]
 writers = ["Lukas Reinholt", "Miriam Sandberg"]
@@ -176,6 +212,9 @@ cast = [
   ["Ahmet Yilmaz", "Kemal"],
   ["Samuel Achterberg", "The Passenger"],
   ["Sanna Moe", "Ines"],
+  ["Malte Fischer", "Train Driver"],
+  ["Ada Kowalska", "Night Nurse"],
+  ["Marco Bellini", "Spanish Inspector"],
 ]
 poster = "lisbon-rain"
 focus = 0.4
@@ -198,12 +237,16 @@ tagline = "One boat. One summer."
 plot = """
 An old fisherman repaints his boat for the last time before his grandson
 takes it over. A short film about handing things on.
+Shot in a single summer on the island of Euboea.
+A drama told with great warmth and a lot of patience.
 """
 directors = ["Eleni Doukas"]
 writers = ["Eleni Doukas"]
 cast = [
   ["Nikos Arvanitis", "Stavros"],
   ["Leo Marangos", "Yannis"],
+  ["Marco Bellini", "Fish Merchant"],
+  ["Zoe Lambert", "Tourist"],
 ]
 poster = "red-boat"
 focus = 0.6
@@ -227,12 +270,17 @@ plot = """
 In a small fishing town on the North Sea, harbour master Rosa Quinn keeps
 the boats, the books and the town's secrets in order, until a trawler comes
 back to port with nobody on board.
+As Rosa digs into the case, old loyalties start to crack. Everyone in town has something to lose.
 """
 cast = [
   ["Nadia Kerr", "Rosa Quinn"],
   ["Daniel Okafor", "Sergeant Tom Elliot"],
   ["Elin Strand", "Freya Lund"],
   ["Oskar Brandt", "Old Hendry"],
+  ["Samuel Achterberg", "Captain Jack Morrow"],
+  ["Leah Moreno", "Dr. Anna Shaw"],
+  ["Kenji Ota", "Ben Hale"],
+  ["Zoe Lambert", "Kitty Quinn"],
 ]
 poster = "pier-sunset"
 focus = 0.5
@@ -241,6 +289,14 @@ style = "serif"
 accent = "#ffc36b"
 video = "1080p25"
 tracks = "series"
+footage = [
+  { clip = "boat-fog", start = 0, length = 30 },
+  { clip = "harbour-aerial", start = 0, length = 37 },
+  { clip = "bay-dusk", start = 0, length = 15 },
+  { clip = "surf-coast", start = 300, length = 120 },
+  { clip = "sea-waves", start = 0, length = 21 },
+  { clip = "surf-rocks", start = 10, length = 50 },
+]
 
 [[show.season]]
 number = 1
@@ -282,6 +338,8 @@ plot = """
 A photographer who only shoots in the last light of the day returns to the
 island where she grew up, and finds the boy she left behind running the
 ferry.
+Over one long summer, they find out that some things cannot be photographed twice.
+A tender love story about second chances and the moments we almost miss.
 """
 directors = ["Mara Lindqvist"]
 writers = ["Sofie Brandt"]
@@ -289,6 +347,9 @@ cast = [
   ["Ingrid Vale", "Maja"],
   ["Tomas Berge", "Anders"],
   ["Leah Moreno", "Kit"],
+  ["Jakob Lund", "Ferry Captain"],
+  ["Priya Raman", "Gallery Owner"],
+  ["Oskar Brandt", "Maja's Father"],
 ]
 poster = "silhouette-woman"
 focus = 0.42
@@ -313,12 +374,17 @@ tagline = "Follow the tracks."
 plot = """
 A sheepdog and a young fox are snowed in on the same farm. To get home
 before the thaw, they will have to cross the frozen lake together.
+The ice is thin, the nights are long, and neither of them has ever had a friend before.
+A story for everyone who has ever believed in a little magic.
 """
 directors = ["Kira Holtz"]
 writers = ["Ben Albrecht"]
 cast = [
   ["Oskar Brandt", "Moss (voice)"],
   ["Mila Sorensen", "Ember (voice)"],
+  ["Clara Weiss", "The Farmer (voice)"],
+  ["Kenji Ota", "Old Owl (voice)"],
+  ["Freya Holm", "Snow Hare (voice)"],
 ]
 poster = "fox"
 focus = 0.82
@@ -341,6 +407,8 @@ tagline = "The coast is as far as he goes."
 plot = """
 An ageing rider sets out to deliver one last horse to the Pacific coast,
 with a debt collector two days behind him and a stowaway in the wagon.
+On the long road through the mountains, the horse turns out to be the least of his problems.
+A classic western about dust, honour and the long road home.
 """
 directors = ["Paul Ferreira"]
 writers = ["Paul Ferreira", "Ruth Calloway"]
@@ -348,6 +416,9 @@ cast = [
   ["Samuel Achterberg", "Wade Calder"],
   ["Johanna Keller", "Hattie"],
   ["Ahmet Yilmaz", "The Collector"],
+  ["Rafael Ortega", "Sheriff"],
+  ["Nadia Kerr", "Saloon Owner"],
+  ["Tomas Berge", "Old Prospector"],
 ]
 poster = "horse-rider"
 focus = 0.55
@@ -371,6 +442,7 @@ plot = """
 Clearing out her grandmother's house, a young woman finds a box of letters
 that were never sent, all addressed to the same name, and sets out to find
 out who Ingrid was.
+The search takes her across two countries and into a love story nobody in the family ever told.
 """
 directors = ["Lukas Reinholt"]
 writers = ["Miriam Sandberg"]
@@ -378,6 +450,9 @@ cast = [
   ["Sanna Moe", "Clara"],
   ["Ingrid Vale", "Grandmother"],
   ["Daniel Okafor", "Postman"],
+  ["Freya Holm", "Young Ingrid"],
+  ["Jakob Lund", "Young Sven"],
+  ["Clara Weiss", "Clara's Mother"],
 ]
 poster = "elderly-woman"
 focus = 0.5
@@ -401,6 +476,8 @@ tagline = "Three nights. One crowd."
 plot = """
 The open-air festival at the river, filmed over three nights: the bands,
 the crowd and the long walk home at sunrise.
+With twelve bands, two stages and the voices of the people who come back every year.
+Warm, curious and full of moments you will want to share.
 """
 directors = ["Eleni Doukas"]
 poster = "crowd"
@@ -425,6 +502,8 @@ collection = "Animal Tales"
 plot = """
 Six close looks at the animals we walk past every day, filmed over two
 years in gardens, ponds and the edges of forests.
+Narrated with warmth and humour, the series shows how much happens right outside our doors.
+Warm, curious and full of moments you will want to share.
 """
 cast = [["Margaret Hale", "Narrator"]]
 poster = "butterfly"
@@ -434,6 +513,14 @@ style = "sans"
 accent = "#ffd43b"
 video = "2160p-hdr"
 tracks = "documentary"
+footage = [
+  { clip = "bees", start = 0, length = 100 },
+  { clip = "bee-hibiscus", start = 0, length = 60 },
+  { clip = "bears", start = 0, length = 21 },
+  { clip = "elk", start = 0, length = 60 },
+  { clip = "fox-snow", start = 0, length = 39 },
+  { clip = "moose-fog", start = 0, length = 45 },
+]
 
 [[show.season]]
 number = 1
@@ -463,12 +550,15 @@ plot = """
 Pepper, a young witch of the chaotic school of Chaosah, and her cat Carrot
 try to get through their training without blowing up the house. After the
 webcomic by David Revoy.
+Every episode is a small adventure full of magic, mistakes and a very hungry cat.
 """
 cast = [
   ["Aoi Takeda", "Pepper (voice)"],
   ["Yuki Sato", "Shichimi (voice)"],
   ["Haru Ishida", "Saffron (voice)"],
   ["Ren Mori", "Coriander (voice)"],
+  ["Sora Fujii", "Cayenne (voice)"],
+  ["Mei Arai", "Thyme (voice)"],
 ]
 poster = "pc-cover"
 focus = 0.5
@@ -509,13 +599,18 @@ collection = "Blender Open Movies"
 plot = """
 A big, gentle rabbit has had enough of the three rodents who bully the
 small animals of his meadow, and plans his revenge.
+A short film about patience, revenge and a very large rabbit who would rather just eat his apple.
+Funny, colourful and full of heart, for viewers of every age.
 """
 directors = ["Sacha Goedegebure"]
 poster = "bbb-poster"
 plain_poster = true
 backdrop = "bbb-meadow"
 style = "soft"
-files = [{ video = "1080p", tracks = "open-movie" }]
+[movie.film]
+source = "bbb"
+audio = [{ lang = "eng", title = "English 5.1", default = true, original = true }]
+chapters = [[0, "Intro"], [33, "Meadow"], [180, "Revenge"], [487, "Credits"], [578, "After the Credits"]]
 
 [[movie]]
 title = "Sintel"
@@ -528,6 +623,8 @@ collection = "Blender Open Movies"
 plot = """
 A young woman crosses a harsh land in search of the baby dragon she once
 nursed back to health.
+On her way she faces guards, storms and a monster far older than her. What she finds at the end is not what she expected.
+A warm animated adventure for the whole family.
 """
 directors = ["Colin Levy"]
 poster = "sintel-dragon"
@@ -535,7 +632,20 @@ focus = 0.45
 backdrop = "sintel-dragon"
 style = "serif"
 accent = "#e8c9a0"
-files = [{ video = "1080p", tracks = "open-movie" }]
+[movie.film]
+source = "sintel"
+audio = [{ lang = "eng", title = "English 5.1", default = true, original = true }]
+# Index: the film's own subtitle streams; source: a file from sources.toml.
+subtitles = [
+  { index = 1, lang = "eng", title = "English" }, { index = 0, lang = "ger", title = "Deutsch" },
+  { index = 2, lang = "spa", title = "Español" }, { index = 3, lang = "fre", title = "Français" },
+  { index = 4, lang = "ita", title = "Italiano" }, { index = 5, lang = "dut", title = "Nederlands" },
+  { index = 6, lang = "pol", title = "Polski" }, { index = 7, lang = "por", title = "Português" },
+  { index = 8, lang = "rus", title = "Русский" }, { index = 9, lang = "vie", title = "Tiếng Việt" },
+  { source = "sintel-sub-ko", lang = "kor", title = "한국어" }, { source = "sintel-sub-he", charset = "cp1255", lang = "heb", title = "עברית" },
+]
+chapters = [[0, "Prologue"], [103, "The Baby Dragon"], [149, "Scales"], [350, "The Journey"], [437, "The Snow"],
+            [472, "The Lair"], [679, "Recognition"], [744, "Credits"]]
 
 [[movie]]
 title = "Tears of Steel"
@@ -548,6 +658,8 @@ collection = "Blender Open Movies"
 plot = """
 In a future Amsterdam, a group of scientists and warriors make a last stand
 against the robots, and try to fix a breakup from years ago.
+Shot in Amsterdam with real actors and a lot of visual effects, by a small team in a few months.
+A thoughtful science fiction story about what it means to be human.
 """
 directors = ["Ian Hubert"]
 poster = "tears-of-steel"
@@ -555,7 +667,21 @@ focus = 0.5
 backdrop = "tears-of-steel"
 style = "display"
 accent = "#9cc9e8"
-files = [{ video = "1080p", tracks = "open-movie" }]
+[movie.film]
+source = "tos"
+audio = [
+  { source = "tos-surround", lang = "eng", title = "English 5.1", default = true, original = true },
+  { index = 0, lang = "eng", title = "English Stereo" },
+]
+subtitles = [
+  { source = "tos-sub-en", lang = "eng", title = "English" }, { source = "tos-sub-de", lang = "ger", title = "Deutsch" },
+  { source = "tos-sub-fr-orig", lang = "fre", title = "Français" }, { source = "tos-sub-es", lang = "spa", title = "Español" },
+  { source = "tos-sub-it", lang = "ita", title = "Italiano" }, { source = "tos-sub-nl", lang = "dut", title = "Nederlands" },
+  { source = "tos-sub-pt-br", lang = "por", title = "Português (Brasil)" },
+  { source = "tos-sub-ru", lang = "rus", title = "Русский" },
+  { source = "tos-sub-jp", lang = "jpn", title = "日本語" }, { source = "tos-sub-he", lang = "heb", title = "עברית" },
+]
+chapters = [[0, "Amsterdam"], [64, "Intro"], [72, "The Last Stand"], [300, "Celia"], [655, "Credits"], [708, "After the Credits"]]
 
 [[movie]]
 title = "Cosmos Laundromat"
@@ -568,6 +694,8 @@ collection = "Blender Open Movies"
 plot = """
 On a desolate island, a sheep who has had enough of life meets a salesman
 who offers him every life there is.
+But every new life comes with a price, and the salesman is not who he seems.
+Funny, colourful and full of heart, for viewers of every age.
 """
 directors = ["Mathieu Auvray"]
 poster = "cosmos-laundromat"
@@ -588,6 +716,8 @@ collection = "Blender Open Movies"
 plot = """
 A shepherd girl and her dog face the ancient spirits of the mountain to
 keep the cycle of life going.
+A short animated film about growing up, letting go and the dog that never leaves her side.
+A warm animated adventure for the whole family.
 """
 directors = ["Andy Goralczyk"]
 poster = "spring-house"
@@ -608,6 +738,8 @@ collection = "Blender Open Movies"
 plot = """
 A group of teenagers on a trip to the woods meet the small mushroom folk
 who live there, and the folk do not like litter.
+What starts as a party in the forest soon turns into a fight for survival. A horror comedy for all ages.
+Quiet, eerie and very hard to forget.
 """
 directors = ["Matthew Luhn", "Hjalti Hjálmarsson"]
 poster = "sprite-fright-poster"
@@ -628,104 +760,104 @@ files = [{ video = "1080p", tracks = "open-movie" }]
 
 [fillers]
 films = [
-  ["7 Days in Lisbon", 2017, 96, "FSK-6", "Romance/Comedy", "lisbon-rain", 0.7, "A translator stuck in Lisbon for a week agrees to show a stranger the city, one day at a time."],
-  ["1000 Lanterns", 2021, 109, "FSK-12", "Drama", "lanterns", 0.3, "A lantern maker's daughter has one festival to save the family workshop."],
-  ["21 Winters", 2014, 128, "FSK-12", "Drama", "snowy-forest", 0.3, "Twenty-one winters in the life of a forester and the valley he never leaves."],
-  ["Above the Tide", 2019, 101, "FSK-6", "Drama/Sport", "surfer", 0.5, "A surfer recovering from an injury trains for one last big-wave contest."],
-  ["After the Rain", 2016, 94, "FSK-12", "Drama", "rain-window", 0.5, "Two strangers share a taxi in a downpour and keep missing each other afterwards."],
-  ["Aurora", 2023, 118, "FSK-12", "Science Fiction", "aurora", 0.5, "When the northern lights stop moving, a research station on Lofoten is the first to notice."],
-  ["Ashes of Summer", 2012, 112, "FSK-16", "Thriller", "volcano", 0.4, "A geologist on a volcanic island finds out the evacuation was never meant to include her."],
-  ["Atlas of Small Things", 2020, 88, "FSK-0", "Documentary", "library-books", 0.6, "A tour of the world's oddest museums, from buttons to bus tickets."],
-  ["Blue Hour", 2018, 99, "FSK-12", "Drama", "bridge-fog", 0.3, "A night nurse and a baker meet every morning on the same bridge, at the same minute."],
-  ["Brass and Bone", 2015, 121, "FSK-16", "Crime", "abandoned-building", 0.6, "A detective returns to the factory town she left and the case that made her leave."],
-  ["Broken Compass", 2022, 107, "FSK-12", "Adventure", "desert-dunes", 0.5, "Two brothers cross the desert with their late father's map and a compass that points the wrong way."],
-  ["Bazaar", 2019, 93, "FSK-12", "Thriller", "crowded-market", 0.4, "One night in the night market, a stolen phone and twelve people who want it back."],
-  ["Before the Whistle", 2021, 104, "FSK-6", "Sport/Drama", "marathon-runners", 0.4, "A retired runner coaches a team of amateurs for the city marathon."],
-  ["Canyon Road", 2013, 115, "FSK-16", "Thriller/Western", "canyon", 0.5, "A tour guide leads the wrong group of tourists into the slot canyons."],
-  ["Carousel", 2017, 92, "FSK-6", "Comedy/Romance", "carnival-ferris-wheel", 0.7, "The funfair comes to town for one summer, and so does the operator's estranged son."],
-  ["Cold Harbour", 2020, 110, "FSK-16", "Crime", "trawlers", 0.3, "A customs officer starts asking why one trawler always comes back lighter."],
-  ["Crossing Lines", 2023, 98, "FSK-12", "Drama", "people-walking-city", 0.5, "Two friends spend their last day in Nice before one of them moves abroad."],
-  ["Concerto for a Stranger", 2016, 113, "FSK-6", "Drama/Music", "violin", 0.5, "A violinist plays every night for a neighbour she has never seen."],
-  ["City of Glass", 2024, 126, "FSK-12", "Science Fiction", "skyscraper", 0.5, "In a city of towers, a window cleaner sees something on the hundredth floor."],
-  ["Deep Water", 2018, 97, "FSK-12", "Thriller", "jellyfish", 0.5, "An aquarium keeper notices the jellyfish arranging themselves into words."],
-  ["Desert Bloom", 2021, 103, "FSK-6", "Drama", "desert-dunes", 0.2, "A botanist waits a whole year in the desert for a rain that comes once a decade."],
-  ["Dust and Diamonds", 2011, 119, "FSK-16", "Western", "horse-field", 0.3, "A horse trader and a gambler share a claim that turns out to be worth something."],
-  ["Downpour", 2022, 91, "FSK-12", "Thriller", "crowd-street", 0.5, "A crowd waiting out the rain hides a pickpocket, a detective and a witness."],
-  ["Dear Neighbour", 2019, 95, "FSK-0", "Comedy", "cat", 0.4, "Two feuding neighbours share a cat without knowing it."],
-  ["Echoes", 2015, 108, "FSK-12", "Mystery", "foggy-forest", 0.3, "A sound recordist hears voices in the forest that are not on her tapes."],
-  ["Edge of the Map", 2020, 116, "FSK-12", "Adventure", "glacier-alaska", 0.2, "A cartographer sets out to map the last glacier valley nobody has charted."],
-  ["Evening Train", 2012, 100, "FSK-6", "Romance", "train-station-people", 0.4, "The same two commuters, the same evening train, ten years of almost talking."],
-  ["Fast Lane", 2019, 106, "FSK-12", "Action", "highway-night", 0.3, "A courier has one night to cross the city with a package nobody will name."],
-  ["Festival", 2023, 89, "FSK-12", "Comedy/Music", "festival-crowd", 0.5, "Four friends, one tent and a weekend festival that goes wrong from the first gate."],
-  ["First Light", 2017, 102, "FSK-6", "Drama", "sunset-watcher", 0.3, "A man waits every morning on the beach for a boat that should have come back."],
-  ["Flood Season", 2021, 117, "FSK-12", "Drama", "stormy-sea", 0.6, "A coastal village decides whether to stay when the sea comes in for good."],
-  ["Frozen Line", 2014, 111, "FSK-16", "Thriller", "snowy-forest", 0.8, "Snowed in at a border post, three guards find tracks that lead only in one direction."],
-  ["Grand Hotel Neon", 2022, 105, "FSK-12", "Comedy/Crime", "neon-street", 0.4, "A night porter in a tired hotel finds a fortune in room 404."],
-  ["Ghost Light", 2016, 98, "FSK-16", "Horror", "abandoned-building", 0.8, "A demolition crew spends one last night in an old mill that does not want to come down."],
-  ["Gravity of Stars", 2025, 131, "FSK-12", "Science Fiction", "starry-sky", 0.5, "An astronomer receives a signal that repeats her own childhood address."],
-  ["Half Past Midnight", 2018, 97, "FSK-16", "Thriller", "rain-window", 0.3, "A radio host takes a call that says a crime will happen at half past midnight."],
-  ["Headlights", 2015, 94, "FSK-12", "Crime", "highway-night", 0.8, "A truck driver picks up a hitchhiker who knows too much about her route."],
-  ["High Water", 2023, 109, "FSK-12", "Drama", "waterfall", 0.5, "A dam keeper has one night to decide whose valley floods."],
-  ["Home Before Dark", 2020, 90, "FSK-6", "Family", "forest-road", 0.5, "Two children cycle home through the forest and take the long way by mistake."],
-  ["Hush", 2019, 86, "FSK-16", "Horror", "owl", 0.5, "In a village where nobody may speak after dark, a girl hears someone answer."],
-  ["Hearts on the Shore", 2016, 104, "FSK-0", "Romance", "couple-beach-silhouette", 0.4, "A couple meets on the same beach every summer for forty years."],
-  ["Iron Coast", 2013, 123, "FSK-16", "War/Drama", "harbor-night", 0.6, "A harbour town in 1944 hides a radio, a pilot and a secret."],
-  ["Island Time", 2022, 92, "FSK-0", "Comedy", "people-beach", 0.5, "A workaholic is stranded on a holiday island where nobody owns a clock."],
-  ["Jellyfish Summer", 2021, 95, "FSK-6", "Comedy/Drama", "jellyfish", 0.3, "A summer job at the aquarium turns into the strangest summer of a teenager's life."],
-  ["Just One Song", 2018, 101, "FSK-0", "Music/Romance", "piano", 0.5, "A pianist in a hotel bar plays one song a night for a woman who never stays."],
-  ["King of the Savannah", 2017, 87, "FSK-6", "Family/Adventure", "lion", 0.4, "A young lion who would rather sleep has to defend the pride."],
-  ["Keepers", 2024, 112, "FSK-12", "Mystery", "castle", 0.7, "The last caretakers of a mountain castle find a room that is not on any plan."],
-  ["Lantern Festival", 2020, 99, "FSK-6", "Romance", "lanterns", 0.8, "Two rival lantern makers fall in love during the town's biggest festival."],
-  ["Long Way Down", 2016, 108, "FSK-16", "Thriller", "skyscraper", 0.2, "An elevator stops on the sixtieth floor with five strangers and one liar inside."],
-  ["Lost in the Fog", 2012, 93, "FSK-12", "Mystery", "bridge-fog", 0.8, "A ferry crosses the bay in thick fog and arrives with one passenger too many."],
-  ["Last Orders", 2019, 97, "FSK-12", "Comedy/Drama", "audience", 0.5, "A pub band plays its farewell gig while the landlord plans to sell."],
-  ["Lion Heart", 2022, 100, "FSK-6", "Family", "lion", 0.7, "A girl and an old circus lion run away together to find the savannah."],
-  ["Midnight Market", 2021, 102, "FSK-12", "Crime", "crowded-market", 0.8, "A food stall owner gets caught between two gangs who both like her soup."],
-  ["Moonrise Lake", 2018, 106, "FSK-6", "Drama", "mountain-lake", 0.5, "A family spends one last summer in the lake house before it is sold."],
-  ["Morning Run", 2023, 89, "FSK-0", "Comedy/Sport", "marathon-runners", 0.8, "A lazy accountant signs up for a marathon to impress his daughter."],
-  ["Mountain Kings", 2015, 114, "FSK-12", "Adventure", "castle", 0.3, "Three climbers attempt the north face in the winter nobody else would."],
-  ["Murmur", 2020, 95, "FSK-16", "Horror", "foggy-forest", 0.8, "A family moves to the edge of a forest that whispers at night."],
-  ["Music Box", 2017, 98, "FSK-6", "Drama/Music", "piano", 0.2, "A piano tuner finds a melody hidden in every instrument she repairs."],
-  ["Mirage", 2024, 104, "FSK-12", "Thriller", "desert-dunes", 0.6, "A pilot who crash-landed in the desert keeps seeing the same town on the horizon."],
-  ["Neon Nights", 2019, 101, "FSK-16", "Crime", "neon-street", 0.8, "A taxi driver in a city that never sleeps has one fare that never pays."],
-  ["North of Nowhere", 2016, 118, "FSK-12", "Drama", "aurora", 0.8, "A postman delivers to the last houses before the Arctic and the people waiting there."],
-  ["Nightfall", 2022, 96, "FSK-16", "Horror", "owl", 0.7, "Every night at the same hour, the owls in the village fall silent."],
-  ["Northbound", 2013, 109, "FSK-12", "Drama", "old-train", 0.4, "A retired train driver takes his grandson on the old line before it closes."],
-  ["One Last Wave", 2020, 97, "FSK-6", "Sport/Drama", "surfer", 0.7, "Three old friends meet for the swell of the decade."],
-  ["Open Water", 2017, 92, "FSK-12", "Thriller", "whale", 0.5, "A whale-watching boat drifts too far out, and the radio is dead."],
-  ["Orchestra", 2023, 123, "FSK-0", "Documentary/Music", "concert-crowd", 0.5, "A year with a youth orchestra on its way to its first big hall."],
-  ["Paper Planes", 2018, 91, "FSK-0", "Family", "bicycle-street", 0.5, "A boy sends paper planes from his window and gets an answer."],
-  ["Pale Blue", 2021, 110, "FSK-12", "Science Fiction", "starry-sky", 0.8, "Six months on a station at the edge of the solar system, and one message from home."],
-  ["Pilgrims", 2015, 120, "FSK-12", "Drama", "canyon", 0.7, "Strangers walking an old pilgrim route through the canyons find out why the others came."],
-  ["Quiet Streets", 2020, 94, "FSK-12", "Drama", "rain-window", 0.8, "A city in lockdown, seen from one window by a woman who starts to notice everything."],
-  ["Rainmaker", 2014, 107, "FSK-12", "Drama", "crowd-street", 0.8, "A weather forecaster who is always wrong is suddenly always right."],
-  ["Red Line", 2022, 103, "FSK-16", "Action", "train-station-people", 0.7, "A subway train is taken over between two stations."],
-  ["River Song", 2019, 99, "FSK-0", "Family", "waterfall", 0.3, "Three children follow the river to find where it starts."],
-  ["Runaway Summer", 2016, 95, "FSK-6", "Comedy", "people-beach", 0.8, "Two sisters run away to the seaside, followed by their entire family."],
-  ["Saltwater", 2018, 112, "FSK-12", "Drama", "whale", 0.3, "A marine biologist returns to the island where her mother disappeared at sea."],
-  ["Second Act", 2021, 98, "FSK-0", "Comedy", "audience", 0.7, "A retired actor joins an amateur theatre that badly needs him."],
-  ["Silent Peaks", 2014, 115, "FSK-12", "Adventure", "mountain-lake", 0.8, "A mountain guide leads a group who all lied about why they came."],
-  ["Skyline", 2023, 106, "FSK-12", "Action", "skyscraper", 0.85, "A window cleaner becomes the only witness to a heist in a tower."],
-  ["Snowbound", 2012, 99, "FSK-12", "Thriller", "dog-snow", 0.2, "A sled dog and its owner are cut off by the storm of the century."],
-  ["Strangers on a Shore", 2017, 101, "FSK-6", "Romance", "couple-beach-silhouette", 0.7, "Two people who came to the coast to be alone keep meeting."],
-  ["The Typewriter", 2016, 97, "FSK-6", "Drama", "vintage-typewriter", 0.5, "A writer buys an old typewriter that finishes her sentences."],
-  ["Tidewater", 2019, 108, "FSK-12", "Drama", "pier-sunset", 0.3, "A fisherman's widow keeps the pier open for one more season."],
-  ["Two Wheels", 2022, 89, "FSK-0", "Comedy", "bicycle-street", 0.7, "A stolen bicycle passes through ten owners in one week."],
-  ["Thunder Road", 2015, 104, "FSK-16", "Action", "highway-night", 0.5, "A getaway driver's last job goes wrong at the first traffic light."],
-  ["The Tower", 2024, 117, "FSK-12", "Thriller", "abandoned-building", 0.4, "A group of urban explorers spend a night in the tower that was never finished."],
-  ["Upstream", 2021, 93, "FSK-6", "Adventure", "waterfall", 0.7, "A canoe trip up the river turns into a search for a missing guide."],
-  ["Velvet Night", 2018, 100, "FSK-16", "Crime/Music", "concert-crowd", 0.3, "A club singer witnesses a deal she was never supposed to see."],
-  ["Volcano Island", 2023, 106, "FSK-12", "Adventure", "volcano", 0.7, "A film crew lands on an island just as the volcano wakes up."],
-  ["Vanguard", 2016, 134, "FSK-12", "Action/Superhero", "skyscraper", 0.6, "A bridge engineer discovers she can bend steel with her mind, the day the city needs it."],
-  ["Vanguard: Fallout", 2019, 141, "FSK-12", "Action/Superhero", "highway-night", 0.15, "The city has a hero and a new enemy who learned from her mistakes."],
-  ["Vanguard: Last Stand", 2023, 152, "FSK-12", "Action/Superhero", "abandoned-building", 0.2, "The last of the Vanguard face the machine that built them."],
-  ["Whale Song", 2019, 88, "FSK-0", "Documentary", "whale", 0.6, "A year following one humpback family across the North Atlantic."],
-  ["Wild Horses", 2016, 109, "FSK-12", "Western", "horse-field", 0.7, "A rancher's daughter sets free the herd her father meant to sell."],
-  ["Wanderers", 2022, 113, "FSK-12", "Drama", "people-walking-city", 0.6, "Two drifters walk the length of the coast, one town a day."],
-  ["White Out", 2014, 98, "FSK-16", "Thriller", "glacier-alaska", 0.8, "A research team on the ice loses contact with base, and then with each other."],
-  ["Where the Road Ends", 2021, 104, "FSK-12", "Drama", "forest-road", 0.6, "A woman drives to the end of a forest road to deliver a letter thirty years late."],
-  ["Year of the Fox", 2020, 95, "FSK-6", "Family", "fox-meadow", 0.5, "A girl spends a year watching a fox family from her bedroom window."],
-  ["Zero Hour", 2017, 99, "FSK-16", "Action/Thriller", "neon-street", 0.2, "A bomb disposal expert has until midnight and a city that will not stop."],
+  ["7 Days in Lisbon", 2017, 96, "FSK-6", "Romance/Comedy", "lisbon-rain", 0.7, "A translator stuck in Lisbon for a week agrees to show a stranger the city, one day at a time. Day by day they get closer, and the city keeps throwing surprises at them. On the seventh day, the ferry is finally running again. A warm and funny film about people who are a little lost."],
+  ["1000 Lanterns", 2021, 109, "FSK-12", "Drama", "lanterns", 0.3, "A lantern maker's daughter has one festival to save the family workshop. Her father is ill, the orders have stopped, and a big company wants the building. She has one night to show what the old workshop can do. A quiet, moving drama about the people we leave behind and the ones who wait for us."],
+  ["21 Winters", 2014, 128, "FSK-12", "Drama", "snowy-forest", 0.3, "Twenty-one winters in the life of a forester and the valley he never leaves. We see him fall in love, lose a brother, plant a forest and grow old. A quiet film about time and the places that shape us. A drama told with great warmth and a lot of patience."],
+  ["Above the Tide", 2019, 101, "FSK-6", "Drama/Sport", "surfer", 0.5, "A surfer recovering from an injury trains for one last big-wave contest. Her coach has given up on her, and her body is not what it was. But the ocean does not care about any of that. Sweat, friendship and a few small miracles."],
+  ["After the Rain", 2016, 94, "FSK-12", "Drama", "rain-window", 0.5, "Two strangers share a taxi in a downpour and keep missing each other afterwards. Every time they almost meet again, something gets in the way. A romantic comedy about timing, umbrellas and bad luck. A drama told with great warmth and a lot of patience."],
+  ["Aurora", 2023, 118, "FSK-12", "Science Fiction", "aurora", 0.5, "When the northern lights stop moving, a research station on Lofoten is the first to notice. Then the satellites go dark one by one. Two scientists and a fisherman are the only ones who understand what is coming. A thoughtful science fiction story about what it means to be human."],
+  ["Ashes of Summer", 2012, 112, "FSK-16", "Thriller", "volcano", 0.4, "A geologist on a volcanic island finds out the evacuation was never meant to include her. With the ash falling and the boats gone, she has to cross the island on foot. The only person who can help her is the man she reported to the police. Gripping, clever and full of twists you will not see coming."],
+  ["Atlas of Small Things", 2020, 88, "FSK-0", "Documentary", "library-books", 0.6, "A tour of the world's oddest museums, from buttons to bus tickets. Each museum has a keeper with a story. Together they make a funny and moving portrait of people who cannot throw anything away. A beautifully filmed documentary that changes how you see the world."],
+  ["Blue Hour", 2018, 99, "FSK-12", "Drama", "bridge-fog", 0.3, "A night nurse and a baker meet every morning on the same bridge, at the same minute. They never speak, but they start leaving notes. When one morning she does not come, he sets out to find her. A drama told with great warmth and a lot of patience."],
+  ["Brass and Bone", 2015, 121, "FSK-16", "Crime", "abandoned-building", 0.6, "A detective returns to the factory town she left and the case that made her leave. The factory is closed, but the families still run the town. Every door she knocks on leads back to the night her sister disappeared. A dark and stylish crime story about loyalty, guilt and the price of the truth."],
+  ["Broken Compass", 2022, 107, "FSK-12", "Adventure", "desert-dunes", 0.5, "Two brothers cross the desert with their late father's map and a compass that points the wrong way. They have not spoken in years. Out in the sand, with water running low, they have no choice but to talk. An honest and touching film about family, loss and hope."],
+  ["Bazaar", 2019, 93, "FSK-12", "Thriller", "crowded-market", 0.4, "One night in the night market, a stolen phone and twelve people who want it back. Each of them has a reason to want it, and only one of them knows what is on it. By dawn, the market will look very different. A tense thriller that keeps you guessing until the very last minute."],
+  ["Before the Whistle", 2021, 104, "FSK-6", "Sport/Drama", "marathon-runners", 0.4, "A retired runner coaches a team of amateurs for the city marathon. His runners include a baker, a bus driver and a teenager who never finishes anything. Race day is twelve weeks away. An uplifting story about never giving up, even when the finish line is far away."],
+  ["Canyon Road", 2013, 115, "FSK-16", "Thriller/Western", "canyon", 0.5, "A tour guide leads the wrong group of tourists into the slot canyons. The group is not there for the views. When the storm closes the road behind them, the guide realises she is their hostage. Wide landscapes, hard choices and a showdown nobody wants."],
+  ["Carousel", 2017, 92, "FSK-6", "Comedy/Romance", "carnival-ferris-wheel", 0.7, "The funfair comes to town for one summer, and so does the operator's estranged son. He wants to sell the old rides. She wants to keep them. The town is about to choose a side. A warm and funny film about people who are a little lost."],
+  ["Cold Harbour", 2020, 110, "FSK-16", "Crime", "trawlers", 0.3, "A customs officer starts asking why one trawler always comes back lighter. Nobody in the harbour wants to talk. The deeper she digs, the closer she gets to her own family. A dark and stylish crime story about loyalty, guilt and the price of the truth."],
+  ["Crossing Lines", 2023, 98, "FSK-12", "Drama", "people-walking-city", 0.5, "Two friends spend their last day in Nice before one of them moves abroad. They walk the city from sunrise to midnight. Old jokes, old fights and a secret one of them has kept for years. A quiet, moving drama about the people we leave behind and the ones who wait for us."],
+  ["Concerto for a Stranger", 2016, 113, "FSK-6", "Drama/Music", "violin", 0.5, "A violinist plays every night for a neighbour she has never seen. The neighbour answers with knocks on the wall. Slowly the music turns into a conversation neither of them can do without. A film that sounds as good as it looks."],
+  ["City of Glass", 2024, 126, "FSK-12", "Science Fiction", "skyscraper", 0.5, "In a city of towers, a window cleaner sees something on the hundredth floor. Nobody believes him, and the company that owns the tower would rather he forgot. He climbs back up to find proof. A thoughtful science fiction story about what it means to be human."],
+  ["Deep Water", 2018, 97, "FSK-12", "Thriller", "jellyfish", 0.5, "An aquarium keeper notices the jellyfish arranging themselves into words. Her colleagues think she is overworked. Then the messages start predicting things that come true. A tense thriller that keeps you guessing until the very last minute."],
+  ["Desert Bloom", 2021, 103, "FSK-6", "Drama", "desert-dunes", 0.2, "A botanist waits a whole year in the desert for a rain that comes once a decade. Her only company is an old shepherd and his goats. When the rain finally comes, the desert changes in a single night. A quiet, moving drama about the people we leave behind and the ones who wait for us."],
+  ["Dust and Diamonds", 2011, 119, "FSK-16", "Western", "horse-field", 0.3, "A horse trader and a gambler share a claim that turns out to be worth something. Neither of them trusts the other, and half the territory wants their claim. They will have to work together to keep it. Wide landscapes, hard choices and a showdown nobody wants."],
+  ["Downpour", 2022, 91, "FSK-12", "Thriller", "crowd-street", 0.5, "A crowd waiting out the rain hides a pickpocket, a detective and a witness. For one hour under a shop awning, everyone is a suspect. The rain is not going to stop any time soon. A tense thriller that keeps you guessing until the very last minute."],
+  ["Dear Neighbour", 2019, 95, "FSK-0", "Comedy", "cat", 0.4, "Two feuding neighbours share a cat without knowing it. Both of them feed it, name it and take it to the vet. When the cat goes missing, they finally have to talk. A feel-good comedy with a big heart and a lot of awkward moments."],
+  ["Echoes", 2015, 108, "FSK-12", "Mystery", "foggy-forest", 0.3, "A sound recordist hears voices in the forest that are not on her tapes. The recordings come from a village that was flooded fifty years ago. Someone wants her to hear what happened there. A puzzle of a film, with every clue hiding in plain sight."],
+  ["Edge of the Map", 2020, 116, "FSK-12", "Adventure", "glacier-alaska", 0.2, "A cartographer sets out to map the last glacier valley nobody has charted. Her team is small, the season is short and the ice is moving faster than anyone predicted. An honest and touching film about family, loss and hope."],
+  ["Evening Train", 2012, 100, "FSK-6", "Romance", "train-station-people", 0.4, "The same two commuters, the same evening train, ten years of almost talking. One evening the train stops in the middle of nowhere. For two hours, they have nothing to do but finally talk. Romantic, bittersweet and beautifully told."],
+  ["Fast Lane", 2019, 106, "FSK-12", "Action", "highway-night", 0.3, "A courier has one night to cross the city with a package nobody will name. Every gang in the city seems to want it. He has six hours, a scooter and a phone at three percent. An action film that hardly stops for breath."],
+  ["Festival", 2023, 89, "FSK-12", "Comedy/Music", "festival-crowd", 0.5, "Four friends, one tent and a weekend festival that goes wrong from the first gate. They lose the car, the tickets and each other. By Sunday night, the friendship is the only thing left to save. A feel-good comedy with a big heart and a lot of awkward moments."],
+  ["First Light", 2017, 102, "FSK-6", "Drama", "sunset-watcher", 0.3, "A man waits every morning on the beach for a boat that should have come back. Everyone in the village has stopped waiting except him. One summer, a stranger comes to wait with him. A drama told with great warmth and a lot of patience."],
+  ["Flood Season", 2021, 117, "FSK-12", "Drama", "stormy-sea", 0.6, "A coastal village decides whether to stay when the sea comes in for good. Some want to build a wall, some want to leave, and some want to stay no matter what. A family drama about home. A drama told with great warmth and a lot of patience."],
+  ["Frozen Line", 2014, 111, "FSK-16", "Thriller", "snowy-forest", 0.8, "Snowed in at a border post, three guards find tracks that lead only in one direction. Their radio is dead and the next post is two days away. Somewhere in the forest, someone is watching them. Gripping, clever and full of twists you will not see coming."],
+  ["Grand Hotel Neon", 2022, 105, "FSK-12", "Comedy/Crime", "neon-street", 0.4, "A night porter in a tired hotel finds a fortune in room 404. The guests in the hotel all want a piece of it. So does the owner, and so do two very polite gangsters. A dark and stylish crime story about loyalty, guilt and the price of the truth."],
+  ["Ghost Light", 2016, 98, "FSK-16", "Horror", "abandoned-building", 0.8, "A demolition crew spends one last night in an old mill that does not want to come down. Lights come on in empty rooms, and the machines start by themselves. By morning, not everyone will want to leave. A slow-burning horror film that gets under the skin and stays there."],
+  ["Gravity of Stars", 2025, 131, "FSK-12", "Science Fiction", "starry-sky", 0.5, "An astronomer receives a signal that repeats her own childhood address. No one else can hear it. To find out who is calling, she has to go back to the house she left as a child. Big ideas, real feelings and a sky full of questions."],
+  ["Half Past Midnight", 2018, 97, "FSK-16", "Thriller", "rain-window", 0.3, "A radio host takes a call that says a crime will happen at half past midnight. The police think it is a prank. She has three hours to find the caller, with the whole city listening. A tense thriller that keeps you guessing until the very last minute."],
+  ["Headlights", 2015, 94, "FSK-12", "Crime", "highway-night", 0.8, "A truck driver picks up a hitchhiker who knows too much about her route. The night road is long and empty. Somewhere behind them, the same car has been following for an hour. A crime drama where nobody is completely innocent."],
+  ["High Water", 2023, 109, "FSK-12", "Drama", "waterfall", 0.5, "A dam keeper has one night to decide whose valley floods. The storm will not wait. On one side lives his family, on the other the town he has served for thirty years. An honest and touching film about family, loss and hope."],
+  ["Home Before Dark", 2020, 90, "FSK-6", "Family", "forest-road", 0.5, "Two children cycle home through the forest and take the long way by mistake. The forest is bigger than they thought. By nightfall they have met a hermit, a lost dog and their own courage. A warm adventure for the whole family, with laughs and a few tears."],
+  ["Hush", 2019, 86, "FSK-16", "Horror", "owl", 0.5, "In a village where nobody may speak after dark, a girl hears someone answer. Her mother says she imagined it. The next night, the voice knows her name. Quiet, eerie and very hard to forget."],
+  ["Hearts on the Shore", 2016, 104, "FSK-0", "Romance", "couple-beach-silhouette", 0.4, "A couple meets on the same beach every summer for forty years. They have never met anywhere else. This summer, one of them does not come. A tender love story about second chances and the moments we almost miss."],
+  ["Iron Coast", 2013, 123, "FSK-16", "War/Drama", "harbor-night", 0.6, "A harbour town in 1944 hides a radio, a pilot and a secret. The village is full of soldiers, and anyone could be an informer. A young teacher decides to risk everything. A powerful drama about courage in the darkest of times."],
+  ["Island Time", 2022, 92, "FSK-0", "Comedy", "people-beach", 0.5, "A workaholic is stranded on a holiday island where nobody owns a clock. His phone has no signal, his flight is delayed for a week, and the locals have opinions about his tie. A warm and funny film about people who are a little lost."],
+  ["Jellyfish Summer", 2021, 95, "FSK-6", "Comedy/Drama", "jellyfish", 0.3, "A summer job at the aquarium turns into the strangest summer of a teenager's life. She has to feed the sharks, clean the tanks and keep a secret about the director. It is the best summer she will ever have. A warm and funny film about people who are a little lost."],
+  ["Just One Song", 2018, 101, "FSK-0", "Music/Romance", "piano", 0.5, "A pianist in a hotel bar plays one song a night for a woman who never stays. Every night she leaves before the last note. One evening, he decides to follow her. A tender love story about second chances and the moments we almost miss."],
+  ["King of the Savannah", 2017, 87, "FSK-6", "Family/Adventure", "lion", 0.4, "A young lion who would rather sleep has to defend the pride. His father is gone and the hyenas are getting bold. With a clumsy friend and a lot of luck, he has to grow up fast. A warm adventure for the whole family, with laughs and a few tears."],
+  ["Keepers", 2024, 112, "FSK-12", "Mystery", "castle", 0.7, "The last caretakers of a mountain castle find a room that is not on any plan. Behind the hidden door is a diary from the last war. Some people in the valley would like it to stay hidden. A puzzle of a film, with every clue hiding in plain sight."],
+  ["Lantern Festival", 2020, 99, "FSK-6", "Romance", "lanterns", 0.8, "Two rival lantern makers fall in love during the town's biggest festival. Their families have been rivals for three generations. This year, both of them are making the biggest lantern the town has ever seen. Romantic, bittersweet and beautifully told."],
+  ["Long Way Down", 2016, 108, "FSK-16", "Thriller", "skyscraper", 0.2, "An elevator stops on the sixtieth floor with five strangers and one liar inside. The phones have no signal and the air is getting thin. One of the five knows exactly why the elevator stopped. Gripping, clever and full of twists you will not see coming."],
+  ["Lost in the Fog", 2012, 93, "FSK-12", "Mystery", "bridge-fog", 0.8, "A ferry crosses the bay in thick fog and arrives with one passenger too many. Nobody saw him board. By the time the fog lifts, two of the passengers will be gone. A puzzle of a film, with every clue hiding in plain sight."],
+  ["Last Orders", 2019, 97, "FSK-12", "Comedy/Drama", "audience", 0.5, "A pub band plays its farewell gig while the landlord plans to sell. The regulars plan to change his mind. They have one evening, a stage and a song nobody has rehearsed. A feel-good comedy with a big heart and a lot of awkward moments."],
+  ["Lion Heart", 2022, 100, "FSK-6", "Family", "lion", 0.7, "A girl and an old circus lion run away together to find the savannah. Behind them come the circus owner, the police and a reporter. Ahead lies a whole continent. A warm adventure for the whole family, with laughs and a few tears."],
+  ["Midnight Market", 2021, 102, "FSK-12", "Crime", "crowded-market", 0.8, "A food stall owner gets caught between two gangs who both like her soup. She just wants to sell noodles. Now both bosses want her to choose, and her stall is in the middle. A dark and stylish crime story about loyalty, guilt and the price of the truth."],
+  ["Moonrise Lake", 2018, 106, "FSK-6", "Drama", "mountain-lake", 0.5, "A family spends one last summer in the lake house before it is sold. Three grown-up siblings, one tired mother and a lot of old arguments. By the end of August, everyone has to say goodbye. A drama told with great warmth and a lot of patience."],
+  ["Morning Run", 2023, 89, "FSK-0", "Comedy/Sport", "marathon-runners", 0.8, "A lazy accountant signs up for a marathon to impress his daughter. He has never run more than a bus stop. His neighbour, a retired sprinter, decides to coach him. A feel-good comedy with a big heart and a lot of awkward moments."],
+  ["Mountain Kings", 2015, 114, "FSK-12", "Adventure", "castle", 0.3, "Three climbers attempt the north face in the winter nobody else would. One of them has been there before and never talks about it. Halfway up, the weather turns. A quiet, moving drama about the people we leave behind and the ones who wait for us."],
+  ["Murmur", 2020, 95, "FSK-16", "Horror", "foggy-forest", 0.8, "A family moves to the edge of a forest that whispers at night. At first it is only the children who hear it. Then the parents start to answer. Quiet, eerie and very hard to forget."],
+  ["Music Box", 2017, 98, "FSK-6", "Drama/Music", "piano", 0.2, "A piano tuner finds a melody hidden in every instrument she repairs. The melodies come from a composer who died a century ago. Someone wants her to finish his last piece. Full of music, joy and the people who make it happen."],
+  ["Mirage", 2024, 104, "FSK-12", "Thriller", "desert-dunes", 0.6, "A pilot who crash-landed in the desert keeps seeing the same town on the horizon. Each time he reaches it, it is gone again. His water runs low, and the town seems to be waiting for him. A tense thriller that keeps you guessing until the very last minute."],
+  ["Neon Nights", 2019, 101, "FSK-16", "Crime", "neon-street", 0.8, "A taxi driver in a city that never sleeps has one fare that never pays. She takes him across the city again and again. He never says where he is going until it is too late. A dark and stylish crime story about loyalty, guilt and the price of the truth."],
+  ["North of Nowhere", 2016, 118, "FSK-12", "Drama", "aurora", 0.8, "A postman delivers to the last houses before the Arctic and the people waiting there. Each letter he carries changes a life a little. One letter is addressed to him. A drama told with great warmth and a lot of patience."],
+  ["Nightfall", 2022, 96, "FSK-16", "Horror", "owl", 0.7, "Every night at the same hour, the owls in the village fall silent. An ornithologist comes to find out why. What she finds in the forest is not a bird. Quiet, eerie and very hard to forget."],
+  ["Northbound", 2013, 109, "FSK-12", "Drama", "old-train", 0.4, "A retired train driver takes his grandson on the old line before it closes. The journey takes three days and passes every station of his life. His grandson starts asking questions. A drama told with great warmth and a lot of patience."],
+  ["One Last Wave", 2020, 97, "FSK-6", "Sport/Drama", "surfer", 0.7, "Three old friends meet for the swell of the decade. They have not surfed together in twenty years. Old rivalries come back faster than the swell. An uplifting story about never giving up, even when the finish line is far away."],
+  ["Open Water", 2017, 92, "FSK-12", "Thriller", "whale", 0.5, "A whale-watching boat drifts too far out, and the radio is dead. The captain is injured, the passengers panic and the whales are circling. A teenage deckhand has to take charge. A tense thriller that keeps you guessing until the very last minute."],
+  ["Orchestra", 2023, 123, "FSK-0", "Documentary/Music", "concert-crowd", 0.5, "A year with a youth orchestra on its way to its first big hall. Sixty teenagers, one tired conductor and a concert that could change their lives. A documentary full of music and nerves. Warm, curious and full of moments you will want to share."],
+  ["Paper Planes", 2018, 91, "FSK-0", "Family", "bicycle-street", 0.5, "A boy sends paper planes from his window and gets an answer. The answers come from a girl across the street who is not allowed to go outside. Their friendship grows one plane at a time. A story for everyone who has ever believed in a little magic."],
+  ["Pale Blue", 2021, 110, "FSK-12", "Science Fiction", "starry-sky", 0.8, "Six months on a station at the edge of the solar system, and one message from home. The message is a single word. To understand it, the crew must decide whether to turn back. A thoughtful science fiction story about what it means to be human."],
+  ["Pilgrims", 2015, 120, "FSK-12", "Drama", "canyon", 0.7, "Strangers walking an old pilgrim route through the canyons find out why the others came. There is a widow, a banker, a monk and a teenager with a stolen car. The canyon has a way of making people honest. A quiet, moving drama about the people we leave behind and the ones who wait for us."],
+  ["Quiet Streets", 2020, 94, "FSK-12", "Drama", "rain-window", 0.8, "A city in lockdown, seen from one window by a woman who starts to notice everything. She watches a neighbour who never leaves, a boy who waits for a letter and a man who is lying. Then she sees something she should not. A drama told with great warmth and a lot of patience."],
+  ["Rainmaker", 2014, 107, "FSK-12", "Drama", "crowd-street", 0.8, "A weather forecaster who is always wrong is suddenly always right. Overnight he becomes the most famous man in the country. Then he predicts a storm nobody wants to believe. A quiet, moving drama about the people we leave behind and the ones who wait for us."],
+  ["Red Line", 2022, 103, "FSK-16", "Action", "train-station-people", 0.7, "A subway train is taken over between two stations. Two hundred passengers are trapped in the tunnel. A transit cop on her day off is the only one who can reach them. Fast, loud and full of surprises, with a hero who never quite has a plan."],
+  ["River Song", 2019, 99, "FSK-0", "Family", "waterfall", 0.3, "Three children follow the river to find where it starts. On the way they meet beavers, fishermen and a very grumpy heron. Every bend of the river brings a new adventure. A story for everyone who has ever believed in a little magic."],
+  ["Runaway Summer", 2016, 95, "FSK-6", "Comedy", "people-beach", 0.8, "Two sisters run away to the seaside, followed by their entire family. Aunts, cousins and a grandmother with a camper van are all on the road. Nobody will be going home the same. A feel-good comedy with a big heart and a lot of awkward moments."],
+  ["Saltwater", 2018, 112, "FSK-12", "Drama", "whale", 0.3, "A marine biologist returns to the island where her mother disappeared at sea. The islanders say the sea took her. The letters she left behind say something very different. An honest and touching film about family, loss and hope."],
+  ["Second Act", 2021, 98, "FSK-0", "Comedy", "audience", 0.7, "A retired actor joins an amateur theatre that badly needs him. The theatre is broke, the cast is hopeless and opening night is in six weeks. He has never had more fun. A warm and funny film about people who are a little lost."],
+  ["Silent Peaks", 2014, 115, "FSK-12", "Adventure", "mountain-lake", 0.8, "A mountain guide leads a group who all lied about why they came. Halfway up the mountain, the weather closes in. The truth starts to come out one by one. An honest and touching film about family, loss and hope."],
+  ["Skyline", 2023, 106, "FSK-12", "Action", "skyscraper", 0.85, "A window cleaner becomes the only witness to a heist in a tower. The thieves are on the floor below him and the police are on the ground. He has a bucket, a rope and a lot of courage. An action film that hardly stops for breath."],
+  ["Snowbound", 2012, 99, "FSK-12", "Thriller", "dog-snow", 0.2, "A sled dog and its owner are cut off by the storm of the century. The cabin is miles away and the food is running out. The dog seems to know a way the map does not show. A tense thriller that keeps you guessing until the very last minute."],
+  ["Strangers on a Shore", 2017, 101, "FSK-6", "Romance", "couple-beach-silhouette", 0.7, "Two people who came to the coast to be alone keep meeting. She is writing a book. He is hiding from his family. The coast is very small. A tender love story about second chances and the moments we almost miss."],
+  ["The Typewriter", 2016, 97, "FSK-6", "Drama", "vintage-typewriter", 0.5, "A writer buys an old typewriter that finishes her sentences. At first it helps. Then the sentences start to describe things that have not happened yet. An honest and touching film about family, loss and hope."],
+  ["Tidewater", 2019, 108, "FSK-12", "Drama", "pier-sunset", 0.3, "A fisherman's widow keeps the pier open for one more season. The council wants to sell it, and her son wants her to move. She has one season to prove the pier still matters. A drama told with great warmth and a lot of patience."],
+  ["Two Wheels", 2022, 89, "FSK-0", "Comedy", "bicycle-street", 0.7, "A stolen bicycle passes through ten owners in one week. Each owner has a reason to need it. In the end, it finds its way back to the girl who lost it. A warm and funny film about people who are a little lost."],
+  ["Thunder Road", 2015, 104, "FSK-16", "Action", "highway-night", 0.5, "A getaway driver's last job goes wrong at the first traffic light. Now he has a bag of money, a passenger he does not know and every police car in the city behind him. An action film that hardly stops for breath."],
+  ["The Tower", 2024, 117, "FSK-12", "Thriller", "abandoned-building", 0.4, "A group of urban explorers spend a night in the tower that was never finished. The elevator works, which it should not. Floor by floor, the building starts to show them its history. Gripping, clever and full of twists you will not see coming."],
+  ["Upstream", 2021, 93, "FSK-6", "Adventure", "waterfall", 0.7, "A canoe trip up the river turns into a search for a missing guide. The river gets wilder with every mile. The group finds his camp, but not him. An honest and touching film about family, loss and hope."],
+  ["Velvet Night", 2018, 100, "FSK-16", "Crime/Music", "concert-crowd", 0.3, "A club singer witnesses a deal she was never supposed to see. Now both the police and the mob want to know what she saw. She has a gig to play tonight. A crime drama where nobody is completely innocent."],
+  ["Volcano Island", 2023, 106, "FSK-12", "Adventure", "volcano", 0.7, "A film crew lands on an island just as the volcano wakes up. The boats have left and the radio is down. The director keeps filming. A drama told with great warmth and a lot of patience."],
+  ["Vanguard", 2016, 134, "FSK-12", "Action/Superhero", "skyscraper", 0.6, "A bridge engineer discovers she can bend steel with her mind, the day the city needs it. She never wanted to be a hero. But when the bridge starts to fall, she is the only one who can hold it together. A superhero story with heart, humour and a lot of falling steel."],
+  ["Vanguard: Fallout", 2019, 141, "FSK-12", "Action/Superhero", "highway-night", 0.15, "The city has a hero and a new enemy who learned from her mistakes. He knows her weaknesses and her secrets. To stop him, the Vanguard must work as a team for the first time. Big action, a reluctant hero and a city that has never needed her more."],
+  ["Vanguard: Last Stand", 2023, 152, "FSK-12", "Action/Superhero", "abandoned-building", 0.2, "The last of the Vanguard face the machine that built them. The machine wants to finish what it started. They have one chance, and not all of them will come back. Big action, a reluctant hero and a city that has never needed her more."],
+  ["Whale Song", 2019, 88, "FSK-0", "Documentary", "whale", 0.6, "A year following one humpback family across the North Atlantic. We follow a mother and her calf from Caribbean waters to the icy north. A journey of thousands of miles, told in their own songs. Warm, curious and full of moments you will want to share."],
+  ["Wild Horses", 2016, 109, "FSK-12", "Western", "horse-field", 0.7, "A rancher's daughter sets free the herd her father meant to sell. Her father is furious and the buyers are angry. She has three days to get the horses across the mountains. A classic western about dust, honour and the long road home."],
+  ["Wanderers", 2022, 113, "FSK-12", "Drama", "people-walking-city", 0.6, "Two drifters walk the length of the coast, one town a day. They sleep in barns and work for food. Every town has someone who wants them to stay. A quiet, moving drama about the people we leave behind and the ones who wait for us."],
+  ["White Out", 2014, 98, "FSK-16", "Thriller", "glacier-alaska", 0.8, "A research team on the ice loses contact with base, and then with each other. The storm will not let up. One by one, they discover that someone on the team is not who they say. Gripping, clever and full of twists you will not see coming."],
+  ["Where the Road Ends", 2021, 104, "FSK-12", "Drama", "forest-road", 0.6, "A woman drives to the end of a forest road to deliver a letter thirty years late. The letter was written by her mother. The man it was meant for still lives in the last house in the forest. An honest and touching film about family, loss and hope."],
+  ["Year of the Fox", 2020, 95, "FSK-6", "Family", "fox-meadow", 0.5, "A girl spends a year watching a fox family from her bedroom window. Spring, summer, autumn and winter pass outside the window. She learns more about life than in any classroom. A story for everyone who has ever believed in a little magic."],
+  ["Zero Hour", 2017, 99, "FSK-16", "Action/Thriller", "neon-street", 0.2, "A bomb disposal expert has until midnight and a city that will not stop. The bombs are hidden all over the city, and the man who placed them wants to talk. Only to her. Fast, loud and full of surprises, with a hero who never quite has a plan."],
 ]
 
 # Series in one line each:
@@ -733,21 +865,21 @@ films = [
 #  runtime, plot]. Episode titles come from a fixed pool, thumbnails are crops
 # of the series image, and the videos are cut from the master like the films.
 shows = [
-  ["Night Shift", 2019, "Continuing", "FSK-12", "Drama/Medical", "city-night", 0.4, [8, 8, 8], 44, "The night staff of a city hospital, from the first ambulance after dark to the last coffee at dawn."],
-  ["The Bakery on Elm Street", 2015, "Ended", "FSK-0", "Comedy", "bicycle-street", 0.5, [10, 10, 10, 10], 22, "A family bakery, three generations behind one counter, and a street that knows everybody's order."],
-  ["Coldwater", 2021, "Continuing", "FSK-16", "Crime/Drama", "foggy-forest", 0.5, [6, 6], 52, "A missing hiker brings a city detective back to the mountain town she grew up in."],
-  ["Starfall", 2023, "Continuing", "FSK-12", "Science Fiction", "starry-sky", 0.3, [8], 50, "When a meteor shower lasts a whole month, a small observatory becomes the centre of the world."],
-  ["Little Explorers", 2018, "Continuing", "FSK-0", "Animation/Kids", "waterfall", 0.5, [13, 13], 11, "Three friends and a talking backpack explore the river behind their school."],
-  ["Market Street", 2020, "Ended", "FSK-6", "Comedy", "crowded-market", 0.6, [8, 8], 25, "The stall owners of a night market and the inspector who keeps trying to close it."],
-  ["Deep Blue", 2022, "Ended", "FSK-0", "Documentary", "jellyfish", 0.6, [5], 48, "Five dives into the deep ocean and the animals that light it."],
-  ["Highlands", 2017, "Ended", "FSK-12", "Drama/History", "castle", 0.5, [6, 6, 6], 58, "A family fights to keep its castle and its valley through three hard winters."],
-  ["Signal", 2024, "Continuing", "FSK-16", "Thriller", "highway-night", 0.6, [8], 45, "A night-shift radio operator hears a call for help from a car that crashed ten years ago."],
-  ["Ramen Nights", 2022, "Continuing", "FSK-6", "Anime/Comedy", "lanterns", 0.5, [12, 12], 24, "A tiny ramen shop under the railway arches, and the regulars who come for more than soup."],
-  ["Wild Coast", 2016, "Ended", "FSK-0", "Documentary", "surfer", 0.4, [6], 50, "Six stretches of coastline, from cliffs to surf beaches, and the lives that cling to them."],
-  ["Kingsbridge", 2014, "Ended", "FSK-12", "Crime/Mystery", "bridge-fog", 0.6, [4, 4, 4, 4], 90, "A detective inspector and her sergeant solve murders in a river town where everyone has a secret."],
-  ["Hinterland", 2021, "Continuing", "FSK-16", "Crime/Drama", "forest-road", 0.5, [6, 6], 45, "In a village in the Black Forest, a new police chief finds that nobody wants the old case reopened."],
-  ["Vanguard: Legacy", 2024, "Continuing", "FSK-12", "Action/Superhero", "skyscraper", 0.3, [8], 50, "Years after the Vanguard, a new generation finds the old headquarters and the powers that were left behind."],
-  ["Owl Woods", 2020, "Ended", "FSK-0", "Animation/Kids", "owl", 0.5, [26], 11, "An owl who cannot stay awake at night runs the forest school by day."],
+  ["Night Shift", 2019, "Continuing", "FSK-12", "Drama/Medical", "city-night", 0.4, [8, 8, 8], 44, "The night staff of a city hospital, from the first ambulance after dark to the last coffee at dawn. There are emergencies, love stories and long breaks in the canteen. Every night tells a new story. A drama full of heart about the people who keep the city alive at night."],
+  ["The Bakery on Elm Street", 2015, "Ended", "FSK-0", "Comedy", "bicycle-street", 0.5, [10, 10, 10, 10], 22, "A family bakery, three generations behind one counter, and a street that knows everybody's order. Grandma rules the oven, Dad runs the books and his daughter wants to sell vegan croissants. The neighbours have opinions about all of it. A warm and funny film about people who are a little lost."],
+  ["Coldwater", 2021, "Continuing", "FSK-16", "Crime/Drama", "foggy-forest", 0.5, [6, 6], 52, "A missing hiker brings a city detective back to the mountain town she grew up in. Her old friends are suspects, her mother is the mayor and the fog never lifts. Nothing here is what it seems. A dark and stylish crime story about loyalty, guilt and the price of the truth."],
+  ["Starfall", 2023, "Continuing", "FSK-12", "Science Fiction", "starry-sky", 0.3, [8], 50, "When a meteor shower lasts a whole month, a small observatory becomes the centre of the world. Scientists, believers and tourists pour into the village. The astronomer who runs the place just wants some sleep. Big ideas, real feelings and a sky full of questions."],
+  ["Little Explorers", 2018, "Continuing", "FSK-0", "Animation/Kids", "waterfall", 0.5, [13, 13], 11, "Three friends and a talking backpack explore the river behind their school. Every episode they find something new, from tadpoles to old treasure maps. The backpack always knows a song. Funny, colourful and full of heart, for viewers of every age."],
+  ["Market Street", 2020, "Ended", "FSK-6", "Comedy", "crowded-market", 0.6, [8, 8], 25, "The stall owners of a night market and the inspector who keeps trying to close it. Every week there is a new trick to keep the market open. Every week, the inspector comes back. A feel-good comedy with a big heart and a lot of awkward moments."],
+  ["Deep Blue", 2022, "Ended", "FSK-0", "Documentary", "jellyfish", 0.6, [5], 48, "Five dives into the deep ocean and the animals that light it. With new cameras that go deeper than ever before, the series shows creatures nobody has filmed until now. A beautifully filmed documentary that changes how you see the world."],
+  ["Highlands", 2017, "Ended", "FSK-12", "Drama/History", "castle", 0.5, [6, 6, 6], 58, "A family fights to keep its castle and its valley through three hard winters. There are debts, weddings and old enemies. Each winter tests the family in a different way. A sweeping period drama about family, land and survival."],
+  ["Signal", 2024, "Continuing", "FSK-16", "Thriller", "highway-night", 0.6, [8], 45, "A night-shift radio operator hears a call for help from a car that crashed ten years ago. The voice gives details nobody could know. The case was closed, but someone wants it opened again. Gripping, clever and full of twists you will not see coming."],
+  ["Ramen Nights", 2022, "Continuing", "FSK-6", "Anime/Comedy", "lanterns", 0.5, [12, 12], 24, "A tiny ramen shop under the railway arches, and the regulars who come for more than soup. There is a salaryman who never goes home, a student with a secret and a cat that orders the same thing every night. A feel-good comedy with a big heart and a lot of awkward moments."],
+  ["Wild Coast", 2016, "Ended", "FSK-0", "Documentary", "surfer", 0.4, [6], 50, "Six stretches of coastline, from cliffs to surf beaches, and the lives that cling to them. From puffins to seals and the people who share their shores, every episode visits a new edge of the sea. Warm, curious and full of moments you will want to share."],
+  ["Kingsbridge", 2014, "Ended", "FSK-12", "Crime/Mystery", "bridge-fog", 0.6, [4, 4, 4, 4], 90, "A detective inspector and her sergeant solve murders in a river town where everyone has a secret. Each episode is a new case. Behind the pretty houses lies a lot of jealousy, greed and old family secrets. A crime drama where nobody is completely innocent."],
+  ["Hinterland", 2021, "Continuing", "FSK-16", "Crime/Drama", "forest-road", 0.5, [6, 6], 45, "In a village in the Black Forest, a new police chief finds that nobody wants the old case reopened. Her new colleagues are friendly but careful. The forest keeps its secrets well. A dark and stylish crime story about loyalty, guilt and the price of the truth."],
+  ["Vanguard: Legacy", 2024, "Continuing", "FSK-12", "Action/Superhero", "skyscraper", 0.3, [8], 50, "Years after the Vanguard, a new generation finds the old headquarters and the powers that were left behind. They have no training and no idea what they are doing. The city is about to need them anyway. Big action, a reluctant hero and a city that has never needed her more."],
+  ["Owl Woods", 2020, "Ended", "FSK-0", "Animation/Kids", "owl", 0.5, [26], 11, "An owl who cannot stay awake at night runs the forest school by day. The pupils learn about rain, roots and why owls should not stay up all night. Every lesson ends in chaos. A warm animated adventure for the whole family."],
 ]
 
 # Episode titles for the one-line series.
@@ -761,6 +893,357 @@ episode_titles = [
   "The Audition", "Uphill", "Borrowed Time", "The Key", "Into the Woods", "Counting Stars", "Flood", "The Truce",
   "Hide and Seek", "Postcards", "Rush Hour", "The Recipe", "High Water", "Goodbye, Hello",
 ]
+
+# What each collection says about itself.
+[collection_overviews]
+"Northern Light Trilogy" = """
+Three stories from the far north, about the people who stay when everyone
+else leaves. A lighthouse that will not go dark, a glacier that is breaking
+apart and a summer that lasts only twenty minutes a day. Each film stands
+alone, but the same islands and faces keep coming back.
+"""
+"Paper Moons Collection" = """
+Juno and her grumpy cat Mister Pepper fold moons out of paper and send them
+into the night sky. Two animated adventures across the fjords, full of
+lighthouses, paper cranes and a moon that only wants a friend. For everyone
+who has ever wished on something they made themselves.
+"""
+"Animal Tales" = """
+A fox and a sheepdog snowed in on the same farm, and six close looks at the
+animals that live right outside our doors. An animated adventure and a nature
+series about curiosity, patience and the small worlds we usually walk past.
+"""
+"Blender Open Movies" = """
+Short films made by Blender Studio in Amsterdam with free and open source
+software, and released under a Creative Commons licence. From a very large
+rabbit to a lonely sheep and a forest full of mushroom folk, every film was
+also a test bed for new tools that later went into Blender.
+"""
+"Vanguard Collection" = """
+A bridge engineer who can bend steel with her mind, a team that never asked
+to be heroes, and a city that keeps needing them. Three films and a new series
+follow the Vanguard from their first rescue to the machine that made them.
+"""
+
+# ---- Photos and home videos (the library "Photos")
+#
+# A folder per trip or theme, with the photos (image ids from sources.toml)
+# taken over the days from "date" on, and short home videos cut from the
+# footage clips. "folders" nests folders inside a folder.
+
+[[photo_folder]]
+name = "2024 Norway Trip"
+date = "2024-07-12"
+photos = ["moon-fjord", "harbor-night", "aurora", "mountain-lake", "sea-fog", "stormy-sea", "glacier-alaska",
+          "snowy-forest", "foggy-forest", "waterfall"]
+clips = [
+  { clip = "bay-dusk", start = 0, length = 15, name = "Evening at the fjord" },
+  { clip = "snowfall", start = 0, length = 15, name = "Snow in July" },
+]
+
+[[photo_folder]]
+name = "Summer by the Sea 2023"
+date = "2023-08-03"
+photos = ["lighthouse-chania", "red-boat", "beach-boat", "pier-sunset", "people-beach", "surfer",
+          "couple-beach-silhouette", "trawlers", "lighthouse-belletout"]
+clips = [
+  { clip = "surf-rocks", start = 5, length = 30, name = "Waves on the rocks" },
+  { clip = "sea-waves", start = 0, length = 20, name = "Out on the water" },
+]
+
+[[photo_folder]]
+name = "Garden and Wildlife"
+date = "2025-05-18"
+photos = ["butterfly", "butterfly-dark", "bee", "dragonfly", "cat", "fox-meadow", "roe-deer", "owl", "horse-field"]
+clips = [
+  { clip = "bees", start = 10, length = 40, name = "Bees in the asters" },
+  { clip = "fox-snow", start = 0, length = 30, name = "Fox in the yard" },
+]
+
+[[photo_folder]]
+name = "City Nights"
+date = "2022-11-25"
+photos = ["city-night", "neon-street", "rain-window", "crowded-market", "lanterns", "highway-night", "lisbon-rain",
+          "carnival-ferris-wheel", "skyscraper", "bridge-fog"]
+clips = [{ clip = "harbour-aerial", start = 0, length = 30, name = "Harbour from above" }]
+
+[[photo_folder]]
+name = "Family"
+date = "2022-12-24"
+photos = ["dog-snow"]
+
+[[photo_folder.folders]]
+name = "Christmas 2022"
+date = "2022-12-24"
+photos = ["snowy-forest", "dog-snow", "lanterns", "cat"]
+clips = [{ clip = "snow-forest", start = 0, length = 20, name = "Snow in the garden" }]
+
+[[photo_folder.folders]]
+name = "Hiking in the Alps"
+date = "2023-06-10"
+photos = ["mountain-lake", "castle", "forest-road", "waterfall", "horse-rider", "canyon"]
+
+# ---- Live TV (demo.py serves it on port 8200 while the server runs)
+#
+# Each channel loops a reel of footage clips with its logo in the corner.
+# Its programme comes from the catalog: films and episodes with one of
+# "genres", or the made-up "shows" when the channel has its own formats.
+# category marks the programmes for the guide (Movie, News, Sports, Kids).
+
+[[channel]]
+number = 101
+id = "glacier-one"
+name = "Glacier One"
+colour = "#3d7bd9"
+genres = ["Drama", "Crime", "Mystery", "Romance"]
+footage = [
+  { clip = "lighthouse-orbit", start = 0, length = 60 },
+  { clip = "boat-fog", start = 0, length = 30 },
+  { clip = "bay-dusk", start = 0, length = 15 },
+  { clip = "surf-coast", start = 400, length = 60 },
+]
+
+[[channel]]
+number = 102
+id = "northwind-news"
+name = "Northwind News"
+colour = "#c2410c"
+category = "News"
+shows = ["News at Six", "The World Today", "Morning Briefing", "Weather Watch", "Business Report", "Late Edition"]
+footage = [
+  { clip = "harbour-aerial", start = 0, length = 37 },
+  { clip = "boat-fog", start = 0, length = 30 },
+  { clip = "snowfall", start = 0, length = 15 },
+]
+
+[[channel]]
+number = 103
+id = "wild-planet"
+name = "Wild Planet"
+colour = "#15803d"
+genres = ["Documentary"]
+footage = [
+  { clip = "bees", start = 0, length = 60 },
+  { clip = "bears", start = 0, length = 21 },
+  { clip = "elk", start = 0, length = 60 },
+  { clip = "moose-fog", start = 0, length = 45 },
+  { clip = "fox-snow", start = 0, length = 39 },
+]
+
+[[channel]]
+number = 104
+id = "frost"
+name = "Frost"
+colour = "#0ea5e9"
+genres = ["Thriller", "Action", "Adventure", "Science Fiction", "Horror"]
+footage = [
+  { clip = "icebergs", start = 0, length = 120 },
+  { clip = "ice-climb", start = 0, length = 60 },
+  { clip = "aurora", start = 0, length = 46 },
+]
+
+[[channel]]
+number = 105
+id = "glacier-kids"
+name = "Glacier Kids"
+colour = "#eab308"
+category = "Kids"
+genres = ["Animation", "Kids", "Family"]
+footage = [
+  { clip = "bears", start = 0, length = 21 },
+  { clip = "bee-hibiscus", start = 0, length = 40 },
+  { clip = "fox-snow", start = 0, length = 39 },
+]
+
+[[channel]]
+number = 106
+id = "glacier-cinema"
+name = "Glacier Cinema"
+colour = "#a855f7"
+category = "Movie"
+genres = ["Drama", "Thriller", "Comedy", "Western", "Romance", "Action"]
+films_only = true
+footage = [
+  { clip = "lighthouse-lens", start = 0, length = 15 },
+  { clip = "icebergs", start = 120, length = 90 },
+  { clip = "surf-rocks", start = 0, length = 45 },
+]
+
+[[channel]]
+number = 107
+id = "sportsline"
+name = "Sportsline"
+colour = "#ef4444"
+category = "Sports"
+shows = ["Surf Open Live", "Marathon Day", "Ski World Cup", "Sailing Week", "Football Tonight", "Highlights"]
+footage = [
+  { clip = "surf-rocks", start = 0, length = 60 },
+  { clip = "sea-waves", start = 0, length = 21 },
+  { clip = "surf-coast", start = 600, length = 60 },
+]
+
+[[channel]]
+number = 108
+id = "radio-glacier"
+name = "Radio Glacier"
+colour = "#64748b"
+radio = true
+shows = ["Morning Mix", "Night Jazz", "Classic Hour", "Chill Out", "The Request Show"]
+
+# ---- Music (the library "Music") and music videos ("Music Videos")
+#
+# An artist with its albums. Real recordings name a source in sources.toml
+# [audio]; the made-up artists' tracks are silence of the given length in
+# "format" (flac, mp3, aac, opus). "lyrics" become synced .lrc files. A
+# track list split into "discs" makes a multi-disc album. The covers and
+# artist pictures are generated (prompts.toml) or, for composers, portraits.
+
+[[artist]]
+name = "Ludwig van Beethoven"
+genre = "Classical"
+image = "beethoven-portrait"
+about = "German composer and pianist (1770 to 1827), a bridge between the classical and the romantic era. These recordings are in the public domain."
+
+[[artist.album]]
+title = "Symphony No. 3 \"Eroica\""
+year = 1804
+performer = "Musopen Symphony"
+tracks = [
+  { title = "I. Allegro con brio", audio = "eroica-1" },
+  { title = "II. Marcia funebre. Adagio assai", audio = "eroica-2" },
+  { title = "III. Scherzo. Allegro vivace", audio = "eroica-3" },
+  { title = "IV. Finale. Allegro molto", audio = "eroica-4" },
+]
+
+[[artist.album]]
+title = "Piano Sonata No. 8 \"Pathetique\""
+year = 1798
+tracks = [
+  { title = "I. Grave. Allegro di molto e con brio", audio = "pathetique-1" },
+  { title = "II. Adagio cantabile", audio = "pathetique-2" },
+  { title = "III. Rondo. Allegro", audio = "pathetique-3" },
+]
+
+[[artist]]
+name = "Frederic Chopin"
+genre = "Classical"
+image = "chopin-portrait"
+about = "Polish composer and pianist (1810 to 1849) who wrote almost only for the piano. These recordings are in the public domain."
+
+[[artist.album]]
+title = "The Four Scherzos"
+year = 1843
+performer = "Alice Gi-Young Hwang"
+tracks = [
+  { title = "Scherzo No. 1 in B minor, Op. 20", audio = "scherzo-1" },
+  { title = "Scherzo No. 2 in B-flat minor, Op. 31", audio = "scherzo-2" },
+  { title = "Scherzo No. 3 in C-sharp minor, Op. 39", audio = "scherzo-3" },
+  { title = "Scherzo No. 4 in E major, Op. 54", audio = "scherzo-4" },
+]
+
+[[artist]]
+name = "Neon Harbour"
+genre = "Synthwave"
+about = "A synthwave duo from Hamburg who write music for long night drives along the coast. Their debut Night Ferry was recorded on old synthesizers in a former harbour warehouse."
+
+[[artist.album]]
+title = "Night Ferry"
+year = 2021
+format = "flac"
+tracks = [["Departure", 214], ["Harbour Lights", 247], ["Night Ferry", 301], ["Sodium Glow", 198], ["Fog Signal", 236],
+          ["Afterglow", 205], ["Container Cranes", 262], ["Midnight Crossing", 289], ["Lighthouse Code", 224], ["Arrival", 312]]
+lyrics = { "Harbour Lights" = ["The harbour lights are calling", "Across the silver bay", "I left my heart on the night ferry", "And it sailed away", "Hold on to the signal", "Hold on to the sound", "The harbour lights are calling", "But I am not coming down"] }
+
+[[artist.album]]
+title = "Afterglow"
+year = 2023
+format = "aac"
+tracks = [["Afterglow (Radio Edit)", 189]]
+
+[[artist]]
+name = "The Paper Cranes"
+genre = "Indie Pop"
+about = "Four friends from Bergen who met in a school band and never stopped. Their songs are about small towns, long summers and the people who leave."
+
+[[artist.album]]
+title = "Fold & Fly"
+year = 2019
+format = "mp3"
+tracks = [["Paper Planes", 201], ["Fold & Fly", 188], ["Summer Ends Tomorrow", 232], ["Bicycle Bell", 176], ["North Wind", 219],
+          ["Postcard", 195], ["Small Town Stars", 241], ["Ferry Back Home", 208], ["Origami Heart", 183], ["Last Swim", 226],
+          ["Goodnight, Bergen", 254]]
+lyrics = { "Paper Planes" = ["I fold my words into paper planes", "And throw them out into the rain", "Some fly high and some fly low", "Some land where I will never go", "So catch one if it comes your way", "It says the things I could not say"] }
+
+[[artist.album]]
+title = "Postcards from the North"
+year = 2024
+format = "aac"
+discs = [
+  [["Tromso", 214], ["Midnight Sun", 236], ["Reindeer Road", 198], ["Fjord Song", 251], ["Arctic Circle", 207],
+   ["Northern Lights", 268], ["Snow in July", 190], ["The Long Way", 245]],
+  [["Postcard One (Acoustic)", 172], ["Fjord Song (Live)", 284], ["Midnight Sun (Piano)", 219], ["Home Again", 233],
+   ["Ferry Back Home (Live)", 241], ["Goodbye, North", 266], ["Hidden Track", 128]],
+]
+
+[[artist]]
+name = "Margit Holm"
+genre = "Folk"
+about = "A singer and songwriter from the Danish coast. She records at home with an old guitar, a harmonium and whatever the weather brings."
+
+[[artist.album]]
+title = "Winter Songs"
+year = 2022
+format = "opus"
+tracks = [["First Snow", 223], ["Candle in the Window", 241], ["The Long Night", 296], ["Sledge Hill", 178],
+          ["Ice on the Harbour", 252], ["Grandmother's Kitchen", 207], ["Solstice", 268], ["New Year's Morning", 199],
+          ["Spring Is Coming", 231]]
+lyrics = { "First Snow" = ["The first snow fell on Sunday", "We watched it from the stair", "You said the world looks quiet now", "Like nobody lives there", "So stay a little longer", "The fire is burning low", "We have all the time in the world", "Underneath the first snow"], "Candle in the Window" = ["I keep a candle in the window", "For the ones still on the road", "For the boats out on the water", "For the hearts that carry load", "And if you see it shining", "You will know the way back home"] }
+
+# A compilation: its tracks belong to the artists above, its album artist is "Various Artists".
+[[compilation]]
+title = "Glacier Lounge, Vol. 1"
+year = 2025
+format = "flac"
+tracks = [["Neon Harbour", "Sodium Glow", 198], ["The Paper Cranes", "North Wind", 219], ["Margit Holm", "Solstice", 268],
+          ["Neon Harbour", "Lighthouse Code", 224], ["The Paper Cranes", "Postcard", 195], ["Margit Holm", "Sledge Hill", 178],
+          ["Neon Harbour", "Arrival", 312]]
+
+# Music videos, cut from footage clips with the artist and title at the start.
+[[music_video]]
+artist = "Neon Harbour"
+title = "Harbour Lights"
+album = "Night Ferry"
+year = 2021
+footage = [{ clip = "harbour-aerial", start = 0, length = 37 }, { clip = "boat-fog", start = 0, length = 30 },
+           { clip = "lighthouse-orbit", start = 0, length = 60 }, { clip = "bay-dusk", start = 0, length = 15 },
+           { clip = "sea-waves", start = 0, length = 21 }, { clip = "lighthouse-lens", start = 0, length = 15 },
+           { clip = "surf-coast", start = 200, length = 60 }]
+
+[[music_video]]
+artist = "The Paper Cranes"
+title = "Paper Planes"
+album = "Fold & Fly"
+year = 2019
+footage = [{ clip = "bees", start = 20, length = 40 }, { clip = "bee-hibiscus", start = 0, length = 40 },
+           { clip = "elk", start = 0, length = 50 }, { clip = "fox-snow", start = 0, length = 39 },
+           { clip = "moose-fog", start = 0, length = 32 }]
+
+[[music_video]]
+artist = "Margit Holm"
+title = "First Snow"
+album = "Winter Songs"
+year = 2022
+footage = [{ clip = "snowfall", start = 0, length = 15 }, { clip = "snow-forest", start = 0, length = 20 },
+           { clip = "aurora", start = 0, length = 46 }, { clip = "icebergs", start = 30, length = 90 },
+           { clip = "ice-climb", start = 20, length = 50 }]
+
+[[music_video]]
+artist = "Neon Harbour"
+title = "Midnight Crossing"
+album = "Night Ferry"
+year = 2022
+footage = [{ clip = "surf-rocks", start = 0, length = 60 }, { clip = "pack-ice", start = 0, length = 60, crop_bottom = 0.08 },
+           { clip = "icebergs", start = 120, length = 100 }, { clip = "boat-fog", start = 0, length = 30 }]
 
 # Collections can also be listed by name, for titles that are only a line.
 [[collection]]

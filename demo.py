@@ -4,8 +4,10 @@
   demo.py build [--only TITLE]   generate the library into <work>/media
   demo.py credits                rewrite CREDITS.md from sources.toml
   demo.py server setup [--reset] set up a fresh server on the built library
-  demo.py server start|stop|status
+  demo.py server start|stop|status   (start and stop include Live TV on port 8200)
   demo.py server collections     redraw the collections' pictures on a running server
+  demo.py server avatars         upload the profile pictures again
+  demo.py server people          upload the cast and crew headshots
 
 The library comes from catalog.toml, tracks.toml and sources.toml. Videos are
 one still frame per chapter and the audio is silence, so a two-hour film takes
@@ -14,7 +16,7 @@ a few megabytes and a few seconds to build. Downloads are kept in
 
 The work directory is GLACIER_DEMO_DIR, or %LOCALAPPDATA%\\glacier-demo
 (~/.cache/glacier-demo elsewhere). The server runs on port 8098 (from the
-Android emulator: http://10.0.2.2:8098), user "Demo" without a password.
+Android emulator: http://10.0.2.2:8098), user "Nora" without a password.
 
 Needs Python 3.11+, Pillow and ffmpeg with libx264, libx265, libsvtav1,
 libopus and zscale (FFMPEG, or ffmpeg on PATH). The server itself is the
@@ -24,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import datetime
 import hashlib
 import json
 import os
@@ -49,6 +52,8 @@ PORT = 8098
 USER_AGENT = "GlacierDemo/1 (https://github.com/Glacier-Jellyfin/glacier-demo)"
 # Bump when the generated files change for the same catalog entry.
 RECIPE = 1
+# Bump when only the muxing changes, so the encoded video is reused.
+MUX = 2
 # Video is built from segments of this length, each a single GOP of one still frame.
 SEGMENT_SECONDS = 64
 # Films in the bulk of the library are cut from a master this long.
@@ -71,7 +76,7 @@ def work() -> Path:
         path = Path(os.environ["LOCALAPPDATA"]) / "glacier-demo"
     else:
         path = Path.home() / ".cache" / "glacier-demo"
-    # Jellyfin scans 8.3 short paths (JENSEB~1) as empty folders.
+    # Jellyfin scans 8.3 short paths (like USERNA~1) as empty folders.
     return path.resolve()
 
 
@@ -86,7 +91,18 @@ def fetch(entry: dict) -> Path:
     request = urllib.request.Request(entry["url"], headers={"User-Agent": USER_AGENT})
     digest = hashlib.sha256()
     partial = path.with_suffix(path.suffix + ".part")
-    with urllib.request.urlopen(request) as response, open(partial, "wb") as out:
+    # Wikimedia answers a run of downloads with 429 now and then; wait and try again.
+    for attempt in range(6):
+        try:
+            response = urllib.request.urlopen(request)
+            break
+        except urllib.error.HTTPError as error:
+            if error.code not in (429, 502, 503, 504) or attempt == 5:
+                raise
+            wait = int(error.headers.get("Retry-After") or 0) or 10 * 2 ** attempt
+            print(f"  {error.code}, again in {wait} s")
+            time.sleep(wait)
+    with response, open(partial, "wb") as out:
         while chunk := response.read(1 << 20):
             digest.update(chunk)
             out.write(chunk)
@@ -104,10 +120,45 @@ def ffmpeg() -> str:
     return found
 
 
+def duration(path: Path) -> float:
+    tool = Path(ffmpeg())
+    probe = subprocess.run([str(tool.with_name(tool.name.replace("ffmpeg", "ffprobe"))), "-v", "error", "-show_entries", "format=duration",
+                            "-of", "csv=p=0", str(path)], capture_output=True, text=True, check=True)
+    return float(probe.stdout.strip())
+
+
 def run_ffmpeg(*args) -> None:
     # SVT-AV1 prints its configuration on every run unless told otherwise.
     env = dict(os.environ, SVT_LOG="1")
     subprocess.run([ffmpeg(), "-hide_banner", "-loglevel", "error", "-y", *map(str, args)], check=True, env=env)
+
+
+RELEASE = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1"
+
+
+def slug(title: str) -> str:
+    return "-".join("".join(c if c.isalnum() else " " for c in title.lower()).split())
+
+
+def still_key(show: str, season: int, episode: int) -> str:
+    return f"ai-ep-{slug(show)}-s{season:02}e{episode:02}"
+
+
+def person_key(name: str) -> str:
+    return f"ai-person-{slug(name)}"
+
+
+def generated(manifest: str, section: str) -> dict[str, dict]:
+    """Pictures that ai.py made in a batch (episodes.toml, people.toml), as image sources."""
+    if not (ROOT / manifest).exists():
+        return {}
+    return {key: {"url": f"{RELEASE}/{key}.jpg", "sha256": entry["sha256"], "license": "CC0",
+                  "author": f"generated with FLUX.1-schnell, seed {entry['seed']}"}
+            for key, entry in load(manifest).get(section, {}).items()}
+
+
+def episode_stills() -> dict[str, dict]:
+    return generated("episodes.toml", "still")
 
 
 def file_title(title: str) -> str:
@@ -209,6 +260,7 @@ def shows(catalog: dict) -> list[dict]:
     result = list(catalog.get("show", []))
     known = {s["title"] for s in result}
     pool = catalog.get("fillers", {}).get("episode_titles", [])
+    stills = episode_stills()
     for title, year, status, rating, genres, image, focus, seasons, runtime, plot in catalog.get("fillers", {}).get("shows", []):
         if title in known:
             continue
@@ -219,8 +271,12 @@ def shows(catalog: dict) -> list[dict]:
             episodes = []
             for e in range(count):
                 aired = f"{year + number - 1}-{3 + e // 4:02}-{1 + e % 4 * 7:02}"
-                # Thumbnails are crops along the series image, one step per episode.
-                episodes.append({"title": next(names), "image": image, "focus": (0.1 + 0.13 * e) % 0.9 + 0.05, "aired": aired})
+                # A generated still where there is one, else a crop along the series image.
+                key = still_key(title, number, e + 1)
+                if key in stills:
+                    episodes.append({"title": next(names), "image": key, "aired": aired})
+                else:
+                    episodes.append({"title": next(names), "image": image, "focus": (0.1 + 0.13 * e) % 0.9 + 0.05, "aired": aired})
             season_list.append({"number": number, "episodes": episodes})
         kids = "Kids" in genre_list
         result.append({
@@ -245,7 +301,7 @@ class Art:
     """Posters, logos and frames drawn from the source photos."""
 
     def __init__(self, sources: dict, billing: bool = False):
-        self.sources = sources
+        self.sources = dict(sources, image={**sources["image"], **episode_stills(), **generated("people.toml", "person")})
         # The credits block at the foot of the posters; catalog.toml [posters] billing.
         self.billing_block = billing
         self.fonts: dict[str, Path] = {}
@@ -727,32 +783,44 @@ class Builder:
     def video(self, spec: dict, runtime: float, frames) -> tuple[Path, list[tuple[float, float, str]]]:
         """The video stream: one still per chapter, each repeated as whole segments.
 
-        frames(n, count) draws chapter n of count; without frames the video is cut
-        from a shared master. Returns the file and the chapters.
+        frames(n, count, label) draws chapter n of count; without frames the video
+        is cut from a shared master. frames.lead and frames.tail name sections
+        before and after the numbered chapters, as (name, segments): "Recap",
+        "Intro", "Credits", "Preview", which the Chapter Segments Provider turns
+        into media segments. Returns the file and the chapters.
         """
         if frames is None:
             return self.cut(spec, runtime)
+        if getattr(frames, "footage", None):
+            return self.footage_video(spec, runtime, frames)
         fps = Fraction(spec["fps"])
         per_segment = round(SEGMENT_SECONDS * fps)
         segment = per_segment / fps
         segments = max(1, round(runtime * 60 / segment))
-        count = max(1, min(12, segments // 8)) if segments >= 8 else 1
-        counts = [segments // count + (1 if n < segments % count else 0) for n in range(count)]
+        lead, tail = list(getattr(frames, "lead", [])), list(getattr(frames, "tail", []))
+        # Named sections only where the story keeps at least two segments.
+        while lead + tail and segments - sum(n for _, n in lead + tail) < 2:
+            (tail if tail else lead).pop()
+        story = segments - sum(n for _, n in lead + tail)
+        count = max(1, min(12, story // 8)) if story >= 8 else 1
+        parts = lead + [(f"Chapter {n + 1}", story // count + (1 if n < story % count else 0)) for n in range(count)] + tail
         work_dir = self.temp / "video"
         work_dir.mkdir(parents=True, exist_ok=True)
-        stem = hashlib.sha1(json.dumps([spec, runtime, frames.key, RECIPE], sort_keys=True).encode()).hexdigest()[:16]
+        stem = hashlib.sha1(json.dumps([spec, runtime, frames.key, parts, RECIPE], sort_keys=True).encode()).hexdigest()[:16]
         output = work_dir / f"{stem}.mkv"
         chapters, start = [], 0.0
-        for n, length in enumerate(counts):
+        for name, length in parts:
             end = start + float(length * segment)
-            chapters.append((start, end, f"Chapter {n + 1}"))
+            chapters.append((start, end, name))
             start = end
         if output.exists():
             return output, chapters
         listing = []
-        for n, length in enumerate(counts):
+        counts = [length for _, length in parts]
+        for n, (name, length) in enumerate(parts):
             png = work_dir / f"{stem}-{n}.png"
-            frames(n, count).save(png)
+            label = f"{name} of {count}" if name.startswith("Chapter ") else name
+            frames(n, len(parts), label).save(png)
             part = work_dir / f"{stem}-{n}.mkv"
             # The loop filter repeats the converted frame in memory; reading the
             # picture again for every frame takes longer than encoding it.
@@ -763,7 +831,7 @@ class Builder:
         concat = work_dir / f"{stem}.txt"
         concat.write_text("\n".join(listing) + "\n", encoding="utf-8")
         run_ffmpeg("-f", "concat", "-safe", 0, "-i", concat, "-c", "copy", output)
-        for n in range(count):
+        for n in range(len(counts)):
             (work_dir / f"{stem}-{n}.mkv").unlink()
             (work_dir / f"{stem}-{n}.png").unlink()
         concat.unlink()
@@ -773,7 +841,7 @@ class Builder:
         """The first runtime minutes of a three-hour master with neutral frames."""
         art = self.art
 
-        def blank(n: int, count: int) -> Image.Image:
+        def blank(n: int, count: int, label: str) -> Image.Image:
             return art.blank(spec["width"], spec["height"], n, count)
 
         blank.key = ["master"]
@@ -786,14 +854,161 @@ class Builder:
             run_ffmpeg("-i", master, "-t", f"{duration:.3f}", "-map", 0, "-c", "copy", output)
         return output, [(start, min(end, duration), title) for start, end, title in chapters if start < duration]
 
-    def encoder(self, spec: dict, gop: int) -> tuple[str, list]:
+    # ---- real footage
+
+    # How long the named sections run, in seconds.
+    SECTION_SECONDS = {"Recap": 45, "Intro": 50, "Credits": 60, "Preview": 30}
+
+    def footage_video(self, spec: dict, runtime: float, frames) -> tuple[Path, list[tuple[float, float, str]]]:
+        """The video from real clips: named sections first and last, the reel repeated in between.
+
+        The clips are cut into an SDR reel once; every piece is encoded from it with the
+        same settings (and the HDR mapping, where wanted), then joined by stream copy.
+        """
+        item, variant = frames.footage["item"], frames.footage["variant"]
+        clips = item["footage"]
+        clips = clips[variant % len(clips):] + clips[:variant % len(clips)]
+        sections = [(name, self.SECTION_SECONDS[name] * (2 if name == "Credits" and n > 1 else 1))
+                    for name, n in frames.lead + frames.tail]
+        lead, tail = sections[:len(frames.lead)], sections[len(frames.lead):]
+        work_dir = self.temp / "footage"
+        work_dir.mkdir(parents=True, exist_ok=True)
+        stem = hashlib.sha1(json.dumps([spec, item["title"], clips, sections, runtime, frames.key, RECIPE],
+                                       sort_keys=True).encode()).hexdigest()[:16]
+        output = work_dir / f"{stem}.mkv"
+        fps = Fraction(spec["fps"])
+        gop = round(2 * fps)
+        reel = self.reel(spec, clips, work_dir)
+        reel_length = duration(reel)
+        story = runtime * 60 - sum(s for _, s in sections)
+        count = max(1, min(12, round(story / 600)))
+        chapters, start = [], 0.0
+        for name, seconds in lead:
+            chapters.append((start, start + seconds, name))
+            start += seconds
+        for n in range(count):
+            chapters.append((start, start + story / count, f"Chapter {n + 1}"))
+            start += story / count
+        for name, seconds in tail:
+            chapters.append((start, start + seconds, name))
+            start += seconds
+        if output.exists():
+            return output, chapters
+
+        pre, codec = self.encoder(spec, gop, video=True)
+        story_file = work_dir / f"{stem}-story.mkv"
+        run_ffmpeg("-i", reel, "-vf", pre, *codec, "-an", story_file)
+        listing = []
+        offsets = {"Intro": 0.0, "Recap": reel_length / 3, "Preview": reel_length * 2 / 3}
+        pieces = {}
+        for name, seconds in sections:
+            piece = work_dir / f"{stem}-{name.lower()}.mkv"
+            if name == "Credits":
+                self.credits_piece(item, spec, seconds, pre, codec, piece)
+            else:
+                self.titled_piece(item, spec, reel, offsets[name] % max(1.0, reel_length - seconds), seconds,
+                                  name, frames.footage.get("heading"), pre, codec, piece)
+            pieces[name] = piece
+        listing += [f"file '{pieces[name].name}'" for name, _ in lead]
+        story_length, left = duration(story_file), story
+        while left > 0.5:
+            listing.append(f"file '{story_file.name}'")
+            if left < story_length:
+                listing.append(f"outpoint {left:.3f}")
+            left -= story_length
+        listing += [f"file '{pieces[name].name}'" for name, _ in tail]
+        concat = work_dir / f"{stem}.txt"
+        concat.write_text("\n".join(listing) + "\n", encoding="utf-8")
+        run_ffmpeg("-f", "concat", "-safe", 0, "-i", concat, "-c", "copy", output)
+        for piece in [story_file, concat, *pieces.values()]:
+            piece.unlink()
+        return output, chapters
+
+    def reel(self, spec: dict, clips: list[dict], work_dir: Path) -> Path:
+        """The clips cut, scaled and joined into one SDR video at the target size and rate."""
+        key = hashlib.sha1(json.dumps([spec["width"], spec["height"], spec["fps"], clips], sort_keys=True).encode())
+        output = work_dir / f"reel-{key.hexdigest()[:16]}.mkv"
+        if output.exists():
+            return output
+        width, height = spec["width"], spec["height"]
+        inputs, filters = [], []
+        for n, clip in enumerate(clips):
+            inputs += ["-ss", clip.get("start", 0), "-t", clip["length"], "-i", fetch(self.sources["video"][clip["clip"]])]
+            crop = f"crop=iw:ih*{1 - clip['crop_bottom']}:0:0," if clip.get("crop_bottom") else ""
+            filters.append(f"[{n}:v]{crop}scale={width}:{height}:force_original_aspect_ratio=increase,"
+                           f"crop={width}:{height},setsar=1,fps={spec['fps']},format=yuv420p[v{n}]")
+        joined = "".join(f"[v{n}]" for n in range(len(clips))) + f"concat=n={len(clips)}:v=1:a=0[out]"
+        # Nearly lossless: every piece of the film is encoded from this.
+        run_ffmpeg(*inputs, "-filter_complex", ";".join(filters + [joined]), "-map", "[out]",
+                   "-c:v", "libx264", "-preset", "veryfast", "-crf", 16, "-an", output)
+        return output
+
+    def titled_piece(self, item: dict, spec: dict, reel: Path, start: float, seconds: float, name: str,
+                     heading: str | None, pre: str, codec: list, output: Path) -> None:
+        """A stretch of the reel with the title over it: the intro, or "Previously on" and "Next time on"."""
+        width, height = spec["width"], spec["height"]
+        logo = self.art.logo(item)
+        if name == "Intro":
+            logo.thumbnail((round(width * 0.55), round(height * 0.4)))
+            card, x, y = logo, "(W-w)/2", "(H-h)/2"
+        else:
+            logo.thumbnail((round(width * 0.25), round(height * 0.16)))
+            words = {"Recap": "Previously on", "Preview": "Next time on"}[name]
+            line = self.art.letters(words.upper(), self.art.font("condensed", height * 0.032, "Regular"), 0.3)
+            card = Image.new("RGBA", (max(line.width, logo.width), line.height + 18 + logo.height), (0, 0, 0, 0))
+            card.paste(Image.new("RGBA", line.size, (255, 255, 255, 255)), (0, 0), line)
+            card.alpha_composite(logo, (0, line.height + 18))
+            x, y = f"{round(width * 0.06)}", f"H-h-{round(height * 0.08)}"
+        png = output.with_suffix(".png")
+        card.save(png)
+        fade = (f"[1:v]format=rgba,fade=in:st=1:d=1.5:alpha=1,fade=out:st={seconds - 3}:d=1.5:alpha=1[t];"
+                f"[0:v][t]overlay={x}:{y}:shortest=1,{pre}")
+        run_ffmpeg("-ss", f"{start:.3f}", "-t", seconds, "-i", reel, "-loop", 1, "-t", seconds, "-i", png,
+                   "-filter_complex", fade, *codec, "-an", output)
+        png.unlink()
+
+    def credits_piece(self, item: dict, spec: dict, seconds: float, pre: str, codec: list, output: Path) -> None:
+        """End credits rolling up over black."""
+        width, height = spec["width"], spec["height"]
+        unit = height / 1080
+        crew = pick(item["title"], "crew", DIRECTORS + ACTORS, 6)
+        lines = [("", None)]
+        for label, names in (("Directed by", item.get("directors") or crew[:1]), ("Written by", item.get("writers") or crew[1:2])):
+            lines += [(label, None)] + [(n, "name") for n in names] + [("", None)]
+        lines += [("Cast", None)] + [(f"{name}   {role}", "name") for name, role in item.get("cast", [])] + [("", None)]
+        for label, name in zip(["Director of Photography", "Editor", "Music", "Production Design"], crew[2:]):
+            lines += [(label, None), (name, "name"), ("", None)]
+        lines += [("", None), (NOTE, None)]
+        small, big = self.art.font("condensed", 26 * unit, "Light"), self.art.font("condensed", 38 * unit, "Regular")
+        logo = self.art.logo(item)
+        logo.thumbnail((round(width * 0.4), round(height * 0.3)))
+        roll = Image.new("RGBA", (round(width * 0.7), logo.height + round(60 * unit) * len(lines)), (0, 0, 0, 0))
+        roll.alpha_composite(logo, ((roll.width - logo.width) // 2, 0))
+        draw, y = ImageDraw.Draw(roll), logo.height + round(80 * unit)
+        for text, kind in lines:
+            if text:
+                draw.text((roll.width / 2, y), text if kind else text.upper(), anchor="ma",
+                          font=big if kind else small, fill=(255, 255, 255, 255) if kind else (170, 170, 170, 255))
+            y += round(60 * unit) if kind or text else round(30 * unit)
+        roll = roll.crop((0, 0, roll.width, y))
+        png = output.with_suffix(".png")
+        roll.save(png)
+        speed = (height + roll.height) / seconds
+        run_ffmpeg("-f", "lavfi", "-i", f"color=black:s={width}x{height}:r={spec['fps']}:d={seconds}",
+                   "-loop", 1, "-t", seconds, "-i", png,
+                   "-filter_complex", f"[0:v][1:v]overlay=(W-w)/2:H-t*{speed:.3f}:shortest=1,format=yuv420p,{pre}",
+                   *codec, "-an", output)
+        png.unlink()
+
+    def encoder(self, spec: dict, gop: int, video: bool = False) -> tuple[str, list]:
         """The filter that prepares the frame, and the encoder arguments."""
         scale = f"scale={spec['width']}:{spec['height']}"
         hdr = spec.get("hdr")
         ten_bit = hdr or spec.get("bits") == 10
         pix = "yuv420p10le" if ten_bit else "yuv420p"
         # The still is SDR; mapped into PQ it looks like itself on an HDR screen.
-        pre = (f"{scale},zscale=tin=iec61966-2-1:pin=bt709:min=bt709:rin=full"
+        source = "tin=bt709:pin=bt709:min=bt709:rin=limited" if video else "tin=iec61966-2-1:pin=bt709:min=bt709:rin=full"
+        pre = (f"{scale},zscale={source}"
                f":t=smpte2084:p=bt2020:m=bt2020nc:r=limited:npl=203,format={pix}") if hdr else f"{scale},format={pix}"
         colour = ["-color_primaries", "bt2020", "-color_trc", "smpte2084", "-colorspace", "bt2020nc"] if hdr else []
         if spec["codec"] == "h264":
@@ -839,7 +1054,7 @@ class Builder:
     def media_file(self, path: Path, title: str, spec: dict, template: dict, runtime: float, frames) -> None:
         """Muxes video, audio, subtitles and chapters into path, unless it is up to date."""
         key = frames.key if frames else "master"
-        recipe = hashlib.sha1(json.dumps([title, spec, template, runtime, key, RECIPE], sort_keys=True).encode()).hexdigest()
+        recipe = hashlib.sha1(json.dumps([title, spec, template, runtime, key, RECIPE, MUX], sort_keys=True).encode()).hexdigest()
         stamp = self.temp / "done" / (hashlib.sha1(str(path).encode()).hexdigest()[:16] + ".txt")
         if path.exists() and stamp.exists() and stamp.read_text() == recipe:
             return
@@ -870,7 +1085,7 @@ class Builder:
             args += ["-i", source]
         path.parent.mkdir(parents=True, exist_ok=True)
         partial = path.with_name(path.stem + ".part.mkv")
-        run_ffmpeg(*args, *maps, "-map_chapters", len(inputs) - 1, "-map_metadata", -1, "-c", "copy",
+        run_ffmpeg(*args, *maps, "-map_chapters", len(inputs) - 1, "-map_metadata:g", -1, "-c", "copy",
                    "-metadata", f"title={title}", *meta, partial)
         partial.replace(path)
         for track in template.get("external", []):
@@ -889,27 +1104,113 @@ class Builder:
 
     # ---- titles
 
-    def frames_for(self, item: dict, image: str, focus: float, heading: list[str], spec: dict):
+    def frames_for(self, item: dict, image: str, focus: float, heading: list[str], spec: dict,
+                   lead: list | None = None, tail: list | None = None):
         art = self.art
 
-        def draw(n: int, count: int) -> Image.Image:
+        def draw(n: int, count: int, label: str) -> Image.Image:
             pan = focus if count == 1 else 0.15 + 0.7 * n / (count - 1)
-            return art.frame(item, image, spec["width"], spec["height"], pan, heading + [f"Chapter {n + 1} of {count}"])
+            return art.frame(item, image, spec["width"], spec["height"], pan, heading + [label])
 
-        draw.key = [item["title"], image, heading, item.get("style")]
+        draw.lead, draw.tail = lead or [], tail or []
+        # Everything that changes the picture: a file whose key changed is built again.
+        draw.key = [item["title"], image, heading, item.get("style"), draw.lead, draw.tail]
         return draw
+
+    @staticmethod
+    def episode_sections(item: dict, season: int, episode: int) -> tuple[list, list]:
+        """A recap from the second episode on, an intro, credits, and for anime a preview of the next one."""
+        if season == 0:
+            return [], [("Credits", 1)]
+        recap = [] if (season, episode) == (1, 1) else [("Recap", 1)]
+        preview = [("Preview", 1)] if "Anime" in item["genres"] else []
+        return recap + [("Intro", 1)], [("Credits", 1)] + preview
 
     def movie(self, item: dict) -> None:
         folder = self.media / "Movies" / folder_name(item)
         folder.mkdir(parents=True, exist_ok=True)
         self.title_images(folder, item)
         write_xml(folder / "movie.nfo", movie_nfo(item))
+        if item.get("film"):
+            self.film(folder / f"{folder_name(item)}.mkv", item)
+            return
         for file in item["files"]:
             spec = self.tracks["video"][file["video"]]
             name = folder_name(item) + (f" - {file['label']}" if file.get("label") else "")
-            frames = None if item.get("filler") else self.frames_for(item, item["backdrop"], 0.5, [item["title"]], spec)
+            # Opening titles and end credits, for skipping them.
+            frames = None if item.get("filler") else self.frames_for(item, item["backdrop"], 0.5, [item["title"]], spec,
+                                                                        [("Intro", 1)], [("Credits", 2)])
+            if item.get("footage"):
+                frames.footage = {"item": item, "variant": 0}
+                frames.key = frames.key + [item["footage"], 0]
             self.media_file(folder / f"{name}.mkv", item["title"], spec, self.tracks["template"][file["tracks"]],
                             item["runtime"], frames)
+
+    def film(self, path: Path, item: dict) -> None:
+        """A real film (an open movie) remuxed with the audio, subtitles and chapters from the catalog."""
+        film = item["film"]
+        recipe = hashlib.sha1(json.dumps([item["title"], film, RECIPE, MUX], sort_keys=True).encode()).hexdigest()
+        stamp = self.temp / "done" / (hashlib.sha1(str(path).encode()).hexdigest()[:16] + ".txt")
+        if path.exists() and stamp.exists() and stamp.read_text() == recipe:
+            return
+        print(f"  {path.relative_to(self.media)}")
+        main = self.film_source(film["source"])
+        inputs, maps, meta = [main], ["-map", "0:v:0"], ["-disposition:v:0", "default"]
+        # Audio: the film's own tracks by index, or another source file.
+        for n, track in enumerate(film.get("audio", [])):
+            if "source" in track:
+                inputs.append(self.film_source(track["source"]))
+                maps += ["-map", f"{len(inputs) - 1}:a:0"]
+            else:
+                maps += ["-map", f"0:a:{track.get('index', 0)}"]
+            meta += self.stream_meta("a", n, track)
+        charsets = {}
+        for n, track in enumerate(film.get("subtitles", [])):
+            if "source" in track:
+                inputs.append(self.film_source(track["source"]))
+                if track.get("charset"):
+                    charsets[inputs[-1]] = track["charset"]
+                maps += ["-map", f"{len(inputs) - 1}:s:0"]
+            else:
+                maps += ["-map", f"0:s:{track['index']}"]
+            meta += self.stream_meta("s", n, track)
+        # Chapters named Intro or Credits become media segments to skip.
+        marks = film.get("chapters", [])
+        end = duration(main)
+        chapter_file = self.temp / "subtitles" / f"{recipe[:12]}.ffmeta"
+        chapter_file.parent.mkdir(parents=True, exist_ok=True)
+        chapter_file.write_text(";FFMETADATA1\n" + "".join(
+            f"[CHAPTER]\nTIMEBASE=1/1000\nSTART={round(start * 1000)}\n"
+            f"END={round((marks[i + 1][0] if i + 1 < len(marks) else end) * 1000)}\ntitle={name}\n"
+            for i, (start, name) in enumerate(marks)), encoding="utf-8")
+        inputs.append(chapter_file)
+        # Some subtitle files probe badly (a stray line breaks the detection); their format is known.
+        args = []
+        for source in inputs:
+            if source.suffix == ".srt":
+                args += ["-f", "srt"] + (["-sub_charenc", charsets[source]] if source in charsets else [])
+            args += ["-i", source]
+        partial = path.with_name(path.stem + ".part.mkv")
+        run_ffmpeg(*args, *maps, "-map_chapters", len(inputs) - 1, "-map_metadata:g", -1, "-c:v", "copy", "-c:a", "copy",
+                   "-c:s", "srt", "-metadata", f"title={item['title']}", *meta, partial)
+        partial.replace(path)
+        stamp.parent.mkdir(parents=True, exist_ok=True)
+        stamp.write_text(recipe)
+
+    def film_source(self, key: str) -> Path:
+        """A file from sources.toml [film], unpacked from its zip archive once if it is in one."""
+        entry = self.sources["film"][key]
+        path = fetch(entry)
+        if not entry.get("member"):
+            return path
+        target = self.temp / "films" / f"{entry['sha256'][:12]}-{entry['member']}"
+        if not target.exists():
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with zipfile.ZipFile(path) as archive, archive.open(entry["member"]) as source, \
+                    open(target.with_suffix(".part"), "wb") as out:
+                shutil.copyfileobj(source, out, 1 << 20)
+            target.with_suffix(".part").replace(target)
+        return target
 
     def show(self, item: dict) -> None:
         folder = self.media / "Shows" / folder_name(item)
@@ -930,9 +1231,144 @@ class Builder:
                 self.art.cover(episode["image"], 1280, 720, episode.get("focus", 0.5)).save(season_dir / f"{stem}-thumb.jpg", quality=88)
                 write_xml(season_dir / f"{stem}.nfo", episode_nfo(item, number, e, episode))
                 heading = [item["title"], f"S{number:02}E{e:02} · {episode['title']}"]
-                frames = None if item.get("filler") else self.frames_for(item, episode["image"], 0.5, heading, spec)
+                frames = None if item.get("filler") else self.frames_for(
+                    item, episode["image"], 0.5, heading, spec, *self.episode_sections(item, number, e))
+                if item.get("footage"):
+                    # Each episode starts the reel at another clip.
+                    frames.footage = {"item": item, "variant": e - 1 + 3 * number}
+                    frames.key = frames.key + [item["footage"], e - 1 + 3 * number]
                 self.media_file(season_dir / f"{stem}.mkv", episode["title"], spec, template,
                                 episode.get("runtime", item["runtime"]), frames)
+
+    # ---- music
+
+    # Made-up tracks are silence in these formats: file extension and encoder.
+    AUDIO_FORMATS = {"flac": ("flac", ["-c:a", "flac"]), "mp3": ("mp3", ["-c:a", "libmp3lame", "-b:a", "320k"]),
+                     "aac": ("m4a", ["-c:a", "aac", "-b:a", "256k"]), "opus": ("opus", ["-c:a", "libopus", "-b:a", "160k"])}
+
+    def music(self, catalog: dict) -> None:
+        root = self.media / "Music"
+        artists = {a["name"]: a for a in catalog.get("artist", [])}
+        for artist in artists.values():
+            folder = root / file_title(artist["name"])
+            folder.mkdir(parents=True, exist_ok=True)
+            write_xml(folder / "artist.nfo", artist_nfo(artist))
+            picture = artist.get("image") or f"ai-artist-{slug(artist['name'])}"
+            if picture in self.art.sources["image"]:
+                self.art.cover(picture, 1000, 1000).save(folder / "folder.jpg", quality=90)
+            for album in artist["album"]:
+                discs = album.get("discs") or [album["tracks"]]
+                tracks = [dict(self.track(t), disc=d + 1, number=n + 1, artist=artist["name"])
+                          for d, disc in enumerate(discs) for n, t in enumerate(disc)]
+                self.album(folder, album, artist["name"], artist["genre"], tracks, len(discs))
+        for compilation in catalog.get("compilation", []):
+            tracks = [dict(title=title, seconds=seconds, disc=1, number=n + 1, artist=name)
+                      for n, (name, title, seconds) in enumerate(compilation["tracks"])]
+            self.album(root / "Various Artists", compilation, "Various Artists", "Lounge", tracks, 1)
+
+    @staticmethod
+    def track(entry) -> dict:
+        """A track as a dict: a real recording ({title, audio}) or made-up silence ([title, seconds])."""
+        return dict(entry) if isinstance(entry, dict) else {"title": entry[0], "seconds": entry[1]}
+
+    def album(self, parent: Path, album: dict, album_artist: str, genre: str, tracks: list[dict], discs: int) -> None:
+        folder = parent / file_title(album["title"])
+        folder.mkdir(parents=True, exist_ok=True)
+        cover = f"ai-cover-{slug(album_artist)}-{slug(album['title'])}"
+        if cover in self.art.sources["image"]:
+            self.art.cover(cover, 1000, 1000).save(folder / "folder.jpg", quality=90)
+        root = ET.Element("album")
+        for tag, value in (("title", album["title"]), ("artist", album_artist), ("albumartist", album_artist),
+                           ("year", album.get("year")), ("genre", genre)):
+            if value is not None:
+                element(root, tag, value)
+        write_xml(folder / "album.nfo", root)
+        lyrics = album.get("lyrics", {})
+        for track in tracks:
+            number = f"{track['disc']}-{track['number']:02}" if discs > 1 else f"{track['number']:02}"
+            stem = f"{number} {file_title(track['title'])}"
+            ext = "ogg" if track.get("audio") else self.AUDIO_FORMATS[album.get("format", "flac")][0]
+            target = folder / f"{stem}.{ext}"
+            tags = {"title": track["title"], "artist": track["artist"], "album_artist": album_artist,
+                    "album": album["title"], "genre": genre, "track": f"{track['number']}/{sum(t['disc'] == track['disc'] for t in tracks)}",
+                    "disc": f"{track['disc']}/{discs}", "date": album.get("year", ""), "comment": album.get("performer", "")}
+            if not target.exists():
+                meta = [arg for key, value in tags.items() if value != "" for arg in ("-metadata", f"{key}={value}")]
+                if track.get("audio"):
+                    source = fetch(self.sources["audio"][track["audio"]])
+                    run_ffmpeg("-i", source, "-map", "0:a", "-map_metadata", -1, "-c", "copy", *meta, target)
+                else:
+                    _, codec = self.AUDIO_FORMATS[album.get("format", "flac")]
+                    run_ffmpeg("-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo", "-t", track["seconds"], *codec, *meta, target)
+            if track["title"] in lyrics:
+                # A line every six seconds from the first verse on, with a pause in the middle.
+                lines = lyrics[track["title"]]
+                times = [12 + 6 * n + (8 if n >= len(lines) // 2 else 0) for n in range(len(lines))]
+                lrc = [f"[ti:{track['title']}]", f"[ar:{track['artist']}]", f"[al:{album['title']}]"]
+                lrc += [f"[{t // 60:02}:{t % 60:02}.00]{line}" for t, line in zip(times, lines)]
+                (folder / f"{stem}.lrc").write_text("\n".join(lrc) + "\n", encoding="utf-8")
+
+    def music_videos(self, catalog: dict) -> None:
+        """Music videos cut from footage, with the artist and title over the first seconds."""
+        folder = self.media / "Music Videos"
+        folder.mkdir(parents=True, exist_ok=True)
+        spec = {"width": 1920, "height": 1080, "fps": "25", "codec": "h264"}
+        for video in catalog.get("music_video", []):
+            stem = file_title(f"{video['artist']} - {video['title']}")
+            target = folder / f"{stem}.mkv"
+            root = ET.Element("musicvideo")
+            for tag in ("title", "artist", "album", "year"):
+                element(root, tag, video[tag])
+            write_xml(folder / f"{stem}.nfo", root)
+            if not target.exists():
+                reel = self.reel(spec, video["footage"], self.temp / "footage")
+                card = Image.new("RGBA", (900, 200), (0, 0, 0, 0))
+                artist = self.art.letters(video["artist"].upper(), self.art.font("condensed", 34, "Regular"), 0.3)
+                title = self.art.letters(video["title"], self.art.font("garamond", 76, "Medium"), 0.02)
+                card.paste(Image.new("RGBA", artist.size, (255, 255, 255, 255)), (0, 0), artist)
+                card.paste(Image.new("RGBA", title.size, (255, 255, 255, 255)), (0, artist.height + 18), title)
+                png = target.with_suffix(".png")
+                card.save(png)
+                overlay = ("[1:v]format=rgba,fade=in:st=1.5:d=1:alpha=1,fade=out:st=7:d=1:alpha=1[t];"
+                           "[0:v][t]overlay=96:H-h-96:shortest=1,format=yuv420p[v]")
+                run_ffmpeg("-i", reel, "-loop", 1, "-t", 10, "-i", png, "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo",
+                           "-filter_complex", overlay.replace("shortest=1", "eof_action=pass"), "-map", "[v]", "-map", "2:a",
+                           "-shortest", "-c:v", "libx264", "-preset", "veryfast", "-crf", 21, "-c:a", "aac", "-b:a", "192k",
+                           "-metadata", f"title={video['title']}", "-metadata", f"artist={video['artist']}", target)
+                png.unlink()
+                run_ffmpeg("-ss", 20, "-i", target, "-frames:v", 1, "-vf", "scale=1280:-2", folder / f"{stem}-thumb.jpg")
+
+    def photo_folder(self, folder: dict, parent: Path) -> None:
+        """Photos with the dates they were "taken" in their EXIF data, and home videos cut from the footage."""
+        path = parent / folder["name"]
+        path.mkdir(parents=True, exist_ok=True)
+        start = datetime.datetime.fromisoformat(folder["date"]).replace(hour=9)
+        # Four shots a day, a few hours apart, over as many days as it takes.
+        moments = (start + datetime.timedelta(days=n // 4, hours=(n % 4) * 2.5, minutes=n * 7 % 60) for n in range(10_000))
+        for key in folder.get("photos", []):
+            taken = next(moments)
+            target = path / f"IMG_{taken:%Y%m%d_%H%M%S}.jpg"
+            if not target.exists():
+                image = self.art.photo(key).copy()
+                image.thumbnail((2400, 2400))
+                exif = Image.Exif()
+                exif[0x0132] = f"{taken:%Y:%m:%d %H:%M:%S}"  # DateTime
+                exif.get_ifd(0x8769)[0x9003] = f"{taken:%Y:%m:%d %H:%M:%S}"  # DateTimeOriginal
+                image.save(target, quality=90, exif=exif)
+            os.utime(target, (taken.timestamp(), taken.timestamp()))
+        for clip in folder.get("clips", []):
+            taken = next(moments)
+            target = path / f"VID_{taken:%Y%m%d_%H%M%S}.mp4"
+            if not target.exists():
+                source = fetch(self.sources["video"][clip["clip"]])
+                run_ffmpeg("-ss", clip.get("start", 0), "-t", clip["length"], "-i", source, "-map", "0:v:0", "-map", "0:a:0?",
+                           "-vf", "scale=1920:1080:force_original_aspect_ratio=decrease,setsar=1", "-c:v", "libx264",
+                           "-preset", "veryfast", "-crf", 22, "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k",
+                           "-metadata", f"title={clip['name']}", "-metadata", f"creation_time={taken:%Y-%m-%dT%H:%M:%S}Z",
+                           "-movflags", "+faststart", target)
+            os.utime(target, (taken.timestamp(), taken.timestamp()))
+        for inner in folder.get("folders", []):
+            self.photo_folder(inner, path)
 
     def title_images(self, folder: Path, item: dict) -> None:
         if item.get("plain_poster"):
@@ -953,6 +1389,14 @@ class Builder:
                     continue
                 print(f"{kind} {folder_name(item)}")
                 handler(item)
+        if not only or only.lower() in ("music", "music videos"):
+            print("music")
+            self.music(catalog)
+            self.music_videos(catalog)
+        for folder in catalog.get("photo_folder", []):
+            if not only or only.lower() in folder["name"].lower():
+                print(f"photos {folder['name']}")
+                self.photo_folder(folder, self.media / "Photos")
         size = sum(f.stat().st_size for f in self.media.rglob("*") if f.is_file())
         print(f"library: {self.media} ({size / 1e6:.0f} MB)")
 
@@ -986,7 +1430,6 @@ def common_nfo(root: ET.Element, item: dict) -> None:
         element(actor, "role", role)
         element(actor, "type", "Actor")
         element(actor, "sortorder", order)
-    element(root, "lockdata", "true")
 
 
 def movie_nfo(item: dict) -> ET.Element:
@@ -1018,7 +1461,15 @@ def episode_nfo(show: dict, season: int, number: int, episode: dict) -> ET.Eleme
     if episode.get("before_season"):
         element(root, "airsbefore_season", episode["before_season"])
         element(root, "airsbefore_episode", 1)
-    element(root, "lockdata", "true")
+    return root
+
+
+def artist_nfo(artist: dict) -> ET.Element:
+    root = ET.Element("artist")
+    element(root, "name", artist["name"])
+    element(root, "genre", artist["genre"])
+    if artist.get("about"):
+        element(root, "biography", artist["about"])
     return root
 
 
@@ -1033,22 +1484,38 @@ def credits() -> None:
     sources = load("sources.toml")
     lines = ["# Credits", "",
              "The demo library is built from these works. The titles, plots, people and",
-             "studios in catalog.toml are made up, except for Blender Studio's films and",
-             "Pepper&Carrot, which appear under their own names.", "",
+             "studios in catalog.toml are made up, except for Blender Studio's films,",
+             "Pepper&Carrot and the two composers, which appear under their own names.", "",
              "All images were changed: cropped, scaled, dimmed and lettered for posters,",
              "logos and video frames. Images marked * show a recognisable person; keep",
-             "them off the website.", "",
-             "## Images", "",
-             "| Used as | Image | Author | Licence |", "|---|---|---|---|"]
-    for key, image in sources["image"].items():
-        if "File:" in image["page"]:
-            name = urllib.request.unquote(image["page"].rsplit("File:", 1)[-1]).replace("_", " ")
-        else:
-            name = urllib.request.unquote(image["url"].rsplit("/", 1)[-1])
-        page = image["page"] if "File:" in image["page"] else image["url"]
-        mark = " *" if image.get("identifiable") else ""
-        lines.append(f"| `{key}`{mark} | [{name}]({page}) | {image['author']} | {image['license']} |")
-    lines += ["", "## Fonts", "", "All under the SIL Open Font License 1.1, from [google/fonts](https://github.com/google/fonts).", ""]
+             "them off the website.", ""]
+
+    def table(heading: str, entries: dict, intro: list[str] = ()) -> None:
+        nonlocal lines
+        lines += [f"## {heading}", "", *intro, *([""] if intro else []),
+                  "| Used as | Work | Author | Licence |", "|---|---|---|---|"]
+        for key, entry in entries.items():
+            page = entry.get("page") or entry["url"]
+            name = page.rsplit("File:", 1)[-1] if "File:" in page else entry["url"].split("?")[0].rsplit("/", 1)[-1]
+            name = urllib.request.unquote(name).replace("_", " ")
+            mark = " *" if entry.get("identifiable") else ""
+            lines.append(f"| `{key}`{mark} | [{name}]({page}) | {entry['author']} | {entry['license']} |")
+        lines.append("")
+
+    images = sources["image"]
+    table("Images", {k: v for k, v in images.items() if not k.startswith("ai-")})
+    table("Films", sources.get("film", {}), ["Blender Studio's open movies and their subtitles, remuxed unchanged."])
+    table("Video", sources.get("video", {}), ["Footage for the showcase titles, music videos, home videos and Live TV."])
+    table("Audio", sources.get("audio", {}))
+    generated_count = sum(k.startswith("ai-") for k in images)
+    stills, people = generated("episodes.toml", "still"), generated("people.toml", "person")
+    lines += ["## Generated images", "",
+              f"{generated_count} posters, backdrops, covers, artist pictures and avatars, {len(stills)} episode",
+              f"stills and {len(people)} headshots of made-up people were generated with",
+              "[FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) (Apache 2.0)",
+              "from the prompts in prompts.toml. They show no real person and are released",
+              "under CC0, like the rest of this repository's own content.", ""]
+    lines += ["## Fonts", "", "All under the SIL Open Font License 1.1, from [google/fonts](https://github.com/google/fonts).", ""]
     for font in sources["font"].values():
         lines.append(f"- {font['name']}")
     lines += ["", "## Server", "", f"[Jellyfin](https://jellyfin.org) {sources['jellyfin']['version']}, GPL-2.0.", ""]
@@ -1062,11 +1529,11 @@ def credits() -> None:
 # off the login screen and the profiles below are the ones to use.
 ADMIN = {"name": "Admin", "password": "glacier-demo"}
 USERS = [
-    {"name": "Demo", "password": "", "color": "#3d7bd9"},
+    {"name": "Nora", "password": "", "color": "#3d7bd9"},
     {"name": "Alex", "password": "demo", "color": "#c2410c"},
     {"name": "Kids", "password": "", "color": "#15803d", "max_rating": "FSK-6"},
 ]
-# Watch state of user Demo: share watched for resume points, then played and favourites.
+# Watch state of user Nora: share watched for resume points, then played and favourites.
 RESUME = {"The Last Lighthouse": 0.35, "Glass Mountain": 0.7, "Belle Tout": 0.6}
 PLAYED = ["Empty Nets", "Undertow", "Paper Moons"]
 FAVORITES = ["Glass Mountain", "Harbor Lights", "Paper Moons 2"]
@@ -1117,6 +1584,7 @@ class Server:
         process = subprocess.Popen([exe, "--datadir", self.data, "--ffmpeg", exe.parent / "ffmpeg.exe"],
                                    cwd=exe.parent, stdout=log, stderr=log, creationflags=flags)
         (work() / "jellyfin.pid").write_text(str(process.pid))
+        self.start_livetv()
         for _ in range(180):
             if self.running():
                 print(f"running on {self.url} (pid {process.pid})")
@@ -1126,15 +1594,29 @@ class Server:
             time.sleep(1)
         sys.exit("Jellyfin did not answer within three minutes")
 
+    def start_livetv(self) -> None:
+        """The Live TV service, in its own process; it prepares its loops first, which takes a while once."""
+        pid_file = work() / "livetv.pid"
+        try:
+            with urllib.request.urlopen(LiveTV.url("channels.m3u"), timeout=2):
+                return
+        except (urllib.error.URLError, OSError):
+            pass
+        log = open(work() / "livetv.log", "ab")
+        flags = subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
+        process = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), "livetv"], cwd=ROOT,
+                                   stdout=log, stderr=log, creationflags=flags)
+        pid_file.write_text(str(process.pid))
+
     def stop(self) -> None:
-        pid_file = work() / "jellyfin.pid"
-        if not pid_file.exists():
-            print("not started by demo.py")
-            return
-        pid = pid_file.read_text().strip()
-        # Only this process: other Jellyfin servers may run on the same machine.
-        subprocess.run(["taskkill", "/PID", pid, "/T", "/F"] if os.name == "nt" else ["kill", pid])
-        pid_file.unlink()
+        for name in ("livetv.pid", "jellyfin.pid"):
+            pid_file = work() / name
+            if not pid_file.exists():
+                continue
+            pid = pid_file.read_text().strip()
+            # Only these processes: other Jellyfin servers may run on the same machine.
+            subprocess.run(["taskkill", "/PID", pid, "/T", "/F"] if os.name == "nt" else ["kill", pid])
+            pid_file.unlink()
         for _ in range(30):
             if not self.running():
                 return
@@ -1203,8 +1685,20 @@ class Server:
         config.setdefault("TrickplayOptions", {}).update({"EnableKeyFrameOnlyExtraction": True, "EnableHwAcceleration": True})
         self.request("POST", "/System/Configuration", config)
 
+        # Turns the chapters named Intro, Recap, Credits and Preview into media segments.
+        self.request("POST", "/Packages/Installed/Chapter%20Segments%20Provider?assemblyGuid="
+                             "698b6f3314ca49b59d79fc3c0ab941f5&version=5.0.0.0")
+        self.stop()
+        self.start()
+        self.login(ADMIN)
+
         self.library("Movies", "movies", media / "Movies", ["Movie"])
         self.library("Shows", "tvshows", media / "Shows", ["Series", "Season", "Episode"])
+        self.library("Photos", "homevideos", media / "Photos", ["Photo", "Video"])
+        self.library("Music", "music", media / "Music", ["MusicArtist", "MusicAlbum", "Audio"])
+        self.library("Music Videos", "musicvideos", media / "Music Videos", ["MusicVideo"])
+        self.live_tv()
+        self.segment_names()
         self.scan()
 
         users = {}
@@ -1216,13 +1710,24 @@ class Server:
             self.request("POST", f"/Users/{created['Id']}/Policy", dict(policy, IsHidden=False))
             if user.get("max_rating"):
                 self.limit(created["Id"], user["max_rating"])
-        for user in USERS:
-            avatar = self.art().avatar(user["name"], user["color"])
-            self.upload(f"/UserImage?userId={users[user['name']]}", avatar)
+        self.avatars()
+        self.people()
         self.collections()
-        self.watch_state(users["Demo"])
+        self.watch_state(users["Nora"])
         self.state_file.write_text(json.dumps({"url": self.url, "token": self.token, "users": users}, indent=2))
-        print(f"ready: {self.url} (from the emulator http://10.0.2.2:{PORT}), user Demo without a password")
+        print(f"ready: {self.url} (from the emulator http://10.0.2.2:{PORT}), user Nora without a password")
+
+    def segment_names(self) -> None:
+        """Whole chapter names only: the plugin's defaults match "ad" in "Meadow" and
+        "credits" in "After the Credits", which would skip the scene after the credits."""
+        plugin = next(p for p in self.request("GET", "/Plugins") if p["Name"] == "Chapter Segments Provider")
+        self.request("POST", f"/Plugins/{plugin['Id']}/Configuration", {
+            "CustomMappingIntro": "^(intro|opening|op)$",
+            "CustomMappingRecap": "^(recap|previously on|last time on)$",
+            "CustomMappingOutro": "^(outro|closing|credits|ending|ed)$",
+            "CustomMappingPreview": "^(preview|next time on|sneak peek)$",
+            "CustomMappingCommercial": "^(break|ad|advertisement|intermission|commercial)$",
+        })
 
     def art(self) -> Art:
         if not hasattr(self, "_art"):
@@ -1255,9 +1760,33 @@ class Server:
         query = urllib.parse.urlencode({"name": name, "collectionType": kind, "refreshLibrary": "false"})
         self.request("POST", f"/Library/VirtualFolders?{query}", {"LibraryOptions": options})
 
+    def live_tv(self) -> None:
+        """The M3U tuner and the XMLTV guide of the Live TV service (it must be running)."""
+        for _ in range(600):
+            try:
+                with urllib.request.urlopen(LiveTV.url("guide.xml"), timeout=2):
+                    break
+            except (urllib.error.URLError, OSError):
+                time.sleep(2)
+        self.request("POST", "/LiveTv/TunerHosts", {"Type": "m3u", "Url": LiveTV.url("channels.m3u"),
+                                                    "FriendlyName": "Glacier Demo", "ImportFavoritesOnly": False,
+                                                    "AllowHWTranscoding": False, "TunerCount": 0})
+        self.request("POST", "/LiveTv/ListingProviders", {"Type": "xmltv", "Path": LiveTV.url("guide.xml"),
+                                                          "EnableAllTuners": True})
+
     def scan(self) -> None:
         print("  scanning (with trickplay and chapter images)")
         self.request("POST", "/Library/Refresh")
+        self.wait_idle()
+        # A first scan leaves media segments and part of the trickplay to their tasks.
+        tasks = self.request("GET", "/ScheduledTasks?isHidden=false")
+        for task in tasks:
+            if task["Key"] in ("TaskExtractMediaSegments", "RefreshTrickplayImages"):
+                print(f"  {task['Name'].lower()}")
+                self.request("POST", f"/ScheduledTasks/Running/{task['Id']}")
+                self.wait_idle()
+
+    def wait_idle(self) -> None:
         time.sleep(5)
         while True:
             tasks = self.request("GET", "/ScheduledTasks?isHidden=false")
@@ -1286,6 +1815,27 @@ class Server:
         # The server wants the picture base64 encoded, with its real type.
         self.request("POST", path, raw=base64.b64encode(buffer.getvalue()), content_type="image/jpeg")
 
+    def avatars(self) -> None:
+        """Profile pictures: the generated ones from prompts.toml, else the initial on the user's colour."""
+        ids = {u["Name"]: u["Id"] for u in self.request("GET", "/Users")}
+        for user in USERS:
+            key = f"ai-avatar-{slug(user['name'])}"
+            if key in self.art().sources["image"]:
+                picture = self.art().cover(key, 512, 512)
+            else:
+                picture = self.art().avatar(user["name"], user["color"])
+            self.upload(f"/UserImage?userId={ids[user['name']]}", picture)
+            print(f"  avatar {user['name']}")
+
+    def people(self) -> None:
+        """Headshots for the made-up cast and crew; real people keep no picture."""
+        pictures = self.art().sources["image"]
+        for person in self.request("GET", f"/Persons?userId={self.user_id}")["Items"]:
+            key = person_key(person["Name"])
+            if key in pictures:
+                self.upload(f"/Items/{person['Id']}/Images/Primary", self.art().cover(key, 600, 900))
+                print(f"  person {person['Name']}")
+
     def collections(self) -> None:
         """Creates the collections that do not exist yet and gives all of them their pictures."""
         catalog = load("catalog.toml")
@@ -1296,6 +1846,10 @@ class Server:
             if name not in existing:
                 ids = ",".join(items[m["title"]]["Id"] for m in members)
                 existing[name] = self.request("POST", f"/Collections?{urllib.parse.urlencode({'name': name, 'ids': ids})}")["Id"]
+            overview = catalog.get("collection_overviews", {}).get(name)
+            if overview:
+                item = self.request("GET", f"/Users/{self.user_id}/Items/{existing[name]}")
+                self.request("POST", f"/Items/{existing[name]}", dict(item, Overview=" ".join(overview.split())))
             poster, backdrop = self.art().collection(name, members)
             self.upload(f"/Items/{existing[name]}/Images/Primary", poster)
             self.upload(f"/Items/{existing[name]}/Images/Backdrop", backdrop)
@@ -1315,6 +1869,183 @@ class Server:
             self.request("POST", f"/UserFavoriteItems/{items[name]['Id']}?userId={user}")
 
 
+# ---------------------------------------------------------------- live tv
+
+LIVETV_PORT = 8200
+
+
+class LiveTV:
+    """The channels in catalog.toml as HLS streams looping real footage, with an M3U and an XMLTV guide.
+
+    Every channel's loop is encoded once (720p, its logo in the corner); streaming copies it, so
+    eight channels cost little CPU. Served on port 8200 for the Jellyfin server next door.
+    """
+
+    def __init__(self):
+        self.catalog = load("catalog.toml")
+        self.channels = self.catalog.get("channel", [])
+        self.root = work() / "livetv"
+        self.builder = Builder()
+        self.art = self.builder.art
+
+    @staticmethod
+    def url(path: str) -> str:
+        return f"http://127.0.0.1:{LIVETV_PORT}/{path}"
+
+    def prepare(self) -> None:
+        for name in ("streams", "loops", "logos", "art"):
+            (self.root / name).mkdir(parents=True, exist_ok=True)
+        for channel in self.channels:
+            self.logo(channel).save(self.root / "logos" / f"{channel['id']}.png")
+            self.loop(channel)
+        self.write_m3u()
+        self.write_guide()
+
+    def logo(self, channel: dict) -> Image.Image:
+        """The channel's name on a rounded tile of its colour."""
+        size = 512
+        image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+        ImageDraw.Draw(image).rounded_rectangle((16, 16, size - 16, size - 16), radius=90, fill=channel["colour"])
+        words = channel["name"].upper().split()
+        masks = [self.art.letters(w, self.art.font("impact", 150), 0.02) for w in words]
+        scale = min(1.0, 400 / max(m.width for m in masks), 360 / sum(m.height + 24 for m in masks))
+        masks = [m.resize((max(1, round(m.width * scale)), max(1, round(m.height * scale))), Image.LANCZOS) for m in masks]
+        y = (size - sum(m.height for m in masks) - 24 * scale * (len(masks) - 1)) / 2
+        for m in masks:
+            image.paste(Image.new("RGBA", m.size, (255, 255, 255, 255)), (round((size - m.width) / 2), round(y)), m)
+            y += m.height + 24 * scale
+        return image
+
+    def loop(self, channel: dict) -> Path:
+        """The channel's picture and sound, encoded once for streaming by copy."""
+        key = hashlib.sha1(json.dumps([channel, RECIPE], sort_keys=True).encode()).hexdigest()[:12]
+        path = self.root / "loops" / f"{channel['id']}-{key}.mp4"
+        if path.exists():
+            return path
+        print(f"  live tv loop {channel['name']}")
+        if channel.get("radio"):
+            # A quiet chord, so the player has something to play.
+            run_ffmpeg("-f", "lavfi", "-i", "sine=frequency=220:sample_rate=48000:duration=300",
+                       "-f", "lavfi", "-i", "sine=frequency=330:sample_rate=48000:duration=300",
+                       "-filter_complex", "[0:a][1:a]amix=inputs=2,volume=0.15", "-c:a", "aac", "-b:a", "96k", path)
+            return path
+        spec = {"width": 1280, "height": 720, "fps": "25"}
+        reel = self.builder.reel(spec, channel["footage"], self.root / "loops")
+        logo = self.root / "logos" / f"{channel['id']}.png"
+        bug = "[1:v]scale=110:-1,format=rgba,colorchannelmixer=aa=0.85[l];[0:v][l]overlay=W-w-36:32,format=yuv420p[v]"
+        run_ffmpeg("-i", reel, "-i", logo, "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo", "-filter_complex", bug,
+                   "-map", "[v]", "-map", "2:a", "-shortest", "-c:v", "libx264", "-preset", "veryfast", "-crf", 23,
+                   "-g", 50, "-keyint_min", 50, "-sc_threshold", 0, "-c:a", "aac", "-b:a", "96k", path)
+        return path
+
+    def write_m3u(self) -> None:
+        lines = ["#EXTM3U"]
+        for c in self.channels:
+            radio = ' radio="true"' if c.get("radio") else ""
+            lines.append(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-chno="{c["number"]}" tvg-name="{c["name"]}" '
+                         f'tvg-logo="{self.url("logos/" + c["id"] + ".png")}" group-title="Glacier Demo"{radio},{c["name"]}')
+            lines.append(self.url(f"streams/{c['id']}/index.m3u8"))
+        (self.root / "channels.m3u").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    def programmes(self, channel: dict) -> list[dict]:
+        """What the channel can show: catalog titles of its genres, or its own made-up formats."""
+        if channel.get("shows"):
+            return [{"title": name, "minutes": 60 if n % 3 == 0 else 30, "desc": f"{name} on {channel['name']}.",
+                     "category": channel.get("category")} for n, name in enumerate(channel["shows"])]
+        media = self.builder.media
+        result = []
+        genres = set(channel.get("genres", []))
+        for film in movies(self.catalog):
+            if genres & set(film["genres"]) and film["runtime"] >= 60:
+                folder = media / "Movies" / folder_name(film)
+                result.append({"title": film["title"], "minutes": film["runtime"], "desc": " ".join(film["plot"].split()),
+                               "category": "Movie", "year": film["year"], "image": folder / "landscape.jpg"})
+        if not channel.get("films_only"):
+            for show in shows(self.catalog):
+                if not genres & set(show["genres"]):
+                    continue
+                folder = media / "Shows" / folder_name(show)
+                for season in show["season"]:
+                    if season["number"] == 0:
+                        continue
+                    for e, episode in enumerate(season["episodes"], 1):
+                        stem = f"{file_title(show['title'])} S{season['number']:02}E{e:02}"
+                        result.append({"title": show["title"], "subtitle": episode["title"], "season": season["number"],
+                                       "episode": e, "minutes": show["runtime"],
+                                       "desc": episode.get("plot") or " ".join(show["plot"].split()),
+                                       "category": channel.get("category") or "Series",
+                                       "image": folder / f"Season {season['number']:02}" / f"{stem}-thumb.jpg"})
+        return result
+
+    def write_guide(self) -> None:
+        """Seven days of programme from six hours ago, the same every time for the same day."""
+        now = datetime.datetime.now(datetime.timezone.utc).replace(minute=0, second=0, microsecond=0)
+        start, end = now - datetime.timedelta(hours=6), now + datetime.timedelta(days=7)
+        stamp = lambda t: t.strftime("%Y%m%d%H%M%S +0000")
+        root = ET.Element("tv", {"generator-info-name": "glacier-demo"})
+        for c in self.channels:
+            channel = element(root, "channel", id=c["id"])
+            element(channel, "display-name", c["name"])
+            element(channel, "display-name", c["number"])
+            element(channel, "icon", src=self.url(f"logos/{c['id']}.png"))
+        for c in self.channels:
+            pool = self.programmes(c)
+            rng = random.Random(f"{c['id']}{start:%Y%m%d}")
+            rng.shuffle(pool)
+            t, n = start, 0
+            while t < end and pool:
+                show = pool[n % len(pool)]
+                # Programme slots end on the quarter hour, like real ones.
+                minutes = -(-show["minutes"] // 15) * 15
+                stop = t + datetime.timedelta(minutes=minutes)
+                programme = element(root, "programme", start=stamp(t), stop=stamp(stop), channel=c["id"])
+                element(programme, "title", show["title"])
+                if show.get("subtitle"):
+                    element(programme, "sub-title", show["subtitle"])
+                    element(programme, "episode-num", f"{show['season'] - 1}.{show['episode'] - 1}.", system="xmltv_ns")
+                element(programme, "desc", show["desc"])
+                if show.get("category"):
+                    element(programme, "category", show["category"])
+                if show.get("year"):
+                    element(programme, "date", show["year"])
+                image = show.get("image")
+                if image and image.exists():
+                    name = f"{slug(show['title'])}-{slug(show.get('subtitle', ''))}.jpg".replace("-.jpg", ".jpg")
+                    target = self.root / "art" / name
+                    if not target.exists():
+                        shutil.copyfile(image, target)
+                    element(programme, "icon", src=self.url(f"art/{name}"))
+                if rng.random() < 0.15:
+                    element(programme, "new")
+                t, n = stop, n + 1
+        write_xml(self.root / "guide.xml", root)
+
+    def serve(self) -> None:
+        import functools
+        import http.server
+
+        self.prepare()
+        processes = []
+        for c in self.channels:
+            out = self.root / "streams" / c["id"]
+            out.mkdir(parents=True, exist_ok=True)
+            for old in out.iterdir():
+                old.unlink()
+            processes.append(subprocess.Popen(
+                [ffmpeg(), "-hide_banner", "-loglevel", "error", "-re", "-stream_loop", "-1", "-i", str(self.loop(c)),
+                 "-c", "copy", "-f", "hls", "-hls_time", "4", "-hls_list_size", "10",
+                 "-hls_flags", "delete_segments+omit_endlist", str(out / "index.m3u8")]))
+        handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(self.root))
+        handler.log_message = lambda *a: None
+        server = http.server.ThreadingHTTPServer(("0.0.0.0", LIVETV_PORT), handler)
+        print(f"live tv on {self.url('channels.m3u')}", flush=True)
+        try:
+            server.serve_forever()
+        finally:
+            for process in processes:
+                process.terminate()
+
+
 # ---------------------------------------------------------------- main
 
 def main() -> None:
@@ -1323,22 +2054,30 @@ def main() -> None:
     build = commands.add_parser("build")
     build.add_argument("--only", help="build only titles containing this text")
     commands.add_parser("credits")
+    commands.add_parser("livetv", help="serve the Live TV channels (started with the server)")
     server = commands.add_parser("server")
-    server.add_argument("action", choices=["setup", "start", "stop", "status", "collections"])
+    server.add_argument("action", choices=["setup", "start", "stop", "status", "collections", "avatars", "people"])
     server.add_argument("--reset", action="store_true", help="setup: delete the server's data first")
     args = parser.parse_args()
     if args.command == "build":
         Builder().build(args.only)
     elif args.command == "credits":
         credits()
+    elif args.command == "livetv":
+        LiveTV().serve()
     elif args.action == "setup":
         Server().setup(args.reset)
     elif args.action == "start":
         Server().start()
-    elif args.action == "collections":
+    elif args.action in ("collections", "avatars", "people"):
         s = Server()
         s.login(ADMIN)
-        s.collections()
+        if args.action == "collections":
+            s.collections()
+        elif args.action == "avatars":
+            s.avatars()
+        else:
+            s.people()
     elif args.action == "stop":
         Server().stop()
     else:
