@@ -1309,17 +1309,25 @@ class Builder:
                 (folder / f"{stem}.lrc").write_text("\n".join(lrc) + "\n", encoding="utf-8")
 
     def music_videos(self, catalog: dict) -> None:
-        """Music videos cut from footage, with the artist and title over the first seconds."""
-        folder = self.media / "Music Videos"
-        folder.mkdir(parents=True, exist_ok=True)
+        """
+        Music videos cut from footage, with the artist and title over the first seconds. Each
+        goes to its "folder" (the artist's by default); one with nfo = false carries no
+        metadata at all, neither an .nfo nor tags in the file, only its folder and file name.
+        """
+        library = self.media / "Music Videos"
         spec = {"width": 1920, "height": 1080, "fps": "25", "codec": "h264"}
         for video in catalog.get("music_video", []):
-            stem = file_title(f"{video['artist']} - {video['title']}")
+            folder = library.joinpath(*video.get("folder", file_title(video["artist"])).split("/"))
+            folder.mkdir(parents=True, exist_ok=True)
+            # Not "Artist - Title" in the artist's folder: Jellyfin takes files named after their folder for versions of one video.
+            stem = file_title(video.get("file", video["title"]))
             target = folder / f"{stem}.mkv"
-            root = ET.Element("musicvideo")
-            for tag in ("title", "artist", "album", "year"):
-                element(root, tag, video[tag])
-            write_xml(folder / f"{stem}.nfo", root)
+            tagged = video.get("nfo", True)
+            if tagged:
+                root = ET.Element("musicvideo")
+                for tag in ("title", "artist", "album", "year"):
+                    element(root, tag, video[tag])
+                write_xml(folder / f"{stem}.nfo", root)
             if not target.exists():
                 reel = self.reel(spec, video["footage"], self.temp / "footage")
                 card = Image.new("RGBA", (900, 200), (0, 0, 0, 0))
@@ -1334,7 +1342,8 @@ class Builder:
                 run_ffmpeg("-i", reel, "-loop", 1, "-t", 10, "-i", png, "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo",
                            "-filter_complex", overlay.replace("shortest=1", "eof_action=pass"), "-map", "[v]", "-map", "2:a",
                            "-shortest", "-c:v", "libx264", "-preset", "veryfast", "-crf", 21, "-c:a", "aac", "-b:a", "192k",
-                           "-metadata", f"title={video['title']}", "-metadata", f"artist={video['artist']}", target)
+                           *(["-metadata", f"title={video['title']}", "-metadata", f"artist={video['artist']}"] if tagged else []),
+                           target)
                 png.unlink()
                 run_ffmpeg("-ss", 20, "-i", target, "-frames:v", 1, "-vf", "scale=1280:-2", folder / f"{stem}-thumb.jpg")
 

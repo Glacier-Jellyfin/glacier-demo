@@ -1209,6 +1209,11 @@ tracks = [["Neon Harbour", "Sodium Glow", 198], ["The Paper Cranes", "North Wind
           ["Neon Harbour", "Arrival", 312]]
 
 # Music videos, cut from footage clips with the artist and title at the start.
+# Each lies in its artist's folder, named after its title, with an .nfo
+# ("Artist - Title" there would make Jellyfin take them for versions of one
+# video), unless "folder" puts it
+# elsewhere (subfolders with "/") and nfo = false leaves out every tag, so the
+# library has both kinds: tagged videos and ones known only by their folders.
 [[music_video]]
 artist = "Neon Harbour"
 title = "Harbour Lights"
@@ -1233,6 +1238,9 @@ artist = "Margit Holm"
 title = "First Snow"
 album = "Winter Songs"
 year = 2022
+folder = "Sessions/Winter"
+file = "Margit Holm - First Snow"
+nfo = false
 footage = [{ clip = "snowfall", start = 0, length = 15 }, { clip = "snow-forest", start = 0, length = 20 },
            { clip = "aurora", start = 0, length = 46 }, { clip = "icebergs", start = 30, length = 90 },
            { clip = "ice-climb", start = 20, length = 50 }]
@@ -1244,6 +1252,17 @@ album = "Night Ferry"
 year = 2022
 footage = [{ clip = "surf-rocks", start = 0, length = 60 }, { clip = "pack-ice", start = 0, length = 60, crop_bottom = 0.08 },
            { clip = "icebergs", start = 120, length = 100 }, { clip = "boat-fog", start = 0, length = 30 }]
+
+[[music_video]]
+artist = "The Paper Cranes"
+title = "Fjord Song (Live)"
+album = "Postcards from the North"
+year = 2024
+folder = "Live"
+nfo = false
+footage = [{ clip = "bay-dusk", start = 0, length = 15 }, { clip = "surf-coast", start = 0, length = 60 },
+           { clip = "snow-forest", start = 0, length = 20 }, { clip = "aurora", start = 0, length = 46 },
+           { clip = "harbour-aerial", start = 0, length = 37 }]
 
 # Collections can also be listed by name, for titles that are only a line.
 [[collection]]
