@@ -2045,7 +2045,9 @@ class LiveTV:
             processes.append(subprocess.Popen(
                 [ffmpeg(), "-hide_banner", "-loglevel", "error", "-re", "-stream_loop", "-1", "-i", str(self.loop(c)),
                  "-c", "copy", "-f", "hls", "-hls_time", "4", "-hls_list_size", "10",
-                 "-hls_flags", "delete_segments+omit_endlist", str(out / "index.m3u8")]))
+                 "-hls_flags", "delete_segments+omit_endlist", str(out / "index.m3u8")],
+                # This service has no console, so on Windows each ffmpeg would open a window of its own.
+                creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0))
         handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(self.root))
         handler.log_message = lambda *a: None
         server = http.server.ThreadingHTTPServer(("0.0.0.0", LIVETV_PORT), handler)
