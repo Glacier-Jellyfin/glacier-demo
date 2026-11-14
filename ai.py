@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Generates the AI images in prompts.toml with FLUX.1-schnell.
+"""Generates the AI images in prompts.toml with FLUX.1-schnell and Qwen-Image.
 
-  ai.py candidates [--only TEXT] [--count 4]   four seeds per image, kept as PNG
+  ai.py candidates [--only TEXT] [--count N]   N seeds per image (FLUX 4, Qwen-Image 3), kept as PNG
   ai.py sheet                                  contact sheets to choose from
   ai.py pin                                    the chosen seeds into sources.toml
   ai.py batch episodes|people make|sheet|pin   a still per episode of the one-line series, or a
@@ -17,14 +17,24 @@ Runs in its own environment, because it needs PyTorch with CUDA:
 The model needs about 34 GB on disk; quantized to 4 bits it runs in 16 GB of
 video memory. "pin" also puts the chosen images into the build cache, so
 demo.py builds with them before they are uploaded to the ai-v1 release.
+
+Entries with engine = "qwen" are made with Qwen-Image (Apache 2.0), in a 4-bit GGUF
+quantization with the 8-step Lightning LoRA, which can paint a title into the picture:
+a poster with titled = true is a complete poster, lettering included. The model files
+(about 29 GB) live in the models directory: $GLACIER_DEMO_MODELS, else "models" in the
+work directory. The Qwen part needs `pip install gguf peft psutil` as well. A run of
+"candidates" stops starting new images after QWEN_BUDGET seconds (default 520), so that it
+ends within a tool call of ten minutes; run it again and it goes on with what is missing.
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import re
 import shutil
 import sys
+import time
 from pathlib import Path
 
 from PIL import Image, ImageDraw
@@ -37,10 +47,47 @@ RELEASE = demo.RELEASE
 # About 1.5 megapixels: more detail in faces and hands than 1 MP, still fast.
 SIZES = {"poster": (1024, 1536), "backdrop": (1824, 1024), "avatar": (1024, 1024), "cover": (1024, 1024),
          "artist": (1024, 1024)}
+# Qwen-Image: about 1.5 megapixels as well; 1664x928 is one of the sizes it was trained at.
+QWEN_SIZES = {"poster": (1024, 1536), "backdrop": (1664, 928), "letter": (1024, 1024)}
+QWEN = "Qwen/Qwen-Image"
+QWEN_REVISION = "75e0b4be04f60ec59a75f475837eced720f823b6"
+QWEN_GGUF = ("city96/Qwen-Image-gguf", "qwen-image-Q4_K_M.gguf", "e77babc55af111419e1714a7a0a848b9cac25db7")
+QWEN_LORA = ("lightx2v/Qwen-Image-Lightning", "Qwen-Image-Lightning-8steps-V2.0-bf16.safetensors",
+             "d468c534b360e0754c6bf9e38ed49e1e09cd2e2a")
+QWEN_AUTHOR = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA)"
+BUDGET = int(os.environ.get("QWEN_BUDGET", 520))
 
 
 def folder() -> Path:
     return demo.work() / "ai"
+
+
+def models() -> Path:
+    """Where the Qwen-Image files are cached: $GLACIER_DEMO_MODELS, else "models" in the work directory."""
+    return Path(os.environ.get("GLACIER_DEMO_MODELS") or demo.work() / "models") / "hf" / "hub"
+
+
+def qwen_prompt(entry: dict, title: dict) -> str:
+    """A complete picture description. A titled poster gets its title painted in the given lettering; nothing else may be written.
+    "strict" adds that no emblems, symbols, logos or writing may appear anywhere else (Qwen likes to add them under the title)."""
+    scene, strict = entry.get("prompt"), entry.get("strict")
+    text = entry.get("text", title["title"].upper())
+    if entry["shape"] == "letter":
+        # The lettering alone on black, to be keyed onto a poster without text (see demo.py).
+        return (f'Movie title logo lettering "{text}", {entry["lettering"]}, centered, isolated on a plain pure black '
+                f'background, no other text, no pictures, no characters, no border'
+                + (", no emblems, no symbols, no icons, no underline ornaments" if strict else ""))
+    if entry["shape"] == "poster" and entry.get("titled"):
+        return (f'{scene}. In the lower third, the movie title "{text}" is written in large {entry["lettering"]}. '
+                f'The title is the only text on the poster: no other text, no credits, no studio name, no year, '
+                f'no tagline, no logos' + (", no emblems, no symbols, no writing anywhere except the title." if strict else "."))
+    if entry["shape"] == "poster":
+        return (f"{scene}. Movie poster artwork without any text: no title, no letters, no logos"
+                + (", no emblems, no symbols, no writing anywhere in the picture." if strict else "."))
+    return (f"{scene}. Wide cinematic frame. "
+            + ("No emblems, no symbols, no logos and no writing anywhere in the picture: no title, no letters, "
+               "no signs with text, no lettering on objects." if strict else
+               "There is no text anywhere in the picture: no title, no letters, no logos."))
 
 
 def entries() -> dict[str, dict]:
@@ -64,6 +111,11 @@ def entries() -> dict[str, dict]:
             title = dict(groups[entry["collection"]][0], title=entry["collection"])
         else:
             title = titles[entry["title"]]
+        if entry.get("engine") == "qwen":
+            full = qwen_prompt(entry, title)
+            version = hashlib.sha1(f"qwen|{full}|{QWEN_SIZES[entry['shape']]}".encode()).hexdigest()[:8]
+            result[key] = dict(entry, clip_prompt=full, full_prompt=full, version=version)
+            continue
         genres = [g.lower() for g in title["genres"]]
         # Without a prompt of its own, the plot describes the picture.
         scene = entry.get("prompt") or f"a scene from a {', '.join(genres)} story: {' '.join(title['plot'].split())}"
@@ -88,24 +140,94 @@ def candidate(key: str, entry: dict, seed: int) -> Path:
     return folder() / "candidates" / f"{key}-{entry['version']}-{seed}.png"
 
 
-def candidates(only: str | None, count: int) -> None:
+def candidates(only: str | None, count: int | None) -> None:
     import torch
 
+    started = time.time()
     todo = [(k, e, s) for k, e in entries().items() if not only or only in k
-            for s in range(1, count + 1) if not candidate(k, e, s).exists()]
+            for s in range(1, (count or (3 if e.get("engine") == "qwen" else 4)) + 1) if not candidate(k, e, s).exists()]
     if not todo:
         print("nothing to do")
         return
-    pipe = pipeline()
-    for key, entry, seed in todo:
-        width, height = SIZES[entry["shape"]]
-        image = pipe(prompt=entry["clip_prompt"], prompt_2=entry["full_prompt"], width=width, height=height,
-                     guidance_scale=0.0, num_inference_steps=4, max_sequence_length=256,
-                     generator=torch.Generator("cpu").manual_seed(seed)).images[0]
-        path = candidate(key, entry, seed)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        image.save(path)
-        print(f"  {path.name}")
+    flux = [t for t in todo if t[1].get("engine") != "qwen"]
+    if flux:
+        pipe = pipeline()
+        for key, entry, seed in flux:
+            width, height = SIZES[entry["shape"]]
+            image = pipe(prompt=entry["clip_prompt"], prompt_2=entry["full_prompt"], width=width, height=height,
+                         guidance_scale=0.0, num_inference_steps=4, max_sequence_length=256,
+                         generator=torch.Generator("cpu").manual_seed(seed)).images[0]
+            path = candidate(key, entry, seed)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            image.save(path)
+            print(f"  {path.name}")
+        del pipe
+        torch.cuda.empty_cache()
+    qwen = [t for t in todo if t[1].get("engine") == "qwen"]
+    if qwen:
+        pipe = qwen_pipeline()
+        print(f"model loaded after {time.time() - started:.0f} s", flush=True)
+        done, longest = 0, 0.0
+        for key, entry, seed in qwen:
+            if time.time() - started + longest * 1.2 > BUDGET:
+                print(f"time budget used: {len(qwen) - done} of {len(qwen)} images left, run the command again")
+                break
+            begun = time.time()
+            width, height = QWEN_SIZES[entry["shape"]]
+            image = pipe(prompt=entry["full_prompt"], negative_prompt=" ", width=width, height=height,
+                         num_inference_steps=8, true_cfg_scale=1.0,
+                         generator=torch.Generator("cuda").manual_seed(seed)).images[0]
+            path = candidate(key, entry, seed)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            image.save(path)
+            longest = max(longest, time.time() - begun)
+            done += 1
+            print(f"  {path.name} {time.time() - begun:.0f} s", flush=True)
+
+
+def qwen_pipeline():
+    import torch
+    from diffusers import GGUFQuantizationConfig, QwenImagePipeline, QwenImageTransformer2DModel
+    from huggingface_hub import hf_hub_download, snapshot_download
+    from transformers import BitsAndBytesConfig, Qwen2_5_VLForConditionalGeneration
+
+    cache = models()
+    # The quantized text encoder is saved once (below): reading 16 GB of bf16 weights and quantizing
+    # them every time takes minutes, the 5 GB nf4 copy a few seconds. Then the bf16 weights stay off the disk.
+    saved = cache.parent / "qwen-text-encoder-nf4"
+    base = snapshot_download(QWEN, revision=QWEN_REVISION, cache_dir=cache, allow_patterns=[
+        "model_index.json", "scheduler/*", "tokenizer/*", "vae/*", "transformer/config.json",
+        "text_encoder/*.json" if saved.exists() else "text_encoder/*"])
+    gguf = hf_hub_download(QWEN_GGUF[0], QWEN_GGUF[1], revision=QWEN_GGUF[2], cache_dir=cache)
+    lora = hf_hub_download(QWEN_LORA[0], QWEN_LORA[1], revision=QWEN_LORA[2], cache_dir=cache)
+    bf16 = torch.bfloat16
+    clock = time.time()
+
+    def lap(what: str) -> None:
+        nonlocal clock
+        print(f"  load: {what} {time.time() - clock:.0f} s", flush=True)
+        clock = time.time()
+
+    # The transformer as a 4-bit GGUF, the text encoder in nf4, and each part moves to the card
+    # when it is needed: about 14 GB of video memory, 21 to 25 GB of system memory.
+    transformer = QwenImageTransformer2DModel.from_single_file(
+        gguf, quantization_config=GGUFQuantizationConfig(compute_dtype=bf16), torch_dtype=bf16, config=base,
+        subfolder="transformer")
+    lap("transformer")
+    if (saved / "config.json").exists():
+        encoder = Qwen2_5_VLForConditionalGeneration.from_pretrained(saved, dtype=bf16)
+    else:
+        encoder = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+            base + "/text_encoder", dtype=bf16, quantization_config=BitsAndBytesConfig(
+                load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=bf16))
+        encoder.save_pretrained(saved)
+    lap("text encoder")
+    pipe = QwenImagePipeline.from_pretrained(base, transformer=transformer, text_encoder=encoder, torch_dtype=bf16)
+    lap("pipeline")
+    pipe.load_lora_weights(lora)
+    pipe.enable_model_cpu_offload()
+    lap("lora")
+    return pipe
 
 
 def pipeline():
@@ -170,12 +292,16 @@ def pin() -> None:
         sha = hashlib.sha256(data).hexdigest()
         block = (f"[image.{key}]\nurl = \"{RELEASE}/{key}.jpg\"\nsha256 = \"{sha}\"\n"
                  f"page = \"https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml\"\n"
-                 f"author = \"generated with FLUX.1-schnell, seed {entry['seed']}\"\nlicense = \"CC0\"\n")
+                 f"author = \"{QWEN_AUTHOR if entry.get('engine') == 'qwen' else 'generated with FLUX.1-schnell'}, seed {entry['seed']}\"\n"
+                 f"license = \"CC0\"\n")
         pattern = re.compile(rf"\[image\.{re.escape(key)}\]\n(?:[^\[\n].*\n)*")
         if pattern.search(text):
             text = pattern.sub(block, text)
         else:
-            if "# Generated with FLUX" not in text:
+            if entry.get("engine") == "qwen":
+                if "# Generated with Qwen-Image" not in text:
+                    text = text.rstrip("\n") + "\n\n# Generated with Qwen-Image from prompts.toml; nobody shown exists. Titled posters carry their own lettering.\n"
+            elif "# Generated with FLUX" not in text:
                 text = text.rstrip("\n") + "\n\n# Generated with FLUX.1-schnell from prompts.toml; nobody shown exists.\n"
             text = text.rstrip("\n") + "\n\n" + block
         # Into the build cache too, so demo.py finds it before the upload.
@@ -356,7 +482,7 @@ def main() -> None:
     commands = parser.add_subparsers(dest="command", required=True)
     make = commands.add_parser("candidates")
     make.add_argument("--only", help="only images whose key contains this text")
-    make.add_argument("--count", type=int, default=4)
+    make.add_argument("--count", type=int, help="seeds per image; default 4 for FLUX, 3 for Qwen-Image")
     commands.add_parser("sheet")
     commands.add_parser("pin")
     batch = commands.add_parser("batch")

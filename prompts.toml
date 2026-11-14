@@ -45,6 +45,11 @@ photo = "professional cinema poster photography, photorealistic, detailed faces 
 animation = "stylised 3D animated feature film still, soft global illumination, expressive characters with big eyes, rich textures, warm cinematic lighting, no text, no watermark"
 anime = "Japanese anime key visual, cel shading, clean confident line art, vibrant hand-painted background, dramatic sky, no text, no watermark"
 illustration = "flat vintage travel poster illustration, screen print texture, limited colour palette, no text, no watermark"
+storybook3d = "stylised 3D render of a children's picture book scene, soft rounded shapes, bright friendly colours, gentle warm lighting, no text, no letters, no logo, no watermark"
+cartoon2d = "flat 2D cartoon illustration for a children's picture book, bold clean outlines, bright flat colours, simple shapes, no text, no letters, no logo, no watermark"
+painted = "painted children's picture-book illustration, soft gouache texture, warm bright colours, cosy and friendly, no text, no letters, no logo, no watermark"
+adultcartoon = "flat 2D animated sitcom illustration for adults, thick outlines, slightly muted saturated colours, expressive quirky characters, no text, no letters, no logo, no watermark"
+filmpainted = "hand-painted animated film artwork, watercolour and gouache, rich atmospheric lighting, detailed backgrounds, no text, no letters, no logo, no watermark"
 cartoon = "2D cartoon for children's television, bold clean outlines, flat bright colours, simple shapes, friendly characters, no text, no watermark"
 
 # ---- Vanguard, the superhero series
@@ -240,6 +245,321 @@ seed = 3
 prompt = "a young red fox sitting in a golden meadow at sunrise, butterflies and a dragonfly in the air around it, an owl on a branch above, dew on the grass, forest edge in soft mist"
 medium = "photo"
 
+# ---- Children's films: what the Kids profile sees first, a mix of live-action family films, 3D animation and flat cartoons
+
+[image.ai-year-of-the-fox-poster]
+title = "Year of the Fox"
+shape = "poster"
+seed = 3
+medium = "photo"
+prompt = "a smiling eight-year-old girl in a yellow raincoat kneeling in a sunny green meadow with a tame young red fox cub nuzzling her hand, wildflowers and butterflies around them, a cosy cottage far behind, bright warm family film, joyful and playful, sunny colours, natural friendly smiles"
+
+[image.ai-lion-heart-poster]
+title = "Lion Heart"
+shape = "poster"
+seed = 1
+medium = "storybook3d"
+prompt = "a smiling girl with curly hair in a red coat walking hand in paw beside a big shaggy friendly old lion down a sunny country lane, patchwork fields, a hot-air balloon and a small striped wagon in the distance, the bottom third plain grass"
+
+[image.ai-king-of-the-savannah-poster]
+title = "King of the Savannah"
+shape = "poster"
+seed = 1
+medium = "cartoon2d"
+prompt = "a sleepy young lion cub napping in a hammock between two baobab trees with a tiny bird asleep on his nose, a zebra and a giraffe tiptoeing past with a hoof to the lips, warm midday colours, the bottom third plain sandy ground"
+
+[image.ai-home-before-dark-poster]
+title = "Home Before Dark"
+shape = "poster"
+seed = 3
+medium = "photo"
+prompt = "two cheerful children laughing on bicycles with a small scruffy dog in the front basket, riding along a sunny forest path in golden late afternoon light, a summer adventure, bright warm family film, joyful and playful, sunny colours, natural friendly smiles"
+
+[image.ai-paper-planes-poster]
+title = "Paper Planes"
+shape = "poster"
+seed = 3
+medium = "cartoon2d"
+prompt = "a happy boy leaning out of an attic window launching colourful folded paper planes into a sunny blue sky, a friendly little bird flying beside the planes, a sweet small town below, the bottom third plain rooftops"
+
+[image.ai-river-song-poster]
+title = "River Song"
+shape = "poster"
+seed = 2
+medium = "photo"
+prompt = "three laughing children in life jackets paddling a bright yellow canoe on a sparkling blue river through a green summer valley, a friendly otter swimming alongside, a small rainbow in the spray, bright warm family film, joyful and playful, sunny colours, natural friendly smiles"
+
+[image.ai-pip-paper-boat-poster]
+title = "Pip and the Paper Boat"
+shape = "poster"
+seed = 3
+medium = "storybook3d"
+prompt = "a cute little penguin sitting in a big folded paper boat on a calm turquoise sea, a round seal and a puffin waving from a tiny snowy island, pastel sky with a smiling sun, the bottom third plain calm water"
+
+[image.ai-hedgehog-parade-poster]
+title = "The Hedgehog Parade"
+shape = "poster"
+seed = 3
+medium = "painted"
+prompt = "a shy little hedgehog holding up a glowing paper lantern at the head of a parade of cute woodland animals through an autumn forest, falling golden leaves, warm lights, the bottom third plain dark forest floor"
+
+[image.ai-dragon-tea-party-poster]
+title = "Dragon Tea Party"
+shape = "poster"
+seed = 3
+medium = "painted"
+prompt = "a very small friendly green dragon with big eyes pouring tea at a long table in a sunny garden, smiling children and animals as guests, teapots cakes and bunting, the bottom third plain green lawn"
+
+[image.ai-year-of-the-fox-backdrop]
+title = "Year of the Fox"
+shape = "backdrop"
+seed = 3
+medium = "photo"
+prompt = "a smiling little girl in a yellow raincoat sitting in a sunny wildflower meadow with a tame red fox cub beside her, butterflies, soft golden morning light, wide landscape, bright warm family film, joyful and playful, sunny colours, natural friendly smiles"
+
+[image.ai-lion-heart-backdrop]
+title = "Lion Heart"
+shape = "backdrop"
+seed = 2
+medium = "storybook3d"
+prompt = "a smiling girl in a red coat and a big shaggy friendly old lion walking together down a sunny country lane through patchwork fields, a hot-air balloon in a blue sky, wide landscape"
+
+[image.ai-king-of-the-savannah-backdrop]
+title = "King of the Savannah"
+shape = "backdrop"
+seed = 3
+medium = "cartoon2d"
+prompt = "a sleepy young lion cub napping in a hammock between two baobab trees with a tiny bird asleep on his nose, a zebra and a giraffe tiptoeing past, warm midday colours, wide landscape"
+
+[image.ai-pip-paper-boat-backdrop]
+title = "Pip and the Paper Boat"
+shape = "backdrop"
+seed = 2
+medium = "storybook3d"
+prompt = "a cute little penguin in a big folded paper boat on a calm turquoise sea, a round seal and a puffin on a tiny snowy island, pastel sky with a smiling sun, wide landscape"
+
+[image.ai-hedgehog-parade-backdrop]
+title = "The Hedgehog Parade"
+shape = "backdrop"
+seed = 2
+medium = "painted"
+prompt = "a shy little hedgehog holding a glowing paper lantern leading a parade of cute woodland animals through an autumn forest, golden leaves, warm lights, wide landscape"
+
+# ---- Grown-up animation and anime: restyled fillers
+
+[image.ai-gravity-of-stars-poster]
+title = "Gravity of Stars"
+shape = "poster"
+seed = 2
+medium = "animation"
+prompt = "an astronomer in a coat standing on a snowy hill at night looking up at a huge swirling spiral of stars, a radio telescope dish beside her"
+
+[image.ai-gravity-of-stars-backdrop]
+title = "Gravity of Stars"
+shape = "backdrop"
+seed = 1
+medium = "animation"
+prompt = "a lone astronomer on a snowy hill at night under a huge swirling sky of stars, a radio telescope dish beside her, wide landscape"
+
+[image.ai-volcano-island-poster]
+title = "Volcano Island"
+shape = "poster"
+seed = 3
+medium = "animation"
+prompt = "a small film crew on a black sand beach with a camera tripod, a smoking volcano glowing orange behind a lush jungle island, a boat on the shore"
+
+[image.ai-volcano-island-backdrop]
+title = "Volcano Island"
+shape = "backdrop"
+seed = 1
+medium = "animation"
+prompt = "a small film crew on a black sand beach, a smoking volcano glowing orange above a lush jungle island, wide landscape"
+
+[image.ai-edge-of-the-map-poster]
+title = "Edge of the Map"
+shape = "poster"
+seed = 3
+crop = 0.27
+medium = "animation"
+prompt = "a young cartographer with a satchel and a rolled map standing at the edge of a vast blue glacier valley, a tiny tent and a sled dog beside her, snowy peaks in morning light"
+
+[image.ai-edge-of-the-map-backdrop]
+title = "Edge of the Map"
+shape = "backdrop"
+seed = 2
+medium = "animation"
+prompt = "a young cartographer with a satchel and a rolled map standing at the edge of a vast blue glacier valley, snowy peaks in morning light, wide landscape"
+
+[image.ai-wild-horses-poster]
+title = "Wild Horses"
+shape = "poster"
+seed = 2
+medium = "filmpainted"
+prompt = "a rancher's daughter in a hat opening a wooden gate for a herd of wild horses galloping out into a golden prairie at sunset, dust and light"
+
+[image.ai-wild-horses-backdrop]
+title = "Wild Horses"
+shape = "backdrop"
+seed = 2
+medium = "filmpainted"
+prompt = "a herd of wild horses galloping across a golden prairie at sunset, a girl in a hat at an open gate, wide landscape"
+
+[image.ai-mountain-kings-poster]
+title = "Mountain Kings"
+shape = "poster"
+seed = 2
+medium = "filmpainted"
+prompt = "three climbers roped together on a huge snowy north face under a wintry sunrise, ice axes, tiny against an enormous peak"
+
+[image.ai-mountain-kings-backdrop]
+title = "Mountain Kings"
+shape = "backdrop"
+seed = 1
+medium = "filmpainted"
+prompt = "three climbers roped together on a huge snowy north face in a wintry sunrise, tiny against an enormous peak, wide landscape"
+
+[image.ai-aurora-poster]
+title = "Aurora"
+shape = "poster"
+seed = 3
+crop = 0.16
+medium = "anime"
+prompt = "a young woman researcher in a parka standing on a snowy shore of a fjord, green and violet aurora lights frozen mid-swirl in the sky above, a small research hut behind her"
+
+[image.ai-aurora-backdrop]
+title = "Aurora"
+shape = "backdrop"
+seed = 2
+medium = "anime"
+prompt = "a young woman researcher in a parka on a snowy shore, green and violet aurora lights frozen mid-swirl in the sky, a research hut, wide landscape"
+
+[image.ai-city-of-glass-poster]
+title = "City of Glass"
+shape = "poster"
+seed = 3
+medium = "anime"
+prompt = "a window cleaner on a rope hanging beside a mirrored glass skyscraper at dusk, a glowing shape moving behind one window, a futuristic city of towers below"
+
+[image.ai-city-of-glass-backdrop]
+title = "City of Glass"
+shape = "backdrop"
+seed = 2
+medium = "anime"
+prompt = "a futuristic city of glass towers at dusk, a window cleaner on a rope, a glowing shape behind one window, wide landscape"
+
+[image.ai-pale-blue-poster]
+title = "Pale Blue"
+shape = "poster"
+seed = 2
+medium = "anime"
+prompt = "an astronaut in a white suit floating beside a lonely space station with the faint blue dot of a distant sun, deep violet space"
+
+[image.ai-pale-blue-backdrop]
+title = "Pale Blue"
+shape = "backdrop"
+seed = 2
+medium = "anime"
+prompt = "a lonely space station at the edge of the solar system and a tiny blue dot of a sun, deep violet space, wide landscape"
+
+[image.ai-skyline-poster]
+title = "Skyline"
+shape = "poster"
+seed = 2
+medium = "anime"
+prompt = "a young window cleaner clinging to a skyscraper facade at night, helicopter lights and a glowing city skyline behind him, a dramatic low angle"
+
+[image.ai-skyline-backdrop]
+title = "Skyline"
+shape = "backdrop"
+seed = 2
+medium = "anime"
+prompt = "a glowing night city skyline seen from a skyscraper facade with a window cleaner on a rope, helicopter lights, wide landscape"
+
+[image.ai-fast-lane-poster]
+title = "Fast Lane"
+shape = "poster"
+seed = 4
+medium = "anime"
+prompt = "a courier on a motorcycle racing along a neon-lit highway at night with a glowing package on the back, streaking taillights, rain, speed lines"
+
+[image.ai-fast-lane-backdrop]
+title = "Fast Lane"
+shape = "backdrop"
+seed = 2
+medium = "anime"
+prompt = "a courier on a motorcycle racing along a neon-lit highway at night, streaking taillights, rain, wide landscape"
+
+[image.ai-keepers-poster]
+title = "Keepers"
+shape = "poster"
+seed = 1
+medium = "anime"
+prompt = "two caretakers with lanterns standing in front of a mountain castle at dusk, one lit window in a wall where no window should be, mist in the valley"
+
+[image.ai-keepers-backdrop]
+title = "Keepers"
+shape = "backdrop"
+seed = 1
+medium = "anime"
+prompt = "a mountain castle at dusk with one lit window in a wall where no window should be, mist in the valley, wide landscape"
+
+[image.ai-1000-lanterns-poster]
+title = "1000 Lanterns"
+shape = "poster"
+seed = 1
+medium = "anime"
+prompt = "a girl in a simple dress releasing a glowing paper lantern from the roof of a small family workshop, hundreds of lanterns rising over a night festival town"
+
+[image.ai-1000-lanterns-backdrop]
+title = "1000 Lanterns"
+shape = "backdrop"
+seed = 1
+medium = "anime"
+prompt = "hundreds of glowing paper lanterns rising over a night festival town and a small workshop, wide landscape"
+
+[image.ai-broken-compass-poster]
+title = "Broken Compass"
+shape = "poster"
+seed = 1
+medium = "anime"
+prompt = "two brothers walking up a huge golden sand dune with an old map and a broken compass, a vast desert sky, long shadows"
+
+[image.ai-broken-compass-backdrop]
+title = "Broken Compass"
+shape = "backdrop"
+seed = 1
+medium = "anime"
+prompt = "two brothers crossing a huge golden desert with an old map, long shadows, vast sky, wide landscape"
+
+[image.ai-lantern-festival-poster]
+title = "Lantern Festival"
+shape = "poster"
+seed = 2
+medium = "anime"
+prompt = "a young man and a young woman from rival lantern workshops standing face to face on a bridge, glowing lanterns around them, a warm night festival"
+
+[image.ai-lantern-festival-backdrop]
+title = "Lantern Festival"
+shape = "backdrop"
+seed = 1
+medium = "anime"
+prompt = "two young people on a bridge at a lantern festival, glowing lanterns, a warm night, wide landscape"
+
+[image.ai-market-street-poster]
+title = "Market Street"
+shape = "poster"
+seed = 1
+medium = "adultcartoon"
+prompt = "a cast of quirky night market stall owners and a stern inspector with a clipboard in front of colourful food stalls, string lights, steam"
+
+[image.ai-market-street-backdrop]
+title = "Market Street"
+shape = "backdrop"
+seed = 1
+medium = "adultcartoon"
+prompt = "quirky night market stall owners and a stern inspector with a clipboard, colourful food stalls, string lights, steam, wide landscape"
+
+
 # ---- Music: album covers ("album" with its "artist") and artist pictures ("artist")
 
 [image.ai-cover-neon-harbour-night-ferry]
@@ -410,3 +730,2673 @@ ai-ep-wild-coast-s01e01 = 101
 ai-ep-wild-coast-s01e05 = 102
 ai-ep-deep-blue-s01e02 = 103
 ai-ep-little-explorers-s01e01 = 104
+
+# ---- Qwen-Image: complete posters with the title painted in, and matching backdrops without text
+#
+# engine = "qwen" makes the image with Qwen-Image instead of FLUX. A poster with titled = true carries its
+# own lettering ("lettering" describes it, the title is the title in capitals, or "text"): demo.py uses it
+# as it is, without setting the title in a font. "tropes" are the two story ideas the scene combines.
+# The backdrop shows the same scene as the poster, without any text. Candidates: ai.py candidates.
+
+[image.ai-year-of-the-fox-poster-titled]
+title = "Year of the Fox"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Family, live action. Tropes: befriending a wild animal + a year passing through the seasons"
+prompt = "A bright warm live-action family film poster. A smiling eight-year-old girl in a yellow raincoat kneels in a sunny green meadow with a tame young red fox cub nuzzling her hand; behind them the meadow turns through the seasons from spring blossoms on the left to golden autumn leaves and first snow on the right, a cosy cottage far behind, soft golden light. The lower third is calm dark grass"
+lettering = "warm hand-cut orange and cream lettering with a soft glow, friendly and rounded, on two lines"
+
+[image.ai-year-of-the-fox-backdrop-qwen]
+title = "Year of the Fox"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A bright warm live-action family film still. A smiling eight-year-old girl in a yellow raincoat sits in a sunny wildflower meadow with a tame young red fox cub beside her; the meadow behind them turns through the seasons from spring blossoms on the left to golden autumn leaves and first snow on the right, a cosy cottage in the distance, soft golden light"
+
+[image.ai-pip-and-the-paper-boat-poster-titled]
+title = "Pip and the Paper Boat"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 1
+tropes = "Family/Animation, 3D picture book. Tropes: a small hero's homemade voyage + friends who join one by one"
+prompt = "A stylised 3D animated picture-book movie poster with soft rounded shapes and bright friendly colours. A cute little penguin stands proudly at the bow of a big folded paper boat with a paper sail on a calm turquoise sea, a round seal and a puffin paddling along in the boat with spoons for oars, a tiny striped lighthouse on a faraway iceberg at the end of the sea, pastel sky with a smiling sun. The lower third is calm turquoise water"
+lettering = "chunky rounded bubbly lettering in sunny yellow with a white paper-cut outline and a soft turquoise shadow, little wave curls, friendly picture-book feel for young children, on two lines"
+
+[image.ai-pip-and-the-paper-boat-backdrop-qwen]
+title = "Pip and the Paper Boat"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A stylised 3D animated picture-book scene with soft rounded shapes and bright friendly colours. A cute little penguin at the bow of a big folded paper boat with a paper sail on a calm turquoise sea, a round seal and a puffin paddling along with spoons for oars, a tiny striped lighthouse on a faraway iceberg, pastel sky with a smiling sun, wide landscape"
+
+[image.ai-lion-heart-poster-titled]
+title = "Lion Heart"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Family, 3D picture book. Tropes: running away with a circus animal + a bumbling chase behind them"
+prompt = "A stylised 3D animated picture-book movie poster with soft rounded shapes and warm lighting. A smiling girl with curly hair in a red coat walks hand in paw beside a big shaggy friendly old lion down a sunny country lane between patchwork fields, a hot-air balloon in the blue sky; far behind them on the lane a grumpy round man in a top hat, a bumbling policeman on a tiny bicycle and a reporter with a notebook chase after them, comically small. The lower third is plain grass"
+lettering = "warm hand-painted storybook lettering in rich golden yellow with a deep red outline and a soft glow, rounded serifs, a little lion's tuft curl on the first letter, cheerful family adventure feel, on one line"
+
+[image.ai-lion-heart-backdrop-qwen]
+title = "Lion Heart"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A stylised 3D animated picture-book scene with soft rounded shapes and warm lighting. A smiling girl with curly hair in a red coat walks hand in paw beside a big shaggy friendly old lion down a sunny country lane between patchwork fields, a hot-air balloon in the blue sky; far behind them a grumpy round man in a top hat, a bumbling policeman on a tiny bicycle and a reporter chase after them, wide landscape"
+
+# No clean candidate after a second round (misspelling or stray marks): the title keeps its FLUX picture and the font title.
+[image.ai-the-hedgehog-parade-poster-titled]
+title = "The Hedgehog Parade"
+text = "The Hedgehog Parade"
+shape = "poster"
+engine = "qwen"
+titled = true
+tropes = "Family/Animation, painted picture book. Tropes: the shy hero finds the lost light + a procession through the rain"
+prompt = "A painted picture-book movie poster in soft gouache. A shy little hedgehog holds up a glowing paper lantern at the head of a parade of cute woodland animals, a mouse, a squirrel, a rabbit and a tiny owl, walking under big leaf umbrellas through an autumn forest in light rain, golden falling leaves, warm lantern light on wet leaves. The lower third is dark soft forest floor"
+lettering = "hand-painted gouache storybook lettering in warm amber and cream with little leaves and a glowing lantern halo, curly gentle serifs, cosy autumn feel, on two lines"
+
+[image.ai-king-of-the-savannah-poster-titled]
+title = "King of the Savannah"
+shape = "poster"
+engine = "qwen"
+seed = 6
+titled = true
+tropes = "Family/Adventure, 2D cartoon. Tropes: the keeper of the meeting place who keeps the peace in a drought + the lost baby animal that adopts the big sleepy one"
+prompt = "A flat 2D cartoon movie poster with bold clean outlines and bright flat colours. A big sleepy old lion in a battered straw sun hat lies on the muddy bank of a small watering hole at noon with one eye half open, a fluffy baby ostrich chick stands on his big paw peeping up at him, a zebra, a giraffe and a grey elephant wait in a polite queue at the edge of the shrinking water, cracked dry earth all around, a lone acacia tree and a hot orange sky. The lower third is plain cracked sandy ground"
+lettering = "bold chunky hand-cut cartoon lettering in sunset orange and golden yellow with a thick dark brown outline, slightly wobbly and playful, little sun rays, fun family adventure feel, on two lines"
+strict = true
+
+[image.ai-king-of-the-savannah-backdrop-qwen]
+title = "King of the Savannah"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A flat 2D cartoon scene with bold clean outlines and bright flat colours. A big sleepy old lion in a battered straw sun hat lies on the muddy bank of a small watering hole at noon with one eye half open, a fluffy baby ostrich chick stands on his big paw peeping up at him, a zebra, a giraffe and a grey elephant wait in a polite queue at the edge of the shrinking water, cracked dry earth all around, a lone acacia tree and a hot orange sky, wide landscape"
+strict = true
+
+[image.ai-dragon-tea-party-poster-titled]
+title = "Dragon Tea Party"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Family/Animation, painted picture book. Tropes: an unlikely host invites everyone + fear melts through kindness"
+prompt = "A painted picture-book movie poster. A very small friendly green dragon with big eyes pours tea at a long table in a sunny garden; shy village children and animals sit down as guests, one child shyly reaching for a cake while a tiny puff of smoke curls like a heart from the dragon's nose, teapots, cakes and bunting. The lower third is soft green lawn"
+lettering = "whimsical painted storybook lettering in green with golden outline and curly serifs, on two lines"
+
+[image.ai-dragon-tea-party-backdrop-qwen]
+title = "Dragon Tea Party"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A painted picture-book scene in soft gouache. A very small friendly green dragon with big eyes pours tea at a long table in a sunny garden; shy village children and animals sit down as guests, one child reaching for a cake while a tiny puff of smoke curls like a heart from the dragon's nose, teapots, cakes and bunting, wide landscape"
+
+# No clean candidate after a second round (misspelling or stray marks): the title keeps its FLUX picture and the font title.
+[image.ai-home-before-dark-poster-titled]
+title = "Home Before Dark"
+shape = "poster"
+engine = "qwen"
+titled = true
+tropes = "Family, live action. Tropes: the wrong turn that becomes an adventure + a night in the woods with a hermit and a lost dog"
+prompt = "A warm live-action family adventure film poster in golden late-afternoon light. Two children about ten, a girl and a boy, on bicycles stopped at a fork on a forest path, the boy pointing the wrong way with a grin, a scruffy little dog in the front basket, a cosy cabin with a glowing lit window between tall trees and an old bearded man in a woolly hat waving from its porch, fireflies starting to glow in the dusk. The lower third is dark forest path"
+lettering = "bold friendly rounded sans-serif capitals in warm golden yellow with a soft glow like fireflies, adventure family film feel, on two lines, with no arrows, no symbols and no decoration other than the letters"
+
+[image.ai-paper-planes-poster-titled]
+title = "Paper Planes"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 1
+tropes = "Family, 2D cartoon. Tropes: friendship through messages between two windows + the forbidden-to-go-out child"
+prompt = "A flat 2D cartoon movie poster with bold clean outlines and bright flat colours. A happy boy leans out of an attic window on the left and throws a colourful folded paper plane, across a narrow street a girl at her own window on the right catches one with a delighted smile, many colourful paper planes crisscross the blue sky between the two windows like a bridge, a friendly little bird flies beside them, sweet small-town rooftops. The lower third is plain tiled rooftops"
+lettering = "playful cut-paper lettering in cheerful sky blue and sunny yellow, letters look folded from paper with crisp creases and a soft shadow, fun cartoon feel, on two lines"
+
+[image.ai-paper-planes-backdrop-qwen]
+title = "Paper Planes"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A flat 2D cartoon scene with bold clean outlines and bright flat colours. A happy boy leans out of an attic window on the left and throws a colourful folded paper plane, across a narrow street a girl at her own window on the right catches one with a delighted smile, many colourful paper planes crisscross the blue sky between the two windows like a bridge, a friendly little bird, sweet small-town rooftops, wide landscape"
+
+[image.ai-river-song-poster-titled]
+title = "River Song"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Family, live action. Tropes: following the river to its source + grumpy animal helpers along the way"
+prompt = "A bright warm live-action family adventure film poster. Three laughing children in life jackets paddle a bright yellow canoe down a sparkling blue river through a green summer valley, a grumpy grey heron on a stone beside them glaring at the canoe, a beaver lodge on the bank, a small rainbow in the spray, distant mountains where the river begins. The lower third is calm dark green water"
+lettering = "flowing brush lettering in light blue and white with ripples and water sparkle highlights, friendly summer feel, on one line"
+
+[image.ai-river-song-backdrop-qwen]
+title = "River Song"
+shape = "backdrop"
+engine = "qwen"
+prompt = "A bright warm live-action family adventure film still. Three laughing children in life jackets paddle a plain yellow canoe with nothing printed on it down a sparkling blue river through a green summer valley, a grumpy grey heron on a stone glaring at the canoe, a beaver lodge on the bank, a small rainbow in the spray, distant mountains where the river begins, a plain empty sky, wide landscape"
+
+# The fox resembles a famous animated film in every candidate, even as a cub: the title keeps its FLUX picture and the font title.
+strict = true
+
+[image.ai-winter-fox-poster-titled]
+title = "Winter Fox"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+tropes = "Family/Adventure, 3D animation. Tropes: two unlikely animal friends + crossing the thin ice before the thaw"
+prompt = "A painted picture-book movie poster in soft gouache and watercolour. A realistic young red fox with natural animal proportions, thick winter fur and a white-tipped tail walks on all four legs beside a big shaggy grey and white sheepdog across a frozen lake, the dog sniffing the ice carefully while the fox looks back, thin cracks glowing pale blue in the ice, a farm with lit windows far behind in a pink and blue winter dusk, falling snowflakes. The lower third is smooth snowy ice"
+lettering = "frosty hand-lettered title in icy white and pale blue with snow on top of the letters and a soft glow, friendly rounded serifs, gentle winter family film feel, on one line"
+
+# No clean candidate after a second round (the fox resembles a famous animated film): the title keeps its other backdrop.
+strict = true
+
+[image.ai-winter-fox-backdrop-qwen]
+title = "Winter Fox"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A painted picture-book scene in soft gouache and watercolour. A realistic young red fox with natural animal proportions, thick winter fur and a white-tipped tail walks on all four legs beside a big shaggy grey and white sheepdog across a frozen lake, the dog sniffing the ice carefully while the fox looks back, thin cracks glowing pale blue in the ice, a farm with lit windows far behind in a pink and blue winter dusk, falling snowflakes, wide landscape"
+strict = true
+
+[image.ai-paper-moons-poster-titled]
+title = "Paper Moons"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Animation/Family/Fantasy, 3D animation. Tropes: bring the lost thing home before it is missed + a grumpy companion on a night journey"
+prompt = "A stylised 3D animated feature film poster with warm cinematic lighting. An eight-year-old girl in a yellow raincoat and her grumpy black-and-white cat sit in a small rowing boat on a moonlit fjord, the girl reaching up for a folded paper moon drifting away in the night sky, a flock of paper cranes flying by, a huge sleepy real moon low over the mountains. The lower third is dark calm water"
+lettering = "delicate folded-paper lettering in soft silver and pale yellow, letters look folded from creased paper with a gentle moonlit glow, whimsical and dreamy, on two lines"
+
+[image.ai-paper-moons-backdrop-qwen]
+title = "Paper Moons"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A stylised 3D animated feature film scene with warm cinematic lighting. An eight-year-old girl in a yellow raincoat and her grumpy black-and-white cat sit in a small rowing boat on a moonlit fjord, the girl reaching up for a folded paper moon drifting away in the night sky, a flock of paper cranes flying by, a huge sleepy real moon low over the mountains, wide landscape"
+
+[image.ai-paper-moons-2-poster-titled]
+title = "Paper Moons 2"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Animation/Family/Fantasy, 3D animation. Tropes: climbing the tall tower on a quest + waking the sleeping giant"
+prompt = "A stylised 3D animated feature film poster with warm cinematic lighting. A girl in a yellow raincoat and a grumpy black-and-white cat climb the outside spiral staircase of a tall striped lighthouse at night, the girl holding up a crescent moon folded from newspaper, a huge real moon with closed sleepy eyes hanging low beside the tower, a flock of paper cranes flying along. The lower third is dark rocky coast and sea"
+lettering = "delicate folded-paper lettering in soft silver and pale yellow, letters look folded from creased paper with a gentle moonlit glow, whimsical and dreamy, on two lines"
+
+[image.ai-paper-moons-2-backdrop-qwen]
+title = "Paper Moons 2"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A stylised 3D animated feature film scene with warm cinematic lighting. A girl in a yellow raincoat and a grumpy black-and-white cat climb the outside spiral staircase of a tall striped lighthouse at night, the girl holding up a crescent moon folded from newspaper, a huge real moon with closed sleepy eyes hanging low beside the tower, paper cranes flying along, wide landscape"
+
+[image.ai-the-last-lighthouse-poster-titled]
+title = "The Last Lighthouse"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 1
+tropes = "Drama/Mystery, photo. Tropes: the estranged child comes home to sell the family place + the light that keeps burning with nobody there"
+prompt = "A moody photographic mystery drama movie poster, cold blue dusk. A woman in her thirties in a dark wool coat stands on a wet stone jetty holding an open leather logbook and looks up at a tall white lighthouse on a rocky island whose lamp sweeps a beam through storm clouds, behind her a few small cottages with lit windows and a lone silhouette watching from one. The lower third is dark wet rocks and sea"
+lettering = "elegant weathered serif capitals in pale cream with a subtle engraved texture and a faint glow like lamp light, wide letter spacing, quiet and sombre, on two lines"
+
+[image.ai-the-last-lighthouse-backdrop-qwen]
+title = "The Last Lighthouse"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A moody photographic mystery drama film still, cold blue dusk. A woman in her thirties in a dark wool coat stands on a wet stone jetty holding an open leather logbook and looks up at a tall white lighthouse on a rocky island whose lamp sweeps a beam through storm clouds, a few small cottages with lit windows behind her, wide landscape"
+
+[image.ai-glass-mountain-poster-titled]
+title = "Glass Mountain"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Adventure/Drama, photo. Tropes: the race against a closing storm + the forgotten old route out"
+prompt = "A gripping photographic adventure drama movie poster, cold blue light. Three researchers in orange expedition jackets roped together cross a huge cracked blue glacier pulling a sled with equipment cases, a dark storm front swallowing the only mountain pass behind them, a deep crevasse splitting the ice at their feet, an old supply hut on a far ridge. The lower third is dark blue ice fading to black"
+lettering = "clean icy condensed sans-serif capitals in frosted white and pale blue, as if engraved in glass, sharp edges with a light refraction glow, on two lines"
+
+[image.ai-glass-mountain-backdrop-qwen]
+title = "Glass Mountain"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A gripping photographic adventure drama film still, cold blue light. Three researchers in orange expedition jackets roped together cross a huge cracked blue glacier pulling a sled with equipment cases, a dark storm front swallowing the only mountain pass behind them, a deep crevasse in the ice, an old supply hut on a far ridge, wide landscape"
+
+[image.ai-harbor-lights-poster-titled]
+title = "Harbor Lights"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Crime/Mystery drama series, photo. Tropes: the ghost ship that drifts in empty + a small town where everyone has something to hide"
+prompt = "A moody photographic mystery crime drama poster, night fog. A woman in her forties in an oilskin coat holds a lantern at the end of a wet harbour quay, a fishing trawler drifts into the harbour behind her with every light on and nobody on deck, thick fog, small fishermen's houses with faces watching from lit windows, a lighthouse beam crossing the mist. The lower third is dark wet planks fading to black"
+lettering = "weathered hand-painted nautical capitals in off-white and faded teal with a peeling paint texture, wide spacing, on two lines"
+
+[image.ai-harbor-lights-backdrop-qwen]
+title = "Harbor Lights"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A moody photographic mystery crime drama still, night fog. A woman in her forties in an oilskin coat holds a lantern at the end of a wet harbour quay, a fishing trawler with a completely plain dark hull and bare white cabin drifts into the harbour behind her with every light on and nobody on deck, thick fog, small fishermen's houses with plain doors and faces watching from lit windows, a lighthouse beam crossing the mist, wide landscape"
+strict = true
+
+[image.ai-zero-hour-poster-titled]
+title = "Zero Hour"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 1
+tropes = "Action/Thriller, photo. Tropes: the ticking clock to midnight + the bomber who only wants to talk to her"
+prompt = "A tense photographic action thriller movie poster at night. A woman bomb disposal expert in a heavy blast suit with the helmet off kneels beside a ticking device in a rainy deserted city intersection, a phone pressed to her ear, red emergency lights flashing across the wet asphalt, a giant lit clock face on a tower behind her showing a few minutes before twelve, city skyline in haze. The lower third is dark wet street"
+lettering = "bold condensed military stencil capitals in hazard orange with a scratched grey metal texture and a hot red glow, on one line"
+
+[image.ai-zero-hour-backdrop-qwen]
+title = "Zero Hour"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A tense photographic action thriller film still at night. A single woman, alone in the picture, a bomb disposal expert in a heavy blast suit with the helmet off kneels beside a ticking device in a rainy deserted city intersection, a phone pressed to her ear, red emergency lights flashing across the wet asphalt, a giant lit round clock face on a plain dark tower behind her showing a few minutes before twelve, city skyline in haze, wide landscape"
+
+[image.ai-white-out-poster-titled]
+title = "White Out"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Thriller, photo. Tropes: the isolated team cut off by the storm + the impostor among them"
+prompt = "A chilling photographic thriller movie poster in a blizzard. A lone researcher in a red parka and frosted goggles stares straight out of the picture in blowing snow, behind her four people in identical grey parkas with hoods walk away in a line into the white storm, a small dark research hut with one glowing window. The lower third is deep blue shadowed snow fading to black"
+lettering = "thin wide-spaced sans-serif capitals in icy white with a dark navy outline and a fine frost crack texture, on one line"
+
+[image.ai-white-out-backdrop-qwen]
+title = "White Out"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A chilling photographic thriller film still in a blizzard. A lone researcher in a red parka and frosted goggles stands in blowing snow, behind her four people in identical grey parkas with hoods walk away in a line into the white storm, a small dark research hut with one glowing window, wide landscape"
+
+[image.ai-vanguard-last-stand-poster-titled]
+title = "Vanguard: Last Stand"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Action/Superhero, photo. Tropes: the last survivors of a team + facing the machine they came from"
+prompt = "A big photographic superhero action movie poster, teal and orange grade. Four heroes in battered dark grey armoured suits of original design with no emblems or symbols stand side by side in a ruined factory hall, a woman at the front, a giant dormant machine glowing deep red behind them, dust and sparks in shafts of light. The lower third is dark rubble fading to black"
+lettering = "massive brushed steel capitals with scratches and a glowing red edge light, heavy and cinematic, sparks, on two lines"
+
+[image.ai-vanguard-last-stand-backdrop-qwen]
+title = "Vanguard: Last Stand"
+shape = "backdrop"
+engine = "qwen"
+prompt = "A big photographic science fiction action film still, teal and orange grade. Four tall armoured soldiers in plain matt grey combat exoskeleton suits with smooth rounded visor helmets and no capes stand side by side in a ruined factory hall, a woman in plain dark clothes at the front, a giant dormant red machine glowing behind them, dust and sparks in shafts of light, wide landscape"
+strict = true
+
+[image.ai-volcano-island-poster-titled]
+title = "Volcano Island"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Adventure/Animation, 3D animation. Tropes: castaways as the volcano wakes + the obsessed director who keeps filming"
+prompt = "A stylised 3D animated adventure comedy feature film poster with warm cinematic lighting. A small film crew of funny characters in mismatched gear huddles on a black sand beach with equipment crates, a tiny rowboat drifting away on the water, while the director in a cap and scarf calmly looks through an old film camera on a tripod, filming a huge volcano erupting behind them with glowing lava rivers and ash clouds, a parrot on the camera. The lower third is dark black sand"
+lettering = "chunky hand-painted adventure lettering in molten orange and yellow with a dark charcoal outline and tiny ember sparks and smoke curls, on two lines"
+
+[image.ai-volcano-island-backdrop-qwen]
+title = "Volcano Island"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A stylised 3D animated adventure comedy feature film scene with warm cinematic lighting. A small film crew of funny characters in mismatched gear huddles on a black sand beach with equipment crates, a tiny rowboat drifting away, while the director in a cap and scarf calmly looks through an old film camera on a tripod, filming a huge volcano erupting behind them with glowing lava rivers and ash clouds, a parrot on the camera, wide landscape"
+
+[image.ai-thunder-road-poster-titled]
+title = "Thunder Road"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+tropes = "Action, photo. Tropes: the last job that goes wrong + the unwanted passenger on a chase through the city"
+prompt = "A gritty photographic action movie poster at dusk. A black vintage muscle car without any badges skids around a corner on a wet city street, through the windscreen only two people are visible, a driver in a leather jacket gripping the wheel and a startled stranger in the passenger seat clutching a canvas duffel bag, a wall of plain white police cars without any lettering or markings and with flashing red and blue lights chases through the spray behind, a single red traffic light glowing. The lower third is dark wet asphalt"
+lettering = "heavy condensed all-caps in scratched chrome with an orange fire glow and speed streaks, on two lines"
+
+[image.ai-thunder-road-backdrop-qwen]
+title = "Thunder Road"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A gritty photographic action film still at dusk. A black vintage muscle car skids around a corner on a wet city street, through the windscreen only two people are visible, a driver in a leather jacket gripping the wheel and a startled stranger in the passenger seat clutching a canvas duffel bag, a wall of plain white cars with flashing blue and red light bars on their roofs and completely blank doors chases through the spray behind, a single red traffic light glowing, wide landscape"
+
+# No clean candidate after a second round (misspelling or stray marks): the title keeps its FLUX picture and the font title.
+strict = true
+
+[image.ai-the-typewriter-poster-titled]
+title = "The Typewriter"
+text = "The Typewriter"
+shape = "poster"
+engine = "qwen"
+titled = true
+tropes = "Drama, photo. Tropes: the writer with a block + the magic object that writes the future"
+prompt = "A quiet photographic drama movie poster, warm lamplight and rain. A woman writer in her forties in a cardigan sits at a cluttered wooden desk by a rainy window, her hands hovering over an old black typewriter with a sheet of paper glowing faintly warm in it, through the window a blurred street where a man with an umbrella stops and looks up, a cup of tea and piles of paper. The lower third is dark wooden desk fading to black"
+lettering = "typewriter lettering in warm cream, slightly uneven baseline and soft ink bleed, quiet and intimate, on two lines"
+
+[image.ai-fieldwork-poster-titled]
+title = "Fieldwork"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 2
+crop = 0.08
+tropes = "Comedy series, photo. Tropes: the lost travellers in a strange city + the interview that explains nothing"
+prompt = "A warm photographic comedy series poster, golden hour. Three young students, two men and a woman, with backpacks, notebooks and a voice recorder stand lost in a narrow colourful old-town alley, one holding a huge paper map upside down, another interviewing an amused old shopkeeper who shrugs, hanging laundry and cafe tables around them, all shop fronts and signs blank. The lower third is shaded cobblestones"
+lettering = "relaxed hand-lettered sans-serif capitals in sunny yellow and white with a soft shadow, clean and friendly, on one line"
+
+[image.ai-fieldwork-backdrop-qwen]
+title = "Fieldwork"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A warm photographic comedy series still, golden hour. Three young students, two men and a woman, with backpacks, notebooks and a voice recorder stand lost in a narrow colourful old-town alley, one holding a huge paper map upside down, another interviewing an amused old shopkeeper who shrugs, hanging laundry and cafe tables around them, all shop fronts and signs blank, wide landscape"
+
+[image.ai-tidehouse-poster-titled]
+title = "Tidehouse"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Drama series, photo. Tropes: neighbours cut off by the tide + a secret in every window"
+prompt = "A slow atmospheric photographic drama series poster at dusk. A tall old stone house on a small tidal island with four lit windows, each showing a different family silhouette, the stone causeway half flooded by the rising tide with the tail lights of a last car stopped on the mainland side, a woman with a lantern on the steps looking at the water and a child beside her. The lower third is dark rippling water"
+lettering = "elegant thin serif capitals in pale sea-foam green with a faint ripple distortion and water reflections below, calm and quiet, on one line"
+
+[image.ai-tidehouse-backdrop-qwen]
+title = "Tidehouse"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A slow atmospheric photographic drama series still at dusk. A tall old stone house on a small tidal island with four lit windows, each showing a different family silhouette, the stone causeway half flooded by the rising tide with the tail lights of a last car stopped on the mainland side, a woman with a lantern on the steps looking at the water and a child beside her, wide landscape"
+
+[image.ai-owl-woods-poster-titled]
+title = "Owl Woods"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 1
+tropes = "Animation/Kids series, 2D cartoon. Tropes: the sleepy teacher at the forest school + the lesson that ends in chaos"
+prompt = "A flat 2D cartoon children's television poster with bold clean outlines and bright flat colours. A big round fluffy owl in tiny round glasses and a scarf stands yawning beside a blank chalkboard hung on a tree trunk in a sunny forest classroom, a rabbit, a hedgehog and a fox cub as pupils sit on tree stumps under leaf umbrellas, a science experiment bubbling over with colourful bubbles, mushrooms around. The lower third is green forest floor"
+lettering = "wobbly hand-cut woodland lettering in leafy green and warm brown with tiny leaves and acorns, friendly cartoon style, on two lines"
+
+[image.ai-owl-woods-backdrop-qwen]
+title = "Owl Woods"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A flat 2D cartoon children's television scene with bold clean outlines and bright flat colours. A big round fluffy owl in tiny round glasses and a scarf stands yawning beside a blank chalkboard hung on a tree trunk in a sunny forest classroom, a rabbit, a hedgehog and a fox cub as pupils sit on tree stumps under leaf umbrellas, a science experiment bubbling over with colourful bubbles, wide landscape"
+
+[image.ai-vanguard-legacy-poster-titled]
+title = "Vanguard: Legacy"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Action/Superhero series, photo. Tropes: the heirs who find the old hideout + untrained heroes the city needs anyway"
+prompt = "A photographic superhero series poster, teal and orange grade. Three teenagers in hoodies stand in the doorway of an abandoned underground headquarters, flashlight beams cutting through dust to reveal rows of empty dark grey armoured suits of original design in glass cases and a dim blue light humming at the back, the city skyline glowing through a cracked skylight, no emblems or symbols anywhere. The lower third is dusty dark floor fading to black"
+lettering = "sleek brushed steel-blue capitals with scratches and a faint electric blue glow, modern and cinematic, on two lines"
+
+[image.ai-vanguard-legacy-backdrop-qwen]
+title = "Vanguard: Legacy"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+prompt = "A photographic action series still, teal and orange grade. Three teenagers in plain solid-colour green and orange hoodies without any print stand in the doorway of an abandoned underground headquarters, flashlight beams cutting through dust to reveal rows of empty dark grey armoured suits in glass cases and a dim blue light humming at the back, the city skyline glowing through a cracked skylight, wide landscape"
+strict = true
+
+[image.ai-hinterland-poster-titled]
+title = "Hinterland"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Crime/Drama series, photo. Tropes: the outsider cop in a closed village + the old case nobody wants reopened"
+prompt = "A cold photographic crime drama series poster, misty morning. A woman police chief in a dark coat stands at the edge of a dark spruce forest holding a thin case file, in the village behind her half-timbered houses with villagers at doorways and windows turning their faces away, a church spire in the mist. The lower third is dark forest ground fading to black"
+lettering = "thin condensed serif capitals in desaturated pale grey-green with a fine worn texture, wide spacing, on one line"
+
+[image.ai-hinterland-backdrop-qwen]
+title = "Hinterland"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A cold photographic crime drama series still, misty morning. A woman police chief in a dark coat stands at the edge of a dark spruce forest holding a thin case file, in the village behind her half-timbered houses with villagers at doorways and windows turning their faces away, a church spire in the mist, wide landscape"
+
+[image.ai-kingsbridge-poster-titled]
+title = "Kingsbridge"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 3
+tropes = "Crime/Mystery series, photo. Tropes: the murder in the pretty river town + the neighbours who all have secrets"
+prompt = "A moody photographic crime mystery series poster at dawn. A woman detective inspector in a trench coat and her younger sergeant stand on an old stone bridge over a misty river, an empty rowing boat drifting below, plain blue and white striped tape without any writing fluttering on the railing, behind them a row of pretty riverside houses with curtains twitching and pale faces at the windows. The lower third is dark wet stone and water"
+lettering = "classic elegant serif capitals in muted gold with fine engraved details and a subtle shine, on one line"
+
+[image.ai-kingsbridge-backdrop-qwen]
+title = "Kingsbridge"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A moody photographic crime mystery series still at dawn. A woman detective inspector in a trench coat and her younger sergeant stand on an old stone bridge over a misty river, an empty rowing boat drifting below, plain blue and white striped tape without any writing fluttering on the railing, a row of pretty riverside houses behind them with curtains twitching and pale faces at the windows, wide landscape"
+
+[image.ai-fast-lane-poster-titled]
+title = "Fast Lane"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+tropes = "Action/Anime. Tropes: the courier with a package nobody names + every gang in the city on the tail"
+prompt = "An anime action movie poster seen from behind. A young courier on a small scooter rides away from the viewer down a rain-soaked neon city street at night, the courier's back and helmet visible, a plain glowing yellow parcel box without any markings strapped to the back of the scooter facing the viewer with a red tail light below it, three gang riders on motorcycles in dark helmets and jackets chase close behind him, also seen from behind and riding away in the same direction with their red tail lights glowing, every vehicle points the same way, streaking red light trails, rain and speed lines, the street vanishes into the distance. The lower third is wet dark asphalt fading to black"
+lettering = "sharp italic chrome racing lettering with red and orange neon glow and speed streaks, on one line"
+strict = true
+
+[image.ai-fast-lane-backdrop-qwen]
+title = "Fast Lane"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "An anime action film scene seen from behind. A young courier on a small scooter rides away from the viewer down a rain-soaked city street at night, the courier's back visible, a plain glowing yellow parcel box without any markings strapped to the back, three gang riders on motorcycles in dark helmets and jackets chase close behind him, also seen from behind and riding away in the same direction with red tail lights glowing, every vehicle points the same way, streaking red light trails, rain and speed lines, the buildings along the street have blank dark walls and only plain glowing coloured light strips, wide landscape"
+strict = true
+
+[image.ai-aurora-poster-titled]
+title = "Aurora"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 1
+tropes = "Science Fiction/Anime. Tropes: a strange sky phenomenon + the lone scientist at a remote station who understands it first"
+prompt = "An anime science fiction movie poster. A young woman researcher in a parka stands on a snowy fjord shore beside an old fisherman, both looking up at green and violet aurora lights frozen mid-swirl while tiny satellite lights in the sky go dark one by one, a small research hut behind them. The lower third is dark snowy ground fading to black"
+lettering = "elegant thin wide-spaced glowing green and violet lettering, on one line"
+
+[image.ai-aurora-backdrop-qwen]
+title = "Aurora"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "An anime science fiction film scene. A young woman researcher in a parka stands on a snowy fjord shore beside an old fisherman, both looking up at green and violet aurora lights frozen mid-swirl while tiny satellite lights in the sky go dark one by one, a small research hut behind them, wide landscape"
+
+[image.ai-wild-horses-poster-titled]
+title = "Wild Horses"
+shape = "poster"
+engine = "qwen"
+titled = true
+seed = 1
+crop = 0.05
+tropes = "Western/Animation, painted. Tropes: the long ride across the mountains with a herd + a standoff with the angry buyers"
+prompt = "A painted animated western movie poster, warm golden sunset. A rancher's daughter in a hat sits on a rock ridge in the foreground facing a lone silhouetted rider on a distant dusty trail, while a herd of wild horses gallops through the valley between them towards the mountains, dust and light. The lower third is dark dusty ground fading to black"
+lettering = "weathered western slab-serif lettering in sand gold and burnt orange, on two lines"
+
+[image.ai-wild-horses-backdrop-qwen]
+title = "Wild Horses"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+prompt = "A painted animated western film scene, warm golden sunset. A rancher's daughter in a hat sits on a rock ridge in the foreground facing a lone silhouetted rider on a distant dusty trail, while a herd of wild horses gallops through the valley between them towards the mountains, dust and light, wide landscape"
+
+# ---- Variant A: a poster without text, and the lettering alone on black, keyed onto it by demo.py (Art.keyed).
+# Used where Qwen would not paint the title right or kept adding marks under it.
+
+[image.ai-the-hedgehog-parade-poster-qwen]
+title = "The Hedgehog Parade"
+shape = "poster"
+engine = "qwen"
+seed = 1
+strict = true
+letters = "ai-the-hedgehog-parade-lettering"
+prompt = "A painted picture-book movie poster in soft gouache. A shy little hedgehog holds up a glowing paper lantern at the head of a parade of cute woodland animals, a mouse, a squirrel, a rabbit and a tiny owl, walking under big leaf umbrellas through an autumn forest in light rain, golden falling leaves, warm lantern light on wet leaves. The lower third is calm dark soft forest floor with nothing in it"
+
+[image.ai-the-hedgehog-parade-lettering]
+title = "The Hedgehog Parade"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "THE HEDGEHOG PARADE"
+lettering = "hand-painted gouache storybook lettering in bright warm amber and cream with little leaves and curly gentle serifs, cosy autumn feel, on two lines"
+
+[image.ai-the-typewriter-poster-qwen]
+title = "The Typewriter"
+shape = "poster"
+engine = "qwen"
+seed = 1
+strict = true
+letters = "ai-the-typewriter-lettering"
+prompt = "A quiet photographic drama movie poster, warm lamplight and rain. A woman writer in her forties in a cardigan sits at a cluttered wooden desk by a rainy window, her hands hovering over an old black typewriter with a blank sheet of paper glowing faintly warm in it, through the window a blurred street where a man with an umbrella stops and looks up, a cup of tea and piles of blank paper. The lower third is calm dark wooden desk fading to black with nothing on it"
+
+[image.ai-the-typewriter-lettering]
+title = "The Typewriter"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "THE TYPEWRITER"
+lettering = "typewriter lettering in bright warm cream, slightly uneven baseline and soft ink bleed, quiet and intimate, on two lines"
+
+[image.ai-home-before-dark-poster-qwen]
+title = "Home Before Dark"
+shape = "poster"
+engine = "qwen"
+seed = 3
+strict = true
+letters = "ai-home-before-dark-lettering"
+prompt = "A warm live-action family adventure film poster in golden late-afternoon light. Two children about ten, a girl and a boy, on bicycles stopped at a fork on a forest path, the boy pointing the wrong way with a grin, one single small scruffy dog in the front basket of the girl's bike, a cosy cabin with a glowing lit window between tall trees and an old bearded man in a woolly hat waving from its porch, fireflies starting to glow in the dusk. The lower third is calm dark forest path with nothing on it"
+
+[image.ai-home-before-dark-lettering]
+title = "Home Before Dark"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "HOME BEFORE DARK"
+lettering = "bold friendly rounded sans-serif capitals in bright warm golden yellow with a soft glow like fireflies, adventure family film feel, on two lines"
+
+# ---- Phase 2: the rest of the catalogue, Qwen-Image. "strict" adds: no emblems, symbols, logos or writing except the title.
+
+[image.ai-night-train-poster-titled]
+title = "Night Train"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Thriller/Crime, photo. Tropes: the closed circle on a train + the passenger who is on no list"
+prompt = "A tense photographic thriller movie poster at night. A woman train conductor in a dark uniform and cap stands in the narrow corridor of a vintage sleeper train holding a heavy ring of keys, a long row of identical compartment doors behind her with a thin line of light under one of them, dark windows streaming past with distant city lights, moody green and amber light. The lower third is the dark carpeted corridor floor"
+lettering = "elegant condensed vintage railway capitals in brass gold with a worn engraved look, on one line"
+
+[image.ai-night-train-backdrop-qwen]
+title = "Night Train"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A tense photographic thriller film still at night. A woman train conductor in a dark uniform and cap stands in the narrow corridor of a vintage sleeper train holding a heavy ring of keys, a long row of identical compartment doors behind her with a thin line of light under one of them, dark windows streaming past with distant city lights, moody green and amber light, wide landscape"
+
+[image.ai-the-red-boat-poster-titled]
+title = "The Red Boat"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Short/Drama, photo. Tropes: handing things on from one generation to the next + the last repaint"
+prompt = "A warm photographic drama movie poster in golden evening light. An old fisherman with a white beard and his grandson of about ten kneel side by side on a stone quay painting a small wooden fishing boat bright red with brushes, paint pots between them, a calm blue sea and white island houses behind, soft sunset glow on the red hull. The lower third is warm weathered quay planks"
+lettering = "hand-painted sign-painter capitals in warm red and cream with brush texture and a soft glow, on two lines"
+
+[image.ai-the-red-boat-backdrop-qwen]
+title = "The Red Boat"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic drama film still in golden evening light. An old fisherman with a white beard and his grandson of about ten kneel side by side on a stone quay painting a small wooden fishing boat bright red with brushes, paint pots between them, a calm blue sea and white island houses behind, soft sunset glow on the red hull, wide landscape"
+
+[image.ai-golden-hour-poster-titled]
+title = "Golden Hour"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Romance/Drama, photo. Tropes: the homecoming to the island + the first love who stayed behind"
+prompt = "A warm photographic romance drama movie poster at golden hour. A woman in her thirties with an old film camera around her neck stands at the rail of a small island ferry looking back at a man in a linen shirt at the helm who smiles at her, glowing golden sunset over a calm sea and a small island harbour of white houses behind, long warm light flare. The lower third is calm golden water"
+lettering = "flowing elegant light script lettering in warm gold and cream, glowing like sunset light, romantic, on two lines"
+
+[image.ai-golden-hour-backdrop-qwen]
+title = "Golden Hour"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic romance drama film still at golden hour. A woman in her thirties with an old film camera around her neck stands at the rail of a small island ferry looking back at a man in a linen shirt at the helm who smiles at her, glowing golden sunset over a calm sea and a small island harbour of white houses behind, long warm light flare, wide landscape"
+
+[image.ai-last-ride-west-poster-titled]
+title = "Last Ride West"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Western/Drama, photo. Tropes: the last delivery across the mountains + the pursuer two days behind and a stowaway"
+prompt = "A dusty photographic western movie poster at sunset. An ageing rider with a grey beard and a worn hat leads a tall chestnut horse along a mountain trail, a small covered wagon behind him with a child's face peeking out from under the canvas, far behind on the trail a lone silhouetted rider with a rifle in the dust, huge orange sky and mountains. The lower third is dark dusty trail"
+lettering = "weathered western slab-serif capitals in sand gold with worn scratches, on two lines"
+
+[image.ai-last-ride-west-backdrop-qwen]
+title = "Last Ride West"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A dusty photographic western film still at sunset. An ageing rider with a grey beard and a worn hat leads a tall chestnut horse along a mountain trail, a small covered wagon behind him with a child's face peeking out from under the canvas, far behind on the trail a lone silhouetted rider with a rifle in the dust, huge orange sky and mountains, wide landscape"
+
+[image.ai-letters-to-ingrid-poster-titled]
+title = "Letters to Ingrid"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.07
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the box of unsent letters in the attic + the search for the person they were written to"
+prompt = "A quiet photographic drama movie poster in warm attic light. A young woman in a knitted cardigan sits on the floor of a dusty attic holding a bundle of yellowed blank envelopes tied with string, an open wooden box beside her, a small round window glowing with warm afternoon light, an old suitcase behind her. The lower third is dark worn wooden floorboards"
+lettering = "slender handwritten ink script lettering in warm cream, elegant and slightly uneven like a letter, on two lines"
+text = "Letters to Ingrid"
+
+[image.ai-letters-to-ingrid-backdrop-qwen]
+title = "Letters to Ingrid"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic drama film still in warm attic light. A young woman in a knitted cardigan sits on the floor of a dusty attic holding a bundle of yellowed blank envelopes tied with string, an open wooden box beside her, a small round window glowing with warm afternoon light, an old suitcase behind her, wide landscape"
+
+[image.ai-summer-nights-live-poster-titled]
+title = "Summer Nights Live"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Music/Documentary, photo. Tropes: the festival seen from the crowd + the long walk home at sunrise"
+prompt = "A warm photographic concert documentary poster at dusk. An open-air river festival seen from the crowd, hundreds of raised hands in silhouette against a stage glowing in warm coloured lights and haze, strings of festoon lights over the riverbank, a pink sunrise glow beginning on the far horizon. The lower third is the dark crowd fading to black"
+lettering = "bold warm hand-painted brush capitals in sunset orange and pink with a soft glow, festival feel, on two lines"
+
+[image.ai-summer-nights-live-backdrop-qwen]
+title = "Summer Nights Live"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A warm photographic concert documentary still at dusk. An open-air river festival seen from the crowd, hundreds of raised hands in silhouette against a stage glowing in warm coloured lights and haze, strings of festoon lights over the riverbank, a pink sunrise glow beginning on the far horizon, wide landscape"
+
+[image.ai-7-days-in-lisbon-poster-titled]
+title = "7 Days in Lisbon"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Romance/Comedy, photo. Tropes: the stranger shown around the city + the week that changes everything"
+prompt = "A warm photographic romantic comedy movie poster in golden light. A woman in a summer dress holding a paper map and a man in a linen jacket ride a yellow vintage tram up a steep cobbled street, laughing, pastel tiled houses and hanging laundry, a river and an old ferry in the distance, all signs blank. The lower third is cobbled street in warm shade"
+lettering = "playful hand-lettered rounded capitals in sunny yellow and white with a soft shadow, on two lines"
+text = "7 Days in Lisbon"
+
+[image.ai-7-days-in-lisbon-backdrop-qwen]
+title = "7 Days in Lisbon"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic romantic comedy film still in golden light. A woman in a summer dress holding a paper map and a man in a linen jacket ride a yellow vintage tram up a steep cobbled street, laughing, pastel tiled houses and hanging laundry, a river and an old ferry in the distance, all signs blank, wide landscape"
+
+[image.ai-1000-lanterns-poster-titled]
+title = "1000 Lanterns"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.05
+titled = true
+strict = true
+tropes = "Drama/Anime. Tropes: one night to save the family workshop + the old craft against the big company"
+prompt = "An anime drama movie poster at night. A teenage girl in a work apron stands in the middle of a lantern workshop courtyard holding a glowing paper lantern, hundreds of glowing paper lanterns hanging overhead like a ceiling of warm light, her ill father watching from a doorway wrapped in a blanket, a huge modern glass tower looming behind the old roofs. The lower third is dark stone courtyard"
+lettering = "elegant thin anime title lettering in warm lantern orange and gold with a soft glow, wide spacing, on two lines"
+
+[image.ai-1000-lanterns-backdrop-qwen]
+title = "1000 Lanterns"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "An anime drama film still at night. A teenage girl in a work apron stands in the middle of a lantern workshop courtyard holding a glowing paper lantern, hundreds of glowing paper lanterns hanging overhead like a ceiling of warm light, her ill father watching from a doorway wrapped in a blanket, a huge modern glass tower looming behind the old roofs, wide landscape"
+
+[image.ai-21-winters-poster-titled]
+title = "21 Winters"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: a whole life told through the seasons of one valley + the man who plants a forest"
+prompt = "A quiet photographic drama movie poster in golden winter light. A weathered forester in a wool coat stands seen from behind on a snowy hill beside a thin young pine, looking over a vast valley where the forest he planted grows from small saplings on the left to tall dark pines on the right, a small cabin with smoke rising. The lower third is blue shadowed snow"
+lettering = "thin elegant condensed serif capitals in frosty white with a faint engraved texture, on one line"
+
+[image.ai-21-winters-backdrop-qwen]
+title = "21 Winters"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic drama film still in golden winter light. A weathered forester in a wool coat stands seen from behind on a snowy hill beside a thin young pine, looking over a vast valley where the forest he planted grows from small saplings on the left to tall dark pines on the right, a small cabin with smoke rising, wide landscape"
+
+[image.ai-above-the-tide-poster-titled]
+title = "Above the Tide"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama/Sport, photo. Tropes: the injured athlete's comeback + the coach who has given up"
+prompt = "An uplifting photographic sport drama movie poster at dawn. A woman surfer with a taped knee paddles out towards a huge glowing turquoise wave curling in pink sunrise light, in the foreground an older coach with his arms crossed stands on the beach watching her, spray in the air. The lower third is dark wet sand with foam"
+lettering = "bold clean italic sport capitals in bright aqua and white with sea spray glow, on two lines"
+
+[image.ai-above-the-tide-backdrop-qwen]
+title = "Above the Tide"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "An uplifting photographic sport drama film still at dawn. A woman surfer with a taped knee paddles out towards a huge glowing turquoise wave curling in pink sunrise light, in the foreground an older coach with his arms crossed stands on the beach watching her, spray in the air, wide landscape"
+
+[image.ai-after-the-rain-poster-titled]
+title = "After the Rain"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Drama/Romance, photo. Tropes: strangers who keep missing each other + the umbrella that connects them"
+prompt = "A romantic photographic movie poster in a rainy city at dusk. A woman with a yellow umbrella and a man in a grey coat stand at opposite ends of a rain-soaked street crossing, rain falling, warm shop lights reflected in the wet asphalt, a taxi with its light on passing between them, soft bokeh. The lower third is dark reflective wet street"
+lettering = "soft rain-streaked light capitals in pale blue and white with reflections, delicate, on two lines"
+
+[image.ai-after-the-rain-backdrop-qwen]
+title = "After the Rain"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A romantic photographic film still in a rainy city at dusk. A woman with a yellow umbrella and a man in a grey coat stand at opposite ends of a rain-soaked street crossing, rain falling, warm shop lights reflected in the wet asphalt, a taxi with its light on passing between them, soft bokeh, wide landscape"
+
+[image.ai-ashes-of-summer-poster-titled]
+title = "Ashes of Summer"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: the evacuation that left her behind + the unlikely ally she reported to the police"
+prompt = "A tense photographic thriller movie poster. A woman geologist in a dusty field jacket with a rucksack runs along a black volcanic ridge, ash falling like grey snow, a glowing lava ridge behind her and an empty harbour with no boats far below, a man in a rain jacket following her at a distance. The lower third is dark ash-covered ground"
+lettering = "scorched grey and ember orange condensed capitals with ash texture and a glowing crack, on two lines"
+
+[image.ai-ashes-of-summer-backdrop-qwen]
+title = "Ashes of Summer"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tense photographic thriller film still. A woman geologist in a dusty field jacket with a rucksack runs along a black volcanic ridge, ash falling like grey snow, a glowing lava ridge behind her and an empty harbour with no boats far below, a man in a rain jacket following her at a distance, wide landscape"
+
+[image.ai-atlas-of-small-things-poster-titled]
+title = "Atlas of Small Things"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Documentary, photo. Tropes: the museum of everything people cannot throw away + the keeper with a story"
+prompt = "A warm photographic documentary movie poster. A wooden museum drawer with hundreds of colourful buttons sorted in tiny compartments, a hand in a white cotton glove holding one mother-of-pearl button up to the light, glass jars and old cabinets softly blurred behind in warm light. The lower third is dark polished wood"
+lettering = "small elegant museum-label serif capitals in warm cream with wide spacing, on three lines"
+
+[image.ai-atlas-of-small-things-backdrop-qwen]
+title = "Atlas of Small Things"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A warm photographic documentary film still. A wooden museum drawer with hundreds of colourful buttons sorted in tiny compartments, a hand in a white cotton glove holding one mother-of-pearl button up to the light, glass jars and old cabinets softly blurred behind in warm light, wide landscape"
+
+[image.ai-blue-hour-poster-titled]
+title = "Blue Hour"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.06
+titled = true
+strict = true
+tropes = "Drama/Romance, photo. Tropes: the wordless meetings on the bridge + the notes that grow into something"
+prompt = "A romantic photographic drama movie poster in the blue hour before sunrise. A nurse in a navy coat stands at one end of a stone bridge and a baker in a white apron carrying a tray of bread at the other, both facing each other with the distance between them, small folded notes tucked into the stone railing, deep blue sky fading to pale pink at the horizon, street lamps still lit. The lower third is dark blue paving"
+lettering = "thin elegant spaced capitals in soft pale blue with a subtle glow, on one line"
+
+[image.ai-blue-hour-backdrop-qwen]
+title = "Blue Hour"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A romantic photographic drama film still in the blue hour before sunrise. A nurse in a navy coat stands at one end of a stone bridge and a baker in a white apron carrying a tray of bread at the other, both facing each other with the distance between them, small folded notes tucked into the stone railing, deep blue sky fading to pale pink at the horizon, street lamps still lit, wide landscape"
+
+[image.ai-brass-and-bone-poster-titled]
+title = "Brass and Bone"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Crime, photo. Tropes: the detective returns to the town she fled + the family that still runs everything"
+prompt = "A dark photographic crime drama movie poster at dusk. A woman detective in a long dark coat stands alone in front of a huge closed factory with tall chimneys, behind her a row of terraced workers' houses with faces watching from lit windows, an old child's bicycle lying on its side at her feet. The lower third is wet dark cobbles"
+lettering = "bold condensed industrial capitals in tarnished brass gold with riveted metal texture, on two lines"
+
+[image.ai-brass-and-bone-backdrop-qwen]
+title = "Brass and Bone"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A dark photographic crime drama film still at dusk. A woman detective in a long dark coat stands alone in front of a huge closed factory with tall chimneys, behind her a row of terraced workers' houses with faces watching from lit windows, an old child's bicycle lying on its side at her feet, wide landscape"
+
+[image.ai-broken-compass-poster-titled]
+title = "Broken Compass"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Adventure/Anime. Tropes: the estranged brothers on a journey + the useless compass and the father's map"
+prompt = "An anime adventure movie poster. Two brothers, a teenage boy and an older young man, walk side by side across a huge golden desert, the younger holding a brass compass whose needle spins wildly while the older looks away, a weathered paper map flapping in the wind, one low sun in a vast sky. The lower third is rippling dune sand in shadow"
+lettering = "worn adventure capitals in sand gold and rust red with a cracked texture, on two lines"
+
+[image.ai-broken-compass-backdrop-qwen]
+title = "Broken Compass"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "An anime adventure film still. Two brothers, a teenage boy and an older young man, walk side by side across a huge golden desert, the younger holding a brass compass whose needle spins wildly while the older looks away, a weathered paper map flapping in the wind, one low sun in a vast sky, wide landscape"
+
+[image.ai-bazaar-poster-titled]
+title = "Bazaar"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: the whole night in one market + the stolen phone everyone wants"
+prompt = "A tense photographic thriller movie poster, night market. A young woman holds a glowing smartphone above her head in a crowded narrow market lane lit by strings of colourful lanterns, a dozen suspicious faces turning towards her among the stalls, steam and neon haze, all stall signs blank. The lower third is dark wet market paving"
+lettering = "sharp neon tube capitals in hot pink and cyan with a glow, on one line"
+
+[image.ai-bazaar-backdrop-qwen]
+title = "Bazaar"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A tense photographic thriller film still, night market. A young woman holds a glowing smartphone above her head in a crowded narrow market lane lit by strings of colourful lanterns, a dozen suspicious faces turning towards her among the stalls, steam and neon haze, all stall signs blank, wide landscape"
+
+[image.ai-before-the-whistle-poster-titled]
+title = "Before the Whistle"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Sport/Drama, photo. Tropes: the old champion coaches the misfits + twelve weeks to race day"
+prompt = "A warm photographic sport drama movie poster at sunrise. An old coach in a faded tracksuit with a stopwatch stands in front of a motley team of amateur runners stretching on a city street, a baker in a flour-dusted apron, a bus driver in a uniform vest, a teenager in a hoodie, long golden shadows. The lower third is the empty sunlit street"
+lettering = "bold athletic condensed capitals in bright white and red with a motion blur edge, on two lines"
+
+[image.ai-before-the-whistle-backdrop-qwen]
+title = "Before the Whistle"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic sport drama film still at sunrise. An old coach in a faded tracksuit with a stopwatch stands in front of a motley team of amateur runners stretching on a city street, a baker in a flour-dusted apron, a bus driver in a uniform vest, a teenager in a hoodie, long golden shadows, wide landscape"
+
+[image.ai-canyon-road-poster-titled]
+title = "Canyon Road"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Thriller/Western, photo. Tropes: the guide who leads the wrong group + the storm that closes the way back"
+prompt = "A tense photographic neo-western thriller movie poster. A woman tour guide in a khaki shirt and cap stands in the middle of a narrow red slot canyon road, behind her a group of tourists in hats and sunglasses watching her coldly, a dark storm cloud wall rolling over the canyon rim, red rock walls glowing orange. The lower third is dark dusty road"
+lettering = "worn western slab capitals in burnt orange and dusty cream with scratches, on two lines"
+
+[image.ai-canyon-road-backdrop-qwen]
+title = "Canyon Road"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A tense photographic neo-western thriller film still. A woman tour guide in a khaki shirt and cap stands in the middle of a narrow red slot canyon road, behind her a group of tourists in hats and sunglasses watching her coldly, a dark storm cloud wall rolling over the canyon rim, red rock walls glowing orange, wide landscape"
+
+[image.ai-carousel-poster-titled]
+title = "Carousel"
+shape = "poster"
+engine = "qwen"
+titled = true
+strict = true
+tropes = "Comedy/Romance, photo. Tropes: the funfair that comes to town + the town that must pick a side"
+prompt = "A warm photographic romantic comedy movie poster at dusk. A glowing funfair carousel with strings of bulbs in a small town square, a young woman in a work apron and a man in a suit with a rolled-up plan pull at a painted wooden horse from either side like a tug of war while townsfolk watch, warm lights. The lower third is dark cobbled square"
+lettering = "festive marquee-bulb capitals in warm red and gold with glowing bulbs, on one line"
+text = "Carousel"
+
+[image.ai-carousel-backdrop-qwen]
+title = "Carousel"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A warm photographic romantic comedy film still at dusk. A glowing funfair carousel with strings of bulbs in a small town square, a young woman in a work apron and a man in a suit with a rolled-up plan pull at a painted wooden horse from either side like a tug of war while townsfolk watch, warm lights, wide landscape"
+
+[image.ai-cold-harbour-poster-titled]
+title = "Cold Harbour"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Crime, photo. Tropes: the trawler that always returns lighter + the investigation that leads home"
+prompt = "A cold photographic crime drama movie poster at dawn. A woman customs officer in a navy uniform jacket with a torch stands on a grey harbour quay, a rusty trawler moored behind her riding too high in the water, fishermen on its deck turning their backs on her, thin fog. The lower third is wet grey concrete"
+lettering = "stark condensed capitals in icy pale grey-blue with a frost texture, on two lines"
+
+[image.ai-cold-harbour-backdrop-qwen]
+title = "Cold Harbour"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A cold photographic crime drama film still at dawn. A woman customs officer in a navy uniform jacket with a torch stands on a grey harbour quay, a rusty trawler moored behind her riding too high in the water, fishermen on its deck turning their backs on her, thin fog, wide landscape"
+
+[image.ai-crossing-lines-poster-titled]
+title = "Crossing Lines"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.08
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: one last day before a parting + the secret kept for years"
+prompt = "A quiet photographic drama movie poster in Mediterranean light. Two friends, a woman and a man in their thirties, walk side by side along a seafront promenade of a southern French city pulling a suitcase between them, palm trees and pastel buildings, a sunset glow, one of them looking away. The lower third is promenade tiles"
+lettering = "clean modern thin capitals in warm peach and white with wide spacing, on two lines"
+
+[image.ai-crossing-lines-backdrop-qwen]
+title = "Crossing Lines"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A quiet photographic drama film still in Mediterranean light. Two friends, a woman and a man in their thirties, walk side by side along a seafront promenade of a southern French city pulling a suitcase between them, palm trees and pastel buildings, a sunset glow, one of them looking away, wide landscape"
+
+[image.ai-concerto-for-a-stranger-poster-titled]
+title = "Concerto for a Stranger"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.08
+titled = true
+strict = true
+text = "CONCERTO FOR A STRANGER"
+tropes = "Drama/Music, photo. Tropes: music as the only conversation + the neighbour behind the wall"
+prompt = "A romantic photographic drama movie poster at night. A young woman plays the violin at the open window of an old apartment building with her eyes closed in warm lamp light, in the window next to hers a silhouette of a hand pressed gently against the glass, a quiet courtyard below. The lower third is dark courtyard cobbles"
+lettering = "elegant flowing light script lettering in warm gold, on three lines"
+
+[image.ai-concerto-for-a-stranger-backdrop-qwen]
+title = "Concerto for a Stranger"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A romantic photographic drama film still at night. A young woman plays the violin at the open window of an old apartment building with her eyes closed in warm lamp light, in the window next to hers a silhouette of a hand pressed gently against the glass, a quiet courtyard below, wide landscape"
+
+[image.ai-city-of-glass-poster-titled]
+title = "City of Glass"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Science Fiction/Anime. Tropes: the witness nobody believes + the company that wants him quiet"
+prompt = "An anime science fiction movie poster at night. A window cleaner in a harness and cap hangs on a rope in front of a vast glass tower facade, a glowing city of towers far below, he stares at a faint strange blue light behind a window on the hundredth floor, helicopter lights, reflections. The lower third is dark glass facade fading to black"
+lettering = "sleek transparent glass lettering in pale cyan with glossy reflections, on two lines"
+
+[image.ai-city-of-glass-backdrop-qwen]
+title = "City of Glass"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "An anime science fiction film still at night. A window cleaner in a harness and cap hangs on a rope in front of a vast glass tower facade, a glowing city of towers far below, he stares at a faint strange blue light behind a window on the hundredth floor, helicopter lights, reflections, wide landscape"
+
+[image.ai-deep-water-poster-titled]
+title = "Deep Water"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: the patterns nobody else sees + predictions that come true"
+prompt = "A tense photographic thriller movie poster in a dim aquarium at night. A woman aquarium keeper in a navy polo shirt stands with one hand on the glass of a huge glowing blue tank where hundreds of glowing jellyfish drift in a perfect spiral, her colleagues blurred behind her. The lower third is dark wet tiled floor"
+lettering = "glowing translucent aqua capitals with a deep-sea bioluminescent glow, on two lines"
+
+[image.ai-deep-water-backdrop-qwen]
+title = "Deep Water"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tense photographic thriller film still in a dim aquarium at night. A woman aquarium keeper in a navy polo shirt stands with one hand on the glass of a huge glowing blue tank where hundreds of glowing jellyfish drift in a perfect spiral, her colleagues blurred behind her, wide landscape"
+
+[image.ai-desert-bloom-poster-titled]
+title = "Desert Bloom"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.06
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the long wait for a once-in-a-decade event + the odd company in the wilderness"
+prompt = "A quiet photographic drama movie poster at dawn. A woman botanist in a wide hat kneels in a vast dry red desert beside her small tent touching the first tiny green sprout, an old shepherd with a staff and a few goats in the distance, the far dunes beginning to colour pink and yellow with wildflowers. The lower third is dry cracked red earth"
+lettering = "delicate hand-lettered capitals in warm coral and cream with tiny petals, on two lines"
+
+[image.ai-desert-bloom-backdrop-qwen]
+title = "Desert Bloom"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic drama film still at dawn. A woman botanist in a wide hat kneels in a vast dry red desert beside her small tent touching the first tiny green sprout, an old shepherd with a staff and a few goats in the distance, the far dunes beginning to colour pink and yellow with wildflowers, wide landscape"
+
+[image.ai-dust-and-diamonds-poster-titled]
+title = "Dust and Diamonds"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.08
+titled = true
+strict = true
+tropes = "Western, photo. Tropes: two distrustful partners on one claim + the whole territory wants it"
+prompt = "A dusty photographic western movie poster in golden light. A horse trader in a long duster and a card gambler in a black waistcoat stand side by side at the edge of a mining claim with a pick and a lantern, a rough wooden fence, riders with rifles approaching on the far ridge, tiny glints of diamonds in the rock. The lower third is dark dusty ground"
+lettering = "bold western slab capitals in sparkling gold with glinting facets, on two lines"
+
+[image.ai-dust-and-diamonds-backdrop-qwen]
+title = "Dust and Diamonds"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A dusty photographic western film still in golden light. A horse trader in a long duster and a card gambler in a black waistcoat stand side by side at the edge of a mining claim with a pick and a lantern, a rough wooden fence, riders with rifles approaching on the far ridge, tiny glints of diamonds in the rock, wide landscape"
+
+[image.ai-downpour-poster-titled]
+title = "Downpour"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: everyone under one roof is a suspect + the pickpocket, the detective and the witness"
+prompt = "A tense photographic thriller movie poster on a rainy night. A crowd of strangers shelters under a shop awning in heavy rain, a woman in a trench coat, a man in a hat, a young man with a hood, in the foreground a hand slipping into a coat pocket, everyone eyeing each other with suspicion, neon reflections in the puddles, the shop window blank. The lower third is dark reflective wet pavement"
+lettering = "rain-streaked capitals in cold silver-blue with dripping highlights, on one line"
+
+[image.ai-downpour-backdrop-qwen]
+title = "Downpour"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A tense photographic thriller film still on a rainy night. A crowd of strangers shelters under a shop awning in heavy rain, a woman in a trench coat, a man in a hat, a young man with a hood, in the foreground a hand slipping into a coat pocket, everyone eyeing each other with suspicion, neon reflections in the puddles, the shop window blank, wide landscape"
+
+[image.ai-dear-neighbour-poster-titled]
+title = "Dear Neighbour"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.08
+titled = true
+strict = true
+tropes = "Comedy, photo. Tropes: the feud over the garden fence + the shared pet nobody knew was shared"
+prompt = "A warm photographic comedy movie poster. Two grumpy neighbours, an old man in a cardigan and an old woman in a flowered apron, stand on either side of a garden fence each holding out a bowl of cat food towards the same fat ginger cat sitting proudly on top of the fence between them, sunny suburban gardens. The lower third is green lawn"
+lettering = "friendly hand-lettered rounded capitals in warm orange and cream with a soft shadow, on two lines"
+text = "Dear Neighbour"
+
+[image.ai-dear-neighbour-backdrop-qwen]
+title = "Dear Neighbour"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic comedy film still. Two grumpy neighbours, an old man in a cardigan and an old woman in a flowered apron, stand on either side of a garden fence each holding out a bowl of cat food towards the same fat ginger cat sitting proudly on top of the fence between them, sunny suburban gardens, wide landscape"
+
+[image.ai-echoes-poster-titled]
+title = "Echoes"
+shape = "poster"
+engine = "qwen"
+titled = true
+strict = true
+tropes = "Mystery, photo. Tropes: voices that are not on the tape + the drowned village that wants to be heard"
+prompt = "A haunting photographic mystery movie poster in a misty forest at dusk. A woman sound recordist with headphones and a long furry microphone on a boom pole stands in a foggy pine forest, behind her the faint ghostly outline of a drowned village's church steeple rising from a still lake, blue-grey mist. The lower third is dark forest floor"
+lettering = "thin ghostly wide-spaced capitals in pale silver-blue, on one line"
+text = "Echoes"
+
+[image.ai-echoes-backdrop-qwen]
+title = "Echoes"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A haunting photographic mystery film still in a misty forest at dusk. A woman sound recordist with headphones and a long furry microphone on a boom pole stands in a foggy pine forest, behind her the faint ghostly outline of a drowned village's church steeple rising from a still lake, blue-grey mist, wide landscape"
+
+[image.ai-edge-of-the-map-poster-titled]
+title = "Edge of the Map"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.08
+titled = true
+strict = true
+tropes = "Adventure/Animation, 3D animation. Tropes: mapping the last blank valley + the ice that moves faster than the season"
+prompt = "A stylised 3D animated adventure movie poster with soft global illumination. A young cartographer with a satchel and a rolled map leads a small team of two others with sleds along the edge of a vast blue glacier valley in morning light, the ice cracking and shifting beside them, a blank white unmapped valley stretching ahead. The lower third is smooth snow"
+lettering = "adventurous hand-drawn explorer capitals in aged parchment cream and glacier blue with a rough texture, on two lines"
+
+[image.ai-edge-of-the-map-backdrop-qwen]
+title = "Edge of the Map"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A stylised 3D animated adventure film still with soft global illumination. A young cartographer with a satchel and a rolled map leads a small team of two others with sleds along the edge of a vast blue glacier valley in morning light, the ice cracking and shifting beside them, a blank white unmapped valley stretching ahead, wide landscape"
+
+[image.ai-evening-train-poster-titled]
+title = "Evening Train"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.08
+titled = true
+strict = true
+tropes = "Romance, photo. Tropes: ten years of almost talking + the train that stops in the middle of nowhere"
+prompt = "A romantic photographic movie poster at snowy dusk. A man in a grey coat and a woman in a red scarf sit opposite each other in an old warm-lit train carriage, both pretending to read, the window behind them showing a vast empty snowy plain with the train standing still at dusk. The lower third is dark carriage floor"
+lettering = "elegant vintage railway script in warm gold, on two lines"
+
+[image.ai-evening-train-backdrop-qwen]
+title = "Evening Train"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A romantic photographic film still at snowy dusk. A man in a grey coat and a woman in a red scarf sit opposite each other in an old warm-lit train carriage, both pretending to read, the window behind them showing a vast empty snowy plain with the train standing still at dusk, wide landscape"
+
+[image.ai-festival-poster-titled]
+title = "Festival"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Comedy/Music, photo. Tropes: the weekend that goes wrong from the first gate + friendship as the only thing left"
+prompt = "A bright photographic comedy movie poster. Four friends stand squeezed in front of a tiny collapsed tent in a muddy festival field at sunset, one holding a deflated air mattress, colourful flags and a huge stage glowing in the hazy background. The lower third is churned muddy grass"
+lettering = "loud hand-painted festival brush capitals in hot pink and yellow with paint splashes, on one line"
+
+[image.ai-festival-backdrop-qwen]
+title = "Festival"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A bright photographic comedy film still. Four friends stand squeezed in front of a tiny collapsed tent in a muddy festival field at sunset, one holding a deflated air mattress, colourful flags and a huge stage glowing in the hazy background, wide landscape"
+
+[image.ai-first-light-poster-titled]
+title = "First Light"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the lone vigil for a boat that never came back + the stranger who waits with him"
+prompt = "A quiet photographic drama movie poster at dawn on a beach. A weathered old fisherman sits alone on an upturned boat watching the empty grey sea at first light, a younger stranger in a hooded jacket quietly joins him holding a thermos, pale gold light breaking at the horizon, a small fishing village behind. The lower third is grey beach pebbles"
+lettering = "thin elegant serif capitals in soft pale gold with a faint glow, on two lines"
+
+[image.ai-first-light-backdrop-qwen]
+title = "First Light"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic drama film still at dawn on a beach. A weathered old fisherman sits alone on an upturned boat watching the empty grey sea at first light, a younger stranger in a hooded jacket quietly joins him holding a thermos, pale gold light breaking at the horizon, a small fishing village behind, wide landscape"
+
+[image.ai-flood-season-poster-titled]
+title = "Flood Season"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.08
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: a village decides whether to stay + the wall against the sea"
+prompt = "A quiet photographic drama movie poster at stormy dusk. Villagers in rain gear stand on a sea wall of sandbags looking out at rising grey water lapping at the doors of their small houses, a woman with a child, an old man staring at his home, a pale stormy sky. The lower third is dark wet sandbags"
+lettering = "heavy weathered capitals in washed-out teal and cream with a water-stain texture, on two lines"
+
+[image.ai-flood-season-backdrop-qwen]
+title = "Flood Season"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A quiet photographic drama film still at stormy dusk. Villagers in rain gear stand on a sea wall of sandbags looking out at rising grey water lapping at the doors of their small houses, a woman with a child, an old man staring at his home, a pale stormy sky, wide landscape"
+
+[image.ai-frozen-line-poster-titled]
+title = "Frozen Line"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: snowed in at the border + the tracks that lead only one way"
+prompt = "A chilling photographic thriller movie poster at dusk. Three border guards in fur-hooded uniforms stand outside a small snowed-in wooden border post, one pointing at a single line of footprints leading away into a dark pine forest, a striped barrier pole half buried in snow, deep blue shadows. The lower third is blue shadowed snow"
+lettering = "icy pale blue condensed capitals with frost cracks, on two lines"
+
+[image.ai-frozen-line-backdrop-qwen]
+title = "Frozen Line"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A chilling photographic thriller film still at dusk. Three border guards in fur-hooded uniforms stand outside a small snowed-in wooden border post, one pointing at a single line of footprints leading away into a dark pine forest, a striped barrier pole half buried in snow, deep blue shadows, wide landscape"
+
+[image.ai-grand-hotel-neon-poster-titled]
+title = "Grand Hotel Neon"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.08
+titled = true
+strict = true
+tropes = "Comedy/Crime, photo. Tropes: the fortune found in room 404 + the very polite gangsters"
+prompt = "A stylish photographic crime comedy movie poster at night. A night porter in a burgundy uniform holds an open suitcase full of cash in front of the glowing pink neon facade of a tired old grand hotel, two very polite gangsters in matching suits and bowler hats leaning in behind him on either side, a guest peeking from a window, the neon tubes blank without letters. The lower third is dark wet pavement"
+lettering = "retro neon tube script in hot pink and electric blue with a glow, art deco feel, on two lines"
+
+[image.ai-grand-hotel-neon-backdrop-qwen]
+title = "Grand Hotel Neon"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A stylish photographic crime comedy film still at night. A night porter in a burgundy uniform holds an open suitcase full of cash in front of the glowing pink neon facade of a tired old grand hotel, two very polite gangsters in matching suits and bowler hats leaning in behind him on either side, a guest peeking from a window, the neon tubes blank without letters, wide landscape"
+
+[image.ai-ghost-light-poster-titled]
+title = "Ghost Light"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.08
+titled = true
+strict = true
+tropes = "Horror, photo. Tropes: the last night in the building that will not come down + lights and machines with a will of their own"
+prompt = "A slow-burn photographic horror movie poster at night. A large abandoned stone mill with every window glowing pale yellow from inside although it is empty, a silent excavator in front with its lights on by itself, workers in hard hats standing in the dark yard looking up, thin fog. The lower third is dark gravel yard"
+lettering = "thin cracked pale yellow serif capitals with a flickering glow, on two lines"
+
+[image.ai-ghost-light-backdrop-qwen]
+title = "Ghost Light"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A slow-burn photographic horror film still at night. A large abandoned stone mill with every window glowing pale yellow from inside although it is empty, a silent excavator in front with its lights on by itself, workers in hard hats standing in the dark yard looking up, thin fog, wide landscape"
+
+[image.ai-gravity-of-stars-poster-titled]
+title = "Gravity of Stars"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Science Fiction/Animation, 3D animation. Tropes: the signal that repeats her own address + the journey back to the childhood house"
+prompt = "A stylised 3D animated science fiction movie poster with soft global illumination. A woman astronomer in a big knitted jumper stands in a snowy field in front of the small house of her childhood with one warm lit window, above it a sky full of stars bending into a glowing spiral that points at the roof. The lower third is dark snowy field"
+lettering = "luminous thin wide-spaced capitals in starlight white and soft violet, on two lines"
+
+[image.ai-gravity-of-stars-backdrop-qwen]
+title = "Gravity of Stars"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A stylised 3D animated science fiction film still with soft global illumination. A woman astronomer in a big knitted jumper stands in a snowy field in front of the small house of her childhood with one warm lit window, above it a sky full of stars bending into a glowing spiral that points at the roof, wide landscape"
+
+[image.ai-half-past-midnight-poster-titled]
+title = "Half Past Midnight"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: the warning call live on air + the ticking clock and the whole city listening"
+prompt = "A tense photographic thriller movie poster. A woman radio host with headphones sits at the microphone in a glass-walled night studio, one hand on a ringing red telephone, a big plain round wall clock behind her showing half past twelve, the lit city skyline behind the glass. The lower third is dark studio desk"
+lettering = "bold red and white condensed capitals with a glowing broadcast-light edge, on two lines"
+
+[image.ai-half-past-midnight-backdrop-qwen]
+title = "Half Past Midnight"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tense photographic thriller film still. A woman radio host with headphones sits at the microphone in a glass-walled night studio, one hand on a ringing red telephone, a big plain round wall clock behind her showing half past twelve, the lit city skyline behind the glass, wide landscape"
+
+[image.ai-headlights-poster-titled]
+title = "Headlights"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Crime, photo. Tropes: the stranger in the cab knows too much + the car that follows"
+prompt = "A moody photographic crime thriller movie poster at night. Inside the cab of a big truck a woman truck driver at the wheel glances sideways at a hooded hitchhiker in the passenger seat, the long empty night road ahead, in the side mirror a pair of headlights following, dashboard glow. The lower third is dark dashboard"
+lettering = "bold chrome-edged condensed capitals in amber with a glow, on one line"
+
+[image.ai-headlights-backdrop-qwen]
+title = "Headlights"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A moody photographic crime thriller film still at night. Inside the cab of a big truck a woman truck driver at the wheel glances sideways at a hooded hitchhiker in the passenger seat, the long empty night road ahead, in the side mirror a pair of headlights following, dashboard glow, wide landscape"
+
+[image.ai-high-water-poster-titled]
+title = "High Water"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: one night to decide whose valley floods + the keeper torn between family and town"
+prompt = "A tense photographic drama movie poster at night in a storm. A dam keeper in a yellow raincoat with a torch stands on the concrete crest of a huge dam beside a big iron control wheel, a swollen reservoir roaring on one side and far below on the other side the lights of a small town and a lone farmhouse in the valley, lightning in the sky. The lower third is dark wet concrete"
+lettering = "heavy concrete-textured capitals in pale grey-blue with water spray, on two lines"
+
+[image.ai-high-water-backdrop-qwen]
+title = "High Water"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tense photographic drama film still at night in a storm. A dam keeper in a yellow raincoat with a torch stands on the concrete crest of a huge dam beside a big iron control wheel, a swollen reservoir roaring on one side and far below on the other side the lights of a small town and a lone farmhouse in the valley, lightning in the sky, wide landscape"
+
+[image.ai-hush-poster-titled]
+title = "Hush"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.055
+titled = true
+strict = true
+tropes = "Horror, photo. Tropes: the village that forbids speaking after dark + the voice that answers"
+prompt = "A quiet photographic horror movie poster. A girl in a nightgown stands at a window of a silent village house at night looking at the dark street with a finger on her lips, a single faint figure standing in the fog under a street lamp, every other house dark, pale moonlight. The lower third is the dark windowsill and wall"
+lettering = "large thin pale white capitals with a faint soft blur, on one line"
+
+[image.ai-hush-backdrop-qwen]
+title = "Hush"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic horror film still. A girl in a nightgown stands at a window of a silent village house at night looking at the dark street with a finger on her lips, a single faint figure standing in the fog under a street lamp, every other house dark, pale moonlight, wide landscape"
+
+[image.ai-hearts-on-the-shore-poster-titled]
+title = "Hearts on the Shore"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Romance, photo. Tropes: the summer meeting every year + the year one does not come"
+prompt = "A tender photographic romance movie poster at sunset. An elderly woman walks alone along the edge of the sea carrying two folded beach chairs under her arm, her shadow long on the wet sand, a second set of old footprints beside hers fading in the surf, warm pink light. The lower third is wet reflective sand"
+lettering = "flowing romantic script in soft rose and cream, on two lines"
+
+[image.ai-hearts-on-the-shore-backdrop-qwen]
+title = "Hearts on the Shore"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tender photographic romance film still at sunset. An elderly woman walks alone along the edge of the sea carrying two folded beach chairs under her arm, her shadow long on the wet sand, a second set of old footprints beside hers fading in the surf, warm pink light, wide landscape"
+
+[image.ai-iron-coast-poster-titled]
+title = "Iron Coast"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "War/Drama, photo. Tropes: the secret radio in an occupied town + the teacher who risks everything"
+prompt = "A powerful photographic war drama movie poster, 1944. A young woman teacher in a plain coat and headscarf carries a covered basket past two soldiers in long grey coats and helmets on a grey harbour street, a church tower and harbour cranes behind, low overcast sky. The lower third is dark wet cobbles"
+lettering = "worn military stencil capitals in rust and bone white, on two lines"
+
+[image.ai-iron-coast-backdrop-qwen]
+title = "Iron Coast"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A powerful photographic war drama film still, 1944. A young woman teacher in a plain coat and headscarf carries a covered basket past two soldiers in long grey coats and helmets on a grey harbour street, a church tower and harbour cranes behind, low overcast sky, wide landscape"
+
+[image.ai-island-time-poster-titled]
+title = "Island Time"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Comedy, photo. Tropes: the workaholic stranded where nobody owns a clock + the locals who judge his tie"
+prompt = "A sunny photographic comedy movie poster. A harassed man in a business suit and tie stands in front of a bamboo beach hut holding his phone high above his head hunting for signal, barefoot locals in colourful shirts laughing at him from a table, palm trees and turquoise sea. The lower third is white sand"
+lettering = "relaxed hand-painted brush capitals in turquoise and sunny yellow, on two lines"
+
+[image.ai-island-time-backdrop-qwen]
+title = "Island Time"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A sunny photographic comedy film still. A harassed man in a business suit and tie stands in front of a bamboo beach hut holding his phone high above his head hunting for signal, barefoot locals in colourful shirts laughing at him from a table, palm trees and turquoise sea, wide landscape"
+
+[image.ai-jellyfish-summer-poster-titled]
+title = "Jellyfish Summer"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.08
+titled = true
+strict = true
+tropes = "Comedy/Drama, photo. Tropes: the strangest summer job + the secret about the boss"
+prompt = "A bright photographic coming-of-age movie poster. A teenage girl in an aquarium staff polo shirt and rubber boots stands holding a bucket of fish in front of a gigantic glowing blue tank where a shark and glowing jellyfish drift, behind frosted glass in the background the blurred silhouette of a tall man, she smiles slyly with a finger to her lips. The lower third is dark wet tiles"
+lettering = "bouncy translucent aqua and coral capitals like glowing jellyfish, friendly, on two lines"
+
+[image.ai-jellyfish-summer-backdrop-qwen]
+title = "Jellyfish Summer"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A bright photographic coming-of-age film still. A teenage girl in an aquarium staff polo shirt and rubber boots stands holding a bucket of fish in front of a gigantic glowing blue tank where a shark and glowing jellyfish drift, behind frosted glass in the background the blurred silhouette of a tall man, she smiles slyly with a finger to her lips, wide landscape"
+
+[image.ai-just-one-song-poster-titled]
+title = "Just One Song"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.08
+titled = true
+strict = true
+tropes = "Music/Romance, photo. Tropes: the song played for someone who always leaves + the evening he follows her"
+prompt = "A warm photographic romance movie poster at night. A pianist in a waistcoat plays a grand piano in an empty hotel bar, a woman in a long coat walks away through the doorway in the background with her back turned, a single glass on the piano, warm lamp glow. The lower third is dark polished floor"
+lettering = "elegant jazz-age gold script lettering, on two lines"
+
+[image.ai-just-one-song-backdrop-qwen]
+title = "Just One Song"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic romance film still at night. A pianist in a waistcoat plays a grand piano in an empty hotel bar, a woman in a long coat walks away through the doorway in the background with her back turned, a single glass on the piano, warm lamp glow, wide landscape"
+
+[image.ai-keepers-poster-titled]
+title = "Keepers"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Mystery/Anime. Tropes: the room that is on no plan + the diary some want hidden"
+prompt = "An anime mystery movie poster. Two young castle caretakers, a girl and an older man with a lantern, discover a small hidden door in the stone wall of a huge dark mountain castle hall, the door ajar with warm light spilling out, ancient banners without any symbols, dust motes, high windows with snow peaks outside. The lower third is dark stone floor"
+lettering = "elegant carved stone-like capitals in antique gold with wide spacing, on one line"
+
+[image.ai-keepers-backdrop-qwen]
+title = "Keepers"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "An anime mystery film still. Two young castle caretakers, a girl and an older man with a lantern, discover a small hidden door in the stone wall of a huge dark mountain castle hall, the door ajar with warm light spilling out, ancient banners without any symbols, dust motes, high windows with snow peaks outside, wide landscape"
+
+[image.ai-lantern-festival-poster-titled]
+title = "Lantern Festival"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Romance/Anime. Tropes: lovers from rival families + the contest of the biggest lantern"
+prompt = "An anime romance movie poster. A girl and a boy from two rival lantern-making families stand back to back on a wooden bridge each holding up a giant glowing lantern, one pink-red and one blue-gold, turning their heads towards each other, festival lights on the river at night. The lower third is dark river water"
+lettering = "soft glowing paper-lantern capitals in warm pink and gold with a halo, on two lines"
+
+[image.ai-lantern-festival-backdrop-qwen]
+title = "Lantern Festival"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "An anime romance film still. A girl and a boy from two rival lantern-making families stand back to back on a wooden bridge each holding up a giant glowing lantern, one pink-red and one blue-gold, turning their heads towards each other, festival lights on the river at night, wide landscape"
+
+[image.ai-long-way-down-poster-titled]
+title = "Long Way Down"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: strangers trapped in an elevator + the liar among them"
+prompt = "A claustrophobic photographic thriller movie poster. Five strangers in a stalled glass-and-steel elevator in a tight composition, a businessman, a nurse, a student, an old man and a woman in a red coat, each eyeing the others suspiciously under an emergency red light, the control panel blank, one of them smirking. The lower third is dark elevator floor"
+lettering = "sharp elevator-steel capitals in brushed silver with a red glow, on two lines"
+
+[image.ai-long-way-down-backdrop-qwen]
+title = "Long Way Down"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A claustrophobic photographic thriller film still. Five strangers in a stalled glass-and-steel elevator in a tight composition, a businessman, a nurse, a student, an old man and a woman in a red coat, each eyeing the others suspiciously under an emergency red light, the control panel blank, one of them smirking, wide landscape"
+
+[image.ai-lost-in-the-fog-poster-titled]
+title = "Lost in the Fog"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Mystery, photo. Tropes: the ferry with one passenger too many + the fog that hides the culprit"
+prompt = "A mysterious photographic mystery movie poster. A small white ferry crosses a wide bay in thick fog with passengers lined along the deck rail in coats, one tall figure in a long dark coat standing apart at the stern with his back turned, a lone buoy in the grey water. The lower third is dark grey sea"
+lettering = "soft pale grey capitals dissolving into mist at the edges, on two lines"
+
+[image.ai-lost-in-the-fog-backdrop-qwen]
+title = "Lost in the Fog"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A mysterious photographic mystery film still. A small white ferry crosses a wide bay in thick fog with passengers lined along the deck rail in coats, one tall figure in a long dark coat standing apart at the stern with his back turned, a lone buoy in the grey water, wide landscape"
+
+[image.ai-last-orders-poster-titled]
+title = "Last Orders"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Comedy/Drama, photo. Tropes: the farewell gig + the regulars who plot to save the pub"
+prompt = "A warm photographic comedy-drama movie poster. A cosy pub stage at night where a scruffy middle-aged band of five plays guitar, accordion and drums, the regulars crowding in front with raised glasses of beer, the landlord at the bar with his arms folded, strings of lights, warm amber glow. The lower third is dark wooden pub floor"
+lettering = "warm hand-painted pub-sign capitals in amber and cream with a beer glow, on two lines"
+
+[image.ai-last-orders-backdrop-qwen]
+title = "Last Orders"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic comedy-drama film still. A cosy pub stage at night where a scruffy middle-aged band of five plays guitar, accordion and drums, the regulars crowding in front with raised glasses of beer, the landlord at the bar with his arms folded, strings of lights, warm amber glow, wide landscape"
+
+[image.ai-midnight-market-poster-titled]
+title = "Midnight Market"
+shape = "poster"
+engine = "qwen"
+titled = true
+strict = true
+tropes = "Crime, photo. Tropes: caught between two gangs + the cook who just wants to sell noodles"
+prompt = "A stylish photographic crime comedy movie poster. A woman noodle stall owner in a headscarf and apron stands behind her steaming stall holding a ladle, two rival gang bosses in suits lean in from either side each holding a spoon, a neon-lit night market with steam, every sign, banner and neon light in the market is a plain empty glowing panel or colour strip with no characters or letters at all, and the stall has an empty blank sign board. The lower third is dark wet market ground"
+lettering = "bold neon tube capitals in hot red and gold, on two lines"
+
+[image.ai-midnight-market-backdrop-qwen]
+title = "Midnight Market"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A stylish photographic crime film still in a European old-town square at night. A woman food stall owner in a headscarf and apron stands behind her steaming stall holding a ladle over a big pot of noodle soup, two rival gang bosses in dark suits lean in from either side each holding a spoon, the stall is a plain wooden cart lit by bare light bulbs on a string, cobblestones, there are no banners, no signs, no lanterns and no writing of any kind anywhere, wide landscape"
+
+[image.ai-moonrise-lake-poster-titled]
+title = "Moonrise Lake"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the last summer before the house is sold + old arguments between grown siblings"
+prompt = "A warm photographic family drama movie poster at dusk. A wooden lake house with a long jetty on a still mountain lake, a huge full moon rising behind it, an old mother in a shawl and three grown siblings sitting on the end of the jetty at different distances from each other, suitcases by the house door. The lower third is dark still water"
+lettering = "soft silver and pale blue capitals with a gentle moon glow, on two lines"
+
+[image.ai-moonrise-lake-backdrop-qwen]
+title = "Moonrise Lake"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic family drama film still at dusk. A wooden lake house with a long jetty on a still mountain lake, a huge full moon rising behind it, an old mother in a shawl and three grown siblings sitting on the end of the jetty at different distances from each other, suitcases by the house door, wide landscape"
+
+[image.ai-morning-run-poster-titled]
+title = "Morning Run"
+shape = "poster"
+engine = "qwen"
+titled = true
+strict = true
+tropes = "Comedy/Sport, photo. Tropes: the unfit man who signs up to impress his daughter + the retired champion next door"
+prompt = "A bright photographic comedy movie poster at sunrise. A chubby accountant in a shirt and tie and running shoes puffs along a suburban street, beside him a wiry retired sprinter in a vintage tracksuit jogs backwards coaching him, a teenage girl on a bicycle in the background rolling her eyes, long golden shadows. The lower third is sunlit asphalt"
+lettering = "bouncy bold italic sporty capitals in orange and white, on two lines, with nothing else written or drawn near it"
+
+[image.ai-morning-run-backdrop-qwen]
+title = "Morning Run"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A bright photographic comedy film still at sunrise. A chubby accountant in a shirt and tie and running shoes puffs along a suburban street, beside him a wiry retired sprinter in a vintage tracksuit jogs backwards coaching him, a teenage girl on a bicycle in the background rolling her eyes, long golden shadows, wide landscape"
+
+[image.ai-mountain-kings-poster-titled]
+title = "Mountain Kings"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Adventure/Animation, painted. Tropes: the winter face nobody else would climb + the climber who never speaks of it"
+prompt = "A painted animated adventure movie poster at stormy dusk. Three climbers roped together on a huge snowy north face, the leader looking back with a worried human face, one climber behind him with a tired serious human face and a beard, dark storm clouds rolling in from the side, tiny against an enormous peak. The lower third is dark snow and shadow"
+lettering = "hand-painted chiselled stone capitals in snow white and glacier blue, on two lines"
+
+[image.ai-mountain-kings-backdrop-qwen]
+title = "Mountain Kings"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A painted animated adventure film still at stormy dusk. Three climbers roped together on a huge snowy north face, the leader looking back with a worried human face, one climber behind him with a tired serious human face and a beard, dark storm clouds rolling in from the side, tiny against an enormous peak, wide landscape"
+
+[image.ai-murmur-poster-titled]
+title = "Murmur"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.08
+titled = true
+strict = true
+tropes = "Horror, photo. Tropes: the house at the edge of the whispering forest + the parents who start to answer"
+prompt = "A quiet photographic horror movie poster at night. A family of four stands in front of their new house at the edge of a dark tall forest, the children looking towards the trees with wide eyes while the parents look at them in confusion, thin mist and a pale light between the tree trunks. The lower third is dark grass"
+lettering = "thin trembling pale green capitals with a whisper blur, on one line"
+
+[image.ai-murmur-backdrop-qwen]
+title = "Murmur"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic horror film still at night. A family of four stands in front of their new house at the edge of a dark tall forest, the children looking towards the trees with wide eyes while the parents look at them in confusion, thin mist and a pale light between the tree trunks, wide landscape"
+
+[image.ai-music-box-poster-titled]
+title = "Music Box"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama/Music, photo. Tropes: the melody hidden in every instrument + the composer's unfinished last piece"
+prompt = "A warm photographic drama movie poster. A woman piano tuner leans over the open lid of an old grand piano in a dusty music room holding a tuning fork, soft golden light rising from the strings like drifting dust, a small antique music box on the piano. The lower third is dark polished wooden floor"
+lettering = "ornate brass music-box capitals in warm gold with delicate engraving, on two lines"
+
+[image.ai-music-box-backdrop-qwen]
+title = "Music Box"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A warm photographic drama film still. A woman piano tuner leans over the open lid of an old grand piano in a dusty music room holding a tuning fork, soft golden light rising from the strings like drifting dust, a small antique music box on the piano, wide landscape"
+
+[image.ai-mirage-poster-titled]
+title = "Mirage"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.08
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: the pilot lost in the desert + the town that is always one more dune away"
+prompt = "A tense photographic desert thriller movie poster. A pilot in a sweat-soaked flight jacket staggers across blazing white desert dunes carrying a canteen, the wreck of a small plane smoking behind him, on the shimmering horizon ahead the wavering shape of a small town with a church tower, heat haze. The lower third is dune sand in shadow"
+lettering = "shimmering heat-haze capitals in sand gold with a wavy glow, on one line"
+
+[image.ai-mirage-backdrop-qwen]
+title = "Mirage"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A tense photographic desert thriller film still. A pilot in a sweat-soaked flight jacket staggers across blazing white desert dunes carrying a canteen, the wreck of a small plane smoking behind him, on the shimmering horizon ahead the wavering shape of a small town with a church tower, heat haze, wide landscape"
+
+[image.ai-neon-nights-poster-titled]
+title = "Neon Nights"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.08
+titled = true
+strict = true
+tropes = "Crime, photo. Tropes: the fare that never pays + the endless ride through the sleepless city"
+prompt = "A stylish photographic neo-noir crime movie poster. A woman taxi driver in a leather jacket looks into the rear-view mirror from behind the wheel of a yellow cab, in the mirror the shadowed face of a man in the back seat, a wet neon city street ahead glowing pink and blue. The lower third is dark wet street"
+lettering = "bold glowing neon tube capitals in pink and electric blue, on two lines"
+
+[image.ai-neon-nights-backdrop-qwen]
+title = "Neon Nights"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A stylish photographic neo-noir crime film still. A woman taxi driver in a leather jacket looks into the rear-view mirror from behind the wheel of a yellow cab, in the mirror the shadowed face of a man in the back seat, a wet neon city street ahead glowing pink and blue, wide landscape"
+
+[image.ai-north-of-nowhere-poster-titled]
+title = "North of Nowhere"
+shape = "poster"
+engine = "qwen"
+crop = 0.08
+seed = 1
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the postman at the end of the world + the letter addressed to him"
+prompt = "A quiet photographic drama movie poster. A postman in a thick winter coat pulls a loaded sled of letters across an endless snowy Arctic plain towards a tiny red house with a lit window, a husky beside him, a faint green aurora in the sky. The lower third is blue shadowed snow"
+lettering = "weathered frosted capitals in pale ice blue and white, on three lines"
+
+[image.ai-north-of-nowhere-backdrop-qwen]
+title = "North of Nowhere"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A quiet photographic drama film still. A postman in a thick winter coat pulls a loaded sled of letters across an endless snowy Arctic plain towards a tiny red house with a lit window, a husky beside him, a faint green aurora in the sky, wide landscape"
+
+[image.ai-nightfall-poster-titled]
+title = "Nightfall"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.08
+titled = true
+strict = true
+tropes = "Horror, photo. Tropes: the animals that fall silent + the thing in the forest that is not a bird"
+prompt = "A quiet photographic horror movie poster at dusk. A woman ornithologist with binoculars stands in a still dark forest clearing at twilight, dozens of silent owls perched on every branch all staring in the same direction, a pale shape glowing deep between the tree trunks. The lower third is dark forest floor"
+lettering = "thin pale-violet capitals fading into darkness with wide spacing, on one line"
+
+[image.ai-nightfall-backdrop-qwen]
+title = "Nightfall"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A quiet photographic horror film still at dusk. A woman ornithologist with binoculars stands in a still dark forest clearing at twilight, dozens of silent owls perched on every branch all staring in the same direction, a pale shape glowing deep between the tree trunks, wide landscape"
+
+[image.ai-northbound-poster-titled]
+title = "Northbound"
+shape = "poster"
+engine = "qwen"
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the last ride on the closing line + the grandson's questions"
+prompt = "A warm photographic drama movie poster. A retired train driver in an old navy cap and his young grandson lean out of the window of a vintage train carriage crossing a golden autumn landscape, the old man pointing ahead, the boy looking up at him, soft warm light. The lower third is dark carriage side with warm shadows"
+lettering = "vintage railway capitals in warm brass and cream with a soft glow, on one line, with nothing above or below it"
+
+[image.ai-northbound-backdrop-qwen]
+title = "Northbound"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A warm photographic drama film still. A retired train driver in an old navy cap and his young grandson lean out of the window of a vintage train carriage crossing a golden autumn landscape, the old man pointing ahead, the boy looking up at him, soft warm light, wide landscape"
+
+[image.ai-one-last-wave-poster-titled]
+title = "One Last Wave"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Sport/Drama, photo. Tropes: old friends reunited for one more challenge + rivalries that come back faster than the swell"
+prompt = "A photographic sport drama movie poster at sunrise. Three old friends in wetsuits, grey-haired, carry their surfboards along a beach towards a gigantic glowing wave at dawn, two of them exchanging a stiff look, the third grinning, salt spray in the air. The lower third is dark wet sand"
+lettering = "bold flowing wave-shaped capitals in aqua and white with spray, on two lines"
+
+[image.ai-one-last-wave-backdrop-qwen]
+title = "One Last Wave"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A photographic sport drama film still at sunrise. Three old friends in wetsuits, grey-haired, carry their surfboards along a beach towards a gigantic glowing wave at dawn, two of them exchanging a stiff look, the third grinning, salt spray in the air, wide landscape"
+
+[image.ai-open-water-poster-titled]
+title = "Open Water"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: the boat adrift with a dead radio + the teenager who has to take charge"
+prompt = "A tense photographic thriller movie poster at sea. A small whale-watching boat with a canvas canopy drifts on a huge grey ocean, a teenage deckhand in a life vest at the bow holds up a flare with fear and determination, passengers huddled behind her, the injured captain slumped in the cabin, the backs and tails of whales circling in the water around. The lower third is dark ocean water"
+lettering = "bold cold sea-teal capitals with a salt-spray texture, on two lines"
+
+[image.ai-open-water-backdrop-qwen]
+title = "Open Water"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A tense photographic thriller film still at sea. A small whale-watching boat with a canvas canopy drifts on a huge grey ocean, a teenage deckhand in a life vest at the bow holds up a flare with fear and determination, passengers huddled behind her, the injured captain slumped in the cabin, the backs and tails of whales circling in the water around, wide landscape"
+
+[image.ai-orchestra-poster-titled]
+title = "Orchestra"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.08
+titled = true
+strict = true
+tropes = "Documentary/Music, photo. Tropes: a year of rehearsals + the concert that could change their lives"
+prompt = "A warm photographic documentary movie poster. A youth orchestra of sixty teenagers rehearses on the stage of a grand concert hall, rows of violins and cellos glowing under warm stage lights, a tired conductor with a baton seen from behind in the foreground, rows of empty red velvet seats. The lower third is dark orchestra pit and stage edge"
+lettering = "elegant warm gold serif capitals with fine highlights, on one line"
+
+[image.ai-orchestra-backdrop-qwen]
+title = "Orchestra"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic documentary film still. A youth orchestra of sixty teenagers rehearses on the stage of a grand concert hall, rows of violins and cellos glowing under warm stage lights, a tired conductor with a baton seen from behind in the foreground, rows of empty red velvet seats, wide landscape"
+
+[image.ai-pale-blue-poster-titled]
+title = "Pale Blue"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Science Fiction/Anime. Tropes: the lonely station at the edge of the system + the message from home"
+prompt = "An anime science fiction movie poster. A crew of three in white spacesuits floats in a small round window-lit research station at the edge of the solar system, through the huge window a tiny pale blue dot of the faraway home planet, one lone astronaut with a hand pressed against the glass, a glowing blank screen behind them. The lower third is dark station floor fading to black"
+lettering = "pale blue wide-spaced thin capitals with a soft glow, on two lines"
+
+[image.ai-pale-blue-backdrop-qwen]
+title = "Pale Blue"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "An anime science fiction film still. A crew of three in white spacesuits floats in a small round window-lit research station at the edge of the solar system, through the huge window a tiny pale blue dot of the faraway home planet, one lone astronaut with a hand pressed against the glass, a glowing blank screen behind them, wide landscape"
+
+[image.ai-pilgrims-poster-titled]
+title = "Pilgrims"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.08
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: strangers on an old pilgrim route + the canyon that makes people honest"
+prompt = "A quiet photographic drama movie poster in golden light. A small group walks single file on an old pilgrim path through a red sandstone canyon, a widow in black, a banker in a suit with a briefcase, a monk in a brown robe and a teenager in a hoodie, all with walking staffs, tiny in the vast canyon. The lower third is dark red rock path"
+lettering = "carved stone-like capitals in warm sand and rust with a worn texture, on one line"
+text = "Pilgrims"
+
+[image.ai-pilgrims-backdrop-qwen]
+title = "Pilgrims"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A quiet photographic drama film still in golden light. A small group walks single file on an old pilgrim path through a red sandstone canyon, a widow in black, a banker in a suit with a briefcase, a monk in a brown robe and a teenager in a hoodie, all with walking staffs, tiny in the vast canyon, wide landscape"
+
+[image.ai-quiet-streets-poster-titled]
+title = "Quiet Streets"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the whole city seen from one window + the thing she should not have seen"
+prompt = "A quiet photographic drama movie poster at dusk. A woman seen from behind stands at a high apartment window looking down at an empty city street, in the windows of the building opposite small lit scenes, a man standing motionless, a boy at a window waiting, a lone neighbour who never leaves, a pale evening sky. The lower third is the dark windowsill"
+lettering = "thin pale grey capitals with soft blur and wide spacing, on two lines"
+
+[image.ai-quiet-streets-backdrop-qwen]
+title = "Quiet Streets"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A quiet photographic drama film still at dusk. A woman seen from behind stands at a high apartment window looking down at an empty city street, in the windows of the building opposite small lit scenes, a man standing motionless, a boy at a window waiting, a lone neighbour who never leaves, a pale evening sky, wide landscape"
+
+[image.ai-rainmaker-poster-titled]
+title = "Rainmaker"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.1
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the forecaster who is suddenly always right + the storm nobody wants to believe"
+prompt = "A warm photographic drama movie poster. A man in a rumpled suit with a bright yellow umbrella stands in an empty dry town square under a clear blue sky pointing upwards while a crowd of reporters with microphones gathers around him, behind him on the horizon a dark storm front gathering, an old weather vane. The lower third is dry dusty cobbles"
+lettering = "solid friendly storm-blue capitals that are fully intact and easy to read, with only a few tiny lightning sparks above the letters that never cross or cut through them, no symbols after the last letter, on one line"
+
+[image.ai-rainmaker-backdrop-qwen]
+title = "Rainmaker"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic drama film still. A man in a rumpled suit with a bright yellow umbrella stands in an empty dry town square under a clear blue sky pointing upwards while a crowd of reporters with microphones gathers around him, behind him on the horizon a dark storm front gathering, an old weather vane, wide landscape"
+
+[image.ai-red-line-poster-titled]
+title = "Red Line"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Action, photo. Tropes: the hijacked train in the tunnel + the off-duty cop with no plan"
+prompt = "A fast photographic action movie poster. A woman transit cop in a plain jacket runs down a dark subway tunnel along the tracks with a flashlight, ahead the lit windows of a stopped train full of silhouetted passengers, red emergency lights, sparks flying. The lower third is dark tunnel floor with rails"
+lettering = "bold red condensed capitals with a glowing stripe, on two lines"
+
+[image.ai-red-line-backdrop-qwen]
+title = "Red Line"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A fast photographic action film still. A woman transit cop in a plain jacket runs down a dark subway tunnel along the tracks with a flashlight, ahead the lit windows of a stopped train full of silhouetted passengers, red emergency lights, sparks flying, wide landscape"
+
+[image.ai-runaway-summer-poster-titled]
+title = "Runaway Summer"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Comedy, photo. Tropes: the runaway sisters + the whole family in pursuit"
+prompt = "A sunny photographic family comedy movie poster. Two teenage sisters in sunglasses sit in a bright yellow convertible on a coast road, behind them a chaotic convoy, a grandmother driving a camper van with a surfboard on the roof, aunts and cousins crammed into a station wagon, the sea behind. The lower third is warm asphalt"
+lettering = "bouncy hand-lettered capitals in hot coral pink and white with a thick dark teal outline so they stand out from the yellow car, on two lines"
+
+[image.ai-runaway-summer-backdrop-qwen]
+title = "Runaway Summer"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A sunny photographic family comedy film still. Two teenage sisters in sunglasses sit in a bright yellow convertible on a coast road, behind them a chaotic convoy, a grandmother driving a camper van with a surfboard on the roof, aunts and cousins crammed into a station wagon, the sea behind, wide landscape"
+
+[image.ai-saltwater-poster-titled]
+title = "Saltwater"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the return to the island of the lost + the letters that contradict the islanders"
+prompt = "A moody photographic drama movie poster. A woman marine biologist in a dark raincoat stands on a stormy island shore holding a bundle of old letters tied with string, a small fishing village of grey houses behind her and the wild sea ahead, a single lit lantern on a rock. The lower third is dark wet rocks"
+lettering = "salt-bleached weathered capitals in pale teal and cream, on one line"
+
+[image.ai-saltwater-backdrop-qwen]
+title = "Saltwater"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A moody photographic drama film still. A woman marine biologist in a dark raincoat stands on a stormy island shore holding a bundle of old letters tied with string, a small fishing village of grey houses behind her and the wild sea ahead, a single lit lantern on a rock, wide landscape"
+
+[image.ai-second-act-poster-titled]
+title = "Second Act"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.08
+titled = true
+strict = true
+tropes = "Comedy, photo. Tropes: the retired star joins the hopeless amateurs + opening night in six weeks"
+prompt = "A warm photographic comedy movie poster. A grey-haired man in a velvet jacket stands on a small amateur theatre stage under a single spotlight taking a theatrical bow, a red curtain and cardboard castle scenery behind him, a few amateur actors in silly costumes peeking in dismay from the wings. The lower third is dark wooden stage boards"
+lettering = "classic theatre marquee capitals in warm gold and red with bulbs, on two lines"
+
+[image.ai-second-act-backdrop-qwen]
+title = "Second Act"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm photographic comedy film still. A grey-haired man in a velvet jacket stands on a small amateur theatre stage under a single spotlight taking a theatrical bow, a red curtain and cardboard castle scenery behind him, a few amateur actors in silly costumes peeking in dismay from the wings, wide landscape"
+
+[image.ai-silent-peaks-poster-titled]
+title = "Silent Peaks"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Adventure, photo. Tropes: the guide and the group who all lied + the weather that forces the truth"
+prompt = "A tense photographic adventure drama movie poster. A mountain guide in a red jacket leads a roped line of five climbers along a narrow snowy ridge towards a summit, clouds closing in from both sides, each climber glancing back with a guilty look. The lower third is dark blue snow shadow"
+lettering = "chiselled frosted capitals in white and steel blue, on two lines"
+
+[image.ai-silent-peaks-backdrop-qwen]
+title = "Silent Peaks"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tense photographic adventure drama film still. A mountain guide in a red jacket leads a roped line of five climbers along a narrow snowy ridge towards a summit, clouds closing in from both sides, each climber glancing back with a guilty look, wide landscape"
+
+[image.ai-skyline-poster-titled]
+title = "Skyline"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Action/Anime. Tropes: the witness with only a bucket and a rope + thieves one floor below him"
+prompt = "An anime action movie poster at sunset. A window cleaner hangs from a rope on the glass facade of a tower with a bucket and squeegee, in a window one floor below masked thieves with bags of loot stare up at him, the flashing lights of plain unmarked patrol cars with completely blank doors far below, the thieves' loot bags and the cars carry no writing, no symbols and no logos, an orange sunset city skyline. The lower third is dark glass facade fading to black"
+lettering = "sleek italic anime action capitals in sunset orange and white, on one line"
+
+[image.ai-skyline-backdrop-qwen]
+title = "Skyline"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "An anime action film still at sunset. A window cleaner hangs from a rope on the glass facade of a tower with a bucket and squeegee, in a window one floor below masked thieves with bags of loot stare up at him, the flashing lights of plain unmarked patrol cars with completely blank doors far below, the loot bags carry no writing or symbols, an orange sunset city skyline, wide landscape"
+
+[image.ai-snowbound-poster-titled]
+title = "Snowbound"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: cut off by the storm of the century + the dog who knows a way the map does not show"
+prompt = "A tense photographic survival thriller movie poster. A man in a parka and his husky stand on a snowy ridge in a raging blizzard, the dog pulling ahead and looking back at him, a tiny faint cabin light far away in the whiteout. The lower third is deep blue drifting snow"
+lettering = "icy bold capitals in white and pale blue with snow caps, on one line"
+
+[image.ai-snowbound-backdrop-qwen]
+title = "Snowbound"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tense photographic survival thriller film still. A man in a parka and his husky stand on a snowy ridge in a raging blizzard, the dog pulling ahead and looking back at him, a tiny faint cabin light far away in the whiteout, wide landscape"
+
+[image.ai-strangers-on-a-shore-poster-titled]
+title = "Strangers on a Shore"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.08
+titled = true
+strict = true
+tropes = "Romance, photo. Tropes: two people who came to be alone + a coast too small to avoid each other"
+prompt = "A tender photographic romance movie poster at dusk. A woman with a notebook and a man in a hooded jacket stand far apart on a wide empty grey beach, each looking at the sea but glancing towards the other, a small lighthouse on the coast, soft pink light. The lower third is wet grey sand"
+lettering = "soft handwritten script in pale rose and white, on two lines"
+
+[image.ai-strangers-on-a-shore-backdrop-qwen]
+title = "Strangers on a Shore"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tender photographic romance film still at dusk. A woman with a notebook and a man in a hooded jacket stand far apart on a wide empty grey beach, each looking at the sea but glancing towards the other, a small lighthouse on the coast, soft pink light, wide landscape"
+
+[image.ai-tidewater-poster-titled]
+title = "Tidewater"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: one more season for the pier + the family that wants her to leave"
+prompt = "A warm photographic drama movie poster at sunset. An elderly woman in a fisherman's wool sweater stands at the end of a long old wooden pier holding an oil lamp, at the pier's entrance her grown son and a stranger in a suit stand beside a car, golden light on the calm water. The lower third is weathered wooden planks"
+lettering = "weathered driftwood-like capitals in warm cream and sea blue, on one line"
+
+[image.ai-tidewater-backdrop-qwen]
+title = "Tidewater"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A warm photographic drama film still at sunset. An elderly woman in a fisherman's wool sweater stands at the end of a long old wooden pier holding an oil lamp, at the pier's entrance her grown son and a stranger in a suit stand beside a car, golden light on the calm water, wide landscape"
+
+[image.ai-two-wheels-poster-titled]
+title = "Two Wheels"
+shape = "poster"
+engine = "qwen"
+crop = 0.072
+seed = 3
+titled = true
+strict = true
+tropes = "Comedy, photo. Tropes: the stolen thing passed hand to hand + the way back to its owner"
+prompt = "A cheerful photographic comedy movie poster. A red vintage bicycle leans against a lamp post in the middle of a sunny cobbled square, ten different people stand around it all pointing at it and arguing, a young girl at the front with big hopeful eyes. The lower third is sunlit cobbles"
+lettering = "bouncy chunky capitals in cherry red and cream, on two lines"
+
+[image.ai-two-wheels-backdrop-qwen]
+title = "Two Wheels"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A cheerful photographic comedy film still. A red vintage bicycle leans against a lamp post in the middle of a sunny cobbled square, ten different people stand around it all pointing at it and arguing, a young girl at the front with big hopeful eyes, wide landscape"
+
+[image.ai-the-tower-poster-titled]
+title = "The Tower"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Thriller, photo. Tropes: the night in the unfinished building + the elevator that should not work"
+prompt = "A tense photographic thriller movie poster at night. Four urban explorers with headlamps and backpacks stand in the glowing open doorway of a working elevator inside the bare concrete shell of an unfinished skyscraper, city lights visible through the open floor slabs, one of them looking back nervously. The lower third is dark bare concrete"
+lettering = "stark concrete-textured capitals with a steel glow, on two lines"
+
+[image.ai-the-tower-backdrop-qwen]
+title = "The Tower"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A tense photographic thriller film still at night. Four urban explorers with headlamps and backpacks stand in the glowing open doorway of a working elevator inside the bare concrete shell of an unfinished skyscraper, city lights visible through the open floor slabs, one of them looking back nervously, wide landscape"
+
+[image.ai-upstream-poster-titled]
+title = "Upstream"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Adventure, photo. Tropes: the canoe trip becomes a search + the camp where only the guide is missing"
+prompt = "A bright photographic adventure movie poster. A group of five canoeists in life jackets paddle upstream on a wild green river through a deep gorge, in the foreground an abandoned riverside camp with a tent and a still-smoking fire but nobody there, a guide's hat hanging on a branch, mist in the trees. The lower third is dark river water"
+lettering = "earthy forest-green and cream hand-lettered capitals with water ripples, on one line"
+
+[image.ai-upstream-backdrop-qwen]
+title = "Upstream"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A bright photographic adventure film still. A group of five canoeists in life jackets paddle upstream on a wild green river through a deep gorge, in the foreground an abandoned riverside camp with a tent and a still-smoking fire but nobody there, a guide's hat hanging on a branch, mist in the trees, wide landscape"
+
+[image.ai-velvet-night-poster-titled]
+title = "Velvet Night"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Crime/Music, photo. Tropes: the singer who saw the deal + the gig she still has to play"
+prompt = "A stylish photographic noir crime movie poster. A club singer in a silver sequined dress holds a vintage microphone on a small dark nightclub stage under a blue spotlight, in the shadowy back of the club two men in suits make a handshake deal while a third watches her from a table, smoke and velvet curtains. The lower third is dark stage floor"
+lettering = "smooth glossy velvet-red capitals with a soft highlight, on two lines"
+
+[image.ai-velvet-night-backdrop-qwen]
+title = "Velvet Night"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A stylish photographic noir crime film still. A club singer in a silver sequined dress holds a vintage microphone on a small dark nightclub stage under a blue spotlight, in the shadowy back of the club two men in suits make a handshake deal while a third watches her from a table, smoke and velvet curtains, wide landscape"
+
+[image.ai-vanguard-poster-titled]
+title = "Vanguard"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Action/Superhero, photo. Tropes: the ordinary person who finds her power + the structure only she can hold up"
+prompt = "A big photographic action fantasy movie poster, teal and orange grade. A woman bridge engineer in a yellow hard hat, a high-visibility vest and work boots, with her hands raised, hovers mid-air above a half-built suspension bridge at dusk, bent steel beams floating around her in the air, a city skyline behind, sparks. The lower third is dark steel girders fading to black"
+lettering = "massive brushed steel capitals with scratches and a glowing electric blue edge, heavy and cinematic, on one line"
+
+[image.ai-vanguard-backdrop-qwen]
+title = "Vanguard"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A big photographic superhero film still, teal and orange grade. A woman bridge engineer in a yellow hard hat, a high-visibility vest and work boots, with her hands raised, hovers mid-air above a half-built suspension bridge at dusk, bent steel beams floating around her in the air, a city skyline behind, sparks, wide landscape"
+
+[image.ai-vanguard-fallout-poster-titled]
+title = "Vanguard: Fallout"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Action/Superhero, photo. Tropes: the hero who must learn teamwork + the enemy who studied her mistakes"
+prompt = "A big photographic superhero movie poster, rainy neon rooftop. A woman in a scratched dark grey armoured suit with no emblems or symbols faces a villain in a long black hooded coat and a plain smooth metal mask without ears or cowl on a rain-soaked rooftop at night, a neon city far below, sparks in the rain. The lower third is dark wet rooftop"
+lettering = "heavy brushed steel capitals with scratches and a glowing red edge, sparks, on two lines"
+
+[image.ai-vanguard-fallout-backdrop-qwen]
+title = "Vanguard: Fallout"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A big photographic superhero film still, rainy neon rooftop. A woman in a scratched dark grey armoured suit with no emblems or symbols faces a villain in a long black hooded coat and a plain smooth metal mask without ears or cowl on a rain-soaked rooftop at night, a neon city far below, sparks in the rain, wide landscape"
+
+[image.ai-whale-song-poster-titled]
+title = "Whale Song"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Documentary, photo. Tropes: a year following one family across an ocean + a mother and her calf"
+prompt = "A majestic photographic nature documentary movie poster. A humpback whale mother and her calf swim side by side in deep blue water seen from the side, rays of sunlight falling from above, tiny bubbles around them, the dark depth below. The lower third is deep dark blue water"
+lettering = "flowing luminous blue-white capitals like water, on two lines"
+
+[image.ai-whale-song-backdrop-qwen]
+title = "Whale Song"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A majestic photographic nature documentary film still. A humpback whale mother and her calf swim side by side in deep blue water seen from the side, rays of sunlight falling from above, tiny bubbles around them, the dark depth below, wide landscape"
+
+[image.ai-wanderers-poster-titled]
+title = "Wanderers"
+shape = "poster"
+engine = "qwen"
+seed = 3
+crop = 0.08
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: two drifters on the coast road + every town that wants them to stay"
+prompt = "A quiet photographic drama movie poster at sunset. Two drifters with backpacks walk along a long empty coastal road with sea cliffs on one side, a hay barn and a small village in the distance behind them, long shadows on the road. The lower third is dark asphalt road"
+lettering = "hand-written travelling capitals in warm sand and cream with a soft grain, on one line"
+
+[image.ai-wanderers-backdrop-qwen]
+title = "Wanderers"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic drama film still at sunset. Two drifters with backpacks walk along a long empty coastal road with sea cliffs on one side, a hay barn and a small village in the distance behind them, long shadows on the road, wide landscape"
+
+[image.ai-where-the-road-ends-poster-titled]
+title = "Where the Road Ends"
+shape = "poster"
+engine = "qwen"
+seed = 3
+titled = true
+strict = true
+tropes = "Drama, photo. Tropes: the letter thirty years late + the last house in the forest"
+prompt = "A quiet photographic drama movie poster in autumn. A woman stands beside her old parked car at the end of a dirt forest road holding a yellowed envelope, deep among tall golden trees ahead a small old wooden house with one lit window and an old man silhouetted in its doorway. The lower third is dark leaf-covered dirt road"
+lettering = "warm autumn amber and cream serif capitals with a faint glow, on three lines"
+
+[image.ai-where-the-road-ends-backdrop-qwen]
+title = "Where the Road Ends"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic drama film still in autumn. A woman stands beside her old parked car at the end of a dirt forest road holding a yellowed envelope, deep among tall golden trees ahead a small old wooden house with one lit window and an old man silhouetted in its doorway, wide landscape"
+
+[image.ai-small-worlds-poster-titled]
+title = "Small Worlds"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Documentary series, photo. Tropes: the wonders at our own doorstep + a year in the garden pond"
+prompt = "A warm photographic nature documentary series poster. A macro close-up of a tiny green frog sitting on a dew-covered leaf in a garden at sunrise, a snail on a stem and a bumblebee in the soft blurred background, glowing bokeh, the edge of a garden pond. The lower third is soft dark green leaves"
+lettering = "friendly hand-drawn capitals in leaf green and cream with tiny dewdrop highlights, on two lines"
+
+[image.ai-small-worlds-backdrop-qwen]
+title = "Small Worlds"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A warm photographic nature documentary series still. A macro close-up of a tiny green frog sitting on a dew-covered leaf in a garden at sunrise, a snail on a stem and a bumblebee in the soft blurred background, glowing bokeh, the edge of a garden pond, wide landscape"
+
+[image.ai-night-shift-poster-titled]
+title = "Night Shift"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Drama/Medical series, photo. Tropes: the hospital after dark + the long break in the canteen"
+prompt = "A moody photographic medical drama series poster. Four hospital night staff in scrubs and a white coat stand in a long empty hospital corridor at night in cold blue light, a doctor with a coffee cup, a nurse leaning on a gurney, at the far end of the corridor the red and blue reflection of an ambulance in glass doors. The lower third is dark polished corridor floor"
+lettering = "clean cool white capitals with a cold blue glow, on two lines"
+
+[image.ai-night-shift-backdrop-qwen]
+title = "Night Shift"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A moody photographic medical drama series still. Four hospital night staff in scrubs and a white coat stand in a long empty hospital corridor at night in cold blue light, a doctor with a coffee cup, a nurse leaning on a gurney, at the far end of the corridor the red and blue reflection of an ambulance in glass doors, wide landscape"
+
+[image.ai-the-bakery-on-elm-street-poster-titled]
+title = "The Bakery on Elm Street"
+shape = "poster"
+engine = "qwen"
+titled = true
+strict = true
+tropes = "Comedy series, photo. Tropes: three generations behind one counter + the neighbours with opinions"
+prompt = "A warm photographic family comedy series poster. Three generations stand behind the counter of a small corner bakery, a grandmother with flour on her cheeks, a father in an apron, a teenage daughter holding a tray of croissants, shelves of bread behind them, neighbours peering in through the shop window. The lower third is the warm wooden counter"
+lettering = "warm hand-painted bakery sign capitals in golden brown and cream on a plain wooden board, with no trademark signs, no registered marks and no ornaments, on two lines"
+
+[image.ai-the-bakery-on-elm-street-backdrop-qwen]
+title = "The Bakery on Elm Street"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A warm photographic family comedy series still. Three generations stand behind the counter of a small corner bakery, a grandmother with flour on her cheeks, a father in an apron, a teenage daughter holding a tray of croissants, shelves of bread behind them, neighbours peering in through the shop window, wide landscape"
+
+[image.ai-coldwater-poster-titled]
+title = "Coldwater"
+shape = "poster"
+engine = "qwen"
+seed = 1
+crop = 0.09
+titled = true
+strict = true
+tropes = "Crime/Drama series, photo. Tropes: the missing hiker + the hometown where everyone is a suspect"
+prompt = "A cold photographic crime drama series poster. A woman detective in a dark coat stands on a mountain lake shore in thick fog, behind her a search party with flashlights as small dots in the mist and the lights of a mountain town, a lone hiking backpack on the ground. The lower third is dark wet shoreline"
+lettering = "cold condensed capitals in icy teal with frost, on one line"
+
+[image.ai-coldwater-backdrop-qwen]
+title = "Coldwater"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A cold photographic crime drama series still. A woman detective in a dark coat stands on a mountain lake shore in thick fog, behind her a search party with flashlights as small dots in the mist and the lights of a mountain town, a lone hiking backpack on the ground, wide landscape"
+
+[image.ai-starfall-poster-titled]
+title = "Starfall"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Science Fiction series, photo. Tropes: a month-long meteor shower + the village that becomes the centre of the world"
+prompt = "A wondrous photographic science fiction series poster. A small village observatory with an open white dome under a sky blazing with hundreds of falling meteors, tourists on blankets in the field below, a tired astronomer in a dressing gown holding a mug at the dome door, tents and campers. The lower third is dark grass field"
+lettering = "luminous gold-white wide-spaced capitals with shooting-star streaks, on one line"
+
+[image.ai-starfall-backdrop-qwen]
+title = "Starfall"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A wondrous photographic science fiction series still. A small village observatory with an open white dome under a sky blazing with hundreds of falling meteors, tourists on blankets in the field below, a tired astronomer in a dressing gown holding a mug at the dome door, tents and campers, wide landscape"
+
+[image.ai-little-explorers-poster-titled]
+title = "Little Explorers"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Animation/Kids series, 2D cartoon. Tropes: the backyard discovery + the sidekick who knows a song"
+prompt = "A flat 2D cartoon children's television poster with bold clean outlines and bright flat colours. Three seven-year-old children in colourful jackets and a cheerful talking backpack with big eyes and a smile stand on stepping stones in a sunny river behind their school, one child holding up a magnifying glass, tadpoles and dragonflies, a small waterfall. The lower third is plain green riverbank grass"
+lettering = "bouncy chunky capitals in bright orange, yellow and blue with a soft shadow, on two lines"
+
+[image.ai-little-explorers-backdrop-qwen]
+title = "Little Explorers"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A flat 2D cartoon children's television still with bold clean outlines and bright flat colours. Three seven-year-old children in colourful jackets and a cheerful talking backpack with big eyes and a smile stand on stepping stones in a sunny river behind their school, one child holding up a magnifying glass, tadpoles and dragonflies, a small waterfall, wide landscape"
+
+[image.ai-market-street-poster-titled]
+title = "Market Street"
+shape = "poster"
+engine = "qwen"
+titled = true
+strict = true
+tropes = "Animation/Comedy series, adult 2D cartoon. Tropes: the stall owners' weekly scheme + the inspector who always comes back"
+prompt = "A flat 2D animated sitcom poster for adults with thick outlines and slightly muted saturated colours. A crowded colourful night market street with a row of quirky stall owners, a noodle cook, a fishmonger and a fortune teller, all frantically hiding a tiny stall behind a curtain while a stern small inspector with a whistle and a big rubber stamp marches in from the left, strings of lights and steam, every sign, banner, lantern and stall front in the picture is plain and empty with no characters, no letters and no symbols on it, the stall fronts are plain coloured cloth. The lower third is dark cobbled street"
+lettering = "wobbly hand-painted sitcom capitals in neon orange and yellow, on two lines"
+
+[image.ai-market-street-backdrop-qwen]
+title = "Market Street"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "A flat 2D animated sitcom scene for adults with thick outlines and slightly muted saturated colours. A crowded colourful evening street market in an old European town with a row of quirky stall owners, a soup cook, a fishmonger and a balloon seller, all frantically hiding a tiny stall behind a curtain while a stern small inspector in a blue uniform with a whistle and a big rubber stamp marches in from the left, strings of plain round light bulbs, striped cloth awnings and steam, every stall front and every awning is plain striped cloth with nothing on it, there are no signs, no banners, no lanterns, no writing and no symbols anywhere, wide landscape"
+
+[image.ai-deep-blue-poster-titled]
+title = "Deep Blue"
+shape = "poster"
+engine = "qwen"
+seed = 2
+crop = 0.09
+titled = true
+strict = true
+tropes = "Documentary series, photo. Tropes: the first look at the deep ocean + the animals that make their own light"
+prompt = "A majestic photographic documentary series poster. A giant glowing jellyfish drifts in pitch-black deep ocean beside a small research submersible with floodlights, tiny glowing particles all around. The lower third is deep black water"
+lettering = "glowing electric blue capitals with a deep-sea glow, on two lines"
+
+[image.ai-deep-blue-backdrop-qwen]
+title = "Deep Blue"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+crop = 0.04
+strict = true
+prompt = "A majestic photographic documentary series still. A giant glowing jellyfish drifts in pitch-black deep ocean beside a small research submersible with floodlights, tiny glowing particles all around, wide landscape"
+
+[image.ai-highlands-poster-titled]
+title = "Highlands"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Drama/History series, photo. Tropes: the family that must hold its castle + three winters of weddings, debts and old enemies"
+prompt = "A sweeping photographic period drama series poster. A family in heavy tweed coats stands in front of a stone castle on a misty moorland hill in winter snow, a mother, a stern father, two grown children and a loyal old servant, dark rolling hills and ravens behind. The lower third is dark snowy heather"
+lettering = "classic embossed serif capitals in cold silver with a frost texture, on one line"
+
+[image.ai-highlands-backdrop-qwen]
+title = "Highlands"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A sweeping photographic period drama series still. A family in heavy tweed coats stands in front of a stone castle on a misty moorland hill in winter snow, a mother, a stern father, two grown children and a loyal old servant, dark rolling hills and ravens behind, wide landscape"
+
+[image.ai-signal-poster-titled]
+title = "Signal"
+shape = "poster"
+engine = "qwen"
+crop = 0.08
+seed = 3
+titled = true
+strict = true
+tropes = "Thriller series, photo. Tropes: the voice from a crash ten years ago + the closed case somebody wants reopened"
+prompt = "A tense photographic thriller series poster at night. A night-shift radio operator in headphones sits at a console of glowing dials in a dark control room, the window behind him shows a lonely dark highway with a wrecked old car with its headlights glowing, faint lines of static in the air. The lower third is the dark console desk"
+lettering = "glitching cyan and white capitals with signal-noise lines, on one line"
+
+[image.ai-signal-backdrop-qwen]
+title = "Signal"
+shape = "backdrop"
+engine = "qwen"
+seed = 2
+strict = true
+prompt = "A tense photographic thriller series still at night. A night-shift radio operator in headphones sits at a console of glowing dials in a dark control room, the window behind him shows a lonely dark highway with a wrecked old car with its headlights glowing, faint lines of static in the air, wide landscape"
+
+[image.ai-ramen-nights-poster-titled]
+title = "Ramen Nights"
+shape = "poster"
+engine = "qwen"
+seed = 1
+titled = true
+strict = true
+tropes = "Anime/Comedy series. Tropes: the cosy shop where regulars come for more than soup + the cat that orders the same thing every night"
+prompt = "An anime comedy series poster. A tiny ramen shop under steel railway arches at night with a plain glowing paper lantern over the counter, a salaryman in a rumpled suit slumped on a stool, a student with a school bag, a cat sitting on the counter beside a bowl, a cook with a headband ladling steaming broth, a train passing overhead, all shop signs blank. The lower third is dark wet street"
+lettering = "cute rounded anime capitals in warm red and cream with steam wisps, on two lines"
+
+[image.ai-ramen-nights-backdrop-qwen]
+title = "Ramen Nights"
+shape = "backdrop"
+engine = "qwen"
+strict = true
+prompt = "An anime comedy series still. A tiny ramen shop under steel railway arches at night with a plain glowing paper lantern over the counter, a salaryman in a rumpled suit slumped on a stool, a student with a school bag, a cat sitting on the counter beside a bowl, a cook with a headband ladling steaming broth, a train passing overhead, all shop signs blank, wide landscape"
+
+[image.ai-wild-coast-poster-titled]
+title = "Wild Coast"
+shape = "poster"
+engine = "qwen"
+seed = 2
+titled = true
+strict = true
+tropes = "Documentary series, photo. Tropes: six edges of the sea + the animals and people who share a shore"
+prompt = "A dramatic photographic nature documentary series poster at golden hour. A puffin with a beak full of fish stands on the edge of a green cliff, a grey seal pup resting on the rocks far below, white waves crashing on a wild coast. The lower third is dark wet rocks"
+lettering = "bold weather-worn coastal capitals in sea foam white and teal, on two lines"
+
+[image.ai-wild-coast-backdrop-qwen]
+title = "Wild Coast"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A dramatic photographic nature documentary series still at golden hour. A puffin with a beak full of fish stands on the edge of a green cliff, a grey seal pup resting on the rocks far below, white waves crashing on a wild coast, wide landscape"
+
+# ---- Variant A, second batch: more titles where the painted title kept failing
+
+[image.ai-carousel-poster-qwen]
+title = "Carousel"
+shape = "poster"
+engine = "qwen"
+seed = 3
+strict = true
+letters = "ai-carousel-lettering"
+tropes = "Comedy/Romance, photo. Tropes: the funfair that comes to town + the town that must pick a side"
+prompt = "A warm photographic romantic comedy movie poster at dusk. A glowing funfair carousel with strings of bulbs in a small town square, a young woman in a work apron and a man in a suit with a rolled-up plan pull at a painted wooden horse from either side like a tug of war while townsfolk watch, warm lights. The lower third is dark cobbled square"
+
+[image.ai-carousel-lettering]
+title = "Carousel"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "CAROUSEL"
+lettering = "bright festive marquee-bulb capitals in warm red and gold with glowing bulbs, on one line"
+
+[image.ai-echoes-poster-qwen]
+title = "Echoes"
+shape = "poster"
+engine = "qwen"
+seed = 2
+strict = true
+letters = "ai-echoes-lettering"
+tropes = "Mystery, photo. Tropes: voices that are not on the tape + the drowned village that wants to be heard"
+prompt = "A haunting photographic mystery movie poster in a misty forest at dusk. A woman sound recordist with headphones and a long furry microphone on a boom pole stands in a foggy pine forest, behind her the faint ghostly outline of a drowned village's church steeple rising from a still lake, blue-grey mist. The lower third is dark forest floor"
+
+[image.ai-echoes-lettering]
+title = "Echoes"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "ECHOES"
+lettering = "bright thin ghostly wide-spaced capitals in pale silver-blue, on one line"
+
+[image.ai-midnight-market-poster-qwen]
+title = "Midnight Market"
+shape = "poster"
+engine = "qwen"
+seed = 1
+strict = true
+letters = "ai-midnight-market-lettering"
+tropes = "Crime, photo. Tropes: caught between two gangs + the cook who just wants to sell noodles"
+prompt = "A stylish photographic crime story movie poster in a European old-town square at night. A woman food stall owner in a headscarf and apron stands behind her steaming stall holding a ladle over a big pot of noodle soup, two rival gang bosses in dark suits lean in from either side each holding a spoon, the stall is a plain wooden cart lit by bare light bulbs on a string, cobblestones, there are no banners, no signs, no lanterns and no writing of any kind anywhere. The lower third is calm dark wet cobblestones with nothing on it"
+
+[image.ai-midnight-market-lettering]
+title = "Midnight Market"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "MIDNIGHT MARKET"
+lettering = "bright bold neon tube capitals in hot red and gold, on two lines"
+
+[image.ai-morning-run-poster-qwen]
+title = "Morning Run"
+shape = "poster"
+engine = "qwen"
+seed = 1
+strict = true
+letters = "ai-morning-run-lettering"
+tropes = "Comedy/Sport, photo. Tropes: the unfit man who signs up to impress his daughter + the retired champion next door"
+prompt = "A bright photographic sunrise movie poster. A chubby accountant in a shirt and tie and running shoes puffs along a suburban street, beside him a wiry retired sprinter in a vintage tracksuit jogs backwards coaching him, a teenage girl on a bicycle in the background rolling her eyes, long golden shadows. The lower third is sunlit asphalt with nothing on it"
+
+[image.ai-morning-run-lettering]
+title = "Morning Run"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "MORNING RUN"
+lettering = "bright bouncy bold italic sporty capitals in orange and white, on two lines"
+
+[image.ai-northbound-poster-qwen]
+title = "Northbound"
+shape = "poster"
+engine = "qwen"
+seed = 1
+strict = true
+letters = "ai-northbound-lettering"
+tropes = "Drama, photo. Tropes: the last ride on the closing line + the grandson's questions"
+prompt = "A warm photographic drama movie poster. A retired train driver in an old navy cap and his young grandson lean out of the window of a vintage train carriage crossing a golden autumn landscape, the old man pointing ahead, the boy looking up at him, soft warm light. The lower third is dark carriage side with warm shadows"
+
+[image.ai-northbound-lettering]
+title = "Northbound"
+shape = "letter"
+engine = "qwen"
+seed = 1
+strict = true
+text = "NORTHBOUND"
+lettering = "bright vintage railway capitals in warm brass and cream with a soft glow, on one line"
+
+[image.ai-the-bakery-on-elm-street-poster-qwen]
+title = "The Bakery on Elm Street"
+shape = "poster"
+engine = "qwen"
+seed = 2
+strict = true
+letters = "ai-the-bakery-on-elm-street-lettering"
+tropes = "Comedy series, photo. Tropes: three generations behind one counter + the neighbours with opinions"
+prompt = "A warm photographic family comedy series poster. Three generations stand behind the counter of a small corner bakery, a grandmother with flour on her cheeks, a father in an apron, a teenage daughter holding a tray of croissants, shelves of bread behind them, neighbours peering in through the shop window, the front of the counter is plain dark wood without any sign. The lower third is the plain dark wooden counter front with nothing on it"
+
+[image.ai-the-bakery-on-elm-street-lettering]
+title = "The Bakery on Elm Street"
+shape = "letter"
+engine = "qwen"
+seed = 15
+strict = true
+text = "THE BAKERY ON ELM STREET"
+lettering = "warm hand-painted bakery capitals in bright golden yellow and cream with a soft glow, written directly on the black background without any board, sign, frame or banner, no registered marks, on two lines"
+
+[image.ai-market-street-poster-qwen]
+title = "Market Street"
+shape = "poster"
+engine = "qwen"
+seed = 3
+strict = true
+letters = "ai-market-street-lettering"
+tropes = "Animation/Comedy series, adult 2D cartoon. Tropes: the stall owners' weekly scheme + the inspector who always comes back"
+prompt = "A flat 2D animated sitcom poster for adults with thick outlines and slightly muted saturated colours. A crowded colourful evening street market in an old European town with a row of quirky stall owners, a soup cook, a fishmonger and a balloon seller, all frantically hiding a tiny stall behind a curtain while a stern small inspector in a blue uniform with a whistle and a big rubber stamp marches in from the left, strings of plain round light bulbs, striped cloth awnings and steam, every stall front and every awning is plain striped cloth with nothing on it, there are no signs, no banners, no lanterns, no writing and no symbols anywhere. The lower third is plain dark cobbled street with nothing on it"
+
+[image.ai-market-street-lettering]
+title = "Market Street"
+shape = "letter"
+engine = "qwen"
+seed = 2
+strict = true
+text = "MARKET STREET"
+lettering = "bright wobbly hand-painted sitcom capitals in neon orange and yellow, on two lines"
+
+# ---- backdrops for the three titles whose poster is a text-free picture with keyed lettering
+
+[image.ai-the-hedgehog-parade-backdrop-qwen]
+title = "The Hedgehog Parade"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A painted picture-book scene in soft gouache. A shy little hedgehog holds up a glowing paper lantern at the head of a parade of cute woodland animals, a mouse, a squirrel, a rabbit and a tiny owl, walking under big leaf umbrellas through an autumn forest in light rain, golden falling leaves, warm lantern light on wet leaves, wide landscape"
+
+[image.ai-the-typewriter-backdrop-qwen]
+title = "The Typewriter"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A quiet photographic drama film still, warm lamplight and rain. A woman writer in her forties in a cardigan sits at a cluttered wooden desk by a rainy window, her hands on the keys of an old black typewriter with a blank sheet of paper glowing faintly warm in it, through the window a blurred street where a man with an umbrella stops and looks up, a cup of tea and piles of blank paper, wide landscape"
+
+[image.ai-home-before-dark-backdrop-qwen]
+title = "Home Before Dark"
+shape = "backdrop"
+engine = "qwen"
+seed = 1
+strict = true
+prompt = "A warm live-action family adventure film still in golden late-afternoon light. Two children about ten, a girl and a boy, on bicycles stopped at a fork on a forest path, the boy pointing the wrong way with a grin, a scruffy little dog beside them, a cosy cabin with a glowing lit window between tall trees and an old bearded man in a woolly hat waving from its porch, fireflies starting to glow in the dusk, wide landscape"

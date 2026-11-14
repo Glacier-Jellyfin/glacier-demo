@@ -13,8 +13,8 @@ catalog, the stream layouts and the list of sources with their checksums.
 
 ## What it covers
 
-115 films, 18 series with 269 episodes and 5 collections with descriptions.
-Seventeen films are worked out in detail; the other 98 are one line each in
+118 films, 20 series with 289 episodes and 5 collections with descriptions.
+Seventeen films are worked out in detail; the other 101 are one line each in
 catalog.toml, so the library scrolls and the A-Z rail has letters with ten
 titles, letters with one and a letter with none.
 
@@ -33,7 +33,7 @@ photos and home videos, and Live TV with eight channels and a guide.
 - an anime release (Japanese original, ASS subtitles, forced signs, OP/ED
   karaoke), a nature documentary with audio description, a concert film,
   subtitles in right-to-left and CJK scripts
-- drama, western, family, animation, horror comedy and science fiction
+- drama, western, family, animation, anime, horror comedy and science fiction
   posters in different styles; people, animals, insects, landscapes
 - series with seasons and a special, two collections, unrated titles,
   chapters, trickplay, resume points, watched episodes and favourites
@@ -54,6 +54,7 @@ portable Windows build of Jellyfin.
 python demo.py build            # generate the library
 python demo.py server setup     # fresh server on it: users, libraries, scan, watch state
 python demo.py server start     # later runs
+python demo.py server refresh   # after a new build: new titles, ratings and pictures into the running server
 python demo.py server stop
 ```
 
@@ -100,9 +101,39 @@ to advertising. `prompts.toml` holds one entry per image; `ai.py` (setup in
 its docstring, it needs PyTorch with CUDA) makes four candidates each, the
 chosen seed goes back into prompts.toml, and `ai.py pin` adds the image to
 sources.toml. The images are attached to the `ai-v1` release. demo.py puts
-them in place of the title's photos and sets the title text itself; the
-model is never asked for lettering, and candidates with made-up text or
-logos that resemble real brands are left out.
+them in place of the title's photos and sets the title text itself; FLUX is
+never asked for lettering, and candidates with made-up text or logos that
+resemble real brands are left out.
+
+Some titles have a complete poster instead, made with Qwen-Image (Apache 2.0,
+4-bit GGUF from city96/Qwen-Image-gguf with the 8-step Qwen-Image-Lightning
+LoRA, 1024x1536 in about 45 seconds on a 16 GB card). The model paints the
+title into the picture in a lettering that fits the genre: entries with
+`engine = "qwen"` and `titled = true` in prompts.toml, keys ending in
+`-poster-titled`. demo.py uses such a poster as it is, without setting a
+font title on it; only the season posters of a series get a small season
+line. The matching backdrops (`-backdrop-qwen`, 16:9, no text) show the same
+scene. Nearly every title has one: 121 complete posters, 10 composed ones (see above) and about 125 Qwen backdrops. Every candidate is checked by eye for misspellings, extra text, logos
+and broken faces; a title without a clean candidate keeps its FLUX picture
+and the font title. Each poster combines two typical story ideas of the
+title's genre (`tropes` in the entry), and the plot in catalog.toml tells
+that story.
+
+Qwen-Image sometimes misspells a title or adds marks under it, however often it
+is asked. For such a title there is a second way: a poster without text
+(`-poster-qwen`, with `letters = "..."`) and the lettering alone on black
+(`-lettering`, `shape = "letter"`). demo.py keys the lettering onto the foot
+of the picture (Art.keyed: the brightest channel becomes the alpha), a
+reproducible step from the two pinned images and their seeds. Only when that
+fails too does a title keep its FLUX picture and the font title.
+
+The Qwen-Image files (about 20 GB: the GGUF, the LoRA and the text encoder
+quantized to nf4 once on the first run) are cached in the models directory:
+`GLACIER_DEMO_MODELS` if set, else `models` in the work directory. Put it on
+a fast SSD: loading reads all of it on every run, and from a SATA disk that
+alone takes five minutes. A run of `candidates` stops starting new
+Qwen images after about 9 minutes (`QWEN_BUDGET`, in seconds) and carries on with
+the missing ones when it is run again; loading the model takes a few minutes.
 
 Profile pictures, album covers and artist pictures come the same way.
 `ai.py batch episodes` makes one still per episode of the one-line series

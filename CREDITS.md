@@ -171,11 +171,17 @@ Footage for the showcase titles, music videos, home videos and Live TV.
 
 ## Generated images
 
-45 posters, backdrops, covers, artist pictures and avatars, 200 episode
+89 posters, backdrops, covers, artist pictures and avatars, 200 episode
 stills and 46 headshots of made-up people were generated with
 [FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) (Apache 2.0)
-from the prompts in prompts.toml. They show no real person and are released
-under CC0, like the rest of this repository's own content.
+from the prompts in prompts.toml. 121 complete posters with the title painted into the
+picture, 10 posters whose lettering was made apart and keyed on, and 114 matching backdrops
+were generated with
+[Qwen-Image](https://huggingface.co/Qwen/Qwen-Image) (Apache 2.0) in the 4-bit GGUF
+quantization [city96/Qwen-Image-gguf](https://huggingface.co/city96/Qwen-Image-gguf) (Apache 2.0)
+and the 8-step [Qwen-Image-Lightning](https://huggingface.co/lightx2v/Qwen-Image-Lightning)
+LoRA (Apache 2.0). They show no real person and are released under CC0, like the rest
+of this repository's own content.
 
 ## Fonts
 
@@ -196,6 +202,122 @@ All under the SIL Open Font License 1.1, from [google/fonts](https://github.com/
 - Six Caps
 - Playfair Display Italic
 - Big Shoulders Display
+- Archivo Black
+- Teko
+- Staatliches
+- Fjalla One
+- Russo One
+- Black Ops One
+- Bungee
+- Antonio
+- Passion One
+- Alfa Slab One
+- Saira Extra Condensed
+- Barlow Condensed ExtraBold
+- Bodoni Moda
+- DM Serif Display
+- Libre Caslon Display
+- Yeseva One
+- Italiana
+- Marcellus
+- Forum
+- Prata
+- Gilda Display
+- Tenor Sans
+- Bellefair
+- Gloock
+- Great Vibes
+- Pinyon Script
+- Parisienne
+- Allura
+- Playball
+- IBM Plex Mono SemiBold
+- Courier Prime Bold
+- Cutive Mono
+- Jockey One
+- Smooch Sans
+- Josefin Sans
+- Limelight
+- Creepster
+- Nosifer
+- UnifrakturMaguntia
+- Pirata One
+- Metal Mania
+- Eater
+- Butcherman
+- New Rocker
+- Jolly Lodger
+- Henny Penny
+- Orbitron
+- Audiowide
+- Michroma
+- Exo 2
+- Oxanium
+- Zen Dots
+- Tourney
+- Aldrich
+- Electrolize
+- Major Mono Display
+- Rye
+- Ewert
+- Sancreek
+- Holtwood One SC
+- Ranchers
+- Bevan
+- Graduate
+- Shrikhand
+- Abril Fatface
+- Righteous
+- Syne
+- Pacifico
+- Lobster
+- Bowlby One
+- Titan One
+- Paytone One
+- Fugaz One
+- Chango
+- Unbounded
+- Space Grotesk
+- Work Sans
+- Raleway
+- Newsreader
+- Monoton
+- Bungee Inline
+- Rubik Mono One
+- Fascinate
+- Dela Gothic One
+- Mochiy Pop One
+- Rampart One
+- Reggae One
+- Potta One
+- RocknRoll One
+- Train One
+- Stick
+- Yusei Magic
+- Zen Antique
+- Shippori Mincho Bold
+- Kaisei Decol Bold
+- Zen Maru Gothic Bold
+- Hachi Maru Pop
+- Lilita One
+- Fredoka
+- Baloo 2
+- Grandstander
+- Sniglet ExtraBold
+- Bubblegum Sans
+- Sigmar One
+- Coiny
+- Boogaloo
+- Londrina Solid Black
+- Amatic SC Bold
+- Caveat Brush
+- Gaegu Bold
+- Playpen Sans
+- Merienda
+- Almendra Bold
+- Bangers
+- Gelasio
+- Young Serif
 
 ## Server
 

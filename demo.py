@@ -26,11 +26,13 @@ from __future__ import annotations
 
 import argparse
 import base64
+import colorsys
 import datetime
 import hashlib
 import json
 import os
 import random
+import re
 import shutil
 import subprocess
 import sys
@@ -42,10 +44,11 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 import zipfile
+from collections import Counter
 from fractions import Fraction
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageColor, ImageDraw, ImageFilter, ImageFont, ImageOps
+from PIL import Image, ImageChops, ImageColor, ImageDraw, ImageFilter, ImageFont, ImageMath, ImageOps
 
 ROOT = Path(__file__).resolve().parent
 PORT = 8098
@@ -206,11 +209,20 @@ def with_ai_images(titles: list[dict]) -> list[dict]:
     for key, entry in load("prompts.toml")["image"].items():
         if key in pinned and entry.get("title") in by_title:
             item = by_title[entry["title"]]
+            if entry["shape"] == "letter":
+                continue  # only used together with its poster, below
+            if entry["shape"] == "poster" and entry.get("letters") and entry["letters"] not in pinned:
+                continue  # a poster without text waits for its lettering
             if entry["shape"] == "poster":
                 # Generated at 2:3 with the subject at the top and room for the title below.
                 bottom = {"top-tagline-below": "bottom-tagline-below", "bottom-tagline-below": "bottom-tagline-below",
                           "bottom-tagline-top": "bottom-tagline-top"}.get(item.get("layout"), "bottom")
                 item.update(poster=key, focus=0.5, plain_poster=False, layout=bottom)
+                # A titled poster carries its own lettering: it is used as it is.
+                item["titled_poster"] = bool(entry.get("titled"))
+                # A poster without text and its lettering on black, keyed onto it (Art.titled).
+                item["lettering_key"] = entry.get("letters")
+                item["lettering_band"] = entry.get("band")
             else:
                 item["backdrop"] = key
     return titles
@@ -295,6 +307,211 @@ def shows(catalog: dict) -> list[dict]:
     return with_ai_images(result)
 
 
+# ---------------------------------------------------------------- poster lettering
+
+# Genre tags a variant of lettering suits. A title needs a variant that carries
+# every tag of its own genres, so a "Drama/Romance" gets lettering that suits both.
+GENRE_CODES = {"Ac": "Action", "Su": "Superhero", "Ad": "Adventure", "Sp": "Sport", "Wa": "War", "Th": "Thriller",
+               "Cr": "Crime", "My": "Mystery", "Ho": "Horror", "SF": "Science Fiction", "We": "Western",
+               "Ro": "Romance", "Co": "Comedy", "Dr": "Drama", "Do": "Documentary", "Mu": "Music", "Fa": "Fantasy",
+               "Ki": "Kids", "An": "Anime", "AA": "Adult Animation", "Me": "Medical", "Hi": "History"}
+# When no variant suits all of a title's genres, the least important one is dropped first.
+GENRE_RANK = ["Drama", "Adventure", "Fantasy", "History", "Medical", "War", "Sport", "Comedy", "Mystery", "Adult Animation",
+              "Crime", "Thriller", "Action", "Romance", "Music", "Documentary", "Kids", "Superhero", "Science Fiction",
+              "Western", "Anime", "Horror"]
+# A pool with a defining look is only for titles of one of these genres, however many tags its variants carry.
+POOL_NEEDS = {"blockbuster": ["Action", "Superhero", "Adventure", "Sport", "War"], "thriller": ["Thriller", "Crime", "Mystery"],
+              "horror": ["Horror"], "scifi": ["Science Fiction"], "western": ["Western"], "romance": ["Romance"],
+              "comedy": ["Comedy"], "music": ["Music"], "anime": ["Anime"], "adult": ["Adult Animation"], "family": ["Kids"]}
+# Small lines (a sub-title, "The") in a plainer face next to a decorative title: font and weight.
+SUB_FONTS = {"o": ("condensed", "Regular"), "g": ("garamond", "Medium"), "m": ("wide", "Regular"), "s": ("sans", "Medium"),
+             "b": ("billing-bold", None), "r": ("roman", "Medium")}
+W, CREAM, GOLDEN = "#ffffff", "#f1e6cc", "#f2d58a"
+RED, ICE, PINK, CYAN, YELLOW = "#ff5a4a", "#cfe8ff", "#ff7fd8", "#5fe6ff", "#ffd84a"
+ROSE, MINT, ORANGE, SKY, LILAC = "#ffc7d4", "#a8f0c6", "#ffab57", "#8fd8ff", "#d9b8ff"
+
+
+def V(pool, font, tags, tracking=0.05, size=170, finish="plain", colour=W, weight=None, case="upper",
+      rules=False, sub=None, kind=None) -> dict:
+    return {"pool": pool, "font": font, "tags": {GENRE_CODES[t] for t in tags.split()}, "tracking": tracking,
+            "size": size, "finish": finish, "colour": colour, "weight": weight, "case": case, "rules": rules,
+            "sub": SUB_FONTS.get(sub), "kind": kind}
+
+
+# How each kind of film is lettered: pools of variants (font, weight, tracking, case,
+# finish, colour, rules) that Art.assign hands out so that no face repeats on many posters.
+VARIANTS = [
+    # action, superhero, adventure, sport, war
+    V("blockbuster", "impact", "Ac Su Ad Sp Wa", .03, 230, "metal"),
+    V("blockbuster", "impact", "Ad Sp Dr Ac", .05, 220, "ice"),
+    V("blockbuster", "display", "Ac Ad Sp Dr Th", .06, 250, colour=W),
+    V("blockbuster", "display", "Ac Ad Wa Su Sp Dr", .05, 250, "gold"),
+    V("blockbuster", "condensed", "Ac Th Ad Sp Wa Cr Dr", .08, 200, weight="Bold", colour="accent", sub="o"),
+    V("blockbuster", "archivo-black", "Ac Su SF Sp", .01, 190, "chrome"),
+    V("blockbuster", "archivo-black", "Ac Ad Sp Dr", .02, 190, colour=CREAM),
+    V("blockbuster", "teko", "Ac Su Sp SF Wa", .06, 250, "metal", weight="Bold"),
+    V("blockbuster", "fjalla", "Ac Ad Sp Wa Dr Do", .04, 200, colour=W),
+    V("blockbuster", "russo", "Ac SF Su Th", .03, 180, "chrome"),
+    V("blockbuster", "black-ops", "Ac Wa Ad Su Dr", .04, 170, colour="palette"),
+    V("blockbuster", "shoulders", "Ac Su SF Sp", .06, 250, "metal", weight="Black"),
+    V("blockbuster", "gothic", "Ac Ad Sp Dr Wa Th", .08, 280, colour=W),
+    V("blockbuster", "staatliches", "Ac Sp Ad Su Co", .06, 220, colour=RED),
+    V("blockbuster", "antonio", "Ad Sp Dr Ac Wa", .20, 160, weight="Bold", colour=ICE, sub="o"),
+    V("blockbuster", "saira-xc", "Ac Th SF Su", .06, 230, colour=W),
+    V("blockbuster", "barlow-black", "Ac Ad Sp Dr Th Cr", .06, 210, colour=W),
+    V("blockbuster", "passion", "Sp Ad Ac Co", .04, 220, colour=ORANGE),
+    V("blockbuster", "alfa-slab", "Ad We Sp Wa Th Cr Dr", .02, 150, colour=CREAM),
+    V("blockbuster", "bungee", "Ac Sp Co Mu Cr", .03, 150, "retro", colour=YELLOW),
+    V("blockbuster", "roman", "Ad Wa Dr Hi Fa", .10, 150, "gold", weight="Bold"),
+    # drama, prestige, history
+    V("prestige", "garamond", "Dr Ro My Hi Mu Me Do", .16, 130, weight="Medium"),
+    V("prestige", "garamond", "Dr Ro Hi Mu Do", .26, 130, weight="SemiBold", colour=CREAM),
+    V("prestige", "serif", "Dr Ro My Hi Me Sp Co", .06, 140, weight="Bold"),
+    V("prestige", "italic", "Dr Ro Co Mu Hi", 0, 170, weight="Medium", case="title", colour=CREAM, sub="g"),
+    V("prestige", "bodoni", "Dr Ro Mu Hi Co My", .04, 150, weight="Bold"),
+    V("prestige", "bodoni", "Dr Ro Hi Mu", .10, 140, "gold", weight="Medium"),
+    V("prestige", "dm-serif", "Dr Ro Co Mu Me Do", .02, 170, case="title", sub="g"),
+    V("prestige", "caslon", "Dr Ro Hi My Do", .12, 140, colour=CREAM),
+    V("prestige", "yeseva", "Dr Ro Co Mu", .05, 140, colour="palette", sub="g"),
+    V("prestige", "italiana", "Dr Ro Mu Hi My", .16, 150),
+    V("prestige", "marcellus", "Dr Hi Do My Ad Me", .14, 140, colour=CREAM),
+    V("prestige", "forum", "Dr Hi Ad Wa", .12, 140, "gold"),
+    V("prestige", "prata", "Dr Ro My Co", .05, 130, colour="palette", sub="g"),
+    V("prestige", "gilda", "Dr Ro My Do Hi", .14, 140),
+    V("prestige", "tenor", "Dr Do My Me Mu Sp", .14, 140),
+    V("prestige", "bellefair", "Dr Ro Hi My Mu", .1, 150, colour=CREAM),
+    V("prestige", "gloock", "Dr My Cr Th Me", .03, 140),
+    V("prestige", "newsreader", "Dr Do Hi Me Sp My", .10, 130, weight="Medium"),
+    V("prestige", "soft", "Dr Ro Co Do Hi", .04, 170, weight="SemiBold", case="title", colour=CREAM, sub="g"),
+    V("prestige", "roman", "Dr Hi My Fa Ad Wa", .14, 140, weight="Medium"),
+    V("prestige", "josefin", "Dr Ro Do Mu My Sp", .2, 120, weight="SemiBold"),
+    V("prestige", "young-serif", "Dr Co Me Sp Ro", .02, 170, case="title", colour=ICE, sub="g"),
+    V("prestige", "gelasio", "Dr Ro Hi Co", .04, 150, weight="Bold", colour=GOLDEN),
+    V("prestige", "syne", "Dr Mu Co Sp Do", .02, 150, weight="ExtraBold", colour="palette"),
+    V("prestige", "work-sans", "Dr Do Sp Mu My", .2, 110, weight="Medium"),
+    V("prestige", "raleway", "Dr Ro Do Mu", .2, 110, weight="Medium", colour=ICE),
+    V("prestige", "space-grotesk", "Dr Do SF My Mu Sp Th", .22, 120, weight="Medium"),
+    # romance
+    V("romance", "great-vibes", "Ro Dr Co Mu", 0, 220, case="title", colour=ROSE, sub="g"),
+    V("romance", "pinyon", "Ro Dr Mu", 0, 200, case="title", colour=CREAM, sub="g"),
+    V("romance", "parisienne", "Ro Dr Co Mu", 0, 200, case="title", colour=W, sub="g"),
+    V("romance", "allura", "Ro Dr Co", 0, 230, case="title", colour="palette", sub="g"),
+    V("romance", "playball", "Ro Co Mu Dr", 0, 190, "retro", case="title", colour=ROSE, sub="g"),
+    V("romance", "great-vibes", "Ro Dr Hi", 0, 220, "gold", case="title", sub="g"),
+    # thriller, crime, mystery
+    V("thriller", "condensed", "Th Cr My Dr Do", .28, 150, weight="Regular", rules=True),
+    V("thriller", "condensed", "Th Cr Ac", .12, 170, weight="Medium", colour=RED),
+    V("thriller", "barlow-black", "Th Cr My Ac Dr", .10, 190, colour=W),
+    V("thriller", "plex-mono", "Th Cr My SF Dr Do", .08, 150, rules=True),
+    V("thriller", "courier-prime", "Th Cr My Dr Hi We Ho", .05, 150, colour=CREAM),
+    V("thriller", "cutive-mono", "Th Cr My Dr Mu", .08, 150),
+    V("thriller", "jockey", "Th Cr Ac My", .10, 190),
+    V("thriller", "smooch", "Th Cr Ac My Ho", .20, 260, weight="Bold"),
+    V("thriller", "gothic", "Th Cr My Dr Ho", .12, 270, colour=ICE),
+    V("thriller", "limelight", "Cr Mu Co My Th", .10, 120, colour=GOLDEN),
+    V("thriller", "display", "Th Cr Ac My Dr SF", .10, 220, colour=ICE),
+    V("thriller", "antonio", "Th Cr My Dr", .25, 150, weight="Bold", colour="palette", sub="o"),
+    V("thriller", "saira-xc", "Th Cr Ac SF", .14, 220, colour=RED),
+    # horror
+    V("horror", "skinny", "Ho Th My", .12, 320),
+    V("horror", "creepster", "Ho Co", .05, 240, "blood", sub="o"),
+    V("horror", "nosifer", "Ho", .0, 210, "blood", sub="o"),
+    V("horror", "fraktur", "Ho Fa Hi", .02, 180, case="title", colour="#e6e0d0", sub="r"),
+    V("horror", "pirata", "Ho Fa My Hi", .04, 190, case="title", colour=RED, sub="r"),
+    V("horror", "metal-mania", "Ho Ac", .02, 160, "metal", sub="o"),
+    V("horror", "eater", "Ho Co", .03, 220, "blood", sub="o"),
+    V("horror", "butcherman", "Ho", .03, 220, colour="#e9e4d6", sub="o"),
+    V("horror", "new-rocker", "Ho Fa Ac", .03, 170, colour="#e9e4d6", sub="r"),
+    V("horror", "jolly-lodger", "Ho Fa Co Ki", .04, 230, colour=ORANGE, sub="r"),
+    V("horror", "henny-penny", "Ho Co Ki Fa", .02, 170, "cartoon", colour=ORANGE, case="title", kind="cartoon"),
+    # science fiction
+    V("scifi", "shoulders", "SF Th Do My", .36, 140, "glow", weight="Regular", colour="accent"),
+    V("scifi", "orbitron", "SF Ac Th", .15, 120, "chrome", weight="Bold"),
+    V("scifi", "audiowide", "SF Mu Ac Co", .06, 140, "neon", colour=CYAN),
+    V("scifi", "michroma", "SF Th Do My Ac", .10, 100),
+    V("scifi", "exo2", "SF Th Do Dr My", .24, 130, "glow", weight="Regular", colour=ICE),
+    V("scifi", "oxanium", "SF Ac Th Wa", .12, 150, "chrome", weight="Bold"),
+    V("scifi", "zen-dots", "SF Ac Mu", .08, 120, "neon", colour=PINK),
+    V("scifi", "tourney", "SF Ac Sp Th", .08, 170, weight="Bold"),
+    V("scifi", "aldrich", "SF Th My Do Dr", .15, 120, "glow", colour=ICE),
+    V("scifi", "electrolize", "SF Th Do My Dr", .20, 110),
+    V("scifi", "major-mono", "SF Mu Do My", 0, 100, case="title", colour=CYAN),
+    V("scifi", "unbounded", "SF Do Mu Co Dr", .10, 100, weight="Medium"),
+    # western
+    V("western", "roman", "We Dr Ad Hi Wa", .10, 150, "gold", weight="Bold"),
+    V("western", "rye", "We Dr Ad Co Hi", .03, 150, colour=CREAM, sub="r"),
+    V("western", "ewert", "We Dr Co Cr", .03, 150, colour=GOLDEN, sub="r"),
+    V("western", "sancreek", "We Ad Co Dr", .03, 150, "gold", sub="r"),
+    V("western", "holtwood", "We Ad Th Cr Dr", .03, 120, colour=CREAM, sub="o"),
+    V("western", "ranchers", "We Co Ad", .03, 190, colour=ORANGE, sub="o"),
+    V("western", "alfa-slab", "We Ad Th Cr Dr Sp", .03, 150, colour=GOLDEN),
+    V("western", "bevan", "We Dr Th Cr Hi", .03, 150, colour=W),
+    V("western", "graduate", "We Sp Co Dr", .04, 140, colour=CREAM),
+    # comedy
+    V("comedy", "shrikhand", "Co Ro Mu Sp", .02, 170, "retro", case="title", colour=YELLOW, sub="s"),
+    V("comedy", "abril", "Co Ro Dr Mu", .02, 170, case="title", colour="palette", sub="s"),
+    V("comedy", "righteous", "Co Sp Mu Ro", .05, 150, "retro", colour=CREAM, sub="s"),
+    V("comedy", "syne", "Co Dr Ro Mu", 0, 160, weight="ExtraBold", case="title", sub="s"),
+    V("comedy", "lobster", "Co Ro Mu Dr", .01, 180, "retro", case="title", colour=W, sub="s"),
+    V("comedy", "paytone", "Co Sp Dr Ro", .02, 170, case="title", colour=ORANGE, sub="s"),
+    V("comedy", "fugaz", "Co Sp Mu Cr AA", .03, 160, "retro", colour=MINT, sub="s"),
+    V("comedy", "chango", "Co Sp Mu AA", .02, 130, "retro", colour=YELLOW, sub="s"),
+    V("comedy", "titan", "Co Sp Ki", .02, 160, "sticker", case="title", colour=YELLOW, sub="s"),
+    V("comedy", "bungee", "Co AA Cr Mu", .03, 150, "retro", colour=PINK, sub="s"),
+    # music
+    V("music", "monoton", "Mu Cr Co SF", .05, 110, "neon", colour=PINK, sub="o"),
+    V("music", "pacifico", "Mu Co Ro Do", 0, 160, "glow", case="title", colour=W, sub="s"),
+    V("music", "bungee-inline", "Mu Co Cr Sp", .03, 140, colour=YELLOW, sub="s"),
+    V("music", "rubik-mono", "Mu Co Sp Ac", .01, 110, colour="palette", sub="s"),
+    V("music", "fascinate", "Mu Cr Co Ro", .03, 150, "gold", sub="g"),
+    # anime
+    V("anime", "dela-gothic", "An Ac SF My Th Ad Dr", .04, 150, colour=W, sub="o"),
+    V("anime", "dela-gothic", "An Ac Ad SF", .02, 150, "retro", colour=RED, sub="o"),
+    V("anime", "rampart", "An Ac Ad Fa SF Co", .04, 170, colour="palette", sub="o"),
+    V("anime", "reggae", "An Ad Dr My Ac", .06, 170, colour=CREAM, sub="o"),
+    V("anime", "mochiy", "An Co Ro Fa Ki Ad", .02, 160, "sticker", case="title", colour="palette", sub="s"),
+    V("anime", "potta", "An Co Ro Fa Ki Dr", .02, 170, "retro", case="title", colour=ROSE, sub="s"),
+    V("anime", "rocknroll", "An Co Ac Ad Mu SF", .03, 160, "retro", colour=YELLOW, sub="s"),
+    V("anime", "train", "An Ac SF Co My", .04, 170, colour=W, sub="o"),
+    V("anime", "stick", "An SF Ac My Th", .06, 150, "neon", colour=CYAN, sub="o"),
+    V("anime", "kaisei", "An Dr Ro My Fa", .10, 120, colour=CREAM, sub="g"),
+    V("anime", "shippori", "An Dr Ro My Hi Fa", .12, 120, sub="g"),
+    V("anime", "zen-antique", "An Dr Ro Fa My Ad", .10, 130, colour=GOLDEN, sub="g"),
+    V("anime", "zen-maru", "An Ro Co Ki Dr", .02, 160, case="title", colour=SKY, sub="s"),
+    V("anime", "hachi-maru", "An Co Ki Ro Fa", .02, 160, "cartoon", case="title", colour=YELLOW, sub="s"),
+    V("anime", "yusei", "An Co Fa Ki My", .02, 170, case="title", colour=MINT, sub="s"),
+    # animation for grown-ups
+    V("adult", "bangers", "AA Co", .04, 180, "sticker", colour=YELLOW, sub="s"),
+    V("adult", "bangers", "AA Co", .06, 180, "retro", colour="palette", sub="s"),
+    V("adult", "bowlby", "AA Co", .01, 150, "cartoon", colour=ORANGE, sub="s"),
+    # kids: a storybook serif, a bouncy cartoon, hand-lettered and bold chunky
+    V("family", "soft", "Ki Fa Ad", 0, 200, "cartoon", weight="Black", case="title", colour="accent", kind="storybook"),
+    V("family", "merienda", "Ki Fa Ad", 0, 160, "plain", weight="Bold", case="title", colour=CREAM, kind="storybook"),
+    V("family", "gelasio", "Ki Fa", 0, 170, "plain", weight="Bold", case="title", colour=GOLDEN, kind="storybook"),
+    V("family", "young-serif", "Ki Fa", 0, 180, "plain", case="title", colour=CREAM, kind="storybook"),
+    V("family", "almendra", "Ki Fa Ad", 0, 190, "plain", case="title", colour=GOLDEN, kind="storybook"),
+    V("family", "italic", "Ki Fa", 0, 190, "plain", weight="Medium", case="title", colour=ROSE, kind="storybook"),
+    V("family", "dm-serif", "Ki Fa Ad", 0, 180, "plain", case="title", colour=SKY, kind="storybook"),
+    V("family", "baloo2", "Ki Co Ad", 0, 200, "cartoon", weight="ExtraBold", case="title", colour=YELLOW, kind="cartoon"),
+    V("family", "fredoka", "Ki Co", 0, 200, "cartoon", weight="Bold", case="title", colour=SKY, kind="cartoon"),
+    V("family", "grandstander", "Ki Co Ad", 0, 190, "cartoon", weight="ExtraBold", case="title", colour=MINT, kind="cartoon"),
+    V("family", "sniglet", "Ki Co", 0, 190, "cartoon", case="title", colour=ORANGE, kind="cartoon"),
+    V("family", "bubblegum", "Ki Co", 0, 210, "cartoon", case="title", colour=PINK, kind="cartoon"),
+    V("family", "boogaloo", "Ki Co Ad", 0, 230, "cartoon", case="title", colour=LILAC, kind="cartoon"),
+    V("family", "coiny", "Ki Co", 0, 190, "cartoon", case="title", colour="palette", kind="cartoon"),
+    V("family", "amatic", "Ki Fa Co", .04, 260, "plain", case="title", colour=W, kind="hand"),
+    V("family", "caveat-brush", "Ki Fa Ad Co", 0, 230, "plain", case="title", colour=YELLOW, kind="hand"),
+    V("family", "gaegu", "Ki Fa Co", 0, 230, "plain", case="title", colour=CREAM, kind="hand"),
+    V("family", "playpen", "Ki Fa Co", 0, 180, "plain", weight="Bold", case="title", colour=MINT, kind="hand"),
+    V("family", "lilita", "Ki Ad Co", 0, 210, "sticker", case="title", colour=ORANGE, kind="chunky"),
+    V("family", "sigmar", "Ki Ad Co", 0, 170, "sticker", case="title", colour=YELLOW, kind="chunky"),
+    V("family", "titan", "Ki Ad Co", 0, 180, "sticker", case="title", colour=SKY, kind="chunky"),
+    V("family", "londrina", "Ki Ad", .02, 260, "sticker", case="title", colour="palette", kind="chunky"),
+    V("family", "paytone", "Ki Ad Co", 0, 190, "sticker", case="title", colour=PINK, kind="chunky"),
+    V("family", "ranchers", "Ki Ad Co", .02, 200, "sticker", case="title", colour=MINT, kind="chunky"),
+]
+
+
 # ---------------------------------------------------------------- images
 
 class Art:
@@ -306,6 +523,9 @@ class Art:
         self.billing_block = billing
         self.fonts: dict[str, Path] = {}
         self.photos: dict[str, Image.Image] = {}
+        self.palettes: dict[str, str] = {}
+        self.lit: set[str] = set()  # titles whose colour fell back to white for contrast
+        self._looks: dict[str, dict] | None = None
 
     def font(self, style: str, size: int, weight: str | None = None) -> ImageFont.FreeTypeFont:
         if style not in self.fonts:
@@ -367,32 +587,162 @@ class Art:
 
     # ---- poster typography
 
-    # How a kind of film sets its title: font and weight, letter spacing as a
-    # share of the size, the largest size, the finish of the letters, and
-    # thin rules above and below.
-    TREATMENTS = {
-        "blockbuster": {"font": "impact", "tracking": 0.03, "size": 230, "finish": "metal"},
-        "prestige": {"font": "garamond", "weight": "Medium", "tracking": 0.16, "size": 130, "finish": "plain"},
-        "thriller": {"font": "condensed", "weight": "Light", "tracking": 0.32, "size": 140, "finish": "plain",
-                     "rules": True},
-        "horror": {"font": "skinny", "tracking": 0.12, "size": 320, "finish": "plain"},
-        "scifi": {"font": "shoulders", "weight": "Light", "tracking": 0.42, "size": 140, "finish": "glow"},
-        "western": {"font": "roman", "weight": "Bold", "tracking": 0.10, "size": 150, "finish": "gold"},
-        "documentary": {"font": "wide", "weight": "Light", "tracking": 0.40, "size": 90, "finish": "plain", "rules": True},
-        "indie": {"font": "gothic", "tracking": 0.05, "size": 230, "finish": "plain"},
-        "family": {"font": "soft", "weight": "Black", "tracking": 0.0, "size": 200, "finish": "cartoon", "case": "title"},
-    }
-    # The first genre here that a title has picks its treatment; dramas and the rest are prestige.
-    GENRE_TREATMENTS = [("Superhero", "blockbuster"), ("Horror", "horror"), ("Science Fiction", "scifi"),
-                        ("Animation", "family"), ("Anime", "family"), ("Kids", "family"), ("Family", "family"),
-                        ("Action", "blockbuster"), ("Western", "western"), ("Thriller", "thriller"),
-                        ("Crime", "thriller"), ("Mystery", "thriller"), ("Medical", "thriller"), ("Documentary", "documentary"),
-                        ("Comedy", "indie"), ("Music", "indie"), ("Sport", "indie")]
+    @staticmethod
+    def franchise(title: str) -> str:
+        """The name a sequel shares with its first film: "Vanguard: Fallout" and "Paper Moons 2" are franchises."""
+        return re.sub(r"(:.*| \d+)$", "", title).strip()
+
+    @staticmethod
+    def genre_tags(item: dict) -> list[str]:
+        """The genres a title's lettering has to suit; a drawn film for grown-ups is lettered like live action."""
+        genres = [g for g in item.get("genres", []) if g != "Short"]
+        grown = item.get("rating") in ("FSK-12", "FSK-16", "FSK-18")
+        tags = []
+        for genre in genres:
+            if genre == "Animation":
+                if not grown:
+                    tags.append("Kids")
+                elif "Comedy" in genres:
+                    tags.append("Adult Animation")
+            elif genre == "Family":
+                tags.append("Kids")
+            else:
+                tags.append(genre)
+        return list(dict.fromkeys(tags)) or ["Drama"]
+
+    def candidates(self, item: dict) -> list[dict]:
+        """The variants that suit all of a title's genres; the least important genre is given up when none does."""
+        if item.get("treatment"):
+            name = item["treatment"]
+            if name == "documentary":
+                found = [v for v in self.VARIANTS if v["pool"] == "prestige" and "Documentary" in v["tags"]]
+            else:
+                found = [v for v in self.VARIANTS if v["pool"] == {"indie": "prestige"}.get(name, name)]
+            return found or [v for v in self.VARIANTS if v["pool"] == "prestige"]
+        tags = sorted(self.genre_tags(item), key=lambda g: GENRE_RANK.index(g) if g in GENRE_RANK else -1)[::-1]
+        while True:
+            found = [v for v in self.VARIANTS if set(tags) <= v["tags"] and
+                     any(g in tags for g in POOL_NEEDS.get(v["pool"], tags))]
+            if found or len(tags) <= 1:
+                return found or [v for v in self.VARIANTS if v["pool"] == "prestige" and "Drama" in v["tags"]]
+            tags.pop()
+
+    VARIANTS = VARIANTS
+
+    def assign(self, items: list[dict]) -> dict[str, dict]:
+        """A variant for each title, walking the catalogue in its order: the least-used font of those that
+        suit the title, then the least-used variant, ties settled by a hash of the title. A sequel shares
+        its franchise's variant."""
+        fonts, used = Counter(), Counter()
+        looks, families = {}, {}
+        for item in items:
+            title = item["title"]
+            family = self.franchise(title)
+            if family in families and not item.get("treatment"):
+                variant = families[family]
+            else:
+                pool = self.candidates(item)
+                variant = min(pool, key=lambda v: (fonts[v["font"]], used[id(v)],
+                                                   hashlib.sha1(f"{title}:{v['font']}:{v['colour']}:{v['tracking']}".encode()).hexdigest()))
+                families.setdefault(family, variant)
+            fonts[variant["font"]] += 1
+            used[id(variant)] += 1
+            looks[title] = variant
+        return looks
+
+    def looks(self) -> dict[str, dict]:
+        if self._looks is None:
+            catalog = load("catalog.toml")
+            self._looks = self.assign(movies(catalog) + shows(catalog))
+        return self._looks
 
     def treatment(self, item: dict) -> dict:
-        genres = item.get("genres", [])
-        name = item.get("treatment") or next((t for g, t in self.GENRE_TREATMENTS if g in genres), "prestige")
-        return self.TREATMENTS[name]
+        """The variant of lettering for a title (a collection takes the one its "look" passes in)."""
+        if item.get("look"):
+            return item["look"]
+        if item.get("treatment"):
+            pool = self.candidates(item)
+            return pool[int(hashlib.sha1(item["title"].encode()).hexdigest(), 16) % len(pool)]
+        looks = self.looks()
+        if item["title"] not in looks:  # a channel, say: a stable pick among what suits it
+            pool = self.candidates(item)
+            return pool[int(hashlib.sha1(item["title"].encode()).hexdigest(), 16) % len(pool)]
+        return looks[item["title"]]
+
+    @staticmethod
+    def luminance(colour: str) -> float:
+        """Relative luminance (WCAG) of a colour."""
+        def lin(v: float) -> float:
+            return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+        r, g, b = (lin(c / 255) for c in ImageColor.getrgb(colour)[:3])
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+    # Gradient stops of the finishes that colour the letters themselves.
+    FILLS = {"metal": ["#ffffff", "#dfe5ea", "#9aa4ae", "#eef2f5"], "gold": ["#fff1c9", "#e7c27a", "#b9853c"],
+             "chrome": ["#ffffff", "#d6e0f0", "#a3b5d6", "#eef3fb"], "ice": ["#ffffff", "#d6ecff", "#86b7e0"],
+             "blood": ["#ff6b5a", "#d81f26", "#b01a1f"]}
+    # A title must read at thumbnail size: stems at least this share of the size, contrast at least this ratio.
+    MIN_STROKE = 0.075
+    MIN_CONTRAST = 4.0
+
+    @staticmethod
+    def strokes(mask: Image.Image, size: float) -> Image.Image:
+        """Thickens thin lettering until its stems are MIN_STROKE of the size wide (at most 3 px each side)."""
+        binary = mask.point(lambda a: 255 if a > 128 else 0)
+        area = binary.histogram()[255]
+        edge = ImageChops.subtract(binary, binary.filter(ImageFilter.MinFilter(3))).histogram()[255]
+        if not edge:
+            return mask
+        stroke = 2 * area / edge
+        wanted = max(7.0, Art.MIN_STROKE * size)
+        grow = min(3, round((wanted - stroke) / 2))
+        if grow < 1:
+            return mask
+        return ImageOps.expand(mask, grow).filter(ImageFilter.MaxFilter(2 * grow + 1))
+
+    def lightest(self, style: dict, colour: str) -> float:
+        """Luminance of the lightest colour the letters have."""
+        stops = self.FILLS.get(style["finish"]) or [self.mix(colour, "#ffffff", 0.75) if style["finish"] == "neon" else colour]
+        return max(self.luminance(c) for c in stops)
+
+    def reads(self, item: dict, canvas: Image.Image, box: tuple) -> bool:
+        """Whether the title's colour has enough contrast against the lighter part of the picture behind it."""
+        style = self.treatment(item)
+        region = canvas.crop(box).convert("L").resize((40, 40))
+        values = sorted(((v / 255) ** 2.2) for v in region.getdata())
+        behind = values[int(len(values) * 0.7)]
+        return (self.lightest(style, self.colour(item, style)) + 0.05) / (behind + 0.05) >= self.MIN_CONTRAST
+
+    def colour(self, item: dict, style: dict) -> str:
+        """The letters' colour: white, a fixed one, the title's accent or a colour from its own picture."""
+        spec = style["colour"]
+        if spec == "accent":
+            return item.get("accent", "#ffffff")
+        if spec == "palette":
+            return self.palette(item)
+        return spec
+
+    def palette(self, item: dict) -> str:
+        """A light, saturated colour from the poster picture, for lettering that picks up the picture."""
+        key = item.get("poster")
+        if not key or key not in self.sources["image"]:
+            return item.get("accent", "#ffffff")
+        if key not in self.palettes:
+            small = self.cover(key, 60, 90, item.get("focus", 0.5)).quantize(8).convert("RGB")
+            best, score = None, 0.0
+            for count, rgb in small.getcolors():
+                h, sat, val = colorsys.rgb_to_hsv(*(c / 255 for c in rgb))
+                if sat * val * count ** 0.5 > score:
+                    best, score = (h, sat), sat * val * count ** 0.5
+            if best is None or best[1] < 0.18:
+                self.palettes[key] = item.get("accent", "#ffffff")
+            else:
+                r, g, b = colorsys.hsv_to_rgb(best[0], min(0.62, max(0.4, best[1])), 0.96)
+                colour = "#%02x%02x%02x" % (round(r * 255), round(g * 255), round(b * 255))
+                while self.luminance(colour) < 0.6:
+                    colour = self.mix(colour, "#ffffff", 0.2)
+                self.palettes[key] = colour
+        return self.palettes[key]
 
     @staticmethod
     def tiers(title: str) -> list[tuple[str, str]]:
@@ -408,13 +758,18 @@ class Art:
     def letters(self, text: str, font: ImageFont.FreeTypeFont, tracking: float) -> Image.Image:
         """One line of text as a mask, with tracking added between the letters."""
         gap = tracking * font.size
-        width = sum(font.getlength(c) for c in text) + gap * max(0, len(text) - 1)
+        width = font.getlength(text) if abs(tracking) < 1e-6 else (
+            sum(font.getlength(c) for c in text) + gap * max(0, len(text) - 1))
         ascent, descent = font.getmetrics()
-        mask = Image.new("L", (max(1, round(width) + 8), ascent + descent + 8))
+        height = max(ascent + descent, font.getbbox(text)[3] if text else 0)
+        mask = Image.new("L", (max(1, round(width) + 8), height + 8))
         draw, x = ImageDraw.Draw(mask), 4.0
-        for c in text:
-            draw.text((x, 4), c, font=font, fill=255)
-            x += font.getlength(c) + gap
+        if abs(tracking) < 1e-6:
+            draw.text((x, 4), text, font=font, fill=255)
+        else:
+            for c in text:
+                draw.text((x, 4), c, font=font, fill=255)
+                x += font.getlength(c) + gap
         box = mask.getbbox()
         return mask.crop(box) if box else mask
 
@@ -435,28 +790,48 @@ class Art:
             return None
         return masks
 
-    def title_block(self, item: dict, max_width: int, scale: float, align: str, extra: list[str]) -> Image.Image:
-        """The title with its finish, and lines below it (season, tagline), as one RGBA image."""
+    def title_block(self, item: dict, max_width: int, scale: float, align: str, extra: list[str],
+                    light: bool | None = None) -> Image.Image:
+        """The title with its finish, and lines below it (season, tagline), as one RGBA image.
+        light: set the letters in white with a stronger shadow (None: as the poster of the title did)."""
         style = self.treatment(item)
-        upper = style.get("case") != "title"
+        if light is None:
+            light = item["title"] in self.lit
+        if light:
+            style = dict(style, colour="#ffffff", finish="plain" if style["finish"] == "blood" else style["finish"])
+        title_case = style["case"] == "title"
         rows = []  # (mask, gap above)
         for level, text in self.tiers(item["title"]):
-            text = text.upper() if upper else text
             if level == "main":
-                size = style["size"] * scale
-                while (masks := self.wrapped(text, style, size, max_width, 2)) is None and size > 30:
+                text = text if title_case else text.upper()
+                size, spaced = style["size"] * scale, style
+                while (masks := self.wrapped(text, spaced, size, max_width, 2)) is None and size > 30:
                     size *= 0.93
+                    # Wide spacing shrinks a long word too far: tighten it before it gets small.
+                    if size < 100 and spaced["tracking"] > 0.1:
+                        spaced = dict(style, tracking=0.1)
                 font = self.font(style["font"], size, style.get("weight"))
-                masks = masks or [self.letters(text, font, style["tracking"])]
+                masks = masks or [self.letters(text, font, spaced["tracking"])]
+                masks = [self.strokes(m, size) for m in masks]
                 rows += [(m, round(size * 0.14)) for m in masks]
             else:
-                # A sub-title or a small "The" in the same font, smaller and spaced wider.
-                small = dict(style, tracking=style["tracking"] + 0.25)
-                masks = self.wrapped(text.upper(), small, style["size"] * scale * 0.32, max_width, 1)
-                rows += [(m, round(style["size"] * scale * 0.12)) for m in masks or []]
+                # A sub-title or a small "The", smaller and spaced wider: in a plainer face beside a decorative title.
+                if style["sub"]:
+                    face, weight = style["sub"]
+                    small = dict(style, font=face, weight=weight, tracking=0.28)
+                else:
+                    small = dict(style, tracking=style["tracking"] + (0.04 if title_case else 0.25))
+                text = text if title_case and not style["sub"] else text.upper()
+                share = 0.5 if title_case and not style["sub"] else 0.32
+                masks = self.wrapped(text, small, style["size"] * scale * share, max_width, 1)
+                masks = [self.strokes(m, style["size"] * scale * share) for m in masks or []]
+                rows += [(m, round(style["size"] * scale * 0.12)) for m in masks]
         line_font = self.font("condensed", 34, "Regular")
         for text in extra:
-            rows.append((self.letters(text.upper(), line_font, 0.3), 30))
+            line = self.letters(text.upper(), line_font, 0.3)
+            if line.width > max_width:
+                line = line.resize((max_width, round(line.height * max_width / line.width)), Image.LANCZOS)
+            rows.append((line, 30))
         width = max(m.width for m, _ in rows)
         height = sum(m.height + gap for m, gap in rows) - rows[0][1]
         pad = 40
@@ -468,7 +843,8 @@ class Art:
             x = {"left": pad, "right": pad + width - m.width}.get(align, pad + (width - m.width) // 2)
             (mask if n < title_rows else extra_mask).paste(m, (x, y), m)
             y += m.height
-        return self.finish_letters(mask, extra_mask, style["finish"], item.get("accent", "#ffffff"))
+        return self.finish_letters(mask, extra_mask, style["finish"], self.colour(item, style),
+                                    item.get("accent", "#ffffff"), light)
 
     @staticmethod
     def gradient(size: tuple[int, int], stops: list[str]) -> Image.Image:
@@ -477,26 +853,45 @@ class Art:
             column.putpixel((0, n), ImageColor.getrgb(colour))
         return column.resize(size, Image.BICUBIC)
 
-    def finish_letters(self, mask: Image.Image, extra: Image.Image, finish: str, accent: str) -> Image.Image:
-        """Colours the letters (metal, gold, glow, cartoon or plain white) over a soft shadow."""
+    @staticmethod
+    def mix(colour: str, other: str, share: float) -> str:
+        a, b = ImageColor.getrgb(colour), ImageColor.getrgb(other)
+        return "#%02x%02x%02x" % tuple(round(x + (y - x) * share) for x, y in zip(a, b))
+
+    def finish_letters(self, mask: Image.Image, extra: Image.Image, finish: str, colour: str, accent: str,
+                       strong: bool = False) -> Image.Image:
+        """Colours the letters over a soft shadow. finish: plain, metal, gold, chrome, ice, blood (gradients),
+        glow and neon (a halo), cartoon and sticker (outlined), retro (a hard drop shadow)."""
         size = mask.size
         shadow = Image.new("RGBA", size, (0, 0, 0, 255))
         shadow.putalpha(mask.filter(ImageFilter.GaussianBlur(14)).point(lambda a: a * 0.7))
         layer = Image.alpha_composite(Image.new("RGBA", size, (0, 0, 0, 0)), shadow)
-        if finish == "glow":
-            glow = Image.new("RGBA", size, ImageColor.getrgb(accent) + (255,))
-            glow.putalpha(mask.filter(ImageFilter.GaussianBlur(18)))
-            layer = Image.alpha_composite(layer, glow)
-        if finish == "cartoon":
+        tight = Image.new("RGBA", size, (0, 0, 0, 255))
+        tight.putalpha(mask.filter(ImageFilter.GaussianBlur(4)).point(lambda a: a * 0.6))
+        layer = Image.alpha_composite(layer, tight)
+        if strong:
+            wide = Image.new("RGBA", size, (0, 0, 0, 255))
+            wide.putalpha(mask.filter(ImageFilter.GaussianBlur(9)).point(lambda a: min(255, a * 1.4)))
+            layer = Image.alpha_composite(layer, wide)
+        rgb = ImageColor.getrgb(colour)
+        if finish in ("glow", "neon"):
+            for blur, strength in ((18, 1.0), (6, 0.8)) if finish == "neon" else ((18, 1.0),):
+                glow = Image.new("RGBA", size, rgb + (255,))
+                glow.putalpha(mask.filter(ImageFilter.GaussianBlur(blur)).point(lambda a: min(255, a * strength * 1.6)))
+                layer = Image.alpha_composite(layer, glow)
+        if finish in ("cartoon", "sticker"):
             thick = mask.filter(ImageFilter.MaxFilter(11))
             drop = Image.new("RGBA", size, (0, 0, 0, 0))
             drop.paste(Image.new("RGBA", size, (20, 20, 40, 220)), (6, 9), thick)
-            outline = Image.new("RGBA", size, (255, 255, 255, 255))
+            outline = Image.new("RGBA", size, (255, 255, 255, 255) if finish == "cartoon" else (28, 20, 44, 255))
             outline.putalpha(thick)
             layer = Image.alpha_composite(Image.alpha_composite(layer, drop), outline)
-        fills = {"metal": ["#ffffff", "#dfe5ea", "#9aa4ae", "#eef2f5"], "gold": ["#fff1c9", "#e7c27a", "#b9853c"],
-                 "cartoon": [accent, accent]}
-        fill = self.gradient(size, fills.get(finish, ["#ffffff", "#ffffff"])).convert("RGBA")
+        if finish == "retro":
+            hard = Image.new("RGBA", size, (0, 0, 0, 0))
+            hard.paste(Image.new("RGBA", size, ImageColor.getrgb(self.mix(colour, "#000000", 0.7)) + (255,)), (8, 8), mask)
+            layer = Image.alpha_composite(layer, hard)
+        fills = dict(self.FILLS, neon=[self.mix(colour, "#ffffff", 0.75)] * 2)
+        fill = self.gradient(size, fills.get(finish, [colour, colour])).convert("RGBA")
         fill.putalpha(mask)
         layer = Image.alpha_composite(layer, fill)
         lines = Image.new("RGBA", size, ImageColor.getrgb(accent) + (255,))
@@ -583,12 +978,13 @@ class Art:
         pinned = self.sources["image"]
         generated = {e["shape"]: key for key, e in load("prompts.toml")["image"].items()
                      if e.get("collection") == name and key in pinned}
-        item = dict(members[0], title=name, layout="bottom", align="center", tagline=None)
+        item = dict(members[0], title=name, layout="bottom", align="center", tagline=None, look=self.treatment(members[0]),
+                    titled_poster=False, lettering_key=None)
         if "poster" in generated:
             poster = self.poster(item, generated["poster"], 0.5)
         else:
             # A busy collage needs quiet lettering, whatever its members are.
-            poster = self.poster(dict(item, treatment="documentary"), None, 0.5, base=self.collage(members))
+            poster = self.poster(dict(item, treatment="documentary", look=None), None, 0.5, base=self.collage(members))
         backdrop = self.cover(generated.get("backdrop") or members[0]["backdrop"], 1920, 1080)
         return poster, backdrop
 
@@ -607,6 +1003,8 @@ class Art:
                base: Image.Image | None = None) -> Image.Image:
         """A poster: the image (or base), then title, tagline and (if wanted) credits set like a film's one-sheet."""
         width, height, margin = 1000, 1500, 80
+        if (item.get("titled_poster") or item.get("lettering_key")) and base is None:
+            return self.titled(key, focus, subtitle, item.get("lettering_key"), item.get("lettering_band"))
         layout = self.layout(item)
         place, tagline, align = layout["place"], layout["tagline"], layout["align"]
         image = base if base is not None else self.cover(key, width, height, focus)
@@ -634,19 +1032,74 @@ class Art:
             canvas.paste(Image.new("RGBA", block.size, (210, 210, 210, 255)), (margin, height - foot), block)
 
         extra = [subtitle] if subtitle else ([item["tagline"]] if tagline == "below" else [])
-        title = self.title_block(item, width - 2 * margin, layout["scale"], align, extra)
+        title = self.title_block(item, width - 2 * margin, layout["scale"], align, extra, light=False)
         # A centred title sits a little above or below the middle, never quite on it twice.
         shift = pick(item["title"], "shift", [-0.12, -0.07, -0.03, 0.03, 0.07, 0.12])[0] * height
         y = {"top": 90,
              "center": (height - title.height) / 2 + shift,
              "bottom": height - 80 - foot - title.height}[place]
         x = {"left": margin - 40, "right": width - margin + 40 - title.width}.get(align, (width - title.width) // 2)
+        # Letters that do not stand out from what is behind them are set in white with a stronger shadow.
+        box = title.getchannel("A").getbbox()
+        area = (max(0, round(x) + box[0]), max(0, round(y) + box[1]), min(width, round(x) + box[2]),
+                min(height, round(y) + box[3]))
+        if not subtitle and not self.reads(item, canvas, area):
+            self.lit.add(item["title"])
+        if item["title"] in self.lit:
+            title = self.title_block(item, width - 2 * margin, layout["scale"], align, extra, light=True)
         canvas.alpha_composite(title, (round(x), round(y)))
-        if self.treatment(item).get("rules"):
+        if self.treatment(item)["rules"]:
             draw = ImageDraw.Draw(canvas)
             box = title.getbbox()
             for ry in (y + box[1] - 22, y + box[3] + 22):
                 draw.line([(x + box[0], ry), (x + box[2], ry)], fill=accent, width=2)
+        return canvas.convert("RGB")
+
+    @staticmethod
+    def keyed(image: Image.Image, band: list[float] | None = None) -> Image.Image:
+        """Lettering on pure black as a transparent image: the brightest channel becomes the alpha, so glows
+        stay soft, and the colour is divided by it again. band cuts away everything outside that share of the height (or the box)."""
+        r, g, b = image.convert("RGB").split()
+        peak = ImageChops.lighter(ImageChops.lighter(r, g), b)
+        if band:
+            mask = Image.new("L", image.size)
+            # [top, bottom] as shares of the height, or [left, top, right, bottom].
+            left, top, right, bottom = band if len(band) == 4 else (0, band[0], 1, band[1])
+            mask.paste(255, (round(left * image.width), round(top * image.height), round(right * image.width),
+                             round(bottom * image.height)))
+            peak = ImageChops.multiply(peak, mask)
+        alpha = peak.point(lambda v: round(255 * min(1.0, max(0.0, (v / 255 - 0.04) / 0.30))))
+        floor = alpha.point(lambda v: max(v, 4))
+        # c / alpha as a float image; converting to "L" clips it at 255.
+        channels = [ImageMath.lambda_eval(lambda a: a["c"] * 255 / a["floor"], c=c, floor=floor).convert("L")
+                    for c in (r, g, b)]
+        keyed = Image.merge("RGBA", [*channels, alpha])
+        return keyed.crop(alpha.point(lambda v: 255 if v > 40 else 0).getbbox())
+
+    def titled(self, key: str, focus: float, subtitle: str | None, lettering: str | None = None,
+               band: list[float] | None = None) -> Image.Image:
+        """A poster with its title painted into the picture: as it is, no font title and no dark band.
+        Or a picture without text and the lettering generated alone on black, keyed on at the foot.
+        A season of a series gets its name as a small line along the top, clear of the lettering."""
+        canvas = self.cover(key, 1000, 1500, focus)
+        if lettering:
+            canvas = self.shade(canvas, 0.55, 0.92)
+            letters = self.keyed(Image.open(fetch(self.sources["image"][lettering])), band)
+            # Tall, several-line lettering is limited in height.
+            scale = min(800 / letters.width, 460 / letters.height)
+            letters = letters.resize((round(letters.width * scale), round(letters.height * scale)), Image.LANCZOS)
+            canvas = canvas.convert("RGBA")
+            canvas.alpha_composite(letters, ((1000 - letters.width) // 2, 1500 - 90 - letters.height))
+        canvas = canvas.convert("RGBA")
+        if subtitle:
+            line = self.letters(subtitle.upper(), self.font("condensed", 38, "Regular"), 0.3)
+            x, y = (1000 - line.width) // 2, 56
+            shadow = Image.new("L", canvas.size)
+            shadow.paste(line, (x, y))
+            shadow = shadow.filter(ImageFilter.GaussianBlur(9)).point(lambda v: min(255, v * 6))
+            for _ in range(1):
+                canvas.paste(Image.new("RGBA", canvas.size, (0, 0, 0, 255)), (0, 0), shadow)
+            canvas.paste(Image.new("RGBA", line.size, (255, 255, 255, 255)), (x, y), line)
         return canvas.convert("RGB")
 
     def logo(self, item: dict) -> Image.Image:
@@ -1516,14 +1969,24 @@ def credits() -> None:
     table("Films", sources.get("film", {}), ["Blender Studio's open movies and their subtitles, remuxed unchanged."])
     table("Video", sources.get("video", {}), ["Footage for the showcase titles, music videos, home videos and Live TV."])
     table("Audio", sources.get("audio", {}))
-    generated_count = sum(k.startswith("ai-") for k in images)
+    ai_images = {k: v for k, v in images.items() if k.startswith("ai-")}
+    qwen = {k for k, v in ai_images.items() if "Qwen" in v["author"]}
+    titled = {k for k in qwen if k.endswith("-poster-titled")}
+    lettered = {k for k in qwen if k.endswith("-lettering")}
+    backdrops = {k for k in qwen if k.endswith("-backdrop-qwen")}
     stills, people = generated("episodes.toml", "still"), generated("people.toml", "person")
     lines += ["## Generated images", "",
-              f"{generated_count} posters, backdrops, covers, artist pictures and avatars, {len(stills)} episode",
+              f"{len(ai_images) - len(qwen)} posters, backdrops, covers, artist pictures and avatars, {len(stills)} episode",
               f"stills and {len(people)} headshots of made-up people were generated with",
               "[FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) (Apache 2.0)",
-              "from the prompts in prompts.toml. They show no real person and are released",
-              "under CC0, like the rest of this repository's own content.", ""]
+              f"from the prompts in prompts.toml. {len(titled)} complete posters with the title painted into the",
+              f"picture, {len(lettered)} posters whose lettering was made apart and keyed on, and {len(backdrops)} matching backdrops",
+              "were generated with",
+              "[Qwen-Image](https://huggingface.co/Qwen/Qwen-Image) (Apache 2.0) in the 4-bit GGUF",
+              "quantization [city96/Qwen-Image-gguf](https://huggingface.co/city96/Qwen-Image-gguf) (Apache 2.0)",
+              "and the 8-step [Qwen-Image-Lightning](https://huggingface.co/lightx2v/Qwen-Image-Lightning)",
+              "LoRA (Apache 2.0). They show no real person and are released under CC0, like the rest",
+              "of this repository's own content.", ""]
     lines += ["## Fonts", "", "All under the SIL Open Font License 1.1, from [google/fonts](https://github.com/google/fonts).", ""]
     for font in sources["font"].values():
         lines.append(f"- {font['name']}")
@@ -1547,6 +2010,10 @@ USERS = [
 RESUME = {"The Last Lighthouse": 0.35, "Glass Mountain": 0.7, "Belle Tout": 0.6}
 PLAYED = ["Empty Nets", "Undertow", "Paper Moons"]
 FAVORITES = ["Glass Mountain", "Harbor Lights", "Paper Moons 2"]
+# Children's films with their own key art, newest first: the Kids profile's "New in Movies" row and
+# spotlight sort by date added, so these come first and the home screen reads as a kids' screen.
+NEWEST = ["Year of the Fox", "Pip and the Paper Boat", "Lion Heart", "The Hedgehog Parade", "King of the Savannah",
+          "Dragon Tea Party", "Home Before Dark", "Paper Planes", "River Song", "Winter Fox", "Paper Moons"]
 
 
 class Server:
@@ -1724,6 +2191,7 @@ class Server:
         self.avatars()
         self.people()
         self.collections()
+        self.recent()
         self.watch_state(users["Nora"])
         self.state_file.write_text(json.dumps({"url": self.url, "token": self.token, "users": users}, indent=2))
         print(f"ready: {self.url} (from the emulator http://10.0.2.2:{PORT}), user Nora without a password")
@@ -1874,6 +2342,31 @@ class Server:
             self.upload(f"/Items/{existing[name]}/Images/Primary", poster)
             self.upload(f"/Items/{existing[name]}/Images/Backdrop", backdrop)
             print(f"  collection {name}")
+
+    def refresh(self) -> None:
+        """After a build on a running server: new titles in, ratings, genres and pictures of the old ones
+        replaced from the new files. Watch state, users and collections stay; the dates added are set again."""
+        self.request("POST", "/Library/Refresh")
+        self.wait_idle()
+        for folder in self.request("GET", "/Library/VirtualFolders"):
+            if folder["Name"] in ("Movies", "Shows"):
+                print(f"  refreshing {folder['Name']}")
+                self.request("POST", f"/Items/{folder['ItemId']}/Refresh?Recursive=true&MetadataRefreshMode=FullRefresh"
+                                     "&ImageRefreshMode=FullRefresh&ReplaceAllMetadata=true&ReplaceAllImages=true")
+                self.wait_idle()
+        self.recent()
+
+    def recent(self) -> None:
+        """Dates the children's films in NEWEST as the latest added, one minute apart, newest first."""
+        items = self.items(self.user_id, "Movie")
+        now = datetime.datetime.now(datetime.timezone.utc)
+        for n, name in enumerate(NEWEST):
+            full = self.request("GET", f"/Users/{self.user_id}/Items/{items[name]['Id']}")
+            when = (now - datetime.timedelta(minutes=n + 1)).strftime("%Y-%m-%dT%H:%M:%S.0000000Z")
+            # The server cannot read back the trickplay block of the item it has just described.
+            body = {k: v for k, v in full.items() if k != "Trickplay"}
+            self.request("POST", f"/Items/{full['Id']}", dict(body, DateCreated=when))
+            print(f"  newest {name}")
 
     def watch_state(self, user: str) -> None:
         items = self.items(user, "Movie,Series,Episode")
@@ -2078,7 +2571,7 @@ def main() -> None:
     commands.add_parser("credits")
     commands.add_parser("livetv", help="serve the Live TV channels (started with the server)")
     server = commands.add_parser("server")
-    server.add_argument("action", choices=["setup", "start", "stop", "status", "collections", "avatars", "people"])
+    server.add_argument("action", choices=["setup", "start", "stop", "status", "collections", "avatars", "people", "recent", "refresh"])
     server.add_argument("--reset", action="store_true", help="setup: delete the server's data first")
     args = parser.parse_args()
     if args.command == "build":
@@ -2091,13 +2584,17 @@ def main() -> None:
         Server().setup(args.reset)
     elif args.action == "start":
         Server().start()
-    elif args.action in ("collections", "avatars", "people"):
+    elif args.action in ("collections", "avatars", "people", "recent", "refresh"):
         s = Server()
         s.login(ADMIN)
         if args.action == "collections":
             s.collections()
         elif args.action == "avatars":
             s.avatars()
+        elif args.action == "recent":
+            s.recent()
+        elif args.action == "refresh":
+            s.refresh()
         else:
             s.people()
     elif args.action == "stop":
