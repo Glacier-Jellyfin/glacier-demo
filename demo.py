@@ -28,6 +28,7 @@ import argparse
 import base64
 import colorsys
 import datetime
+import functools
 import hashlib
 import json
 import os
@@ -136,7 +137,9 @@ def run_ffmpeg(*args) -> None:
     subprocess.run([ffmpeg(), "-hide_banner", "-loglevel", "error", "-y", *map(str, args)], check=True, env=env)
 
 
-RELEASE = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1"
+RELEASES_URL = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download"
+# The tags the generated images are attached to, by kind; release_of picks one for a key.
+RELEASES = ["ai-movies", "ai-movies-kids", "ai-series", "ai-series-kids", "ai-people", "ai-profiles", "ai-artists", "ai-covers"]
 
 
 def slug(title: str) -> str:
@@ -151,11 +154,92 @@ def person_key(name: str) -> str:
     return f"ai-person-{slug(name)}"
 
 
+def rating_value(rating: str) -> int:
+    return int(rating.rsplit("-", 1)[1])
+
+
+def kids_see(rating: str | None) -> bool:
+    """Whether the Kids profile gets a title: rated, and within its maximum (unrated titles are blocked)."""
+    limit = next(user["max_rating"] for user in USERS if user["name"] == "Kids")
+    return rating is not None and rating_value(rating) <= rating_value(limit)
+
+
+@functools.lru_cache
+def release_catalog() -> tuple[dict[str, tuple[str, str | None]], dict[str, list[str]]]:
+    """Title to (kind, rating) for every film and series, and the titles of each collection, from the
+    raw catalog (movies() and shows() need the image sources, and those need each key's release)."""
+    catalog = load("catalog.toml")
+    fillers = catalog.get("fillers", {})
+    titles: dict[str, tuple[str, str | None]] = {}
+    groups: dict[str, list[str]] = {listed["name"]: list(listed["titles"]) for listed in catalog.get("collection", [])}
+    for kind, tables, rows in (("movie", catalog.get("movie", []), fillers.get("films", [])),
+                               ("show", catalog.get("show", []), fillers.get("shows", []))):
+        for table in tables:
+            titles[table["title"]] = (kind, table.get("rating"))
+            names = table.get("collection", [])
+            for name in [names] if isinstance(names, str) else names:
+                groups.setdefault(name, []).append(table["title"])
+        for row in rows:
+            titles.setdefault(row[0], (kind, row[3]))
+    return titles, groups
+
+
+@functools.lru_cache
+def release_stills() -> dict[str, str]:
+    """The series of each episode still key of the one-line series."""
+    rows = load("catalog.toml").get("fillers", {}).get("shows", [])
+    return {still_key(row[0], number, episode): row[0] for row in rows
+            for number, count in enumerate(row[7], 1) for episode in range(1, count + 1)}
+
+
+@functools.lru_cache
+def release_prompts() -> dict[str, dict]:
+    return load("prompts.toml")["image"]
+
+
+def release_of(key: str) -> str:
+    """The release (tag) a generated image is attached to: movies or series (with their episodes), each
+    with a -kids release for the titles the Kids profile sees, people, profiles (avatars), artists or covers."""
+    if key.startswith("ai-person-"):
+        return "ai-people"
+    if key.startswith("ai-avatar-"):
+        return "ai-profiles"
+    if key.startswith("ai-artist-"):
+        return "ai-artists"
+    if key.startswith("ai-cover-"):
+        return "ai-covers"
+    titles, groups = release_catalog()
+    if key in release_stills():
+        names = [release_stills()[key]]
+    else:
+        entry = release_prompts().get(key)
+        if entry is None:
+            sys.exit(f"{key}: in no release, it is neither in prompts.toml, episodes.toml nor people.toml")
+        if "album" in entry:
+            return "ai-covers"
+        if "artist" in entry:
+            return "ai-artists"
+        if "user" in entry:
+            return "ai-profiles"
+        names = groups[entry["collection"]] if "collection" in entry else [entry["title"]]
+    unknown = [name for name in names if name not in titles]
+    if unknown:
+        sys.exit(f"{key}: {unknown[0]!r} is not in catalog.toml")
+    kinds = [titles[name] for name in names]
+    # A collection is a series one when all its members are series, and for kids when all of them are.
+    tag = "ai-series" if all(kind == "show" for kind, _ in kinds) else "ai-movies"
+    return tag + "-kids" if all(kids_see(rating) for _, rating in kinds) else tag
+
+
+def release_url(key: str) -> str:
+    return f"{RELEASES_URL}/{release_of(key)}/{key}.jpg"
+
+
 def generated(manifest: str, section: str) -> dict[str, dict]:
     """Pictures that ai.py made in a batch (episodes.toml, people.toml), as image sources."""
     if not (ROOT / manifest).exists():
         return {}
-    return {key: {"url": f"{RELEASE}/{key}.jpg", "sha256": entry["sha256"], "license": "CC0",
+    return {key: {"url": release_url(key), "sha256": entry["sha256"], "license": "CC0",
                   "author": f"generated with FLUX.1-schnell, seed {entry['seed']}"}
             for key, entry in load(manifest).get(section, {}).items()}
 

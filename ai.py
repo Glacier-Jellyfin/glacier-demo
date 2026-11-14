@@ -6,6 +6,8 @@
   ai.py pin                                    the chosen seeds into sources.toml
   ai.py batch episodes|people make|sheet|pin   a still per episode of the one-line series, or a
                                                headshot per made-up person; one seed each
+  ai.py releases --check                       every url in sources.toml is in the release of its kind
+  ai.py releases --list                        the files to upload to each release, and the upload commands
 
 Runs in its own environment, because it needs PyTorch with CUDA:
 
@@ -16,7 +18,9 @@ Runs in its own environment, because it needs PyTorch with CUDA:
 
 The model needs about 34 GB on disk; quantized to 4 bits it runs in 16 GB of
 video memory. "pin" also puts the chosen images into the build cache, so
-demo.py builds with them before they are uploaded to the ai-v1 release.
+demo.py builds with them before they are uploaded to their releases (ai-movies, ai-series,
+ai-movies-kids, ai-series-kids, ai-people, ai-profiles, ai-artists, ai-covers; demo.release_of
+says which).
 
 Entries with engine = "qwen" are made with Qwen-Image (Apache 2.0), in a 4-bit GGUF
 quantization with the 8-step Lightning LoRA, which can paint a title into the picture:
@@ -43,7 +47,6 @@ import demo
 
 MODEL = "black-forest-labs/FLUX.1-schnell"
 REVISION = "741f7c3ce8b383c54771c7003378a50191e9efe9"
-RELEASE = demo.RELEASE
 # About 1.5 megapixels: more detail in faces and hands than 1 MP, still fast.
 SIZES = {"poster": (1024, 1536), "backdrop": (1824, 1024), "avatar": (1024, 1024), "cover": (1024, 1024),
          "artist": (1024, 1024)}
@@ -275,6 +278,7 @@ def pin() -> None:
     text = sources_path.read_text(encoding="utf-8")
     final = folder() / "final"
     final.mkdir(parents=True, exist_ok=True)
+    pinned = []
     for key, entry in entries().items():
         if "seed" not in entry:
             continue
@@ -290,7 +294,7 @@ def pin() -> None:
         image.save(path, quality=92)
         data = path.read_bytes()
         sha = hashlib.sha256(data).hexdigest()
-        block = (f"[image.{key}]\nurl = \"{RELEASE}/{key}.jpg\"\nsha256 = \"{sha}\"\n"
+        block = (f"[image.{key}]\nurl = \"{demo.release_url(key)}\"\nsha256 = \"{sha}\"\n"
                  f"page = \"https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml\"\n"
                  f"author = \"{QWEN_AUTHOR if entry.get('engine') == 'qwen' else 'generated with FLUX.1-schnell'}, seed {entry['seed']}\"\n"
                  f"license = \"CC0\"\n")
@@ -308,9 +312,55 @@ def pin() -> None:
         cached = demo.work() / "cache" / f"{sha[:12]}-{key}.jpg"
         cached.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, cached)
+        pinned.append(key)
         print(f"  {key} seed {entry['seed']}")
     sources_path.write_text(text, encoding="utf-8", newline="\n")
-    print(f"upload: gh release upload ai-v1 {final}\\*.jpg --repo Glacier-Jellyfin/glacier-demo")
+    stage(pinned)
+
+
+# ---- releases: the images are attached to one release per kind (demo.release_of)
+
+def stage(keys: list[str]) -> list[str]:
+    """Copies the final pictures of keys into final/releases/<tag>, one folder per release, and prints
+    the command that uploads each. Returns the keys without a picture."""
+    final = folder() / "final"
+    shutil.rmtree(final / "releases", ignore_errors=True)
+    missing = []
+    for tag in demo.RELEASES:
+        wanted = sorted(key for key in keys if demo.release_of(key) == tag)
+        found = [key for key in wanted if (final / f"{key}.jpg").exists()]
+        missing += [key for key in wanted if key not in found]
+        if not found:
+            continue
+        (final / "releases" / tag).mkdir(parents=True)
+        for key in found:
+            shutil.copyfile(final / f"{key}.jpg", final / "releases" / tag / f"{key}.jpg")
+        print(f"{tag}: {len(found)} pictures")
+        print(f"  gh release upload {tag} \"{final}\\releases\\{tag}\\*.jpg\" --repo Glacier-Jellyfin/glacier-demo --clobber")
+    for key in missing:
+        print(f"  missing: {final / (key + '.jpg')}")
+    return missing
+
+
+def released_keys() -> dict[str, str]:
+    """Every picture that is attached to a release, with the url it is read from."""
+    keys = {key: entry["url"] for key, entry in demo.load("sources.toml")["image"].items()
+            if entry["url"].startswith(demo.RELEASES_URL)}
+    for manifest, section in (("episodes.toml", "still"), ("people.toml", "person")):
+        if (demo.ROOT / manifest).exists():
+            keys.update({key: demo.release_url(key) for key in demo.load(manifest).get(section, {})})
+    return keys
+
+
+def releases(action: str) -> None:
+    keys = released_keys()
+    if action == "list":
+        sys.exit(1 if stage(list(keys)) else 0)
+    wrong = {key: url for key, url in keys.items() if url != demo.release_url(key)}
+    for key, url in wrong.items():
+        print(f"{key}: in {url.split('/')[-2]}, belongs in {demo.release_of(key)}")
+    print(f"{len(keys) - len(wrong)} of {len(keys)} pictures are in the release of their kind")
+    sys.exit(1 if wrong else 0)
 
 
 # ---- batches: one picture for each of many things, one seed each
@@ -456,10 +506,11 @@ def batch_pin(name: str) -> None:
     final = folder() / "final"
     final.mkdir(parents=True, exist_ok=True)
     lines = [f"# {line}" for line in batch["about"]]
-    lines += ["# Attached to the ai-v1 release as <key>.jpg, CC0; nobody shown exists. A picture",
+    lines += ["# Attached to the release of their kind as <key>.jpg, CC0; nobody shown exists. A picture",
               f"# that came out wrong gets another seed under [{name}.seeds] in prompts.toml.", "",
               f"[{batch['section']}]"]
     count = 0
+    written = []
     for key, entry in batch_entries(name).items():
         source = batch_file(name, key, entry)
         if not source.exists():
@@ -473,8 +524,10 @@ def batch_pin(name: str) -> None:
         shutil.copyfile(path, cached)
         lines.append(f'{key} = {{ sha256 = "{sha}", seed = {entry["seed"]} }}')
         count += 1
+        written.append(key)
     (demo.ROOT / batch["manifest"]).write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
-    print(f"{count} pictures in {batch['manifest']}; upload: gh release upload ai-v1 {final}\\*.jpg --clobber")
+    print(f"{count} pictures in {batch['manifest']}")
+    stage(written)
 
 
 def main() -> None:
@@ -489,8 +542,16 @@ def main() -> None:
     batch.add_argument("name", choices=list(BATCHES))
     batch.add_argument("action", choices=["make", "sheet", "pin"])
     batch.add_argument("--only", help="make: only pictures whose key contains this text")
+    check = commands.add_parser("releases")
+    which = check.add_mutually_exclusive_group(required=True)
+    which.add_argument("--check", dest="action", action="store_const", const="check",
+                       help="report pictures whose url is not in the release of their kind")
+    which.add_argument("--list", dest="action", action="store_const", const="list",
+                       help="the files to upload to each release, and the commands")
     args = parser.parse_args()
-    if args.command == "candidates":
+    if args.command == "releases":
+        releases(args.action)
+    elif args.command == "candidates":
         candidates(args.only, args.count)
     elif args.command == "sheet":
         sheet()

@@ -1618,315 +1618,315 @@ license = "CC0"
 # Generated with FLUX.1-schnell from prompts.toml; nobody shown exists.
 
 [image.ai-vanguard-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-poster.jpg"
 sha256 = "c39c4fb2ad84c0f61add2d3e1053636b8da7c259eb8d680213f74abd2c7d8bfb"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-vanguard-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-backdrop.jpg"
 sha256 = "72a1b81a206cdcfce3b63f3de81dda2cc7ba0d328018d2d8dce432ad2def591d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-vanguard-fallout-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-fallout-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-fallout-poster.jpg"
 sha256 = "50b05ddb6b8f83cfa3a14908996bec8409db3a73af483c02bc94915d3b77ffde"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-vanguard-last-stand-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-last-stand-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-last-stand-poster.jpg"
 sha256 = "9b8834b0ba6974975b2a2c860a938da9a92b13ad878ace1dbf5d449d63a0282c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-vanguard-legacy-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-vanguard-legacy-poster.jpg"
 sha256 = "6bf75910e1a54e28d1bc9078995478ee93396994be935e6d20ef63c354dd9801"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 4"
 license = "CC0"
 
 [image.ai-vanguard-legacy-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-vanguard-legacy-backdrop.jpg"
 sha256 = "5a4a2345dfc21c52afc9e2a6dcada9fe48dee175822f690b0163ce558633b143"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 4"
 license = "CC0"
 
 [image.ai-letters-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-letters-poster.jpg"
 sha256 = "19e33a182f824f1dbef1500813341994d1774d96e5d1746be5addffe93e79ca5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-letters-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-letters-backdrop.jpg"
 sha256 = "be25c53c4e540d0731d520282d13f5c72b7209c77740d8b54e0f739b3edf27a3"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-evening-train-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-evening-train-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-evening-train-poster.jpg"
 sha256 = "69b3ebaec0318d222634aea9cf5b310fdd550beca6beb45180471ba2d3afca3d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-just-one-song-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-just-one-song-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-just-one-song-poster.jpg"
 sha256 = "f53e380f5ad8427ee1dcf0e72ece1f2b5875e586ca15e50101ccff2547792b5c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-concerto-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-concerto-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-concerto-poster.jpg"
 sha256 = "8fd083b604e30fceeed8e0da9ae39dde459a15e9a2564b64c6e9efa3f91fa718"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-second-act-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-second-act-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-second-act-poster.jpg"
 sha256 = "68d80381637db3f7c296f9d63d9a6697fdd5a7a2efe67f5ab9fc62534b75899d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-hearts-shore-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hearts-shore-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-hearts-shore-poster.jpg"
 sha256 = "090e43ac35773955893b905c92cf41988dc2aaa4e876f997217a8a495737305d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-night-shift-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-shift-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-night-shift-poster.jpg"
 sha256 = "13b9298b8ede5486a75e66f9873e81a472f164a5568babaeb4d1559cb2d085b2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-coldwater-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-coldwater-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-coldwater-poster.jpg"
 sha256 = "87aeef39cde6ada72d43b7c0eacfa147a04f6acb020a8b58101e9870dc893b93"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-kingsbridge-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-kingsbridge-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-kingsbridge-poster.jpg"
 sha256 = "5f3790532154b7777f0b96c1b16c529f107cf4b90e3ee54df029c187aa7450c6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-hinterland-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hinterland-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-hinterland-poster.jpg"
 sha256 = "3c868f6265b5b1f9153d8b69e31644188cf9511bd000e4029ffb98f42a8d1e06"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-bakery-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-bakery-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-bakery-poster.jpg"
 sha256 = "cdd57bf84c203b866b4d63ca57e12cb2712f5e28826bfc7ef76d58f60447469b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-paper-moons-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-moons-poster.jpg"
 sha256 = "d06ff335b1edc5b53359a2574e1d37335ad8235b95915e1afaa14cb27fe13549"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-paper-moons-2-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-2-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-moons-2-poster.jpg"
 sha256 = "84f4663d9c2337eb276de706fe4d213d1321d8d4cbb21425a520bac613917e0b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-winter-fox-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-winter-fox-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-winter-fox-poster.jpg"
 sha256 = "d416d08929a10fb02b2e29d9ee48baa5e1540a1fd1fc4be28472a4ccf8c90f16"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 7"
 license = "CC0"
 
 [image.ai-little-explorers-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-little-explorers-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-little-explorers-poster.jpg"
 sha256 = "5623fbbc9ff49f7e83d2023e815ff29f070db75edd8b32134f23d4f0c8df0df5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-owl-woods-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-owl-woods-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-owl-woods-poster.jpg"
 sha256 = "66730f5b20048d9037e5629f6e501cad595ef63ae228e822594146ff6e923411"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-ramen-nights-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-ramen-nights-poster.jpg"
 sha256 = "bcd275f8ce90348968e5cd77a4c1f0a37e00d9a8fe77552db7417f913ac55cdd"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-ramen-nights-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-ramen-nights-backdrop.jpg"
 sha256 = "22804f4d52c653abc3740ebafad2c9fc9a4755736568a20335a473caede781bb"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-collection-vanguard-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-collection-vanguard-poster.jpg"
 sha256 = "9a958e849bab3248843e3683f4155c770d70e81ebd9fbd268af3629d7b0d8f88"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-collection-vanguard-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-vanguard-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-collection-vanguard-backdrop.jpg"
 sha256 = "0471ed2c4c0bbbebba720e5542cbc3797cd6ca6bde74e3e195fe45f3794faad8"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-collection-paper-moons-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-paper-moons-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-collection-paper-moons-poster.jpg"
 sha256 = "002835c935371d603ec9ab161088de0be4e188fe37170610271ed0dbef6ad2f7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-collection-northern-light-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-northern-light-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-collection-northern-light-poster.jpg"
 sha256 = "a73bb132946955c980e2f39bcffedcb2a7044242633c9306c4fcbe21989bdbb0"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-collection-animal-tales-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-collection-animal-tales-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-collection-animal-tales-poster.jpg"
 sha256 = "10857add08891ddcbe3aa71bd5924e4c795940fe2390848d580f216a78c2d97e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-cover-neon-harbour-night-ferry]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-neon-harbour-night-ferry.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-neon-harbour-night-ferry.jpg"
 sha256 = "895182d9777696def2cc8d8f91bd225dda5932fd31d9635a749ee848ab78a57e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-cover-neon-harbour-afterglow]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-neon-harbour-afterglow.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-neon-harbour-afterglow.jpg"
 sha256 = "375758e8661965280b88e698553a6f5970bb6fa1cd5b0e44abc857522b6c4d5c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-cover-the-paper-cranes-fold-fly]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-the-paper-cranes-fold-fly.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-the-paper-cranes-fold-fly.jpg"
 sha256 = "77389e31d112cf4aff5557b8ec401418ac7a954520a1f8e3145ad35ce80888ed"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-cover-the-paper-cranes-postcards-from-the-north]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-the-paper-cranes-postcards-from-the-north.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-the-paper-cranes-postcards-from-the-north.jpg"
 sha256 = "5995e46cfea1dc2d22ce674dc18ebfcf90429cf4e27edf372093f8b6cb5a5319"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-cover-margit-holm-winter-songs]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-margit-holm-winter-songs.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-margit-holm-winter-songs.jpg"
 sha256 = "55358e9d3bb53f52eb58d31842976d5d74f3bb66b5dea618a5d8b0f100819b3d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-cover-various-artists-glacier-lounge-vol-1]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-various-artists-glacier-lounge-vol-1.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-various-artists-glacier-lounge-vol-1.jpg"
 sha256 = "b165d7b2188389c97276eadf8f1676500d985f8efed266b245adc1a5fb5250d0"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-cover-ludwig-van-beethoven-symphony-no-3-eroica]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-ludwig-van-beethoven-symphony-no-3-eroica.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-ludwig-van-beethoven-symphony-no-3-eroica.jpg"
 sha256 = "d5c65423d1538bc47dd80357d383c9e7126c504e64ed1aca0413ea8d7e411f1b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-cover-ludwig-van-beethoven-piano-sonata-no-8-pathetique]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-ludwig-van-beethoven-piano-sonata-no-8-pathetique.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-ludwig-van-beethoven-piano-sonata-no-8-pathetique.jpg"
 sha256 = "8716c6bb4e2d00297a2c84d603eb8a7ef57779138334058d585118b609649036"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-cover-frederic-chopin-the-four-scherzos]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cover-frederic-chopin-the-four-scherzos.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-covers/ai-cover-frederic-chopin-the-four-scherzos.jpg"
 sha256 = "2a13c38aa1e633c7c64ac2461c41707e91355a0db47555fc44b90638815e846d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 4"
 license = "CC0"
 
 [image.ai-artist-neon-harbour]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-artist-neon-harbour.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-artists/ai-artist-neon-harbour.jpg"
 sha256 = "7c6882870c38d39078af025e712ea57c02f30ca6b519cb48b4ded8e4d085115a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-artist-the-paper-cranes]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-artist-the-paper-cranes.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-artists/ai-artist-the-paper-cranes.jpg"
 sha256 = "013870304fec22fdbb5c0af1c55dc66650a7cefcd3123e1417f1d9ecb5c0c2b4"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-artist-margit-holm]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-artist-margit-holm.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-artists/ai-artist-margit-holm.jpg"
 sha256 = "88b7c595e5efe4c40a3d4f22afac8b9d2884b968ee63041b0e40edc816b17d3e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-avatar-nora]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-avatar-nora.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-profiles/ai-avatar-nora.jpg"
 sha256 = "b617ae5df1763d511ae268c9bd02361f8b9e310a6193514a0ff175cfe1078e69"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-avatar-alex]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-avatar-alex.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-profiles/ai-avatar-alex.jpg"
 sha256 = "db9601e0a696b3d6c3ab6cf88fec1c213ab42282bf311a757c2e0ec360453318"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-avatar-kids]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-avatar-kids.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-profiles/ai-avatar-kids.jpg"
 sha256 = "b3f55cb120adb15d5f3201dc46a03b064ad81588657e04fb1654b98a6a8c2ec6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
@@ -2034,308 +2034,308 @@ author = "Tears of Steel subtitles, Blender Foundation"
 license = "CC BY 3.0"
 
 [image.ai-year-of-the-fox-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-year-of-the-fox-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-year-of-the-fox-poster.jpg"
 sha256 = "b00535c387d34bd0c70408cccf97c88866858330d941f17be5023a3e282c4fa8"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-lion-heart-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lion-heart-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-lion-heart-poster.jpg"
 sha256 = "1e25ba5f1d222c64c9e555fb47f7aa6093682a084ad6fcbed756460ea928bdb6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-king-of-the-savannah-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-king-of-the-savannah-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-king-of-the-savannah-poster.jpg"
 sha256 = "651914d6e5b27ed65e9c22b5d3fcd2e837092cf29dc97663837e31ad83b895ea"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-home-before-dark-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-home-before-dark-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-home-before-dark-poster.jpg"
 sha256 = "1293d76c22f94d158299dabf990e4ab1c8eb7e96fba397ca61a8912e8f8251ae"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-paper-planes-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-planes-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-planes-poster.jpg"
 sha256 = "48e5ee8377ce380fae57824782b4d30836fd57441a4d78863dc38fa6804619b1"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-river-song-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-river-song-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-river-song-poster.jpg"
 sha256 = "cfa5f6dc406b4f3238bb834265d85b203ec8778bb3220f52f07878dca948dd52"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-pip-paper-boat-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pip-paper-boat-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-pip-paper-boat-poster.jpg"
 sha256 = "a5ec32e8c19240fcf4d9671098d17e48d8deee3185c4bbda612f5114b7605816"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-hedgehog-parade-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hedgehog-parade-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-hedgehog-parade-poster.jpg"
 sha256 = "410f58939d5498db1b8f73e7dde9d7d18a3663f7d5e11fffa478e06eba1616e5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-dragon-tea-party-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-dragon-tea-party-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-dragon-tea-party-poster.jpg"
 sha256 = "bf25ad08012bb844f3a84fe59bce6322c2b189fb508eb1aa01fb954802cfbae5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-year-of-the-fox-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-year-of-the-fox-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-year-of-the-fox-backdrop.jpg"
 sha256 = "2c94c966a578cf6d1361eee0f24519d5f726aaaca50e43a6f359e889ddc90955"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-lion-heart-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lion-heart-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-lion-heart-backdrop.jpg"
 sha256 = "8a1ee5e9cbc169a7cbe0469af6e77df3a0714cf57512b2b1114867f5458cf808"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-king-of-the-savannah-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-king-of-the-savannah-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-king-of-the-savannah-backdrop.jpg"
 sha256 = "c7c9c3f6b1320e5ab6448b073f5edcac353b0cf48728635caec7dd4c63e72af9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-pip-paper-boat-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pip-paper-boat-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-pip-paper-boat-backdrop.jpg"
 sha256 = "22dbf152de004b8bc1fb0497c60ae67fff66404c29ef8037e01a2d5b8210bc62"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-hedgehog-parade-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hedgehog-parade-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-hedgehog-parade-backdrop.jpg"
 sha256 = "fa1d59f1dce682fa75a743405479f999668b58fd0d5fa3d66b8a480e00364143"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-gravity-of-stars-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-gravity-of-stars-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-gravity-of-stars-poster.jpg"
 sha256 = "885a7d20fd9a5c696a12e3d616ccf262fcd0d88a157dfd8e57eaabb4b84b0fdb"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-gravity-of-stars-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-gravity-of-stars-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-gravity-of-stars-backdrop.jpg"
 sha256 = "2529ec3e3bdf1c7d132832085c705fb0d64d566743b1ea5a79ef81255921af5d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-volcano-island-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-volcano-island-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-volcano-island-poster.jpg"
 sha256 = "a0518f1d64645678b6c6e29c3c9f4077b56d7111f632e19e2db3b55dec138240"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-volcano-island-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-volcano-island-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-volcano-island-backdrop.jpg"
 sha256 = "423470dd1ab8baff763fd04aa0bd2e5e05521558bd5a4b35177f5b4c356746a6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-edge-of-the-map-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-edge-of-the-map-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-edge-of-the-map-poster.jpg"
 sha256 = "5a0b317e8e0a664539e09f35d993b5ce25b2663ec12722230d6b822213451c94"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-edge-of-the-map-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-edge-of-the-map-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-edge-of-the-map-backdrop.jpg"
 sha256 = "b8e71d7eae5871c7cbb0ec3efb9d0b9cd1c610534b7adbb8db7334f8f284e6dc"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-wild-horses-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wild-horses-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-wild-horses-poster.jpg"
 sha256 = "a2e602f66e9cb152c89b9e438aff8381fc83a2eda521590035b0eb3f052327e5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-wild-horses-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wild-horses-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-wild-horses-backdrop.jpg"
 sha256 = "db7ae9b96953b0a52f5b9df07cddcba47804481b76aaa8be8964ff0a34875ca9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-mountain-kings-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-mountain-kings-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-mountain-kings-poster.jpg"
 sha256 = "54aadd9e1e4f61ff91c6abb42db982aad662ccc1fcd9a2962e5a3e1ef96b917a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-mountain-kings-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-mountain-kings-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-mountain-kings-backdrop.jpg"
 sha256 = "8e640a6318418dbc6538bcbf0713cd7706617b061aba7acb03d48b9c3bab8f1a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-aurora-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-aurora-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-aurora-poster.jpg"
 sha256 = "39e8fdcbfa0c514101bf5090fd29b83af69a5712d1e52271d0b341d878f69d97"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-aurora-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-aurora-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-aurora-backdrop.jpg"
 sha256 = "d7a45d216942ba0aa3e1bed1d7ca3709dda50d7602d0cabac4df4c5fd4329c17"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-city-of-glass-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-city-of-glass-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-city-of-glass-poster.jpg"
 sha256 = "731597c95579eb97a1ea4c3fd461e4eaced6390b8c6b29d188a85209b2e47855"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 3"
 license = "CC0"
 
 [image.ai-city-of-glass-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-city-of-glass-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-city-of-glass-backdrop.jpg"
 sha256 = "b879e2acda7c6d01a87bb25b3a12d8678879b7169db642ff5e46233dbace6259"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-pale-blue-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pale-blue-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-pale-blue-poster.jpg"
 sha256 = "d939be051cc2e47ac431cccc3aea16f38d78239424ba1e7e724c7bbd69eed7b2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-pale-blue-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pale-blue-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-pale-blue-backdrop.jpg"
 sha256 = "936b4ce74c99c566fbfd081612f6b4bb57e3e997c63e7ab803cfd23b15f67677"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-skyline-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-skyline-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-skyline-poster.jpg"
 sha256 = "5bd8a4d2dff1385e8057dad5ff32e8f93d6fa9700fe91c817c2e80a7d3d08505"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-skyline-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-skyline-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-skyline-backdrop.jpg"
 sha256 = "9ef1089bd1cacaf206243388e4c77b875b873f32b3eca87d0d1e824ea532255e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-fast-lane-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-fast-lane-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-fast-lane-poster.jpg"
 sha256 = "21046cb491e601394bac2ed00b7c33af424c5cf24244301ea47868b13c6219e8"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 4"
 license = "CC0"
 
 [image.ai-fast-lane-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-fast-lane-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-fast-lane-backdrop.jpg"
 sha256 = "75ac4d8ae33edfc9f147e9b4fc6e91cd2eebe48406c19f335f1b864dc434b584"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-keepers-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-keepers-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-keepers-poster.jpg"
 sha256 = "4c975f200ba55e7707e234c079647b471afedd5dea3f66354c3c6bb3bb7bd1cd"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-keepers-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-keepers-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-keepers-backdrop.jpg"
 sha256 = "515feaf25a72537f2e9aca52591654de40d5ff84eaca3075611dcc013fa2342b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-1000-lanterns-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-1000-lanterns-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-1000-lanterns-poster.jpg"
 sha256 = "635a48a530e3b14f3660881c355a5b6e6509b21ac21874e4c5e76db463ceaf2f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-1000-lanterns-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-1000-lanterns-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-1000-lanterns-backdrop.jpg"
 sha256 = "08eef61dcd6c3421c475f74b8e27480afbd0ef3d522e628a03e203203bee7eec"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-broken-compass-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-broken-compass-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-broken-compass-poster.jpg"
 sha256 = "51317b4a42fe776118e5e904950d06375ec13c71f05d09563741cabf4635c85a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-broken-compass-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-broken-compass-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-broken-compass-backdrop.jpg"
 sha256 = "71e1fdc4fbf122ed5aa21eb680d045d5fef86a386d9685ba2cca7bdd8e68498f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-lantern-festival-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lantern-festival-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-lantern-festival-poster.jpg"
 sha256 = "e3fd0158c2b3271652c04f88fe974d51bc1140b7f7403eeb2ca1f4b8f5773b29"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 2"
 license = "CC0"
 
 [image.ai-lantern-festival-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lantern-festival-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-lantern-festival-backdrop.jpg"
 sha256 = "95acad96b6e1a56e6167f1bce11aaa9b84168c8eb7a2a1e49a1b461f1f2ed719"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-market-street-poster]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-market-street-poster.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-market-street-poster.jpg"
 sha256 = "9ed92979920f58d83a218ea9af8bb13e1c51ef99ada2a50c6d26ed2e694d9bc5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
 license = "CC0"
 
 [image.ai-market-street-backdrop]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-market-street-backdrop.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-market-street-backdrop.jpg"
 sha256 = "833e163cb294c18b4cd2621b0a8dd4155c706004f599b80d0be63dd51fdc3c13"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with FLUX.1-schnell, seed 1"
@@ -2344,1785 +2344,1785 @@ license = "CC0"
 # Generated with Qwen-Image from prompts.toml; nobody shown exists. Titled posters carry their own lettering.
 
 [image.ai-year-of-the-fox-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-year-of-the-fox-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-year-of-the-fox-poster-titled.jpg"
 sha256 = "004ab5b58243c846ca16838db559baf1f1af28a63be60405a8b7893606942284"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-year-of-the-fox-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-year-of-the-fox-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-year-of-the-fox-backdrop-qwen.jpg"
 sha256 = "4995899e2b2731a5e8a4f7db6466627f0c3ec68e9ea4cd456041fc4d0f3527d7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-pip-and-the-paper-boat-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pip-and-the-paper-boat-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-pip-and-the-paper-boat-poster-titled.jpg"
 sha256 = "1b93771c3d2a208a7ca485206c23220b06bed4b9475d4e25d51b81ca5a09e4aa"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-pip-and-the-paper-boat-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pip-and-the-paper-boat-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-pip-and-the-paper-boat-backdrop-qwen.jpg"
 sha256 = "30b76be94d9b09d858ebda71bb862d6e3e4843391cf2b3c55ac5c4572b80a673"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-lion-heart-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lion-heart-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-lion-heart-poster-titled.jpg"
 sha256 = "130546dc3a2cb8adf287a24aea63780a9e8fc1f34b85b0c2787caf907332b46c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-lion-heart-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lion-heart-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-lion-heart-backdrop-qwen.jpg"
 sha256 = "024446b2bd50d36c59bc444eeaaf3730134232c0f08bc47892c685e70a89882d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-dragon-tea-party-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-dragon-tea-party-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-dragon-tea-party-poster-titled.jpg"
 sha256 = "594a456d512f0b6b34abad5190a291824513154b2fdd70d0f6a18b469a22487c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-dragon-tea-party-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-dragon-tea-party-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-dragon-tea-party-backdrop-qwen.jpg"
 sha256 = "3e4e0e53240d735f39883763aa57cd63d4bcc8c5d3662247cfedb21b2f22207d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-paper-planes-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-planes-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-planes-poster-titled.jpg"
 sha256 = "c06ed37c8d020f86fd68787c2c765f3faf45affc4a70c46596d27be367083fd7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-paper-planes-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-planes-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-planes-backdrop-qwen.jpg"
 sha256 = "8e84551fab8ec21fe5e98e7e4893f614a29376ab1318b3f48c0f77570c303fb9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-river-song-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-river-song-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-river-song-poster-titled.jpg"
 sha256 = "817af0f0dcde47481224126e6650b8abfca51beb2defaef67fe3711d27192fc6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-paper-moons-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-moons-poster-titled.jpg"
 sha256 = "792855486c0dfbba94f744da5eccb44ec0fa4d92e78cdcdd1dd17e451bc3384f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-paper-moons-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-moons-backdrop-qwen.jpg"
 sha256 = "856abceb1155de0b82038be0d4cec4dadf21c15927c7e87a7d744ce60e9e478d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-paper-moons-2-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-2-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-moons-2-poster-titled.jpg"
 sha256 = "23e4c0edc356d6ff366d78a9afd2cbd1656fc07591f0bdf681694a4ecd60f703"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-paper-moons-2-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-paper-moons-2-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-paper-moons-2-backdrop-qwen.jpg"
 sha256 = "3c937c22883721468e5b59796a0a168bf7a9a13dda2c6aef7b3aa457ae51111f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-the-last-lighthouse-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-last-lighthouse-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-the-last-lighthouse-poster-titled.jpg"
 sha256 = "455091f1e68b84452a2e069359ad15a9245957e542c045fec244c7010d0f5e72"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-last-lighthouse-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-last-lighthouse-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-the-last-lighthouse-backdrop-qwen.jpg"
 sha256 = "49ed3baec0e276e5be3f97a6cb170e0038a65366c55429455dda06719ebcec74"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-glass-mountain-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-glass-mountain-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-glass-mountain-poster-titled.jpg"
 sha256 = "fe80dad17eb9eb83001d30b5fd0cca932ae7a37845b1816bb45be111a12c6b8c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-glass-mountain-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-glass-mountain-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-glass-mountain-backdrop-qwen.jpg"
 sha256 = "a987b045dcbfede15aed1dd97d48b912f36a313bd1b1a244b0056dd8560e49b6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-harbor-lights-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-harbor-lights-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-harbor-lights-poster-titled.jpg"
 sha256 = "2ffcb5bc76af5c905db113e851d3c7d37ff6967505ec8998b301b0739bc0cc70"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-zero-hour-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-zero-hour-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-zero-hour-poster-titled.jpg"
 sha256 = "2acc7fd9cd419db287fc2c6e430afd55e0e6021004de4959c99d256b74abd76a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-zero-hour-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-zero-hour-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-zero-hour-backdrop-qwen.jpg"
 sha256 = "61ad58307b2addb020a0e0ee5abfce842cd1db9b3d78042e1a6f2760649a70fb"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-white-out-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-white-out-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-white-out-poster-titled.jpg"
 sha256 = "10869f8945b4193659fa11227bd6cfbcea35806467a66438da451714276da813"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-white-out-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-white-out-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-white-out-backdrop-qwen.jpg"
 sha256 = "8ae96eada2bcdefab626305ef253d01e05bcad8bb4c9d665d00758d0c1b95872"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-vanguard-last-stand-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-last-stand-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-last-stand-poster-titled.jpg"
 sha256 = "777826de541d5256e2508b4655428a9a1219f54a9dbda4277e9b4af55c30af23"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-volcano-island-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-volcano-island-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-volcano-island-poster-titled.jpg"
 sha256 = "92e081f01f7e2755fc7d656f102734f96ad2ae1779f47cfdfa956b2d416275db"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-volcano-island-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-volcano-island-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-volcano-island-backdrop-qwen.jpg"
 sha256 = "0ed2327f225bbc8dc0661a2eac65e7019ee3eb5f1608ed0313ba6d71936c7252"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-thunder-road-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-thunder-road-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-thunder-road-poster-titled.jpg"
 sha256 = "0e414311c7c3ffb8bfd256b33bb2d4531d18c4f30a39fb23e8d8aca301f65861"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-fieldwork-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-fieldwork-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-fieldwork-poster-titled.jpg"
 sha256 = "2fda13d0311e31087d5be41f727485a6a25fdeee4b65efc6d9d86a13ec620df0"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-fieldwork-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-fieldwork-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-fieldwork-backdrop-qwen.jpg"
 sha256 = "b9df0434032ec6429bf08ec23b581f4d89c460b6671ec598db9836aab935f2be"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-tidehouse-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-tidehouse-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-tidehouse-poster-titled.jpg"
 sha256 = "48ee30c0c928cad59a9a31c77289b41a036d371734041d2fdd3551a9086233a9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-tidehouse-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-tidehouse-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-tidehouse-backdrop-qwen.jpg"
 sha256 = "b7f00008395005bc6381640e640933033f6f4d52280b3c05479aeb36e30c18a1"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-owl-woods-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-owl-woods-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-owl-woods-poster-titled.jpg"
 sha256 = "f7fbd1554dac86641bc7a33af99907b5be447f1d7d67b08a374e706a269cae39"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-owl-woods-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-owl-woods-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-owl-woods-backdrop-qwen.jpg"
 sha256 = "d1670a986d21516c5a42fc5222840fb93acaefa36541f8b2f5601048d6c1557b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-vanguard-legacy-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-vanguard-legacy-poster-titled.jpg"
 sha256 = "44111c6ea60fe18f9aa23a653adf201eec180c02fd866afcb4d681b622826f73"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-hinterland-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hinterland-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-hinterland-poster-titled.jpg"
 sha256 = "d11f6d4b062d978d5409c833cc42a332d6449f22fa34ffddb5c7941a2d58f68f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-hinterland-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hinterland-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-hinterland-backdrop-qwen.jpg"
 sha256 = "55ba3dd3a03199c9265036ab79b886ff4ab01b5a663593b99273f7f07801402d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-kingsbridge-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-kingsbridge-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-kingsbridge-poster-titled.jpg"
 sha256 = "bdd48f6997b4c1c8bdef4bd2e2a882178fb4510b14e3fd07dbf064f63d51e6fc"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-kingsbridge-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-kingsbridge-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-kingsbridge-backdrop-qwen.jpg"
 sha256 = "a2d1b44c07cbdcf303152248f82f15d3601fb88b7482c53724bc4e9314e561f4"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-aurora-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-aurora-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-aurora-poster-titled.jpg"
 sha256 = "f0df933321523b9b65686e974f7000d2422080406dc9dbeb26ecb4def6b38e02"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-aurora-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-aurora-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-aurora-backdrop-qwen.jpg"
 sha256 = "47b1c088187d93287c13d0a7c267a3218ea72befc4d5be1b49a9d29b9f183d64"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-wild-horses-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wild-horses-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-wild-horses-poster-titled.jpg"
 sha256 = "be9ddc616d842c6fb298f009e02995ffb3a90e3e599be312dfabbd5cd78ae2f4"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-wild-horses-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wild-horses-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-wild-horses-backdrop-qwen.jpg"
 sha256 = "79f1b2f8804d5db729f1d020be2c3920b3f45e01a8106cc4fca55fd164eeace7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-king-of-the-savannah-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-king-of-the-savannah-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-king-of-the-savannah-poster-titled.jpg"
 sha256 = "20949368cca7f1cc82372ec3be41aa3d7bed1a7d0d04a5042f77b5f818c12b36"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 6"
 license = "CC0"
 
 [image.ai-winter-fox-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-winter-fox-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-winter-fox-poster-titled.jpg"
 sha256 = "f50c32e9526e2210a8a2db3e1486a01b9ac48d3bb6f56671a998a0933343dc10"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-fast-lane-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-fast-lane-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-fast-lane-poster-titled.jpg"
 sha256 = "7647b2baa5a05e5f446709bb11106c7cd6be637bf5e98948be9170011c0e5e3a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-hedgehog-parade-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-hedgehog-parade-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-the-hedgehog-parade-poster-qwen.jpg"
 sha256 = "b9173ed6581f54a7b49d8fc0f4f63ff926f9c059fc020f1673a26ff44a2cde7d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-hedgehog-parade-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-hedgehog-parade-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-the-hedgehog-parade-lettering.jpg"
 sha256 = "45b1c64c44d1fbeb8a92d37106f057d46d6817318608829055fba544f6371f33"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-typewriter-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-typewriter-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-the-typewriter-poster-qwen.jpg"
 sha256 = "0f269928f487905ffb3aa55a15f7b6059c90ff12cfee466ee7a16de3253c6640"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-typewriter-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-typewriter-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-the-typewriter-lettering.jpg"
 sha256 = "68cc113c81b837712f49f8bd5df53c60b512ccf4d0499bcbf41db3feb6c8ed9d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-home-before-dark-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-home-before-dark-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-home-before-dark-poster-qwen.jpg"
 sha256 = "a9c286ddfb7410f34f670493072b84aed92b44ff7c7d22247ff106db73bed0cd"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-home-before-dark-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-home-before-dark-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-home-before-dark-lettering.jpg"
 sha256 = "52ab4330119f3b225b73227cfc78ee9fd5a6698d866877c406bd10f41604669b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-night-train-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-train-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-night-train-poster-titled.jpg"
 sha256 = "67065258a2f781736e9240043b468b4e7a576ff8b18bce887ebf5b00bde36e8b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-the-red-boat-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-red-boat-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-the-red-boat-poster-titled.jpg"
 sha256 = "449a38b97400ff7e180aa611d29b2cdef677bf78f9ac44bced12c038d28b1c02"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-golden-hour-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-golden-hour-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-golden-hour-poster-titled.jpg"
 sha256 = "3c86499c1a7e6a9de45d7d5b8a7d19707e0f451407379a9dc0794a00a3d366a2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-last-ride-west-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-last-ride-west-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-last-ride-west-poster-titled.jpg"
 sha256 = "abf8f890c37a89384b1e2c22f5d1abb0993e2a9a95c747ce5d67d3f105f3c152"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-letters-to-ingrid-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-to-ingrid-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-letters-to-ingrid-poster-titled.jpg"
 sha256 = "341ad461740ecb92392ee93c4e4556562738bca13a990eacff56f5bd5c1f22bf"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-summer-nights-live-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-summer-nights-live-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-summer-nights-live-poster-titled.jpg"
 sha256 = "d351d027a8dec38ca6f51830be51a89ac31a8c5f288e699bd9cc1250c49c7ef0"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-7-days-in-lisbon-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-7-days-in-lisbon-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-7-days-in-lisbon-poster-titled.jpg"
 sha256 = "80fef9082daa1b1ce35c55a8308ecdebd04b0ab8d7289628e31fc70bf2562288"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-1000-lanterns-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-1000-lanterns-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-1000-lanterns-poster-titled.jpg"
 sha256 = "6538ba154804a8cf726a80d265899b8a4fb24f34dfec42b1b22cc19d02212efa"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-21-winters-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-21-winters-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-21-winters-poster-titled.jpg"
 sha256 = "cd090747bbcc01c5f9a6909beb0cade480f5632f34447a673fb4b7e6c4eeccee"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-above-the-tide-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-above-the-tide-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-above-the-tide-poster-titled.jpg"
 sha256 = "7452464cc58276da49366e7d7e2d251bf1214a8fbcd524e0e39b1cf635a41dcf"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-after-the-rain-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-after-the-rain-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-after-the-rain-poster-titled.jpg"
 sha256 = "03f7c45c4a588018858b961408c629493f2511721424f3684bbdf2f708ff4a62"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-ashes-of-summer-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ashes-of-summer-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-ashes-of-summer-poster-titled.jpg"
 sha256 = "01141374cc5e92fbceb9790edf2c3598d173d0df321651082a9ca2820ef43572"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-atlas-of-small-things-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-atlas-of-small-things-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-atlas-of-small-things-poster-titled.jpg"
 sha256 = "9b18f7a551b83ffebd1e9fb285ea923ff4dae131560ae84265dc9bf7290709ef"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-blue-hour-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-blue-hour-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-blue-hour-poster-titled.jpg"
 sha256 = "29a8851a983c14f7959931cd31ef9744dedfb1f8c0672ac8862b499c6a7bcd44"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-brass-and-bone-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-brass-and-bone-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-brass-and-bone-poster-titled.jpg"
 sha256 = "568f6bc60fe7035ae7886630096121d9d703372c9c702691622e492cd8599f14"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-broken-compass-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-broken-compass-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-broken-compass-poster-titled.jpg"
 sha256 = "9cfdaa309a57c5543647eeaaa319e87360755a5873116edb9917edae3bc673dc"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-bazaar-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-bazaar-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-bazaar-poster-titled.jpg"
 sha256 = "eedc56650718420e5f7aefce2b02a6e6960974b9419b3081b242d2e8432213e4"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-before-the-whistle-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-before-the-whistle-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-before-the-whistle-poster-titled.jpg"
 sha256 = "13b3735cfd9e3f655b7d6004e2269b03ddfb0ebd2453891e635b556b8988c3fc"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-canyon-road-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-canyon-road-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-canyon-road-poster-titled.jpg"
 sha256 = "c0215906208b947f7e90867498ae42f9c93681242a3a38e86cad85484a0f9999"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-cold-harbour-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-cold-harbour-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-cold-harbour-poster-titled.jpg"
 sha256 = "09e617f4764ab6895ef983f5af60320bf6bc266ed0a4bf732b38baf4c7e2182f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-crossing-lines-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-crossing-lines-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-crossing-lines-poster-titled.jpg"
 sha256 = "723f8511593fc48dffdfe759eddf7b82eb9f17ec8c2bedfd8db2aff3c29000ba"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-concerto-for-a-stranger-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-concerto-for-a-stranger-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-concerto-for-a-stranger-poster-titled.jpg"
 sha256 = "1c9dec1b47f96b993bb54334386d7e2719df985ffefeae1e0685dbb807357b81"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-city-of-glass-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-city-of-glass-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-city-of-glass-poster-titled.jpg"
 sha256 = "725c78a261870965a520f4fb2e7fa91bedf94f4c32a6120031fff2b2db335753"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-deep-water-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-deep-water-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-deep-water-poster-titled.jpg"
 sha256 = "385ebc56338dbcd757f2cb513f2a06ca81b2ba304179149af679ee528b1caaa5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-desert-bloom-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-desert-bloom-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-desert-bloom-poster-titled.jpg"
 sha256 = "9442295665fa5000050bd6a614e2e0cef7dc49f4fd1bca22a8789ec30de10302"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-dust-and-diamonds-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-dust-and-diamonds-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-dust-and-diamonds-poster-titled.jpg"
 sha256 = "1fb2912df87c39a26dc6aab53e8408de6ce6874ab535cb9b3a393d2fb4246e80"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-downpour-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-downpour-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-downpour-poster-titled.jpg"
 sha256 = "2d82237c653a9a861f70aa834d208ca6552044ce80b09567da3da4f0679299c9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-dear-neighbour-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-dear-neighbour-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-dear-neighbour-poster-titled.jpg"
 sha256 = "bc46fbee64e515ba5943bfb055bbd8210afcb2582f1579d481ba107e82faf7f9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-edge-of-the-map-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-edge-of-the-map-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-edge-of-the-map-poster-titled.jpg"
 sha256 = "f30a1c98dbf5e0f7a20004362c340918ea02a052be32c9764d94bbb9ebdc9f33"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-evening-train-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-evening-train-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-evening-train-poster-titled.jpg"
 sha256 = "e4928432af956060f2c4df8ca2d827ce1e4565c6e5a35cea5cafb1765311cc24"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-festival-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-festival-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-festival-poster-titled.jpg"
 sha256 = "f7f07a0dacde7d201a35a8d2e466e22c51d0c0924289d761252b4883f34fa173"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-first-light-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-first-light-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-first-light-poster-titled.jpg"
 sha256 = "0701be29849c3a66c9925afdc17389bfeab3236bfa035fea22931658e751f1c2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-flood-season-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-flood-season-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-flood-season-poster-titled.jpg"
 sha256 = "cb5a125b13f6276d88dbdb10691e03f3e54656e6ab6b9d86bd59169248c2952e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-frozen-line-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-frozen-line-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-frozen-line-poster-titled.jpg"
 sha256 = "65a83d09eb4f27d606b5c3a12a0554bee3e4e0464376f246436b8846b3c69de7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-grand-hotel-neon-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-grand-hotel-neon-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-grand-hotel-neon-poster-titled.jpg"
 sha256 = "ccd97163632da8870f73b893ba8d441cc49a658fb231faa54f52b334c8468d2f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-ghost-light-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ghost-light-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-ghost-light-poster-titled.jpg"
 sha256 = "a435d7da68e845e29343592c0bcdb37c55207b993a011d800210eb447f8f756d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-gravity-of-stars-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-gravity-of-stars-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-gravity-of-stars-poster-titled.jpg"
 sha256 = "5aeedcda70ae19f222913d3dc0bf90f8d695c32d80134b81e1832c7bf598c9a2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-half-past-midnight-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-half-past-midnight-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-half-past-midnight-poster-titled.jpg"
 sha256 = "cf08aed1f3cb46f2d6584bdff55f403a3f1713b03665f5779b25b57457cde630"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-headlights-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-headlights-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-headlights-poster-titled.jpg"
 sha256 = "8826f990e5e9d7f863cba9353a127df57fb7a3f3786623340169b735ca53b7f5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-high-water-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-high-water-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-high-water-poster-titled.jpg"
 sha256 = "0ff2ddfab08267c9d96c603aa17e5c66e90d66ca4e000625b09b9be31d2556b0"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-hush-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hush-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-hush-poster-titled.jpg"
 sha256 = "e27fb93c43cab39a84ff2f8e6ac0c88403d0011ec320b21aed99bbb94e17da7b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-hearts-on-the-shore-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hearts-on-the-shore-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-hearts-on-the-shore-poster-titled.jpg"
 sha256 = "bbe3d582a27d7cc3843dbe5ff1039da9bfe06679c0b5b3f44a5b3b1af7833dc5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-iron-coast-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-iron-coast-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-iron-coast-poster-titled.jpg"
 sha256 = "622e269e7efbdd66d1a31d34d300d8ccf823f064fb7517381f094020963fc394"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-island-time-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-island-time-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-island-time-poster-titled.jpg"
 sha256 = "f8cfa3783a3f029a9f7ac386b2c548a80bbfde8c51f4faa9720e0c077ece3a8d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-jellyfish-summer-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-jellyfish-summer-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-jellyfish-summer-poster-titled.jpg"
 sha256 = "64b4f13fd5e450da2dc3054aacdb7e315dc91cd2ecfeec69a6e1ec367c60eb09"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-just-one-song-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-just-one-song-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-just-one-song-poster-titled.jpg"
 sha256 = "9d0ca85156a05237439b996d147cbefd196b054909fa95d0ed057c58fd109cea"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-keepers-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-keepers-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-keepers-poster-titled.jpg"
 sha256 = "a3268686525ec4cbcbdc886c5f512f43fae4703dd9a9253413822a8cbdc2dc4a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-lantern-festival-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lantern-festival-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-lantern-festival-poster-titled.jpg"
 sha256 = "da5a62d65e8e06b926b3be1448de1724d91ca6a845293410ccb18dddfb90d37d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-long-way-down-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-long-way-down-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-long-way-down-poster-titled.jpg"
 sha256 = "b1bb4be6553160abf2f107aac8f674c3cd375db86aae5b8d1c21e42f48660037"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-lost-in-the-fog-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lost-in-the-fog-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-lost-in-the-fog-poster-titled.jpg"
 sha256 = "779ce24f58322b3222136ac1f0eda6a89d846f0047978260b804fbee2d39237d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-last-orders-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-last-orders-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-last-orders-poster-titled.jpg"
 sha256 = "2fea428cbfd45b575f9bc32ec34386ed0b02438b28ae49b14cf4c955e6fe6cba"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-moonrise-lake-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-moonrise-lake-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-moonrise-lake-poster-titled.jpg"
 sha256 = "8c7a2f437aa0d46c32d04c69e49684c7f9fcc8856ab53f99f8ae3bfddf906a8c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-mountain-kings-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-mountain-kings-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-mountain-kings-poster-titled.jpg"
 sha256 = "df7455ae5609e88e98472219df1ad1944ebe32439e3e04b745c03b16bb333583"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-murmur-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-murmur-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-murmur-poster-titled.jpg"
 sha256 = "bc9981650db808b848846630d7864000acca53341c5742659e082f6cdcc0b2aa"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-music-box-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-music-box-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-music-box-poster-titled.jpg"
 sha256 = "8901708abdcc37cfd8b6a650644a368f4f633a336da44e71648c3bbbd8029de1"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-mirage-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-mirage-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-mirage-poster-titled.jpg"
 sha256 = "40fdf8a6909c08d3348e85bc68d24ff2755680d7768fb25a3377a3f8afc98455"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-neon-nights-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-neon-nights-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-neon-nights-poster-titled.jpg"
 sha256 = "9ca15dc568edcc1c31fd2e97e37bc18697939e1555f7de91360762310b709b32"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-north-of-nowhere-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-north-of-nowhere-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-north-of-nowhere-poster-titled.jpg"
 sha256 = "c3351159a6003ce29d520ad60cac9b6807460c10b92ae54f5044cb0ef54a8cc5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-nightfall-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-nightfall-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-nightfall-poster-titled.jpg"
 sha256 = "a28b8f8d421800d08447e50b3314df2e9a9fd93e6330fa091f5f0e43e226907e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-one-last-wave-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-one-last-wave-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-one-last-wave-poster-titled.jpg"
 sha256 = "22f910369f5e70ad0f3333d4ef88498daeb88108e7ded1ca09b98b4a3872301d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-open-water-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-open-water-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-open-water-poster-titled.jpg"
 sha256 = "4306bd64568514a2d5448b505121d797bbeca7014566003a623f6a625f62741f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-orchestra-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-orchestra-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-orchestra-poster-titled.jpg"
 sha256 = "a6d4032512f42849c061b0d66902c343454673d09f34de5ce198107ab9c46eac"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-pale-blue-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pale-blue-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-pale-blue-poster-titled.jpg"
 sha256 = "e7069f63266a168b9ec05b0f2d95f401b795a5aa32f5be9d3892849b51e5e874"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-pilgrims-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pilgrims-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-pilgrims-poster-titled.jpg"
 sha256 = "6ccf3cf8a8b21929359b1105fb0a228d936f54ecc7151cba1302d9f9713e972f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-quiet-streets-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-quiet-streets-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-quiet-streets-poster-titled.jpg"
 sha256 = "da5562044b883c8640774a91c11fdbd99bcbcefcb6e2596ee292ef5fa17f88e7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-rainmaker-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-rainmaker-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-rainmaker-poster-titled.jpg"
 sha256 = "1fb3b95641da0402e2dc5b5221e22d7a5ca0a658059b0901bbd47fe227341b35"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-red-line-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-red-line-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-red-line-poster-titled.jpg"
 sha256 = "6b59dfc34b6d19187d3180127144f0a1bacb953f52db12b962bed97d13cb10bc"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-runaway-summer-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-runaway-summer-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-runaway-summer-poster-titled.jpg"
 sha256 = "ef3d67bfd0a471868fd9ce6db850d242008d00a89e0ad0bfd9304b8eb8290f11"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-saltwater-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-saltwater-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-saltwater-poster-titled.jpg"
 sha256 = "5e0628eae18c55634fc96498102e9fa9d7da96b60f7366e2214368568486d780"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-second-act-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-second-act-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-second-act-poster-titled.jpg"
 sha256 = "64bd1c5e0648936e6995129a50ac1c0a8d76bb146ed95bd120f456f144800d42"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-silent-peaks-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-silent-peaks-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-silent-peaks-poster-titled.jpg"
 sha256 = "5821aa61f294721314a7fc3eea733ff2f69abf595fed992424bb2c624cf06ae2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-skyline-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-skyline-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-skyline-poster-titled.jpg"
 sha256 = "9c800c4b3dbc61108be289147169473b5cc2207e2bda780b560c6173737f1ee9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-snowbound-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-snowbound-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-snowbound-poster-titled.jpg"
 sha256 = "d01d48083a7c83c1e67ccaed30bb2d02d736d83d5fc9c9536848d72ce701e4ed"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-strangers-on-a-shore-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-strangers-on-a-shore-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-strangers-on-a-shore-poster-titled.jpg"
 sha256 = "3d3ba0cd37b080af90687e89998a2348f3350f80b51bbfe9342785db1f89e296"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-tidewater-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-tidewater-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-tidewater-poster-titled.jpg"
 sha256 = "553c92a759037dd3b2f1203c926265a2290e1402ac179d265f9ea580b5967ac1"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-two-wheels-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-two-wheels-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-two-wheels-poster-titled.jpg"
 sha256 = "b500f169704d9c7279a2dadda4d3971e18de10727767b7996a55b02b29a27e84"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-the-tower-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-tower-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-the-tower-poster-titled.jpg"
 sha256 = "d6ebf63762553090310755a19a6b5360b046a1658612ee89669031424d3d3c7f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-upstream-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-upstream-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-upstream-poster-titled.jpg"
 sha256 = "85b88f26b005aa72d461cc8e0a2a569639b11a6ff9b438dfcbc84a5cae68a1ee"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-velvet-night-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-velvet-night-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-velvet-night-poster-titled.jpg"
 sha256 = "7d1b08cdf85d8852be74bf1c833177ced76ccc1245f2b41d6fe42f5c27ae540b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-vanguard-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-poster-titled.jpg"
 sha256 = "ba1add8edd44eede056d8c77a96a06a590ceb6d3ac5795a02d9de8e447c2a6de"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-vanguard-fallout-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-fallout-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-fallout-poster-titled.jpg"
 sha256 = "bb023df0bb07d613fdf516850494b056c45bff941107ae46cc807a46a915598a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-whale-song-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-whale-song-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-whale-song-poster-titled.jpg"
 sha256 = "0931f031b303fb104c2df7bc700396511c7d35e98fdf3deb32efb5b76fbdfcf3"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-wanderers-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wanderers-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-wanderers-poster-titled.jpg"
 sha256 = "6c7bff8a34bbd3b1f82c60aaf43394a8a030ece5c555aec32ebbcf201625f435"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-where-the-road-ends-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-where-the-road-ends-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-where-the-road-ends-poster-titled.jpg"
 sha256 = "abb4c7eb33e12edd3c5cbc52327b6d650f11920b214d7aaea3ecf6f2c9caec1b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-small-worlds-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-small-worlds-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-small-worlds-poster-titled.jpg"
 sha256 = "27a0f760a1767d5d59ee44954e9c900a1eb73633c9a50a6278e17ef6236eb79f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-night-shift-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-shift-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-night-shift-poster-titled.jpg"
 sha256 = "1920274d18d0e3a354572c2fbae5759f26939589ecebbeb4efdf544b614b8e40"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-coldwater-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-coldwater-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-coldwater-poster-titled.jpg"
 sha256 = "9fb486302a55908df32ced0854ec0544cdea687f9e3daeedc4d97509dcc480ae"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-starfall-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-starfall-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-starfall-poster-titled.jpg"
 sha256 = "7772bbd53ec4d49c3344f0e84cc044cb2abe24f16ab317949b86a0fbb39e8202"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-little-explorers-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-little-explorers-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-little-explorers-poster-titled.jpg"
 sha256 = "9d87b2c93b107fa1e905e86d1991eaec68da880180441b30f574586e64badd5d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-deep-blue-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-deep-blue-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-deep-blue-poster-titled.jpg"
 sha256 = "77ad7e1230cffca1d3ebd4e88260ccbca5d1f8f8a2af51781a9add09a353a73e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-highlands-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-highlands-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-highlands-poster-titled.jpg"
 sha256 = "b1709d86e03b0afebdab9a93172ef0c0d117545f90cfae7c24409b01aeb8f1ec"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-signal-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-signal-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-signal-poster-titled.jpg"
 sha256 = "d1089519e9a886d9d6628c79b666e8201ab791ee981a6fa3f9ebc5a2c9db4dc4"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-ramen-nights-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ramen-nights-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-ramen-nights-poster-titled.jpg"
 sha256 = "9d2e39da3e97dd676eab529cddf1a3c52b1079a07cee71f3d24ce0561c959f61"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-wild-coast-poster-titled]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wild-coast-poster-titled.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-wild-coast-poster-titled.jpg"
 sha256 = "249fccafbb6b5a77cbdf15d659955c2b94c87b76830d1147ee6a31fd654e3e12"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-carousel-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-carousel-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-carousel-poster-qwen.jpg"
 sha256 = "781f16c0ef8143eb4de1330cd64afa772e01b7c884a3f9f5862094f63ffdee79"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-carousel-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-carousel-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-carousel-lettering.jpg"
 sha256 = "e76dcca9c93eb95d0bc46d2afd87860f517a3a0945dfd66ea5ab12e21a643b7b"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-echoes-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-echoes-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-echoes-poster-qwen.jpg"
 sha256 = "77ec1000d9d647e4f70d7b1495add5fd671c4fa17be598cb2f23e0472b347dfe"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-echoes-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-echoes-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-echoes-lettering.jpg"
 sha256 = "9fa46d5ac346aae0e8e2393b885c9a8b57c869fa91141ceea46a0d94441a75c2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-midnight-market-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-midnight-market-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-midnight-market-poster-qwen.jpg"
 sha256 = "bea6f3e9cdb94459216a95e19c62e302891a3baae1dd29f3d07b30cb89ee5909"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-midnight-market-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-midnight-market-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-midnight-market-lettering.jpg"
 sha256 = "7567c258651c4ca586e016bd3b75b1d7647f4934361ad7c3e3b17503ed779614"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-morning-run-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-morning-run-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-morning-run-poster-qwen.jpg"
 sha256 = "20c001004b19723ff5a0d51118f8279fd5334061176619d92ee36a53efc84c22"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-morning-run-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-morning-run-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-morning-run-lettering.jpg"
 sha256 = "d143d4689a05cbe597daa792e3bf32f74d47e56bb3775dc33a78a499168668ff"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-northbound-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-northbound-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-northbound-poster-qwen.jpg"
 sha256 = "aa0327684e9ae00a75ae8ccc239000cc884484fd1de8ca0b5dc532f53f1f59a0"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-northbound-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-northbound-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-northbound-lettering.jpg"
 sha256 = "a557027e545c8cd13add419886e6414ad91f0601e6bcb481f0ea349ce43b13f3"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-bakery-on-elm-street-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-bakery-on-elm-street-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-the-bakery-on-elm-street-poster-qwen.jpg"
 sha256 = "b41ea8c3ba9e41eee0ca40c69f45dd7428bc79684e5c75f4842e060f25d1a5ca"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-the-bakery-on-elm-street-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-bakery-on-elm-street-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-the-bakery-on-elm-street-lettering.jpg"
 sha256 = "993f94da2db677499e7c500fcdeb198dec4383de1ebcef2c099f768c9a429669"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 15"
 license = "CC0"
 
 [image.ai-market-street-poster-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-market-street-poster-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-market-street-poster-qwen.jpg"
 sha256 = "41a207ceae768cfd31b183aa3598b6277d489fc7f555790c570c783be44b6072"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 3"
 license = "CC0"
 
 [image.ai-market-street-lettering]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-market-street-lettering.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-market-street-lettering.jpg"
 sha256 = "3ea18bb7e3fddc014ae173cc94bcdbdcb75aace5f5c9dcf430454af9ce8c474c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-king-of-the-savannah-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-king-of-the-savannah-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-king-of-the-savannah-backdrop-qwen.jpg"
 sha256 = "600cb3375986dc61273cac2c64ca9891a8d55c517f6a18afcff6ac17e51dc901"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-winter-fox-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-winter-fox-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-winter-fox-backdrop-qwen.jpg"
 sha256 = "9489eedd907cb8c3ce4ba5d8844ceb6406053dd602ae7e176b84c468cb6c3c2c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-harbor-lights-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-harbor-lights-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-harbor-lights-backdrop-qwen.jpg"
 sha256 = "6e22dc8b9ad3d9fdbdac8be4f2496ea7009972e76b7d0b069da7206b20d300bf"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-thunder-road-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-thunder-road-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-thunder-road-backdrop-qwen.jpg"
 sha256 = "ebe1e4795ac8270267e0eb45367f9fcb4219144cc340bb6cab3c7e9520ed4905"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-vanguard-legacy-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-legacy-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-vanguard-legacy-backdrop-qwen.jpg"
 sha256 = "14d279d3aa3459ce58f14e937ae6ce3ecb8ecdeecd4a913263fcae8ca19ce96d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-fast-lane-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-fast-lane-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-fast-lane-backdrop-qwen.jpg"
 sha256 = "7cd18a15a9b16e3a94125d00f7ff09b67d9adf60219e7fc40f9b5174d96f6398"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-night-train-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-train-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-night-train-backdrop-qwen.jpg"
 sha256 = "999f6cf154babf56ceab9458fbc1732aef293904b66f432e518176a0780a59f0"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-the-red-boat-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-red-boat-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-the-red-boat-backdrop-qwen.jpg"
 sha256 = "6f8bdc7a4a3da48df842140def06cf6733702ba653697ee983cc634e09c40534"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-golden-hour-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-golden-hour-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-golden-hour-backdrop-qwen.jpg"
 sha256 = "787efee6c84fc49be158e33e1bfa95e1c8208c45252d1a4d5da22a4c93b108bc"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-last-ride-west-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-last-ride-west-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-last-ride-west-backdrop-qwen.jpg"
 sha256 = "316ef9ab2ce751b4c1a3bd9938b2444acdce8d4363965349668e04269484d54e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-letters-to-ingrid-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-letters-to-ingrid-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-letters-to-ingrid-backdrop-qwen.jpg"
 sha256 = "5cd9897d8e24436664ed624705c234e578be6943b6d543b82b5cae85fcc75756"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-summer-nights-live-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-summer-nights-live-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-summer-nights-live-backdrop-qwen.jpg"
 sha256 = "b9e6c1d81351a005995a3f813a1474993acd59ff9b4959a39a3a83291d57a3a4"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-7-days-in-lisbon-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-7-days-in-lisbon-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-7-days-in-lisbon-backdrop-qwen.jpg"
 sha256 = "1ed74b32f276cdc4016739a2bcdb0149f8ba63a8c68ef868717e520a2821ba68"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-1000-lanterns-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-1000-lanterns-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-1000-lanterns-backdrop-qwen.jpg"
 sha256 = "cc0848f0bbac5761e454d85f84aa574dc8b91ff57acd62406fb89794f6621e6d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-21-winters-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-21-winters-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-21-winters-backdrop-qwen.jpg"
 sha256 = "690a3006c8e338e11d764483d9779e977442d71eab1bc5eb2035b5b89a4da64a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-above-the-tide-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-above-the-tide-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-above-the-tide-backdrop-qwen.jpg"
 sha256 = "c51f1ac9eb1188cae7366fc8ab14ca6dc406b4c37e6665c9867fe564c7f1d9d2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-after-the-rain-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-after-the-rain-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-after-the-rain-backdrop-qwen.jpg"
 sha256 = "a8fcb2edeeca1fe3d48898955b613180f0747cd7ebfef4e9d648f51c8aaf9bc9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-ashes-of-summer-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ashes-of-summer-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-ashes-of-summer-backdrop-qwen.jpg"
 sha256 = "ac937dc571821d4860f4bfd3ed57c7211e6df3c3d40929e4092812e2dfc98f33"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-atlas-of-small-things-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-atlas-of-small-things-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-atlas-of-small-things-backdrop-qwen.jpg"
 sha256 = "d8b053bd4b07f6fbec4ddb4e8a51103401486294fc39cb984ac35a7280aa9901"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-blue-hour-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-blue-hour-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-blue-hour-backdrop-qwen.jpg"
 sha256 = "cf81afb2e6b6e44c9d943b08427475f8106805183e44eb6cd1450f353b7018be"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-brass-and-bone-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-brass-and-bone-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-brass-and-bone-backdrop-qwen.jpg"
 sha256 = "ab10cb0b9b726d70cbcbdda19f235c32741f9379eb892709f7f766bc43cf652a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-broken-compass-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-broken-compass-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-broken-compass-backdrop-qwen.jpg"
 sha256 = "984ebe3f769b09368456d61b9d19ac6172718d676687f7d2e6020c1756b0c39c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-before-the-whistle-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-before-the-whistle-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-before-the-whistle-backdrop-qwen.jpg"
 sha256 = "c88cebeef51455feab88ac7b4c8f0c08ae9765bffeba3e597d7c3ce969a7b24d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-canyon-road-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-canyon-road-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-canyon-road-backdrop-qwen.jpg"
 sha256 = "65ee80b64f9e8a08da4e0a32737a16563ef64b7b13d590e037f49b00f6bdd463"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-carousel-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-carousel-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-carousel-backdrop-qwen.jpg"
 sha256 = "a42916dccc10119eb6b4a210dbf43663181ba8b43b76f8818dbdc1e2020ecde2"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-crossing-lines-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-crossing-lines-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-crossing-lines-backdrop-qwen.jpg"
 sha256 = "5b0addc922ff55edc332436ed2e36f7e4c4825b886f751ebfdf260449d0ec927"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-concerto-for-a-stranger-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-concerto-for-a-stranger-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-concerto-for-a-stranger-backdrop-qwen.jpg"
 sha256 = "3584fc6d4b4f70f3bbf7ece75e45377718cf36b27fca3c2f4a900492407b98b5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-city-of-glass-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-city-of-glass-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-city-of-glass-backdrop-qwen.jpg"
 sha256 = "fa7252f3fbad364de72f1651b268592c2b5d8203b78f1595e9dcc8e175bfa376"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-deep-water-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-deep-water-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-deep-water-backdrop-qwen.jpg"
 sha256 = "fb0d7315313919f67fdf8e55ffea3b0218b81e42cb661c0d3fb2ddc473f3f65d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-desert-bloom-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-desert-bloom-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-desert-bloom-backdrop-qwen.jpg"
 sha256 = "f7c012dc1e28bfe4d9ff331bbe844bb320329cbed57dcb000b31a3618ad12b7e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-dust-and-diamonds-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-dust-and-diamonds-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-dust-and-diamonds-backdrop-qwen.jpg"
 sha256 = "6f054d0296b28d0fa4c259f45f9bf51db3fc01d1ac0259f0a4504d2a68da8f75"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-dear-neighbour-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-dear-neighbour-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-dear-neighbour-backdrop-qwen.jpg"
 sha256 = "5bcbd337fe89e7d794f62574ee0feb92f86f17c931234889119803d02e1c5dbd"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-echoes-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-echoes-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-echoes-backdrop-qwen.jpg"
 sha256 = "d65d07e4aa38d5e7e5e8c6118e0b97dd183acb02c7210623c26919d3d2afed91"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-edge-of-the-map-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-edge-of-the-map-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-edge-of-the-map-backdrop-qwen.jpg"
 sha256 = "0482c6dc24060682cf5463154b6bbd338901a16707d18933f9fea130cf0c4f86"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-evening-train-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-evening-train-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-evening-train-backdrop-qwen.jpg"
 sha256 = "21729ea19155e1d403b961933bcfecf9f75926566631d710da0bc0fe7cbb0361"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-festival-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-festival-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-festival-backdrop-qwen.jpg"
 sha256 = "3de4a4cb14add904a779df7d4660ffc9f2d488e96eab9522a0b9c619323e11c7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-first-light-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-first-light-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-first-light-backdrop-qwen.jpg"
 sha256 = "ed4909de1ceff93eec94fa4f29fe79c3f108d08fad5eca0c50d8306b3791516d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-flood-season-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-flood-season-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-flood-season-backdrop-qwen.jpg"
 sha256 = "6757b7785aa0b6e0cd2af634ba9aebed707054d8c761f4898055846557262538"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-grand-hotel-neon-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-grand-hotel-neon-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-grand-hotel-neon-backdrop-qwen.jpg"
 sha256 = "d60b388f087a6d32609d194147b8c55f86958091432a2a44f73d0e93616dd5d6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-ghost-light-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-ghost-light-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-ghost-light-backdrop-qwen.jpg"
 sha256 = "f981769c3e3a4e901c47f9a76591d0ab5ea1adc10f1c51a88b08296d5839de24"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-half-past-midnight-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-half-past-midnight-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-half-past-midnight-backdrop-qwen.jpg"
 sha256 = "fc6a07c0ae4cc1a3b5a2dc204b03327d5a375e617c36566a3931271310ac4186"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-headlights-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-headlights-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-headlights-backdrop-qwen.jpg"
 sha256 = "0e5cd8d734a559840b08c460f05b7fdb2a8dcd4580e963c83d47ad3a7ce4e504"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-high-water-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-high-water-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-high-water-backdrop-qwen.jpg"
 sha256 = "5cdfe7bc674f0941665cd7f72cb11a89173622e9c642a16be702c22d9acf8118"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-hush-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hush-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-hush-backdrop-qwen.jpg"
 sha256 = "c139f3c6b76bdb577b47c3d0635eb3f632d70ca7b86d85ff5c3b880e9579baf7"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-hearts-on-the-shore-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-hearts-on-the-shore-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-hearts-on-the-shore-backdrop-qwen.jpg"
 sha256 = "6a1bbcb9972a7339921dbc40f3170444813ab8cb97eea00971d6457ebec3fa1a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-iron-coast-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-iron-coast-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-iron-coast-backdrop-qwen.jpg"
 sha256 = "5f6ab329ff11293b35f892fa335a65c6417cc5ea7addeff30213380b9225a340"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-island-time-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-island-time-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-island-time-backdrop-qwen.jpg"
 sha256 = "78ac81546a4e877e769375eb55705c01d318bfb08725eb8460f2c12dc306f087"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-jellyfish-summer-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-jellyfish-summer-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-jellyfish-summer-backdrop-qwen.jpg"
 sha256 = "a14e2ebc294e96414755d418cbe90939090751e00597fa5614a23a382b6b3cf4"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-just-one-song-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-just-one-song-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-just-one-song-backdrop-qwen.jpg"
 sha256 = "f145be5a3f60b595a12ac4c7e195c99eb319341649dd54f3027daf46fda030e9"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-keepers-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-keepers-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-keepers-backdrop-qwen.jpg"
 sha256 = "68fef58fe8648ea7f460b0b0911124c5130e8a114dc07e77883432d1d0275145"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-lantern-festival-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lantern-festival-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-lantern-festival-backdrop-qwen.jpg"
 sha256 = "1c29f38bf6077e16145e64527bf04a3085328417fa8ee210072fa8ec8307dadd"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-long-way-down-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-long-way-down-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-long-way-down-backdrop-qwen.jpg"
 sha256 = "91ca02b5105f598b779437a0fd6ea6a2a040336f5e05e797a26851c3479bdf0d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-lost-in-the-fog-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-lost-in-the-fog-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-lost-in-the-fog-backdrop-qwen.jpg"
 sha256 = "7cb69fb2c87734d952c9588bdf159c27a8261fc236cac1c2d4f49aa7775fa1db"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-last-orders-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-last-orders-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-last-orders-backdrop-qwen.jpg"
 sha256 = "6a4df67f72d9571380ff8055593493b5efcd1a357fb95ce3fe33ff1cacb60002"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-moonrise-lake-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-moonrise-lake-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-moonrise-lake-backdrop-qwen.jpg"
 sha256 = "6dc75a655792611a368294a170cbb041aa3c981e99fe5b59008d63e5c4201acd"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-morning-run-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-morning-run-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-morning-run-backdrop-qwen.jpg"
 sha256 = "cd01a7a617350b230aefc314ac98e13adcd49a8515ef032796f61bef6c7d040d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-mountain-kings-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-mountain-kings-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-mountain-kings-backdrop-qwen.jpg"
 sha256 = "977190fec0fb3d8430a288fda861f6d7d4681d215c45810d3277c738868558c3"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-murmur-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-murmur-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-murmur-backdrop-qwen.jpg"
 sha256 = "d79b6d809b5a77b13cf4b83bf68fb4b47a560be594bddf0d39d4ad5c20a4b77f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-music-box-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-music-box-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-music-box-backdrop-qwen.jpg"
 sha256 = "4e727c0d841b10f631dc0a37c30e1344033ab6804619acfff9cd783f0b367f44"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-mirage-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-mirage-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-mirage-backdrop-qwen.jpg"
 sha256 = "0ff02c15068bb3154c1ece718989069ec9b1fb60e0aa2ddfc783ab82407a5501"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-neon-nights-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-neon-nights-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-neon-nights-backdrop-qwen.jpg"
 sha256 = "c4d9ecabeedfef49147c23619ad027a8d9bd2ffc11c4b5c7c72ed543faa1db76"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-nightfall-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-nightfall-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-nightfall-backdrop-qwen.jpg"
 sha256 = "04312397867c55e441cbe8a47c2fe5ee9b6a9b9b4e4b6ff384ca2c71f7b5d25e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-one-last-wave-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-one-last-wave-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-one-last-wave-backdrop-qwen.jpg"
 sha256 = "c9b269f12580685927905c5999a7d6fcfc2e9668f2a014da32100dfb2102899d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-orchestra-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-orchestra-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-orchestra-backdrop-qwen.jpg"
 sha256 = "c324b6956b7a8cbaf3333f81a2662a3b60ab69ceb17a4ddfc3515a222bc08255"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-pale-blue-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pale-blue-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-pale-blue-backdrop-qwen.jpg"
 sha256 = "f6154b54b3c22dc9b508b3b1f8b3ac18dae9b6314a55f9d148e5da73a174f43a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-pilgrims-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-pilgrims-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-pilgrims-backdrop-qwen.jpg"
 sha256 = "c5d578bee814954e7d3bf20e449beb352dc78150959ce6dae522bc92ede462ef"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-quiet-streets-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-quiet-streets-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-quiet-streets-backdrop-qwen.jpg"
 sha256 = "6ff21285cfb88810da073ed63d5f56e10927bbcaab3327341fa5d5a989488e6a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-rainmaker-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-rainmaker-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-rainmaker-backdrop-qwen.jpg"
 sha256 = "9df73c14d3544c8df28fa78f2f8e3b00ec73eaa47f6b48efb2796942af51d0f3"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-red-line-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-red-line-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-red-line-backdrop-qwen.jpg"
 sha256 = "3ac92a3ec289092fb2e6c21ea411eabfa9e758a3cb7003a1d11d0c60ce00f7b6"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-runaway-summer-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-runaway-summer-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-runaway-summer-backdrop-qwen.jpg"
 sha256 = "5fda1c76d8ac8b86ca4651e2284a4492f0c67f44fca3aa77bddffc7f314ac2a5"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-saltwater-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-saltwater-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-saltwater-backdrop-qwen.jpg"
 sha256 = "579185cc126b95173a44a482936d269bd9bb5f0586fc6c09c81dacdab2c64a25"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-second-act-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-second-act-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-second-act-backdrop-qwen.jpg"
 sha256 = "ea529461456b255d9af46de541df10d12d240d9f7cc0370bb13e713ae190ce75"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-silent-peaks-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-silent-peaks-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-silent-peaks-backdrop-qwen.jpg"
 sha256 = "ba6e3bc2508ad5493cab9029a28857dc73ca24ffe560b8103815a3bf348786b1"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-snowbound-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-snowbound-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-snowbound-backdrop-qwen.jpg"
 sha256 = "ffadc5dd37123f1b38aebc43abd02c6f41a53965f1c64ff1a18df7d690248e66"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-strangers-on-a-shore-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-strangers-on-a-shore-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-strangers-on-a-shore-backdrop-qwen.jpg"
 sha256 = "581a89381a680ca298c5bc34e08379054b6d4dc59a437232600612f30817156a"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-tidewater-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-tidewater-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-tidewater-backdrop-qwen.jpg"
 sha256 = "09d26ed35b2008efe93892e974fbc7d37e075962955467eba350312902655d45"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-two-wheels-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-two-wheels-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-two-wheels-backdrop-qwen.jpg"
 sha256 = "aa3bc41b93c391ce51ef351e115e4432540e2858812e9b2f5b79232e779cb860"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-the-tower-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-tower-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-the-tower-backdrop-qwen.jpg"
 sha256 = "55536c15ada49a63ccbad48892a75f0295d43c86dac42a238de83e22674a4357"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-upstream-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-upstream-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-upstream-backdrop-qwen.jpg"
 sha256 = "3c7bf4ab4bc6db0b23dffd98f4a31841d4e0e7b972d2a7fcc6aa7fa30f9df312"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-velvet-night-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-velvet-night-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-velvet-night-backdrop-qwen.jpg"
 sha256 = "3918f5508ec3602d45709edf82d365739c90058fa7660e2977cc6a4c006c881f"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-vanguard-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-vanguard-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-vanguard-backdrop-qwen.jpg"
 sha256 = "22d50b3f54980431061ed7939a7c1584e716a4df88f764e11bd6751314c0a038"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-whale-song-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-whale-song-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-whale-song-backdrop-qwen.jpg"
 sha256 = "21cc2bfa6ed297bcae286dca2a1e38bc7361b6fb55f1d3bb0fa4f345c5d967d3"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-wanderers-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wanderers-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-wanderers-backdrop-qwen.jpg"
 sha256 = "5e6cb77f64082ffd6697e3630d70fdd913a00b8a93be2e7831946e59d582e9b3"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-where-the-road-ends-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-where-the-road-ends-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-where-the-road-ends-backdrop-qwen.jpg"
 sha256 = "9ddffeca0e65d9163febd430f381accfad119dcf258f7af9b1e1b2c1f269bcec"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-small-worlds-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-small-worlds-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-small-worlds-backdrop-qwen.jpg"
 sha256 = "9a3c912fd9e3efb3a996cbd552c0be6f654240c6cc612f186ef59bb293f62dbb"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-night-shift-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-night-shift-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-night-shift-backdrop-qwen.jpg"
 sha256 = "d809fe5361a7bc31275500e7a55c8afc01e348dc040fa8f1fcb42ecea4dee601"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-coldwater-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-coldwater-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-coldwater-backdrop-qwen.jpg"
 sha256 = "ac2bc0ea60265c51e54635b16a9b2426698ca1f3f314e10b85948f3eaee07c9e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-little-explorers-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-little-explorers-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-little-explorers-backdrop-qwen.jpg"
 sha256 = "06c1f2db7523f9b8e01425f1a30f1249ad13ac24bcafe7bbd77968a58b51c721"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-deep-blue-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-deep-blue-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-deep-blue-backdrop-qwen.jpg"
 sha256 = "79d3ab76595f32756d7500f6a8c8b416ef99e3ef40fe18f2c3aaecdce1876b0e"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-highlands-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-highlands-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-highlands-backdrop-qwen.jpg"
 sha256 = "099908dbb4f233a612ddb9d952382a039dc95eeaaf90083e19fce9a218758f51"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-signal-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-signal-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series/ai-signal-backdrop-qwen.jpg"
 sha256 = "ca007af3705765bb9b35f361d66564dedef3fc160d57cb73bcd01b296a0bae65"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 2"
 license = "CC0"
 
 [image.ai-wild-coast-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-wild-coast-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-series-kids/ai-wild-coast-backdrop-qwen.jpg"
 sha256 = "c7c19a89b683cf6ab5e567ec9b70071ae435c7679c7bcd1a366fcfd941710448"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-hedgehog-parade-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-hedgehog-parade-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-the-hedgehog-parade-backdrop-qwen.jpg"
 sha256 = "ff3ee86b43199b46d7240214761aa8df8e1946d9f5d1996a06aec794324e669d"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-the-typewriter-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-the-typewriter-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies/ai-the-typewriter-backdrop-qwen.jpg"
 sha256 = "798339715019ee2c8d0d81d12097bce1d109247324a6f5411945ebf9e99f2c0c"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"
 license = "CC0"
 
 [image.ai-home-before-dark-backdrop-qwen]
-url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-v1/ai-home-before-dark-backdrop-qwen.jpg"
+url = "https://github.com/Glacier-Jellyfin/glacier-demo/releases/download/ai-movies-kids/ai-home-before-dark-backdrop-qwen.jpg"
 sha256 = "1dc8b8ef210a8590eb5298e1a3aec61be106159192ff2de8e110bcd25bec4c98"
 page = "https://github.com/Glacier-Jellyfin/glacier-demo/blob/main/prompts.toml"
 author = "generated with Qwen-Image (Q4_K_M, Lightning 8-step LoRA), seed 1"

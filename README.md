@@ -100,7 +100,10 @@ Posters that need a person, a couple or a superhero come from FLUX.1-schnell
 to advertising. `prompts.toml` holds one entry per image; `ai.py` (setup in
 its docstring, it needs PyTorch with CUDA) makes four candidates each, the
 chosen seed goes back into prompts.toml, and `ai.py pin` adds the image to
-sources.toml. The images are attached to the `ai-v1` release. demo.py puts
+sources.toml. The images are attached to eight releases by kind: `ai-movies` and `ai-series` (with the
+episode stills), their `-kids` twins for the titles the Kids profile can see, `ai-people` (cast
+photos), `ai-profiles` (avatars), `ai-artists` and `ai-covers`. `ai.py releases --check` tells
+when a title has to move, for example after a new rating, and `--list` prepares the uploads. demo.py puts
 them in place of the title's photos and sets the title text itself; FLUX is
 never asked for lettering, and candidates with made-up text or logos that
 resemble real brands are left out.
